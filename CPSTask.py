@@ -162,6 +162,15 @@ class CPSTask(FlexibleDocument):
         # No groups assigned to this task
         return []
 
+    security.declarePublic("isManager")
+    def isManager(self):
+        """
+        Has the current member the Manager rights.
+        """
+        member = self.portal_membership.getAuthenticatedMember()
+        roles_in_context = member.getRolesInContext(self)
+        return "Manager" in roles_in_context
+
     security.declarePublic("isAssigned")
     def isAssigned(self):
         """
@@ -291,7 +300,7 @@ class CPSTask(FlexibleDocument):
         Is the task late according to the deadline.
         """
         today = DateTime()
-        return ((not self.isClosed()) and (self.stop_task_date < today)) 
+        return ((not self.isClosed()) and (self.stop_task_date < today))
 
     security.declareProtected('getStatus', View)
     def getStatus(self):
