@@ -364,6 +364,26 @@ class CPSTask(FlexibleDocument):
 
         return res
 
+    security.declareProtected("sendMail", View)
+    def sendMailTo(self, content="", emails=[], from_address="", subject=""):
+        """
+        Send a mail
+        """
+
+        if hasattr(self, 'MailHost'):
+            mailhost = self.MailHost
+            try:
+                mailhost.send(content,
+                              mto=emails,
+                              mfrom=from_address,
+                              subject=subject,
+                              encode='8bit')
+                return 1
+            except:
+                # Problème while sending mail
+                pass
+        return 0
+
 InitializeClass(CPSTask)
 
 def addCPSTask(dispatcher, id, REQUEST=None, **kw):
