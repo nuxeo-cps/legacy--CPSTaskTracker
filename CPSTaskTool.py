@@ -121,14 +121,13 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 
         #
         # Now sorting on something
-        # type, priority or indicator.-> cf. num values
+        # type, priority or project.-> cf. num values
         # Same business -> building the lambda function.
         #
 
         task_list = res
 
         self.map_priority = {'high': 1, 'normal':2, 'low':3}
-        self.map_indicator = {'normal':3, 'critical':2, 'late':1}
 
         stupid_flag = 0
 
@@ -136,10 +135,11 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             func = (lambda self, x,y:
                     self.map_priority[x.task_priority]\
                     <= self.map_priority[y.task_priority])
-        elif parameters['sort_on'] == 'indicator':
+        elif parameters['sort_on'] == 'project':
+            # Alpha
             func = (lambda self, x,y:
-                    self.map_indicator[x.task_indicator]\
-                    <= self.map_indicator[y.task_indicator])
+                    x.task_project[0].lower\
+                    <= y.task_project.lower[0])
         elif parameters['sort_on'] == 'type':
             # Case on the type -> Alpha sorting.
             func = (lambda self, x,y: x.task_type[0].lower()\
@@ -221,6 +221,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     # PROJECT API
     ################################################
 
+    security.declarePrivate("_hasIndex")
     def _hasIndex(self, project_title):
         """
         Returnt the index of the project in the list
@@ -233,7 +234,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 
         return None
 
-    security.declareProtected(ModifyPortalContent, "getProjects")
+    security.declareProtected(View, "getProjects")
     def getProjects(self):
         """
         Returns the list of projects already stored.
