@@ -23,8 +23,9 @@ __author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
 """
 CPS Task Tool
 This tool will :
-  - acts as a repository for all the tasks.
-  - defines a search API used by the CPSTaskScreen and CPSTaskBox types.
+  - act as a repository for all the tasks.
+  - define a search API used by the CPSTaskScreen and CPSTaskBox types.
+  - store some lists like project list here.
 """
 
 from zLOG import LOG, DEBUG
@@ -36,6 +37,7 @@ from Products.BTreeFolder2.CMFBTreeFolder import CMFBTreeFolder
 
 from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.utils import UniqueObject
+from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 
 class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     """
@@ -54,6 +56,12 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         CMFBTreeFolder constructor
         """
         CMFBTreeFolder.__init__(self, self.id)
+        self.lprojects = [] # We will keep the different projects here.
+
+
+    #################################################
+    # SORT API
+    #################################################
 
     security.declarePrivate("_sortTaskObjects")
     def _sortTaskObjects(self, task_list=[], parameters={},
@@ -136,6 +144,10 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             # Case on the type -> Alpha sorting.
             func = (lambda self, x,y: x.task_type[0].lower()\
                     <= y.task_type[0].lower())
+        elif parameters['sort_on'] == 'project':
+            # Case on the project -> Alpha sorting.
+            func = (lambda self, x,y: x.task_project[0].lower()\
+                    <= y.task_project[0].lower())
         else:
             # No way to sort anything in this condition ;
             stupid_flag = 1
@@ -165,7 +177,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         member_id = member.getMemberId()
 
         task_lists = {}
-        
+
         if parameters.get('display_my_tasks'):
             task_lists['my_tasks'] = [x for x in sorted_tasks \
                                       if x.isCreator()]
@@ -178,14 +190,14 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                                                       sorted_tasks if \
                                                       x.isAssigned()]
         if parameters.get('display_my_accepted_tasks'):
-            task_lists['my_groups_affected_tasks'] = [x for x \
+            task_lists['my_accepted_tasks'] = [x for x \
                                                     in sorted_tasks \
                                                     if \
                                                     x.isTheAssignedOne()]
         return task_lists
 
 
-    security.declareProtected("View", "searchTasks")
+    security.declareProtected(View, "searchTasks")
     def searchTasks(self, parameters={}):
         """
         Searching the tasks within the portal.
@@ -204,5 +216,27 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         #
         task_lists = self._getTaskLists(sorted_tasks, parameters)
         return task_lists
+
+    ################################################
+    # PROJECT API
+    ################################################
+
+    security.declareProtected(ModifyPortalContent, "getProjects")
+    def getProjects(self):
+        """
+        Return the list of projects alredy stored.
+        """
+        return self.lprojects
+
+    security.declareProtected(ModifyPortalContent, "addProject")
+    def addProject(self, new_project={}):
+        """
+        Add a brandly new project.
+        """
+        if new_project != {} and \
+           same_type(new_project, {}):
+            self.lprojects.append(new_projects)
+            return 1
+        return 0
 
 InitializeClass(CPSTaskTool)
