@@ -65,7 +65,12 @@
         <input type="checkbox" value="" name="ids:list"
                tal:attributes="value python:project['title']" />
       </td>
-      <td><span tal:replace="python:project['title']" /></td>
+      <td>
+      <a href=""
+           tal:attributes="href
+           string:cps_task_tool_add_project_form?project_title=${project/title}&project_description=${project/description}">
+          <span tal:replace="python:project['title']" />
+       </a>
       <td><span tal:replace="python:project['description']" /></td>
     </tr>
     </tal:block>
