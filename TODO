@@ -30,12 +30,12 @@ o CPSTask
   o cps_task_edit.py should check the properties (compulsory)
 
 o CPSTaskScreen 
-  o 
+  o Validation against the requierments 
 
 o CPSTaskBox 
-  o Everything. 
+  o Validation against the requierments.
 
-o i18n for the skins.
+o i18n for *all* the skins.
 
 
 
