@@ -180,7 +180,7 @@ class CPSTask(FlexibleDocument):
             return 0
 
         # Checking if the user rejected the task
-        if member_id in self.task_rejecter:
+        if member_id in [x['id'] for x in self.task_rejecter]:
             return 0
 
         # Checking within the assigned members.
@@ -354,8 +354,10 @@ class CPSTask(FlexibleDocument):
         """
         The user rejects the task
         """
+        now = DateTime().strftime("%Y/%m/%d")
         member_id = self.getCurrentMemberId()
-        self.task_rejecter.append(member_id)
+        struct = {'id':member_id, 'date':now}
+        self.task_rejecter.append(struct)
         return 1 # No use since now.
 
     security.declarePublic("getTaskRejecters")
@@ -363,7 +365,7 @@ class CPSTask(FlexibleDocument):
         """
         Return the list of people who rejected the task already
         """
-        return self.task_rejecter
+        return [x['id'] for x in self.task_rejecter]
 
     security.declareProtected(ModifyPortalContent, "getAllAssignedMembers")
     def getAllAssignedMembers(self):
