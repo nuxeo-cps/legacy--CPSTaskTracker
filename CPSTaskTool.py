@@ -22,7 +22,7 @@
     CPS Task Tool
     This tool will :
      - acts as a repository for all the tasks
-     - we'll see for the rest.. ;)
+     - Search API used by the CPSTaskScreen and CPSTaskBox types.
 """
 
 from Globals import InitializeClass
@@ -48,5 +48,11 @@ class CPSTaskTool(UniqueObject, BTreeFolder2, PortalFolder):
     def __init__(self):
         BTreeFolder2.__init__(self, self.id)
 
+    security.declareProtected("View", "searchTasks")
+    def searchTasks(**kw):
+        """
+        Searching the tasks within the portal.
+        """
+        pass
 
 InitializeClass(CPSTaskTool)
