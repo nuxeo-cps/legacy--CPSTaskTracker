@@ -157,6 +157,10 @@ def install(self):
     portal['portal_tasks'].manage_permission('Add portal content',
                                              ['Member'],
                                              1)
+    portal['portal_tasks'].manage_permission('Delete objects',
+                                             ['Member'],
+                                             1)
+
     portal['portal_tasks'].reindexObjectSecurity()
 
 
