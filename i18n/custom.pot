@@ -450,3 +450,6 @@ msgstr ""
 
 msgid "_label_only_this_project"
 msgstr ""
+
+msgid "_label_recall_no_users_assigned"
+msgstr ""

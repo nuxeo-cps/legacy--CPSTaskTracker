@@ -460,3 +460,6 @@ msgstr "Task related to the project : "
 
 msgid "_label_only_this_project"
 msgstr "Display the tasks related to"
+
+msgid "_label_recall_no_users_assigned"
+msgstr "You din't assign this task to anybody."

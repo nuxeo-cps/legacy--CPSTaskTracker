@@ -451,3 +451,6 @@ msgstr "Tâches relatives au projet"
 
 msgid "_label_only_this_project"
 msgstr "Afficher les tâches relatives au projet"
+
+msgid "_label_recall_no_users_assigned"
+msgstr "Vous n'avez pas encore assigné cette tâche"
