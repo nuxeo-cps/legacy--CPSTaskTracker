@@ -184,7 +184,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         if parameters.get('display_my_affected_tasks'):
             task_lists['my_affected_tasks'] = [
-                x for x in sorted_tasks if member_id in x.getContent().getMemberIds()]
+                x for x in sorted_tasks if x.getContent().isAssigned()]
 
         if parameters.get('display_my_groups_affected_tasks'):
             task_lists['my_groups_affected_tasks'] = [
