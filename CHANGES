@@ -3,11 +3,10 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Cosmetic from FJ (CEA)
-- Cosmetic from JA
+-
 Bug fixes:
 ~~~~~~~~~~
-- i18n en.po
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
