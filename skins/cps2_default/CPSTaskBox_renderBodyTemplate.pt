@@ -4,7 +4,8 @@
                    portal_object portal_url/getPortalObject;
                    task_lists python:here.portal_tasks.searchTasks(here.getParameters());
                    isManager python:mtool.checkPermission('Manage portal',portal_object)"
-           condition="not:here/portal_membership/isAnonymousUser">
+          condition="python:not here.portal_membership.isAnonymousUser() and not
+                   ((not here.visible_if_empty) and (not task_lists))" >
 
     <!-- BEGINNING OF MY TASKS -->
     <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []">
