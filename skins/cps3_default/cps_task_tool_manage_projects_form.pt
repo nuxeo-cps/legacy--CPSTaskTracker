@@ -1,0 +1,69 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/content_lib/macros/master">
+  <body>
+    <metal:block fill-slot="header">
+      <h1 i18n:translate="_label_manage_projects">
+        Manage projects
+      </h1>
+    </metal:block>
+    <metal:block fill-slot="main">
+      <div align="right">
+        <a href="./cps_task_tool_add_project_form">
+          <span i18n:translate="_label_create_a_new_project">
+            Create a new project
+          </span>
+        </a>
+      </div>
+      <form method="post" action="doDeleteProjects">
+      <tal:block condition="here/portal_tasks/getProjects">
+        <div class="group">
+          <table border="0" align="center" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <th>&nbsp;</th>
+              <th>
+                <span i18n:translate="_label_title" />
+              </th>
+              <th>
+                <span i18n:translate="_label_description" />
+              </th>
+            </tr>
+            <tr>
+              <td colspan="3">
+                &nbsp;
+              </td>
+            </tr>
+            <tal:block repeat="project here/portal_tasks/getProjects">
+            <tr tal:define="class python:test(repeat['project'].even(), 'even','odd')"
+                tal:attributes="class class">
+              <td>
+                <input type="checkbox" value="" name="ids:list"
+                       tal:attributes="value python:project['title']" />
+              </td>
+              <td align="center">
+                <a href=""
+                   tal:attributes="href string:cps_task_tool_add_project_form?project_title=${project/title}&project_description=${project/description}">
+                  <span tal:replace="python:project['title']" />
+               </a>
+              </td>
+              <td align="center">
+                <span tal:replace="python:project['description']" />
+              </td>
+            </tr>
+            </tal:block>
+            </table>
+            <br />
+            <input type="submit" value="_button_delete" class="standalone"
+                   i18n:attributes="value" />
+        </div>
+      </tal:block>
+      </form>
+      <tal:block condition="not:here/portal_tasks/getProjects">
+        <div class="group" align="center">
+          <span i18n:translate="_label_no_project" />
+        </div>
+      </tal:block>
+    </metal:block>
+  </body>
+</html>

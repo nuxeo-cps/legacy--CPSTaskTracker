@@ -1,0 +1,62 @@
+<tal:block define="dummy python:request.set('breadcrumb_set',
+                                             here.getTaskBreadCrumb(request))">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/content_lib/macros/master">
+<body>
+<div metal:fill-slot="header">
+<h1 i18n:translate="_heading_task_history">
+   Task status history
+</h1>
+</div>
+<div metal:fill-slot="main">
+<div tal:define="review_state python: here.portal_workflow.getInfoFor(here, 'review_state');
+        	     review_history python:here.portal_workflow.getInfoFor(here,'review_history');
+                ">
+<div class="group">
+<h4 i18n:translate="_heading_current_state">
+  Current state
+</h4>
+<br />
+<span i18n:translate="_label_item_is">
+  this item is in
+</span><b>&nbsp;<span i18n:translate="">
+                  <span tal:replace="string:_reviewstate_${review_state}" /></span></b>
+<span i18n:translate="_label_state">
+state.
+</span>
+</div>
+<div class="group" tal:condition="review_history|nothing">
+      <h4>
+        <strong>
+          <span i18n:translate="_label_reviewing_history">
+            Reviewing history
+          </span>
+        </strong>
+      </h4>
+      <br />
+    <div tal:repeat="items python: here.reverseList(review_history)">
+	  <span tal:replace="python:here.get_date(items['time'].strftime('%Y/%m/%d'))['all']" />
+      <strong>
+	    <span tal:define="action items/action"
+              i18n:translate="">
+              <span tal:replace="string:_transition_${action}" />
+        </span>
+      </strong>
+      <span tal:condition="items/effective_date|nothing">
+        (effective: <span tal:replace="python: items['effective_date'].aCommon()"></span>)
+      </span>
+     <span i18n:translate="_label_by">by</span>
+     <i>
+       <span tal:replace="items/actor">Actor</span><br>
+     </i>
+      <div tal:define="rhComments items/comments"
+		 tal:replace="rhComments">Comments</div>
+    </div>
+</div>
+ </div>
+</div>
+</body>
+</html>
+</tal:block>

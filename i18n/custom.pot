@@ -36,6 +36,9 @@ msgstr ""
 msgid "_button_assign"
 msgstr ""
 
+msgid "_button_reinit"
+msgstr ""
+
 ### PORTAL types ##########################################################
 
 msgid "_portal_type_CPS_Task"
@@ -48,6 +51,9 @@ msgid "_portal_type_task Box"
 msgstr ""
 
 ### actions ###############################################################
+
+msgid "_action_reinit_"
+msgstr ""
 
 msgid "_action_create_new_tasks"
 msgstr ""
@@ -220,6 +226,9 @@ msgid "_label_you_are_recalled_for_the_task"
 msgstr ""
 
 msgid "_label_you_can_reassign_the_task_here"
+msgstr ""
+
+msgid "_label_do_you_want_to_reinit_it"
 msgstr ""
 
 msgid "_label_recall"
@@ -439,6 +448,9 @@ msgstr ""
 msgid "_transition_None"
 msgstr ""
 
+msgid "_transition_reinit"
+msgstr ""
+  
 msgid "_label_no_project"
 msgstr ""
 
@@ -452,4 +464,48 @@ msgid "_label_only_this_project"
 msgstr ""
 
 msgid "_label_recall_no_users_assigned"
+msgstr ""
+
+### Document fields
+
+msgid "label_cps_task_type"
+msgstr ""
+
+msgid "label_cps_start_task_date"
+msgstr ""
+
+msgid "label_cps_task_priority"
+msgstr ""
+
+msgid "label_cps_stop_task_date"
+msgstr ""
+
+msgid "label_cps_task_goal"
+msgstr ""
+
+msgid "label_cps_task_description"
+msgstr ""
+
+msgid "label_cps_task_members"
+msgstr ""
+
+msgid "label_cps_task_groups"
+msgstr ""
+
+msgid "label_priority_high"
+msgstr ""
+
+msgid "label_priority_normal"
+msgstr ""
+
+msgid "label_priority_low"
+msgstr ""
+
+msgid "label_priority_internal"
+msgstr ""
+
+msgid "label_priority_nuxeo"
+msgstr ""
+
+msgid "label_priority_other"
 msgstr ""

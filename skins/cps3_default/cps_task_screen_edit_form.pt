@@ -1,0 +1,76 @@
+<tal:block define="current_action string:edit;
+                   global create options/create|nothing;
+                   mcat nocall:here/Localizer/default">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/content_lib/macros/master">
+<body>
+<metal:block fill-slot="header">
+  <tal:block condition="create">
+    <h1 i18n:translate="_heading_create_a_task_screen">
+      Create a task screen.
+    </h1>
+  </tal:block>
+  <tal:block condition="not:create">
+    <h1>
+    <span i18n:translate="_Modify_(object name)_">
+      Modify
+    </span>
+    «&nbsp;<span tal:replace="here/title_or_id">Title</span>&nbsp;»
+    </h1>
+  </tal:block>
+</metal:block>
+<metal:block fill-slot="main"
+             tal:define="title python:(create and [''] or [here.Title()])[0];
+                         description python:(create and [''] or [here.Description()])[0];
+                         submitvalue python:create and mcat('_button_create_') or mcat('_button_modify_');
+                         action python:create and 'cps_task_screen_create' or 'cps_task_screen_edit'">
+<div class="group">
+<form action="." method="POST" enctype="multipart/form-data"
+        tal:attributes="action action">
+  <table border="0" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td colspan="1">
+    <div class="row">
+      <div class="label">
+        <span i18n:translate="_prop_title_">
+          Title
+        </span>
+      </div>
+      <div class="field">
+        <input type="text" name="title" value="title" tal:attributes="value title" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="label">
+       <span i18n:translate="_prop_description_">
+         Description
+       </span>
+      </div>
+      <div class="field">
+        <textarea name="description:text" rows="5" cols="50" wrap="soft"
+           tal:content="description"></textarea>
+      </div>
+    </div>
+
+  <tal:block condition="python:1">
+    <input type="hidden" name="type_name" value="CPS Task Screen" />
+    <input type="hidden" name="default_id_from" value="title" />
+    <input type="hidden" name="default_title_from" value="description" />
+  </tal:block>
+  <input class="standalone" type="submit" value="button_submit"
+         i18n:attributes="value" />
+  <input class="standalone" type="button" name="cancel"
+         onclick="history.back()"
+         value="button_cancel"
+         i18n:attributes="value" />
+</td>
+</tr>
+</table>
+</form>
+</div>
+</metal:block>
+</body>
+</html>
+</tal:block>

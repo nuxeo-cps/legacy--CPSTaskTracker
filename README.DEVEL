@@ -1,0 +1,56 @@
+                          -----------------
+                            CPSTaskTracker
+                          ------------------
+
+          $Id$
+
+This product is CPS2 *AND* CPS3 compliant so check carrefully the modification you may do in here.
+
+I18N :
+-------
+
+ This is on purpose that they are starting with _XX since CP2 was in need of
+such msgids.
+
+SKINS :
+--------
+
+ - cps2_default
+ - cps3_default
+
+INSTALLER :
+------------
+
+ - install.py dispatch to the good installer :
+
+   - install_cps2.py
+   _ install_cps3.py
+
+It checks NuxCPS component presence for CPS2 and CPSCore for CPS3 to decide
+which version of CPS is iun use.
+
+CLASSES :
+----------
+
+ - CPS2 TREE :
+
+   x CPSTask.py
+   x CPSTaskBox.py
+   x CPSTaskScreen.py
+   x CPSTaskTool.py
+
+ - CPS3 TREE :
+
+   x CPS3Task.py
+   x CPS3TaskScreen..py
+   x CPS3TaskBox.py
+   x CPS3TaskTool.py
+
+
+WORKFLOW :
+-----------
+
+ - CPS2 installer imports an xml (which is bad :( ) contained within the Install
+sub-folder.
+ - CPS3 installer installs the workflow from Python code contained within the
+Workflow sub-folder.

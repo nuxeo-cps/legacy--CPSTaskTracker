@@ -1,0 +1,17 @@
+$Id :$
+
+Requierements :
+----------------
+
+- You need ZopeTestCase to run these tests.
+  You can grab it from there : 
+   http://www.zope.org/Members/shh/ZopeTestCase/
+
+- There only implemented for CPS version 3.
+  (CPS2 didn't have any unit test framework)
+
+How to tun them ? :
+------------------
+
+ - Simply run type in the tests su-directory  $make test
+

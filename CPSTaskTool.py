@@ -1,4 +1,4 @@
-# (c) 2003 Nuxeo SARL <http://nuxeo.com>
+# (c) 2003, 2004 Nuxeo SARL <http://nuxeo.com>
 # (c) 2003 CEA <http://www.cea.fr>
 # Author: Julien Anguenot <ja@nuxeo.com>
 #
@@ -20,15 +20,17 @@
 
 __author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
 
-"""
-CPS Task Tool
+"""CPS Task Tool
+
 This tool will :
-  - act as a repository for all the tasks.
-  - define a search API used by the CPSTaskScreen and CPSTaskBox types.
-  - store some lists like project list here.
+  - Acts as a repository for all the tasks created in the whole portal
+  - Defines a task search API used by CPSTaskScreen and CPSTaskBox types.
+  - Stores project records.
 """
 
-from zLOG import LOG, DEBUG , INFO
+from zLOG import LOG, DEBUG, INFO
+
+from types import DictType
 
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
@@ -39,9 +41,13 @@ from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 
-class CPSTaskTool(UniqueObject, CMFBTreeFolder):
-    """
-    Provides a Task Repository
+from Products.CPSTaskTracker.CPSTaskTrackerPermissions import ManageProjects, \
+     TaskCreate
+
+class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
+    """CPS Task Tool
+
+    Provides a Task Repository for the whole portal
     """
 
     id = 'portal_tasks'
@@ -52,22 +58,20 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     manage_options = CMFBTreeFolder.manage_options
 
     def __init__(self):
-        """
-        CMFBTreeFolder constructor
+        """CMFBTreeFolder constructor
         """
         CMFBTreeFolder.__init__(self, self.id)
-        self.lprojects = [] # We will keep the different projects here.
-
+        # We will keep the different projects here.
+        # FIXME enhance that.
+        self.lprojects = []
 
     #################################################
-    # SORT API
     #################################################
 
-    security.declarePrivate("_sortTaskObjects")
+    security.declarePrivate('_sortTaskObjects')
     def _sortTaskObjects(self, task_list=[], parameters={},
                          func=(lambda x,y:x <= y)):
-        """
-        Given a list of task objects we gonna sort it
+        """Given a list of task objects we gonna sort it
         against the paramters.
         """
 
@@ -88,11 +92,8 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 
         stupid_flag = 0
 
-        #
         # Cheking in which case we are and then building the
         # lambda function.
-        #
-
         if parameters['sort_date_on'] == 'start_date' and \
                parameters['sort_order']   == 'asc':
             func = (lambda self, x,y: x.start_task_date <= y.start_task_date)
@@ -119,12 +120,9 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             # Nothing done in here. We got a weired case.
             return task_list
 
-        #
         # Now sorting on something
         # type, priority or project.-> cf. num values
         # Same business -> building the lambda function.
-        #
-
         task_list = res
 
         self.map_priority = {'high': 1, 'normal':2, 'low':3}
@@ -135,14 +133,17 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             func = (lambda self, x,y:
                     self.map_priority[x.task_priority]\
                     <= self.map_priority[y.task_priority])
+
         elif parameters['sort_on'] == 'type':
             # Case on the type -> Alpha sorting.
             func = (lambda self, x,y: x.task_type[0].lower()\
                     <= y.task_type[0].lower())
+
         elif parameters['sort_on'] == 'project':
             # Case on the project -> Alpha sorting.
             func = (lambda self, x,y: x.task_project[0].lower()\
                     <= y.task_project[0].lower())
+
         else:
             # No way to sort anything in this condition ;
             stupid_flag = 1
@@ -153,16 +154,15 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             # Nothing done in here. We got a weired case.
             return res
 
-        # That's it now !
         return res
 
     security.declarePrivate("_getTaskList")
     def _getTaskLists(self, sorted_tasks, parameters):
-        """
-        Sorted_tasks is the list of tasks
-        sorted according to the parameters.
-        Now, we gonna split that in different categories
-        according to the given parameters.
+        """Return the list of tasks split in different categories
+
+        Sorted_tasks is the list of tasks sorted according to the parameters.
+        Now, we gonna split that in different categories according to the given
+        parameters.
         """
 
         portal_membership = self.portal_membership
@@ -173,85 +173,25 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 
         task_lists = {}
 
-#         if parameters.get('display_my_tasks'):
-#             task_lists['my_tasks'] = [x for x in sorted_tasks \
-#                                       if x.isCreator()]
-#
-#         if parameters.get('display_my_affected_tasks'):
-#             task_lists['my_affected_tasks'] = [x for x in sorted_tasks \
-#                                                if member_id in \
-#                                                x.getMemberIds()]
-#
-#         if parameters.get('display_my_groups_affected_tasks'):
-#             task_lists['my_groups_affected_tasks'] = [x for x in \
-#                                                       sorted_tasks if \
-#                                                       member_id in x.getUserGroupsAssigned()]
-#
-#         if parameters.get('display_my_accepted_tasks'):
-#             task_lists['my_accepted_tasks'] = [x for x \
-#                                                in sorted_tasks \
-#                                                if x.isTheAssignedOne()]
-
-
-        # <FJ>
-        # Avoid duplicated items with some kind of priority
-        # my_accepted_tasks > my_affected_tasks > my_groups_affected_tasks > my_tasks
-        out=[]
-        if parameters.get('display_my_accepted_tasks'):
-            for item in sorted_tasks:
-                if item.isTheAssignedOne():
-                    out.append(item)
-                    sorted_tasks.remove(item)
-
-        task_lists['my_accepted_tasks']=out
-        LOG('TaskTool', INFO, 'my accepted tasks : "%s"' % str(out))
-
-
-        out=[]
-        if parameters.get('display_my_affected_tasks'):
-            for item in sorted_tasks:
-                if member_id in item.getMemberIds():
-                    out.append(item)
-                    sorted_tasks.remove(item)
-
-        task_lists['my_affected_tasks']=out
-        LOG('TaskTool', INFO, 'my affected tasks : "%s"' % str(out))
-
-        out=[]
-        if parameters.get('display_my_groups_affected_tasks'):
-            for item in sorted_tasks:
-                if member_id in item.getUserGroupsAssigned():
-                    out.append(item)
-                    sorted_tasks.remove(item)
-
-        task_lists['my_groups_affected_tasks']=out
-        LOG('TaskTool', INFO, 'groups affected tasks : "%s"' % str(out))
-
-        out=[]
+        # Filtering for the different categories
         if parameters.get('display_my_tasks'):
-            for item in sorted_tasks:
-                if item.isCreator():
-                    out.append(item)
-                    sorted_tasks.remove(item)
+            task_lists['my_tasks'] = [
+                x for x in sorted_tasks if x.isCreator()]
 
-        task_lists['my_tasks']=out
-        LOG('TaskTool', INFO, 'my tasks : "%s"' % str(out))
-        # </FJ>
+        if parameters.get('display_my_affected_tasks'):
+            task_lists['my_affected_tasks'] = [
+                x for x in sorted_tasks if member_id in x.getMemberIds()]
 
-        out=[]
-        if parameters.get('display_on_project') != 'none':
-            for item in sorted_tasks:
-                if item.task_project == parameters.get('display_on_project'):
-                    out.append(item)
+        if parameters.get('display_my_groups_affected_tasks'):
+            task_lists['my_groups_affected_tasks'] = [
+                x for x in sorted_tasks if member_id in x.getUserGroupsAssigned()]
 
-        task_lists['display_on_project']=out
-        LOG('TaskTool', INFO, 'Project %s: "%s"' % (parameters.get('display_on_project'),str(out)))
+        if parameters.get('display_my_accepted_tasks'):
+            task_lists['my_accepted_tasks'] = [
+                x for x in sorted_tasks if x.isTheAssignedOne()]
 
-
-        #
         # Cleaning the empty entries
         # For the visible if empty feature
-        #
         if task_lists.get('my_tasks') == []:
             del task_lists['my_tasks']
         if task_lists.get('my_affected_tasks') == []:
@@ -267,58 +207,44 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         return task_lists
 
 
-    security.declareProtected(View, "searchTasks")
+    security.declareProtected(View, 'searchTasks')
     def searchTasks(self, parameters={}):
-        """
-        Searching the tasks within the portal.
+        """Searching the tasks within the portal.
         Main function used by CPSTaskScreen and CPSTaskBox.
         """
+
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
         tasks = [x.getObject() for x in tasks]
-        #
+
         # Sorting the tasks against the parameters
-        #
         sorted_tasks = self._sortTaskObjects(tasks, parameters)
-        #
+
         # Spliting to different lists depending on the choice
         # the user did.
-        #
         task_lists = self._getTaskLists(sorted_tasks, parameters)
+
         return task_lists
 
     ################################################
-    # PROJECT API
     ################################################
 
-    security.declarePrivate("_hasIndex")
-    def _hasIndex(self, project_title):
-        """
-        Returnt the index of the project in the list
-        """
-        i = 0
-        for project in self.lprojects:
-            if project_title == project['title']:
-                return i
-            i+=1
-
-        return None
-
-    security.declareProtected(View, "getProjects")
+    security.declareProtected(View, 'getProjects')
     def getProjects(self):
-        """
-        Returns the list of projects already stored.
+        """Returns the list of projects already stored.
         """
         return self.lprojects
 
-    security.declareProtected(ModifyPortalContent, "addProject")
+    security.declareProtected(ManageProjects, 'addProject')
     def addProject(self, new_project={}):
+        """Adds a brandly new project.
         """
-        Adds a brandly new project.
-        """
+
+        self._p_changed = 1
+
         stupid_flag = 0
         if new_project != {} and \
-           type(new_project) == type({}):
+           type(new_project) == DictType:
             i = 0
             for project in self.lprojects:
                 if project['title'] == new_project['title']:
@@ -327,18 +253,27 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                 i += 1
             if not stupid_flag:
                 self.lprojects.append(new_project)
-            return 1
+                return 1
         return 0
 
-    security.declareProtected(ModifyPortalContent, "delProject")
+    security.declareProtected(ManageProjects, 'delProject')
     def delProjects(self, titles=[]):
+        """Removes projects given title
         """
-        Removes projects given titles
-        """
+
+        self._p_changed = 1
+
+        stupid_flag = 0
         for title in titles:
-            index = self._hasIndex(title)
-            if index is not None:
+            try:
+                titles = [x['title'] for x in self.lprojects]
+                index = titles.index(title)
                 del self.lprojects[index]
-        return 1
+            except ValueError:
+                stupid_flag = 1
+
+        if not stupid_flag:
+            return 1
+        return 0
 
 InitializeClass(CPSTaskTool)

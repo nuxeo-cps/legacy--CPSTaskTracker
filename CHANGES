@@ -1,6 +1,6 @@
-ZODB Requires:
-~~~~~~~~~~~~~~
--
+Requires:
+~~~~~~~~~
+- CPSInstaller
 New features:
 ~~~~~~~~~~~~~
 -
@@ -9,4 +9,4 @@ Bug fixes:
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Refatoring with CPSInstaller within install_cps3.py

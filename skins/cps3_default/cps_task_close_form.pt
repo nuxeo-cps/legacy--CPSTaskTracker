@@ -1,0 +1,28 @@
+<tal:block define="current_action string:view;
+                   dummy python:request.set('breadcrumb_set',
+                                             here.getTaskBreadCrumb(request))">
+  <html xmlns:tal="http://xml.zope.org/namespaces/tal"
+        xmlns:metal="http://xml.zope.org/namespaces/metal"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        metal:use-macro="here/content_lib/macros/master">
+    <body>
+      <metal:block fill-slot="header">
+        <h1 tal:content="here/title_or_id" />
+      </metal:block>
+      <metal:block fill-slot="main">
+        <div class="group">
+          <form action="doCloseTask" method="post">
+            <p>
+              <span i18n:translate="_label_do_you_want_to_close_it">
+                Do you really want to close it ?
+              </span>
+            </p>
+            <input type="submit" name="submit" class="standalone"
+                   value="_button_close"
+                   i18n:attributes="value" />
+          </form>
+        </div>
+      </metal:block>
+    </body>
+  </html>
+</tal:block>

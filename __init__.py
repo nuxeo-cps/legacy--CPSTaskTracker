@@ -1,4 +1,4 @@
-# (c) 2003 Nuxeo SARL <http://nuxeo.com>
+# (c) 2003,2004 Nuxeo SARL <http://nuxeo.com>
 # (c) 2003 CEA <http://www.cea.fr>
 # Author: Julien Anguenot <mailto:ja@nuxeo.com>
 #
@@ -20,17 +20,32 @@
 
 __author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
 
-"""
+"""CPSTaskTracker
+
 CPSTaskTracker is a task tracker intended to be used with CPS
-version 2 in this state.
+version 2 and version 3.
+
 You can access the software requierements specifications within
 the docs sub-directory of the product.
 """
 
 #
-# For debug purposes
+# Checking what's the version of CPS3 in here.
+# This flag will be in use to import the
+# corresponding classes according to the version of CPS.
 #
 
+try:
+        import Products.CPSCore
+        CPS_VERSION = 3
+except ImportError:
+        try:
+                import Products.NuxCPS
+                CPS_VERSION = 2
+        except ImportError:
+                raise "Unknown version of CPS"
+
+# For debug purposes (CPS2)
 from AccessControl import ModuleSecurityInfo
 ModuleSecurityInfo('zLOG').declarePublic('LOG', 'DEBUG')
 
@@ -41,6 +56,8 @@ ModuleSecurityInfo('zLOG').declarePublic('LOG', 'DEBUG')
 # I have to give the member the "Delete objects"
 # permissions for them being able to delete their own tasks.
 # But I don't want them to that for someone else's task.
+
+from cgi import escape
 
 from OFS.ObjectManager import ObjectManager
 from AccessControl import ClassSecurityInfo
@@ -108,10 +125,16 @@ from Products.CMFCore.utils import ToolInit, ContentInit
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.CMFCorePermissions import AddPortalContent
 
-import CPSTaskTool
-import CPSTask
-import CPSTaskScreen
-import CPSTaskBox
+if CPS_VERSION == 2:
+        import CPSTaskTool
+        import CPSTaskScreen
+        import CPSTask
+        import CPSTaskBox
+else:
+        import CPS3TaskTool as CPSTaskTool
+        import CPS3TaskScreen as CPSTaskScreen
+        import CPS3Task as CPSTask
+        import CPS3TaskBox as CPSTaskBox
 
 contentClasses = (
     CPSTask.CPSTask,
@@ -125,11 +148,22 @@ contentConstructors = (
     CPSTaskBox.addCPSTaskBox,
     )
 
-fti = (
-    CPSTask.factory_type_information +
-    CPSTaskScreen.factory_type_information +
-    CPSTaskBox.factory_type_information + ()
-    )
+if CPS_VERSION == 2:
+        fti = (
+                CPSTask.factory_type_information +
+                CPSTaskScreen.factory_type_information +
+                CPSTaskBox.factory_type_information + ()
+                )
+if CPS_VERSION == 3:
+        #
+        # No factory type for CPSTask since it's
+        # a sub class of CPSDocument
+        #
+        fti = (
+                () +
+                CPSTaskScreen.factory_type_information +
+                CPSTaskBox.factory_type_information + ()
+                )
 
 registerDirectory('skins', globals())
 registerDirectory('www', globals())

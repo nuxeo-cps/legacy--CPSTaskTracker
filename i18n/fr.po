@@ -1,15 +1,22 @@
+# translation of fr.po to 
+# translation of fr.po to
+# translation of fr.po to
+# translation of fr.po to
+# translation of fr.po to
+# translation of fr.po to
 # translation of fr.po to Français
 # translation of fr.po to FranÃ§ais
 # Gettext Message File for default.
 # Your Name <your@email>, Year
 # Julien Anguenot <ja@nuxeo.com>, 2003.
+# Julien Anguenot <anguenot@nuxeo.com>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2003-11-15 02:14default\n"
-"PO-Revision-Date: 2003-11-15 02:15+0100\n"
-"Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
-"Language-Team: Français <fr@li.org>\n"
+"POT-Creation-Date: 2004-03-30 15:14default\n"
+"PO-Revision-Date: 2004-03-30 15:14+0200\n"
+"Last-Translator: Julien Anguenot <anguenot@nuxeo.com>\n"
+"Language-Team:  <janguenot@nuxeo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,6 +44,9 @@ msgstr "Rappeller"
 msgid "_button_assign"
 msgstr "Affecter"
 
+msgid "_button_reinit"
+msgstr "Ré-initialiser "
+
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr "Tâche"
@@ -47,6 +57,9 @@ msgstr "Visualisateur des tâches "
 # # portal types ##########################################################
 msgid "_portal_type_task Box"
 msgstr "Boîte des Tâches"
+
+msgid "_action_reinit_"
+msgstr "Ré-initialiser"
 
 # # actions ###############################################################
 msgid "_action_create_new_tasks"
@@ -59,7 +72,7 @@ msgid "_action_edit_"
 msgstr "Editer"
 
 msgid "_action_assign_task_to"
-msgstr "Ré-assigner la tâche"
+msgstr "Ré-initialiser la tâche"
 
 msgid "_action_current_status_"
 msgstr "Statut courant"
@@ -104,7 +117,9 @@ msgid "_label_display_my_affected_tasks"
 msgstr "Afficher les tâches qui me sont affectées "
 
 msgid "_label_display_my_groups_affected_tasks"
-msgstr "Afficher les tâches qui sont affectées à un des groupes auxquels j'appartiens."
+msgstr ""
+"Afficher les tâches qui sont affectées à un des groupes auxquels "
+"j'appartiens."
 
 msgid "_label_display_my_accepted_tasks"
 msgstr "Afficher les tâches que j'ai acceptées. "
@@ -116,7 +131,9 @@ msgid "_label_screener_display_my_affected_tasks"
 msgstr "Afficher les tâches qui me sont affectées  "
 
 msgid "_label_screener_display_my_groups_affected_tasks"
-msgstr "Afficher les tâches qui sont affectées à un des groupes auxquels j'appartiens. "
+msgstr ""
+"Afficher les tâches qui sont affectées à un des groupes auxquels "
+"j'appartiens. "
 
 msgid "_label_screener_display_my_accepted_tasks"
 msgstr "Afficher les tâches que j'ai acceptées.  "
@@ -159,7 +176,9 @@ msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr "Tâches affectées à un de mes groupes"
 
 msgid "_heading_screener_message"
-msgstr "Vous pouvez éditer les pramètres du skinner en suivant le liens <strong>Paramétrer le visualisateur de tâches<stong> sur la droite. "
+msgstr ""
+"Vous pouvez éditer les pramètres du skinner en suivant le liens "
+"<strong>Paramétrer le visualisateur de tâches<stong> sur la droite. "
 
 msgid "_heading_configure"
 msgstr "Configure"
@@ -214,13 +233,21 @@ msgid "_label_status"
 msgstr "Statut"
 
 msgid "_label_recall_explanation"
-msgstr "Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le boutton <strong>Rappeller</strong> après avoir choisit les membres.<br />Vous pouvez également accéder aux informations relatives à chaque membres en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à un membre donné en cliquant le champ email. "
+msgstr ""
+"Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le "
+"boutton <strong>Rappeller</strong> après avoir choisit les membres.<br /"
+">Vous pouvez également accéder aux informations relatives à chaque membres "
+"en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à "
+"un membre donné en cliquant le champ email. "
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Ceci est un rappel vous concernant pour la tâche suivante : "
 
 msgid "_label_you_can_reassign_the_task_here"
 msgstr "Vous pouvez réaffecter la tâche Ceci remplacera les affectations précédentes."
+
+msgid "_label_do_you_want_to_reinit_it"
+msgstr "Etes-vous certain de vouloir ré-initialiser la tâche ?"
 
 msgid "_label_recall"
 msgstr "Rappel"
@@ -402,7 +429,7 @@ msgid "opened"
 msgstr "Ouverte"
 
 msgid "_heading_task_history"
-msgstr "Task status history"
+msgstr "Historique"
 
 msgid "_heading_current_state"
 msgstr "Statut courant "
@@ -429,19 +456,24 @@ msgstr "Acceptation"
 msgid "_transition_assign"
 msgstr "Assignation"
 
-msgid "_transition_reject"
-msgstr "Rejetée"
-
 # ## BUTTTONS ######################################################
 msgid "_transition_close"
 msgstr "Fermeture"
 
+msgid "_transition_reject"
+msgstr "Rejetée"
+
 msgid "_transition_None"
 msgstr "Création"
 
+msgid "_transition_reinit"
+msgstr "Ré-initialisation"
+
 # ## labels ################################################################
 msgid "_label_no_project"
-msgstr "Il n'y a aucun projet existant. Vous pouvez en créer en suivant le lien ci-dessus."
+msgstr ""
+"Il n'y a aucun projet existant. Vous pouvez en créer en suivant le lien ci-"
+"dessus."
 
 msgid "_label_reject_history"
 msgstr "Historique des rejets"
@@ -454,3 +486,46 @@ msgstr "Afficher les tâches relatives au projet"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "Vous n'avez pas encore assigné cette tâche"
+
+msgid "label_cps_task_type"
+msgstr "Type de tâche"
+
+msgid "label_cps_start_task_date"
+msgstr "Date effective"
+
+msgid "label_cps_task_priority"
+msgstr "Priorité "
+
+msgid "label_cps_stop_task_date"
+msgstr "Date d'échéance"
+
+msgid "label_cps_task_goal"
+msgstr "But du projet"
+
+msgid "label_cps_task_description"
+msgstr "Description"
+
+msgid "label_cps_task_members"
+msgstr "Membres affectés à la tâche"
+
+msgid "label_cps_task_groups"
+msgstr "Groupes affectés à la tâche"
+
+msgid "label_priority_high"
+msgstr "Haute"
+
+msgid "label_priority_normal"
+msgstr "Normale"
+
+msgid "label_priority_low"
+msgstr "Basse"
+
+msgid "label_priority_internal"
+msgstr "Interne"
+
+msgid "label_priority_nuxeo"
+msgstr "Nuxeo"
+
+msgid "label_priority_other"
+msgstr "Autre"
+

@@ -1,15 +1,23 @@
+# translation of en.po to 
+# translation of en.po to
+# translation of en.po to
+# translation of en.po to
+# translation of en.po to
+# translation of en.po to
+# translation of en.po to
 # translation of en.po to Français
 # translation of en.po to FranÃ§ais
 # Gettext Message File for default.
 # Your Name <your@email>, Year
 # Julien Anguenot <ja@nuxeo.com>, 2003.
+# Julien Anguenot <anguenot@nuxeo.com>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-15 02:14default\n"
-"PO-Revision-Date: 2003-11-15 02:15+0100\n"
-"Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
-"Language-Team: Français <fr@li.org>\n"
+"POT-Creation-Date: 2004-03-30 15:14default\n"
+"PO-Revision-Date: 2004-03-30 15:15+0200\n"
+"Last-Translator: Julien Anguenot <anguenot@nuxeo.com>\n"
+"Language-Team:  <janguenot@nuxeo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,6 +45,9 @@ msgstr "Recall"
 msgid "_button_assign"
 msgstr "Assign"
 
+msgid "_button_reinit"
+msgstr "Re-initialization "
+
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr "Task"
@@ -47,6 +58,9 @@ msgstr "Task Screen"
 # # portal types ##########################################################
 msgid "_portal_type_task Box"
 msgstr "Task Box"
+
+msgid "_action_reinit_"
+msgstr "Re-initialization"
 
 # # actions ###############################################################
 msgid "_action_create_new_tasks"
@@ -59,7 +73,7 @@ msgid "_action_edit_"
 msgstr "Edit"
 
 msgid "_action_assign_task_to"
-msgstr "Re-assign the task"
+msgstr "Re-init the task"
 
 msgid "_action_current_status_"
 msgstr "Current status"
@@ -103,10 +117,10 @@ msgid "_label_display_my_tasks"
 msgstr "Display my tasks "
 
 msgid "_label_display_my_affected_tasks"
-msgstr "Display the tasks affected to me "
+msgstr "Display the tasks assigned to me "
 
 msgid "_label_display_my_groups_affected_tasks"
-msgstr "Display the tasks affected to one of my groups"
+msgstr "Display the tasks assigned to one of my groups"
 
 msgid "_label_display_my_accepted_tasks"
 msgstr "Display the task I accepted"
@@ -115,7 +129,7 @@ msgid "_label_screener_display_my_tasks"
 msgstr "Tasks I created"
 
 msgid "_label_screener_display_my_affected_tasks"
-msgstr "Tasks affected to me"
+msgstr "Tasks assigned to me"
 
 msgid "_label_screener_display_my_groups_affected_tasks"
 msgstr "Tasks assigned to one of me groups"
@@ -152,16 +166,18 @@ msgid "_heading_task_i_created"
 msgstr "Task I created"
 
 msgid "_heading_task_affected_to_me"
-msgstr "Tasks affected to me"
+msgstr "Tasks assigned to me"
 
 msgid "_heading_task_i_accepted"
 msgstr "Tasks I accepted"
 
 msgid "_heading_task_affected_to_one_of_my_groups"
-msgstr "Task affected to one of my groups"
+msgstr "Task assigned to one of my groups"
 
 msgid "_heading_screener_message"
-msgstr "You can edit your skinner by following the <strong>Screener parameters</strong> action on the right"
+msgstr ""
+"You can edit your skinner by following the <strong>Screener parameters</"
+"strong> action on the right"
 
 msgid "_heading_configure"
 msgstr "Configure"
@@ -219,13 +235,19 @@ msgid "_label_status"
 msgstr "Status"
 
 msgid "_label_recall_explanation"
-msgstr "You can email the assigned ones by choosing the members who have to be recalled. <br /> You can as well access member's preferences by clicking the fullname field or sending an email to one of them by clicking the email one."
+msgstr ""
+"You can email the assigned ones by choosing the members who have to be "
+"recalled. <br /> You can as well access member's preferences by clicking the "
+"fullname field or sending an email to one of them by clicking the email one."
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
 
 msgid "_label_you_can_reassign_the_task_here"
 msgstr "You can re-assign the task here. It will replace the previous assignment."
+
+msgid "_label_do_you_want_to_reinit_it"
+msgstr "Do you really want to reinit it ?"
 
 # ## labels ################################################################
 msgid "_label_recall"
@@ -439,18 +461,23 @@ msgstr "Accept"
 msgid "_transition_assign"
 msgstr "Assign "
 
-msgid "_transition_reject"
-msgstr "Rejected"
-
 # ## BUTTTONS ######################################################
 msgid "_transition_close"
 msgstr "Close "
 
+msgid "_transition_reject"
+msgstr "Rejected"
+
 msgid "_transition_None"
 msgstr "Create"
 
+msgid "_transition_reinit"
+msgstr "Re-initialization"
+
 msgid "_label_no_project"
-msgstr "Currently, there is no project. You can create one by clicking the above link."
+msgstr ""
+"Currently, there is no project. You can create one by clicking the above "
+"link."
 
 msgid "_label_reject_history"
 msgstr "Reject history"
@@ -463,3 +490,49 @@ msgstr "Display the tasks related to"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "You din't assign this task to anybody."
+
+# ## labels ################################################################
+msgid "label_cps_task_type"
+msgstr "Task type"
+
+msgid "label_cps_start_task_date"
+msgstr "Effective Date"
+
+msgid "label_cps_task_priority"
+msgstr "Task priority"
+
+msgid "label_cps_stop_task_date"
+msgstr "Task deadline"
+
+# ## labels ################################################################
+msgid "label_cps_task_goal"
+msgstr "Task goal"
+
+msgid "label_cps_task_description"
+msgstr "Description"
+
+# ## labels ################################################################
+msgid "label_cps_task_members"
+msgstr "Task assigned members"
+
+msgid "label_cps_task_groups"
+msgstr "Task assigned groups"
+
+msgid "label_priority_high"
+msgstr "High"
+
+msgid "label_priority_normal"
+msgstr "Normal"
+
+msgid "label_priority_low"
+msgstr "Low"
+
+msgid "label_priority_internal"
+msgstr "Internal"
+
+msgid "label_priority_nuxeo"
+msgstr "Nuxeo"
+
+msgid "label_priority_other"
+msgstr "Other"
+
