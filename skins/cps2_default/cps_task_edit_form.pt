@@ -92,8 +92,37 @@
           Start
         </metal:block>
         <metal:block fill-slot="content">
-          <input type="text" name="start_task_date" value=""
-                 tal:attributes="value here/start_task_date|nothing" />
+          <tal:block define="date here/get_date;
+                             year date/year;
+                             month date/month;
+                             day date/day;
+                            ">
+            <script language="JavaScript" type="text/javascript"><!--
+              function open_cal_selector(input_id, year, month) {
+              selector_window = window.open('CalendarSelector_view?input_id='+input_id+'&month:int='+month+'&year:int='+year, 'calX_selector', 'toolbar=0, scrollbars=0, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=150, height=180')
+              if(!selector_window.opener) selector_window.opener = window
+              }
+
+              -->
+            </script>
+            <table border=0>
+            <tr>
+                <td>
+                  <input type="text"
+                         tal:define="current_task_start_date here/start_task_date|nothing;
+                                     current_start_date python:here.get_date(str(current_task_start_date))"
+                         tal:attributes="
+                         name string:start_task_date;
+                         id string:start_task_date;
+                         size string:12;
+                         value current_start_date/all" />
+                  </td><td><a tal:attributes="href
+                         string:javascript:open_cal_selector('start_task_date', '${year}','${month}')">
+                       <img border="0" src="calendar.gif" /></a>
+                </td>
+
+              </tr></table>
+          </tal:block>
         </metal:block>
       </metal:block>
 
@@ -103,8 +132,37 @@
           Task Deadline
         </metal:block>
         <metal:block fill-slot="content">
-          <input type="text" name="stop_task_date" value=""
-                 tal:attributes="value here/stop_task_date|nothing" />
+                  <tal:block define="date here/get_date;
+                             year date/year;
+                             month date/month;
+                             day date/day;
+                            ">
+            <script language="JavaScript" type="text/javascript"><!--
+              function open_cal_selector(input_id, year, month) {
+              selector_window = window.open('CalendarSelector_view?input_id='+input_id+'&month:int='+month+'&year:int='+year, 'calX_selector', 'toolbar=0, scrollbars=0, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=150, height=180')
+              if(!selector_windowopener) selector_window.opener = window
+              }
+
+              -->
+            </script>
+            <table border=0>
+            <tr>
+                <td>
+                  <input type="text"
+                         tal:define="current_task_stop_date here/stop_task_date|nothing;
+                                     current_stop_date python:here.get_date(str(current_task_stop_date))"
+                         tal:attributes="
+                         name string:stop_task_date;
+                         id string:stop_task_date;
+                         size string:12;
+                         value current_stop_date/all" />
+                  </td><td><a tal:attributes="href
+                         string:javascript:open_cal_selector('stop_task_date', '${year}','${month}')">
+                       <img border="0" src="calendar.gif" /></a>
+                </td>
+
+              </tr></table>
+          </tal:block>
         </metal:block>
       </metal:block>
 
