@@ -327,25 +327,42 @@ class CPSTask(FlexibleDocument):
         return self.task_rejecter
 
     security.declareProtected("getAssignedEmails", ModifyPortalContent)
-    def getAssignedEmails(self):
+    def getAllAssignedMembers(self):
         """
-        Return assigned member emails.
+        Return assigned members.
         Used to recall them they got sthg to do.
         """
 
         res = []
-        member_ids = self.getMemberIds()
 
         mtool = self.portal_metadirectories
-        member_directory = mtool.members
+        portal = self.portal_url.getPortalObject()
+
+        #
+        # First the single members
+        #
+
+        member_ids = self.getMemberIds()
+
 
         for member_id in member_ids:
-            member = member_directory.getEntry(member_id)
-            #member_email = member['email']
-            res.append(member)
+            member = mtool.members.getEntry(member_id)
+            if member is not None:
+                res.append(member)
+
+        #
+        # Then the groups
+        #
+
+        for group_id in self.getGroupIds():
+            if group_id != '':
+                group = portal.acl_users.getGroupById(group_id)
+                for member_id in group.getUsers():
+                    member = mtool.members.getEntry(member_id)
+                    if member is not None:
+                        res.append(member)
 
         return res
-
 
 InitializeClass(CPSTask)
 
