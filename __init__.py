@@ -18,6 +18,15 @@
 #
 # $Id$
 
+__author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
+
+"""
+CPSTaskTracker is a task tracker intended to be used with CPS
+version 2 in this state.
+You can access the software requierements specifications within
+the docs sub-directory of the product.
+"""
+
 #
 # For debug purposes
 #
@@ -75,7 +84,8 @@ def initialize(context):
         ).initialize(context)
 
     #
-    # Registering content : Task and the Task Screen
+    # Registering content classes :
+    # Task, the Task Screen and the task box.
     #
     ContentInit(
         'CPS Task Tracker',

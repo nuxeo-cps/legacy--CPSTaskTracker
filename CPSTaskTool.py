@@ -18,11 +18,13 @@
 #
 # $Id$
 
+__author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
+
 """
 CPS Task Tool
 This tool will :
-  - acts as a repository for all the tasks
-  - Search API used by the CPSTaskScreen and CPSTaskBox types.
+  - acts as a repository for all the tasks.
+  - defines a search API used by the CPSTaskScreen and CPSTaskBox types.
 """
 
 from zLOG import LOG, DEBUG
@@ -37,7 +39,7 @@ from Products.CMFCore.utils import UniqueObject
 
 class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     """
-    Provides Task Repository
+    Provides a Task Repository
     """
 
     id = 'portal_tasks'
@@ -63,8 +65,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 
         def _doSort(self, func, task_list):
             """
-            Realize de sort given a lambda function
-            and the list of tasks to be sorted
+            Realize the sort of task_list given a lambda function.
             """
             res = []
             j = 0
@@ -87,15 +88,19 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         if parameters['sort_date_on'] == 'start_date' and \
                parameters['sort_order']   == 'asc':
             func = (lambda self, x,y: x.start_task_date <= y.start_task_date)
+
         elif parameters['sort_date_on'] == 'start_date' and \
                  parameters['sort_order']   == 'desc':
             func = (lambda self, x,y: x.start_task_date > y.start_task_date)
+
         elif parameters['sort_date_on'] == 'stop_date' and \
                  parameters['sort_order']   == 'asc':
             func = (lambda self, x,y: x.stop_task_date <= y.stop_task_date)
+
         elif parameters['sort_date_on'] == 'stop_date' and \
                  parameters['sort_order']   == 'desc':
             func = (lambda self, x,y: x.stop_task_date > y.stop_task_date)
+
         else:
             # No way to sort anything in this condition ;)
             stupid_flag = 1
@@ -149,10 +154,13 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         """
         Sorted_tasks is the list of tasks
         sorted according to the parameters.
+        Now, we gonna split that in different categories
+        according to the given parameters.
         """
 
         portal_membership = self.portal_membership
-        member_id = portal_membership.getAuthenticatedMember().getMemberId()
+        member = portal_membership.getAuthenticatedMember()
+        member_id = member.getMemberId()
 
         task_lists = {'my_tasks':[],
                       'my_affected_tasks':[],
@@ -160,14 +168,21 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                       'my_accepted_tasks':[],
                       }
         if parameters.get('display_my_tasks'):
-            task_lists['my_tasks'] = [x for x in sorted_tasks if x.isCreator()]
+            task_lists['my_tasks'] = [x for x in sorted_tasks \
+                                      if x.isCreator()]
         if parameters.get('display_my_affected_tasks'):
-            task_lists['my_affected_tasks'] = [x for x in sorted_tasks if member_id in x.getMemberIds()]
+            task_lists['my_affected_tasks'] = [x for x in sorted_tasks \
+                                               if member_id in \
+                                               x.getMemberIds()]
         if parameters.get('display_my_groups_affected_tasks'):
-            task_lists['my_groups_affected_tasks'] = [x for x in sorted_tasks if x.isAssigned()]
+            task_lists['my_groups_affected_tasks'] = [x for x in \
+                                                      sorted_tasks if \
+                                                      x.isAssigned()]
         if parameters.get('display_my_accepted_tasks'):
-            task_lists['my_groups_affected_tasks'] = [x for x in sorted_tasks if x.isTheAssignedOne()]
-
+            task_lists['my_groups_affected_tasks'] = [x for x \
+                                                    in sorted_tasks \
+                                                    if \
+                                                    x.isTheAssignedOne()]
         return task_lists
 
 
@@ -175,6 +190,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     def searchTasks(self, parameters={}):
         """
         Searching the tasks within the portal.
+        Main function used by CPSTaskScreen and CPSTaskBox.
         """
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
@@ -184,7 +200,8 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         #
         sorted_tasks = self._sortTaskObjects(tasks, parameters)
         #
-        # Spliting to different lists depending on the choice the user did.
+        # Spliting to different lists depending on the choice
+        # the user did.
         #
         task_lists = self._getTaskLists(sorted_tasks, parameters)
         return task_lists

@@ -18,8 +18,12 @@
 #
 # $Id$
 
+__author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
+
 """
-  CPS Task Screen
+CPS Task Screen
+You can access the software requierements specifications within
+the docs sub-directory of the product.
 """
 
 from zLOG import LOG, DEBUG

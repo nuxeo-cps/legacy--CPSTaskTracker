@@ -18,7 +18,13 @@
 #
 # $Id$
 
-from zLOG import LOG, DEBUG
+__author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
+
+"""
+CPS Task Box
+You can access the software requierements specifications within
+the docs sub-directory of the product.
+"""
 
 from AccessControl import ClassSecurityInfo
 from Globals import InitializeClass
@@ -67,11 +73,10 @@ factory_type_information = (
 
 class CPSTaskBox(BaseBox):
     """
-    A Calendar Box simply returns a text.
+    A Box, that can be customized, displaying user related tasks.
     """
     meta_type = 'CPS Task Box'
-    # XXX Hack for CMF 1.3
-    portal_type = 'CPS Task Box'
+    portal_type = meta_type
 
     security = ClassSecurityInfo()
 
@@ -98,13 +103,9 @@ class CPSTaskBox(BaseBox):
     # Initialization of the properties
     #
 
-    # start_date, end_date
     sort_date_on = "start_date"
-    # asc, desc
     sort_order   = "asc"
-
-    # type, indicator or priority
-    sort_on = "a" # For the alpha sorting algo
+    sort_on      = "a" # For the alpha sorting algo
 
     display_my_tasks = 1
     display_my_affected_tasks = 1
@@ -117,9 +118,11 @@ class CPSTaskBox(BaseBox):
                  title='',
                  display_my_tasks=1,
                  **kw):
+        #
+        # Following the box models of NuxPortal
+        #
         apply(BaseBox.__init__, (self, id), kw)
         self.title = title
-        self.display_my_tasks = display_my_tasks
 
     security.declareProtected("getSortDateOn", View)
     def getSortDateOn(self):
@@ -135,7 +138,8 @@ class CPSTaskBox(BaseBox):
     security.declareProtected("getSortOrder", View)
     def getSortOrder(self):
         """
-        Get the sorting order
+        Get the sorting order parameters
+        Yes, I know trivial but just to keep the code nice.
         """
         return [{'title':'_label_asc', 'id':'asc'},
                 {'title':'_label_desc', 'id':'desc'}
@@ -161,9 +165,14 @@ class CPSTaskBox(BaseBox):
         self.sort_order = form.get('sort_order', 'asc')
         self.sort_on = form.get('sort_on', '')
         self.display_my_tasks = form.get('display_my_tasks', 0) and 1
-        self.display_my_affected_tasks = form.get('display_my_affected_tasks', 0) and 1
-        self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0) and 1
-        self.display_my_accepted_tasks = form.get('display_my_accepted_tasks', 0) and 1
+        self.display_my_affected_tasks = form.get(\
+            'display_my_affected_tasks', 0) and 1
+        self.display_my_groups_affected_tasks = form.get(\
+            'display_my_groups_affected_tasks', 0) and 1
+        self.display_my_accepted_tasks = form.get(\
+            'display_my_accepted_tasks', 0) and 1
+
+        return 1 # useless since now.
 
     security.declareProtected("getParameters", "Modify portal content")
     def getParameters(self):
@@ -184,12 +193,11 @@ class CPSTaskBox(BaseBox):
 
         return struct
 
-
 InitializeClass(CPSTaskBox)
 
 
 def addCPSTaskBox(dispatcher, id, REQUEST=None, **kw):
-    """Add a Calendar Box."""
+    """Add a CPS Task  Box."""
     ob = CPSTaskBox(id, **kw)
     dispatcher._setObject(id, ob)
     if REQUEST is not None:
