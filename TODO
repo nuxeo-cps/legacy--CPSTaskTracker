@@ -19,15 +19,18 @@ o install
   o Installtion of the CPSTaskBox in the portal. 
   o portal_catalog indexes for the CPSTask Type 
 
+o Workflow 
+  o Rights setting cause it's not working well for the moment.
+    (to permisive for the users.)
+
 o CPSTask
   o Cleaning and enhancing the task skins.
-  o Members and groups popups reviewing.
-  o Tests with the workflow. 
   o Checking for the indexation of the attached files
   o recall action not here already
   o cps_task_edit.py should check the properties (compulsory)
+
 o CPSTaskScreen 
-  o Everything....
+  o 
 
 o CPSTaskBox 
   o Everything. 
