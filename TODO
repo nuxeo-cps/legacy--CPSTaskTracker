@@ -18,7 +18,8 @@ o Repository
 o CPSTask
   o Cleaning and enhancing the task skins.
   o Checking for the indexation of the attached files
-  o recall assignees action
+  o recall assignees action not finished
+  o date in french ??
 
 o CPSTaskScreen
   o Validation against the requierments
@@ -26,7 +27,8 @@ o CPSTaskScreen
 o CPSTaskBox
   o Validation against the requierments.
 
-o i18n for *all* the skins.
+o check i18n for *all* the skins (and UTF-8 encoding)
 
-o Workflow 
+o Workflow
   o Defining the task workflow in Python within the installer
+  o fixing the pending state and status history.
