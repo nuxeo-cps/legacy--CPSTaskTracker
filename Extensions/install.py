@@ -148,8 +148,17 @@ def install(self):
         prok()
     else:
         pr(" Creating portal_tasks")
-        portal.manage_addProduct["CPSTaskTracker"].manage_addTool(
-            'CPS Task Tool')
+        portal.manage_addProduct["CPSTaskTracker"].manage_addTool('CPS Task Tool')
+
+    #
+    # Setting rights for the members
+    #
+
+    portal['portal_tasks'].manage_permission('Add portal content',
+                                             ['Member'],
+                                             1)
+    portal['portal_tasks'].reindexObjectSecurity()
+
 
     #################################################################
     # Registring CPS Task/CPS Task Screen as portal_types
