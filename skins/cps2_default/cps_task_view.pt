@@ -20,8 +20,8 @@
 <span tal:replace="here/isAssigned" />
 <span tal:replace="here/isCreator" />
 <span tal:replace="here/isTheAssignedOne" />
+<span tal:replace="here/isLate" />
 END DEBUG -->
-
 <br />
 <table align="center" width="100%" cellpadding="2" cellspacing="2">
 <tr>
@@ -112,10 +112,7 @@ END DEBUG -->
     <strong>Task Status</strong>
   </td>
   <td>
-    <tal:block define="isClosed here/isClosed|nothing" >
-      <span tal:condition="isClosed">CLOSED</span>
-      <span tal:condition="not:isClosed">OPENED</span>
-    </tal:block>
+    <span tal:replace="here/getStatus" />
   </td>
 </tr>
 
