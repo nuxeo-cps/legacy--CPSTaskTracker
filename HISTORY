@@ -1,4 +1,26 @@
 *******************************************
+** CPSTaskTracker V0.4.0 [R1 build 2003-11/12-04:03 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Nicer icons for the task indicators.
+- Projects management ready
+- Skinners ready : task screen
+- Skinners ready : task box
+- Spliting the edit/edit_parameters steps
+Bug fixes:
+~~~~~~~~~~
+- i18n bug fix.
+- isLate indicator was buggy.
+- task box visible if empty feature ok
+- ++ 
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- indexes and metadata into the catalog for the CPSTask type
+*******************************************
 ** CPSTaskTracker V0.3.6 [R1 build 2003-11/10-15:34 by anguenot]
 
 ZODB Requires:
