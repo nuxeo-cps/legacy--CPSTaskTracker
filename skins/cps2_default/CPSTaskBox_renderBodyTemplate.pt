@@ -154,4 +154,41 @@
      </tal:block>
     </tal:block>
     <!-- TASK I ACCEPTED -->
+    <!-- TASK RELATED TO ONE PROJECT -->
+    <tal:block condition="python:task_lists.has_key('display_on_project') and task_lists['display_on_project'] != []">
+      <tal:block define="tasks python:task_lists['display_on_project']">
+      <strong>
+        <span tal:content="python:mcat('_heading_task_related_to')">
+        The tasks related to
+        </span>&nbsp;<span tal:replace="here/display_on_project|nothing" />
+      </strong>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tal:block repeat="task tasks">
+          <tr bgcolor="#EEEEEE">
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+                &nbsp;
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}?skip_bc=1">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+           </tr>
+         </tal:block>
+        </table>
+      </form>
+     </tal:block>
+    </tal:block>
+    <!-- TASK RELATED TO ONE PROJECT -->
 </tal:block>

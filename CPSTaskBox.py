@@ -97,6 +97,8 @@ class CPSTaskBox(BaseBox):
          'label':'Display the tasks affected to a one if my groups ?'},
         {'id':'display_my_accepted_tasks', 'type':'boolean', 'mode':'w', \
          'label':'Display the tasks I accepted ?'},
+        {'id':'display_on_project', 'type':'string', 'mode':'w', \
+         'label':'Display the project ?'},
         {'id':'skinner', 'type':'string', 'mode':'w', \
          'label':'Skinner'},
         )
@@ -115,6 +117,7 @@ class CPSTaskBox(BaseBox):
     display_my_affected_tasks = 1
     display_my_groups_affected_tasks = 1
     display_my_accepted_tasks = 1
+    display_on_project = ""
 
     skinner = "nuxeo"
 
@@ -176,7 +179,7 @@ class CPSTaskBox(BaseBox):
             'display_my_groups_affected_tasks', 0) and 1
         self.display_my_accepted_tasks = form.get(\
             'display_my_accepted_tasks', 0) and 1
-
+        self.display_on_project = form.get('display_on_project',"")
         self.skinner = form.get('skinner', 'nuxeo')
 
         return 1 # useless since now.
@@ -197,6 +200,7 @@ class CPSTaskBox(BaseBox):
         struct['display_my_affected_tasks'] = self.display_my_affected_tasks
         struct['display_my_groups_affected_tasks'] = self.display_my_groups_affected_tasks
         struct['display_my_accepted_tasks'] = self.display_my_accepted_tasks
+        struct['display_on_project'] = self.display_on_project
 
         return struct
 
