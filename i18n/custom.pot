@@ -29,4 +29,11 @@ msgstr ""
 msgid "_action_create_new_tasks"
 msgstr ""
 
+msgid "action_parameters"
+msgstr ""
+
+msgid "_action_edit_"
+msgstr ""
+
+
 
