@@ -19,23 +19,23 @@
 # $Id$
 
 """
-    CPS Task Tool
-    This tool will :
-     - acts as a repository for all the tasks
-     - Search API used by the CPSTaskScreen and CPSTaskBox types.
+CPS Task Tool
+This tool will :
+  - acts as a repository for all the tasks
+  - Search API used by the CPSTaskScreen and CPSTaskBox types.
 """
 
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 
-from Products.BTreeFolder2.BTreeFolder2 import BTreeFolder2
+from Products.BTreeFolder2.CMFBTreeFolder import CMFBTreeFolder
 
 from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.utils import UniqueObject
 
-class CPSTaskTool(UniqueObject, BTreeFolder2, PortalFolder):
+class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     """
-        Provides Task Repository
+    Provides Task Repository
     """
 
     id = 'portal_tasks'
@@ -43,16 +43,22 @@ class CPSTaskTool(UniqueObject, BTreeFolder2, PortalFolder):
 
     security = ClassSecurityInfo()
 
-    manage_options = BTreeFolder2.manage_options
+    manage_options = CMFBTreeFolder.manage_options
 
     def __init__(self):
-        BTreeFolder2.__init__(self, self.id)
+         CMFBTreeFolder.__init__(self, self.id)
 
     security.declareProtected("View", "searchTasks")
-    def searchTasks(**kw):
+    def searchTasks(self, **kw):
         """
         Searching the tasks within the portal.
         """
-        pass
+        #
+        # XXX : TO FINISH !
+        #
+        pcat = self.portal_catalog
+        tasks = pcat.searchResults({'portal_type':'CPS Task'})
+        tasks = [x.getObject() for x in tasks]
+        return tasks
 
 InitializeClass(CPSTaskTool)
