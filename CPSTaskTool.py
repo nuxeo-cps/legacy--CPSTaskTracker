@@ -191,9 +191,9 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                                                       x.isAssigned()]
         if parameters.get('display_my_accepted_tasks'):
             task_lists['my_accepted_tasks'] = [x for x \
-                                                    in sorted_tasks \
-                                                    if \
-                                                    x.isTheAssignedOne()]
+                                               in sorted_tasks \
+                                               if \
+                                               x.isTheAssignedOne()]
         return task_lists
 
 
@@ -224,19 +224,32 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     security.declareProtected(ModifyPortalContent, "getProjects")
     def getProjects(self):
         """
-        Return the list of projects alredy stored.
+        Returns the list of projects alredy stored.
         """
         return self.lprojects
 
     security.declareProtected(ModifyPortalContent, "addProject")
     def addProject(self, new_project={}):
         """
-        Add a brandly new project.
+        Adds a brandly new project.
         """
         if new_project != {} and \
            same_type(new_project, {}):
             self.lprojects.append(new_projects)
             return 1
         return 0
+
+    security.declareProtected(ModifyPortalContent, "delProject")
+    def delProjects(self, title=[]):
+        """
+        Removes projects given titles
+        """
+        i = O
+        for title in titles:
+            if self.lprojects['title'] == title:
+                del self.lprojects[i]
+                i -= 1
+            i +=1
+        return 1
 
 InitializeClass(CPSTaskTool)
