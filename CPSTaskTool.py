@@ -189,6 +189,20 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                                                in sorted_tasks \
                                                if \
                                                x.isTheAssignedOne()]
+        #
+        # Cleaning the empty entries
+        # For the visible if empty feature
+        #
+        if task_lists.get('my_tasks') == []:
+            del task_lists['my_tasks']
+        if task_lists.get('my_affected_tasks') == []:
+            del task_lists['my_affected_tasks']
+        if task_lists.get('my_accepted_tasks') == []:
+            del task_lists['my_accepted_tasks']
+        if task_lists.get('my_groups_affected_tasks') == []:
+            del task_lists['my_groups_affected_tasks']
+
+
         return task_lists
 
 
