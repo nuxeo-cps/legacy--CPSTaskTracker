@@ -293,5 +293,46 @@ def install(self):
     pr("### End of CMFCalendar update")
     pr("")
 
+    ###################################################
+    # CATALOG INDEXES
+    ###################################################
+
+    catalog = portal.portal_catalog
+
+    indexes = {
+        'start_task_date': 'DateIndex',
+        'stop_task_date' : 'DateIndex',
+        'task_priority'  : 'FieldIndex',
+        'task_type'      : 'FieldIndex',
+        'task_project'   : 'FieldIndex',
+        'task_goal   '   : 'FieldIndex',
+        }
+
+    metadata = [
+        'start_task_date',
+        'stop_task_date' ,
+        'task_priority'  ,
+        'task_type'      ,
+        'task_project'   ,
+        'task_goal   '   ,
+        ]
+
+    for ix, typ in indexes.items():
+        if ix in catalog.Indexes.objectIds():
+            pr("  %s: ok" % ix)
+        else:
+            prod = catalog.Indexes.manage_addProduct['PluginIndexes']
+            constr = getattr(prod, 'manage_add%s' % typ)
+            constr(ix)
+            pr("  %s: added" % ix)
+
+    pr(" Checking portal_catalog metadatas for CPSTask Type")
+    for md in metadata:
+        if md in catalog.schema():
+            pr("  %s: ok" % md)
+        else:
+            catalog.addColumn(md)
+            pr("  %s: added" % md)
+
     pr("End of specific CPSTaskTracker install")
     return pr('flush')
