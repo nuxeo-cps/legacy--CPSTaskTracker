@@ -102,25 +102,6 @@ def install(self):
     pr(" po files for CPSTaskTracker are searched in %s" % i18n_path)
     pr(" po files for CPSTaskTracker %s are expected" % str(languages))
 
-    # loading po files for the calendar product.
-    for lang in languages:
-        po_filename = 'Calendar-'+lang + '.po'
-        pr("   importing %s file" % po_filename)
-        po_path = os.path.join(i18n_path, po_filename)
-        try:
-            po_file = open(po_path)
-        except NameError:
-            pr("    %s file not found" % po_path)
-        po_path = os.path.join(i18n_path, po_filename)
-        try:
-            po_file = open(po_path)
-        except NameError:
-            pr("    %s file not found" % po_path)
-        else:
-            pr("  before  %s file imported" % po_path)
-            mcat.manage_import(lang, po_file)
-            pr("    %s file imported" % po_path)
-
     # loading po files for the product itself.
     for lang in languages:
         po_filename = lang + '.po'
