@@ -1,1 +1,26 @@
 # $Id$
+
+## DESIGN 
+
+o Design for documentation  
+  o Use cases 
+  o Class Diagrams
+  o docs
+
+## TESTS 
+
+o Setting Unit tests 
+  o Extensions/install.py script
+  o Setting first tests on the types/tool
+
+## DEV
+
+o install 
+  o workflows : CPSTask & CPSTaskScreen
+
+o skins for both types 
+
+o Portlet type as CPS Task Screen 
+
+o more...
+ 
