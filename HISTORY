@@ -1,4 +1,23 @@
 *******************************************
+** CPSTaskTracker V0.3.0 [R1 build 2003-10/29-22:15 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Task Box functional
+- icons 
+- etc....
+Bug fixes:
+~~~~~~~~~~
+- Screener sorting problems
+- Rights on repository fixed for members.
+- +++++....
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- 
+*******************************************
 ** CPSTaskTracker V0.2.1 [R1 build 2003-10/29-10:09 by anguenot]
 
 ZODB Requires:
