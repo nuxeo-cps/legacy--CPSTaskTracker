@@ -362,7 +362,7 @@
                       Task project
                     </option>
                  </tal:block>
-                 <option value="." checked
+                 <option value="." selected
                         tal:attributes="value string:none"
                         tal:content="python:mcat('_label_other')">
                       Task project
