@@ -10,7 +10,10 @@ mcat = context.Localizer.default
 def mcatIso(s):
     """Encode iso
     """
-    return mcat(s).encode("ISO-8859-15", 'ignore')
+    try:
+        return mcat(s).encode("ISO-8859-15", 'ignore')
+    except (UnicodeDecodeError,):
+        return mcat(s)
 
 if REQUEST is not None and \
    REQUEST.form.has_key('ids'):
