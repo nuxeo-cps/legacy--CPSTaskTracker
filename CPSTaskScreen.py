@@ -35,7 +35,7 @@ from Products.NuxCPSDocuments.BaseDocument import BaseDocument, BaseDocument_add
 factory_type_information = (
     {'id': 'CPS Task Screen',
      'title': '_portal_type_CPS_Task_Screen',
-     'content_icon': 'document_icon.png',
+     'content_icon': 'document_icon.gif',
      'product': 'CPSTaskTracker',
      'factory': 'addCPSTaskScreen',
      'meta_type': 'CPS Task Screen',
@@ -52,7 +52,7 @@ factory_type_information = (
                   'permissions': (ModifyPortalContent,)},
                  {'id': 'create',
                   'name': '_action_create_',
-                  'action': 'cps_task_screen_create_form',
+                  'action': 'cps_task_screen_create',
                   'visible': 0,
                   'permissions': ()},
                  {'id': 'isdocument',
@@ -78,6 +78,14 @@ class CPSTaskScreen(BaseDocument):
     portal_type = 'CPS Task Screen'
 
     security = ClassSecurityInfo()
+
+    #
+    # Filtering properties mostly added in here
+    #
+    _properties = BaseDocument._properties + (
+        )
+
+
 
 InitializeClass(CPSTaskScreen)
 
