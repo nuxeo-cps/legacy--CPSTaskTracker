@@ -183,7 +183,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         if parameters.get('display_my_groups_affected_tasks'):
             task_lists['my_groups_affected_tasks'] = [x for x in \
                                                       sorted_tasks if \
-                                                      x.isAssigned()]
+                                                      member_id in x.getUserGroupsAssigned()]
         if parameters.get('display_my_accepted_tasks'):
             task_lists['my_accepted_tasks'] = [x for x \
                                                in sorted_tasks \

@@ -197,6 +197,23 @@ class CPSTask(FlexibleDocument):
 
         return 0
 
+    security.declarePublic("getUserGroupsAssigned")
+    def getUserGroupsAssigned(self):
+        """
+        Return the users from the assigned groups
+        """
+        portal = self.portal_url.getPortalObject()
+        users = []
+        if self.getGroupIds() == []:
+            return []
+        for group_id in self.getGroupIds():
+            if group_id != '':
+                group = portal.acl_users.getGroupById(group_id)
+                for user in group.getUsers():
+                    users.append(user)
+
+        return users
+
     security.declarePublic("isCreator")
     def isCreator(self):
         """
