@@ -41,7 +41,10 @@ from Products.CPSCore.CPSWorkflow import \
 
 SECTIONS_ID = 'sections'
 WORKSPACES_ID = 'workspaces'
-SKINS = {'cps_task_tracker' : 'Products/CPSTaskTracker/skins/cps3_default',
+SKINS = {'cps_task_tracker_default' :
+         'Products/CPSTaskTracker/skins/cps3_default',
+         'cps_task_tracker_documents' :
+         'Products/CPSTaskTracker/skins/cps3_documents',
          }
 
 from Products.CPSTaskTracker.CPSTaskTrackerPermissions import TaskCreate, \
@@ -291,7 +294,8 @@ class CPSInstaller(CPSInstaller):
 
         # Adding wfc task chain
         wfc = getattr(workspaces, '.cps_workflow_configuration')
-        wfc.manage_addChain(portal_type='CPS Task Screen', chain='workspace_folder_wf')
+        wfc.manage_addChain(portal_type='CPS Task Screen',
+                            chain='workspace_folder_wf')
 
     def setupTaskType(self):
         """Setup CPS Task portal_type
@@ -342,6 +346,32 @@ class CPSInstaller(CPSInstaller):
         ### Adding wfc task chain
         ##wfc = getattr(workspaces, '.cps_workflow_configuration')
         ##wfc.manage_addChain(portal_type='CPS Task', chain='task_wf')
+
+        #
+        # Add actions
+        #
+        for type in self.newptypes:
+            ttype = self.ttool[type]
+            ttype.deleteActions((0, 1, 2, 3, 4, 5, 6))
+            ttype.addAction('view',
+                            'action_view',
+                            'string:${object_url}/cpstask_view',
+                            '',
+                            'View',
+                            'object')
+            ttype.addAction('edit',
+                            'action_edit',
+                            'string:${object_url}/cpstask_edit_form',
+                            '',
+                            'Modify portal content',
+                            'object')
+            ttype.addAction('metadata',
+                            'action_metadata',
+                            'string:${object_url}/cpstask_metadata',
+                            '',
+                            'Modify portal content',
+                            'object',
+                            0)
 
     def setupPortalActions(self):
         """Install the portal actions
