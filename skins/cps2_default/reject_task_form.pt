@@ -1,0 +1,26 @@
+<tal:block define="current_action string:view">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="base">
+    <base href="." tal:attributes="href string:${here/absolute_url}/" />
+  </metal:block>
+<body>
+
+
+<metal:block fill-slot="header">
+   <h1 tal:content="here/title_or_id">
+       Title
+   </h1>
+</metal:block>
+
+<metal:block fill-slot="main">
+<form action="doRejectTask" method="post">
+  <p>Do you really want to Reject it ?</p>
+<input type="submit" name="submit" value="reject" />
+</form>
+</metal:block>
+
+</body>
+</html>
+</tal:block>
