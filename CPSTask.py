@@ -22,13 +22,14 @@ __author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
 
 """
 CPS Task Type.
-You can access the software requierements specifications within
+You can access the software requierement specifications within
 the docs sub-directory of the product.
-Notice that this type is following a given workflow defined in
+Notice that this content type is following a given workflow defined in
 the Install sub-directory of this product.
 """
 
 import string
+
 from types import ListType
 from DateTime import DateTime
 
@@ -106,7 +107,7 @@ class CPSTask(FlexibleDocument):
          'label':'Task Indicator'},
         {'id':'task_type', 'type':'string', 'mode':'w', \
          'label':'Task Type'},
-        {'id':'task_project', 'type':'text', 'mode':'w', \
+        {'id':'task_project', 'type':'string', 'mode':'w', \
          'label':'Task Project'},
         {'id':'task_goal', 'type':'text', 'mode':'w', \
          'label':'Task Goal'},
