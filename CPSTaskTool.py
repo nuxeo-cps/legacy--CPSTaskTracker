@@ -183,12 +183,10 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         # Sorting the tasks against the parameters
         #
         sorted_tasks = self._sortTaskObjects(tasks, parameters)
-        LOG("SORTED TASKS", DEBUG, sorted_tasks)
         #
         # Spliting to different lists depending on the choice the user did.
         #
         task_lists = self._getTaskLists(sorted_tasks, parameters)
-        LOG("TASKS LIST", DEBUG, task_lists)
         return task_lists
 
 InitializeClass(CPSTaskTool)
