@@ -285,13 +285,13 @@ class CPSTask(FlexibleDocument):
         """
         return self.is_closed
 
-    security.declarePrivate("isLate")
+    security.declarePublic("isLate")
     def isLate(self):
         """
         Is the task late according to the deadline.
         """
         today = DateTime()
-        return self.stop_task_date < today
+        return ((not self.isClosed()) and (self.stop_task_date < today)) 
 
     security.declareProtected('getStatus', View)
     def getStatus(self):
