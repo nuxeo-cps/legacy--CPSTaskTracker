@@ -1,12 +1,12 @@
 Requires:
 ~~~~~~~~~
-- CPSWorkflow
+-
 New features:
 ~~~~~~~~~~~~~
 -
 Bug fixes:
 ~~~~~~~~~~
-- Don't create the task at first. while following the link 'create new task'
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
