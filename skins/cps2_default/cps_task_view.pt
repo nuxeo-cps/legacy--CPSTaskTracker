@@ -1,0 +1,159 @@
+<tal:block define="current_action string:view">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="base">
+    <base href="." tal:attributes="href string:${here/absolute_url}/" />
+  </metal:block>
+<body>
+
+
+<metal:block fill-slot="header">
+   <h1 tal:content="here/title_or_id">
+       Title
+   </h1>
+</metal:block>
+
+<metal:block fill-slot="main">
+
+<span tal:replace="here/isAssigned" />
+<span tal:replace="here/isCreator" />
+<span tal:replace="here/isTheAssignedOne" />
+
+<table align="center" width="100%" cellpadding="2" cellspacing="2">
+<tr>
+  <td bgcolor="#EEEEEE" width="30%">
+    <strong>Title</strong>
+  </td>
+  <td>
+    <span tal:replace="here/title" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Start</strong>
+  </td>
+  <td >
+    <span tal:replace="here/start_task_date" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Stop</strong>
+  </td>
+  <td>
+    <span tal:replace="here/stop_task_date" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Priority</strong>
+  </td>
+  <td>
+    <span tal:replace="here/task_priority" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Indicator</strong>
+  </td>
+  <td>
+    <span tal:replace="here/task_indicator" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Type</strong>
+  </td>
+  <td>
+    <span tal:replace="here/task_type" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Assigned to Users</strong>
+  </td>
+  <td>
+      <tal:block define="members python:here.getMemberIds()">
+        <tal:block repeat="member members">
+          <span tal:replace="member" /><br />
+        </tal:block>
+      </tal:block>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Assigned to Groups</strong>
+  </td>
+  <td>
+      <tal:block define="groups python:here.getGroupIds()">
+        <tal:block repeat="group groups">
+          <span tal:replace="group" /><br />
+        </tal:block>
+      </tal:block>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Accepted By</strong>
+  </td>
+  <td>
+    <span tal:replace="here/getTheAssignedOne|nothing" />
+  </td>
+</tr>
+
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Status</strong>
+  </td>
+  <td>
+    <tal:block define="isClosed here/isClosed|nothing" >
+      <span tal:condition="isClosed">CLOSED</span>
+      <span tal:condition="not:isClosed">OPENED</span>
+    </tal:block>
+  </td>
+</tr>
+
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Rejected by</strong>
+  </td>
+  <td>
+    <tal:block define="task_rejecters here/getTaskRejecters" >
+     <tal:block repeat="rejecter task_rejecters">
+       <span tal:replace="rejecter" /><br />
+     </tal:block>
+    </tal:block>
+  </td>
+</tr>
+
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Project</strong>
+  </td>
+  <td>
+    <span tal:replace="here/task_project" />
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#EEEEEE">
+    <strong>Task Goal</strong>
+  </td>
+  <td>
+    <span tal:replace="here/task_goal" />
+  </td>
+</tr>
+</table>
+
+<metal:block use-macro="here/main_widgets/macros/linksrender">
+    Related links
+</metal:block>
+
+<metal:block use-macro="here/main_widgets/macros/discussion" />
+
+
+</metal:block>
+
+</body>
+</html>
+</tal:block>
