@@ -47,7 +47,7 @@
       <hr />
       <br />
       <table border="0" align="center" width="100%" cellpadding="2" cellspacing="1">
-        <tr bgcolor="#bea6ea">
+        <tr>
           <td>&nbsp;</td>
           <td>
             <strong>
@@ -86,7 +86,7 @@
                </a>
             </td>
           </tr>
-          <tr tal:condition="repeat/user/even" bgcolor="#e0d7ef">
+          <tr tal:condition="repeat/user/even" bgcolor="#EEEEEE">
             <td >
               <input type="checkbox" name="ids:list" value=""
                      tal:condition="python:user.get('email', '') != ''"
