@@ -16,20 +16,9 @@ o Design for documentation
 o install
   o portal_catalog indexes for the CPSTask Type
 
-o Repository
-  o security fix for members (too many rights : modify portal content)
-
 o CPSTask
   o Checking for the indexation of the attached files
-  o il ne faut pas que les assignés ne puissent modifier les paramètres de la
-    tâche -> action réservée à l'admin
-  o il ne faut pas que l'action '_action_recall_' soit visible alors que la tâche est terminée.
-    Est-ce vraiment un probl�me ? Pas facile car nous avons CMF <1.3 sur CPS2 donc pas de condition
-    sur les actions.
-  o popups i18n.
-  o sorting against projects + changing the project field.
-  o managing a list of Project within the TaskTool.
-
+  o sorting against projects + projects management.
   o Cosmetics
     o Re-skinning the templates like the one for recall the assignees.
 

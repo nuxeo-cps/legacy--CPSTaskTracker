@@ -295,3 +295,55 @@ msgstr ""
 
 msgid "_c_h_"
 msgstr ""
+
+### POPUPS ##################################################
+
+msgid "_searchmembers_tools_"
+msgstr ""
+
+msgid "_Members_criteria_"
+msgstr ""
+
+msgid "_dir_Groups_"
+msgstr ""
+
+msgid "_(Add users ...) as_"
+msgstr ""
+
+msgid "_button_search_"
+msgstr ""
+
+msgid "_select_members_from_search_"
+msgstr ""
+
+msgid "_button_add_"
+msgstr ""
+
+msgid "_No_entry_matches_your_request_"
+msgstr ""
+
+msgid "_members_selected_"
+msgstr ""
+
+msgid "_button_clean_"
+msgstr ""
+
+msgid "_button_close"
+msgstr ""
+
+msgid "_button_validate_"
+msgstr ""
+
+msgid "_searchgroups_tools_"
+msgstr ""
+
+msgid "_Groups_criteria_"
+msgstr ""
+
+msgid "_select_groups_from_search_"
+msgstr ""
+
+msgid "_groups_selected_"
+msgstr ""
+
+

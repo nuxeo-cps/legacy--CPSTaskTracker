@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-05 01:39default\n"
-"PO-Revision-Date: 2003-11-08 00:16+0100\n"
+"POT-Creation-Date: 2003-11-10 12:45default\n"
+"PO-Revision-Date: 2003-11-10 12:46+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -203,7 +203,10 @@ msgid "_label_status"
 msgstr "Status"
 
 msgid "_label_recall_explanation"
-msgstr "You can email the assigned ones by choosing the members who have to be recalled. <br /> You can as well access member's preferences by clicking the fullname field or sending an email to one of them by clicking the email one."
+msgstr ""
+"You can email the assigned ones by choosing the members who have to be "
+"recalled. <br /> You can as well access member's preferences by clicking the "
+"fullname field or sending an email to one of them by clicking the email one."
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
@@ -230,6 +233,10 @@ msgstr "Reject this task"
 
 msgid "_action_close_task"
 msgstr "Close this task"
+
+# # actions ###############################################################
+msgid "_action_create_new_project"
+msgstr "Manage projects"
 
 # # Calendar ################################################################
 msgid "_cday_Su"
@@ -300,4 +307,58 @@ msgstr "at"
 
 msgid "_c_h_"
 msgstr ":"
+
+# ## POPUPS ##################################################
+msgid "_searchmembers_tools_"
+msgstr "Search members tool."
+
+msgid "_Members_criteria_"
+msgstr "Members criteria."
+
+msgid "_dir_Groups_"
+msgstr "Groups"
+
+msgid "_(Add users ...) as_"
+msgstr "Add users as "
+
+msgid "_button_search_"
+msgstr "Search"
+
+msgid "_select_members_from_search_"
+msgstr "Select members from search"
+
+msgid "_button_add_"
+msgstr "Add"
+
+msgid "_No_entry_matches_your_request_"
+msgstr "No entry matches your request."
+
+# ## labels ################################################################
+msgid "_members_selected_"
+msgstr "Members selected"
+
+msgid "_button_clean_"
+msgstr "Flush"
+
+# ## BUTTTONS ######################################################
+msgid "_button_close"
+msgstr "Close"
+
+# ## BUTTTONS ######################################################
+msgid "_button_validate_"
+msgstr "Validate"
+
+# ## POPUPS ##################################################
+msgid "_searchgroups_tools_"
+msgstr "Search groups tool."
+
+msgid "_Groups_criteria_"
+msgstr "Groups criteria."
+
+msgid "_select_groups_from_search_"
+msgstr "Select groups from search"
+
+# ## labels ################################################################
+msgid "_groups_selected_"
+msgstr "Groups selected"
 
