@@ -18,6 +18,13 @@
 #
 # $Id$
 
+#
+# For debug purposes
+#
+
+from AccessControl import ModuleSecurityInfo
+ModuleSecurityInfo('zLOG').declarePublic('LOG', 'DEBUG')
+
 import sys
 
 from Products.CMFCore.utils import ToolInit, ContentInit
