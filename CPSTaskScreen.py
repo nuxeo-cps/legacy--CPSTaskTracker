@@ -36,7 +36,7 @@ from Products.NuxCPSDocuments.BaseDocument import BaseDocument, \
 factory_type_information = (
     {'id': 'CPS Task Screen',
      'title': '_portal_type_CPS_Task_Screen',
-     'content_icon': 'document_icon.gif',
+     'content_icon': 'task_screen_icon.png',
      'product': 'CPSTaskTracker',
      'factory': 'addCPSTaskScreen',
      'meta_type': 'CPS Task Screen',
@@ -137,10 +137,10 @@ class CPSTaskScreen(BaseDocument):
         self.sort_date_on = form.get('sort_date_on', 'start_date')
         self.sort_order = form.get('sort_order', 'asc')
         self.sort_on = form.get('sort_on', '')
-        self.display_my_tasks = form.get('display_my_tasks', 0)
-        self.display_my_affected_tasks = form.get('display_my_affected_tasks', 0)
-        self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0)
-        self.display_my_accepted_tasks = form.get('display_accepted_tasks', 0)
+        self.display_my_tasks = form.get('display_my_tasks', 0) and 1
+        self.display_my_affected_tasks = form.get('display_my_affected_tasks', 0) and 1
+        self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0) and 1
+        self.display_my_accepted_tasks = form.get('display_my_accepted_tasks', 0) and 1
 
     security.declareProtected("getParameters", "Modify portal content")
     def getParameters(self):
