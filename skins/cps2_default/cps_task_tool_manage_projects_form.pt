@@ -1,0 +1,84 @@
+<tal:block define="current_action string:edit;
+                   create options/create|nothing">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="base">
+    <base href="." tal:attributes="href string:${here/absolute_url}/">
+  </metal:block>
+<body>
+
+
+<metal:block fill-slot="header">
+  <h1>
+    <span tal:replace="python:mcat('_label_manage_projects')" />
+  </h1>
+</metal:block>
+
+<metal:block fill-slot="header_plus" />
+
+<metal:block fill-slot="main"
+  tal:define="title python:(create and [''] or [here.Title()])[0];
+                 submitvalue python:mcat('_button_create_')">
+
+<div align="right">
+  <a href="./cps_task_tool_add_project_form">
+    <span tal:replace="python:mcat('_label_create_a_new_project')">
+      Create a new project
+    </span>
+  </a>
+</div>
+<br />
+<!-- LIST OF PROJECTS -->
+<form method="post" action="doDeleteProjects">
+  <table border="0" align="center" width="100%" cellpadding="2" cellspacing="1">
+    <tr bgcolor="#DDDDDD">
+      <td>&nbsp;</td>
+      <td>
+        <strong>
+          <span tal:content="python:mcat('_label_title')" />
+        </strong>
+      </td>
+      <td>
+        <strong>
+          <span tal:content="python:mcat('_label_description')" />
+        </strong>
+      </td>
+    </tr>
+    <tal:block repeat="project here/portal_tasks/getProjects">
+    <tr tal:condition="repeat/project/even">
+      <td>
+        <input type="checkbox" value="" name="ids:list"
+               tal:attributes="value python:project['title']" />
+      </td>
+      <td>
+        <a href=""
+           tal:attributes="href
+           string:cps_task_tool_add_project_form?project_title=${project/title}&project_description=${project/description}">
+          <span tal:replace="python:project['title']" />
+       </a>
+      </td>
+      <td><span tal:replace="python:project['description']" /></td>
+    </tr>
+    <tr tal:condition="repeat/project/odd" bgcolor="#EEEEEE">
+      <td>
+        <input type="checkbox" value="" name="ids:list"
+               tal:attributes="value python:project['title']" />
+      </td>
+      <td><span tal:replace="python:project['title']" /></td>
+      <td><span tal:replace="python:project['description']" /></td>
+    </tr>
+    </tal:block>
+    <tr>
+      <td colspan="3">
+        <input type="submit" value="."
+               tal:attributes="value python:mcat('_button_delete')" />
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END OF LIST OF PROJECT -->
+</metal:block>
+</body>
+</html>
+</tal:block>
