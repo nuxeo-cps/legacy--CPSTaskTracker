@@ -24,6 +24,7 @@
 
 import string
 from types import ListType
+from DateTime import DateTime
 
 from zLOG import LOG, DEBUG
 
@@ -240,6 +241,36 @@ class CPSTask(FlexibleDocument):
         Is the task closed
         """
         return self.is_closed
+
+    security.declarePrivate("isClosed")
+    def isLate(self):
+        """
+        Is the task late according to the deadline.
+        """
+        today = DateTime()
+        task_deadline = DateTime(str(self.stop_task_date) + " 0:00am")
+        return today >= task_deadline
+
+    security.declareProtected('getStatus', View)
+    def getStatus(self):
+        """
+        Return the status of the task.
+        """
+        #
+        # OPENED : not assigned yet.
+        # ASSIGNED : no comment
+        # CLOSED : no comment
+        # LATE : according to the deadline.
+        #
+
+        if self.isClosed():
+            return "closed"
+        elif self.the_assigned is not None:
+            return "assigned"
+        elif self.isLate():
+            return "late"
+        else:
+            return "opened"
 
     security.declarePublic("changeAssigned")
     def changeAssigned(self, members='', groups=''):
