@@ -6,9 +6,9 @@
 task_priority_vocabulary = {
     'data': {
         'dict': {
-            'high': "label_priority_high",
-            'normal': "label_priority_normal",
-            'low': "label_priority_low",
+            'high': "High",
+            'normal': "Normal",
+            'low': "Low",
             },
         'list': [
             'high',
@@ -21,9 +21,9 @@ task_priority_vocabulary = {
 task_type_vocabulary = {
     'data': {
         'dict': {
-            'internal': "label_priority_internal",
-            'nuxeo': "label_priority_nuxeo",
-            'other': "label_priority_other",
+            'internal': "Internal",
+            'nuxeo': "Nuxeo",
+            'other': "Other",
             },
         'list': [
             'internal',
