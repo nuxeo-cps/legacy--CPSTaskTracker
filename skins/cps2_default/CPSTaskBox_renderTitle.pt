@@ -1,0 +1,7 @@
+<tal:block define="mcat nocall:here/portal_messages">
+<p>&nbsp;
+<img src="."
+     tal:attributes="src string:todo.png" />
+<span tal:content="python:mcat('label_my_tasks')" />
+</p>
+</tal:block>
