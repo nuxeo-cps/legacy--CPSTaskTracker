@@ -1,4 +1,4 @@
-NY: tests clean doc
+NY:clean doc
 
 tests:
 	./runtests.py
