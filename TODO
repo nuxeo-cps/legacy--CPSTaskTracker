@@ -16,11 +16,22 @@ o Setting Unit tests
 ## DEV
 
 o install 
-  o workflows : CPSTask & CPSTaskScreen
+  o Installtation of the CPSTaskBox in the portal. 
 
-o skins for both types 
+o CPSTask
+  o Cleaning and enhancing the task skins.
+  o Members and groups popups reviewing.
+  o Tests with the workflow. 
 
-o Portlet type as CPS Task Screen 
+o CPSTaskScreen 
+  o Everything....
 
-o more...
+o CPSTaskBox 
+  o Everything. 
+
+o i18n for the skins.
+
+
+
+
  
