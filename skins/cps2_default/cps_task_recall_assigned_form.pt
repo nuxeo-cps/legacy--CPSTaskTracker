@@ -12,8 +12,66 @@
     </metal:block>
     <metal:block fill-slot="main">
     <form action="doRecallAssigned" method="post">
-      <span tal:replace="here/getAssignedEmails" />
-      <input type="submit" name="submit" value="close" />
+      <br />
+      <hr />
+        <i align="justified" tal:content="structure python:mcat('_label_recall_explanation')" />
+      <hr />
+      <br />
+      <table border="0" align="center" width="100%" cellpadding="2" cellspacing="1">
+        <tr bgcolor="#bea6ea">
+          <td>&nbsp;</td>
+          <td>
+            <strong>
+              <span tal:replace="python:mcat('_label_name')" />
+            </strong>
+          </td>
+          <td>
+            <strong>
+              <span tal:replace="python:mcat('_label_email')" />
+            </strong>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tal:block repeat="user here/getAllAssignedMembers">
+          <tr tal:condition="repeat/user/odd">
+            <td>
+              <input type="checkbox" name="ids:list" value=""
+                     tal:condition="python:user.get('email', '') != ''"
+                     tal:attributes="value python:user.get('email', '')" />
+            </td>
+            <td>
+              <span tal:replace="python:user.get('fullname', '')" />
+            </td>
+            <td>
+               <a href=""
+                  tal:attributes="href python:'mailto:'+user.get('email', '')">
+                 <span tal:replace="python:user.get('email', '')" />
+               </a>
+            </td>
+          </tr>
+          <tr tal:condition="repeat/user/even" bgcolor="#e0d7ef">
+            <td >
+              <input type="checkbox" name="ids:list" value=""
+                     tal:condition="python:user.get('email', '') != ''"
+                     tal:attributes="value python:user.get('email', '')" />
+            </td>
+            <td>
+              <span tal:replace="python:user.get('fullname', '')" />
+            </td>
+            <td>
+               <a href=""
+                  tal:attributes="href python:'mailto:'+user.get('email', '')">
+                 <span tal:replace="python:user.get('email', '')" />
+               </a>
+            </td>
+          </tr>
+        </tal:block>
+      </table>
+      <br />
+      <input type="submit" name="submit" value=""
+             tal:attributes="value python:mcat('_button_recall_')" />
     </form>
     </metal:block>
   </metal:block>
