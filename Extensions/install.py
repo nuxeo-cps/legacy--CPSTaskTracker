@@ -49,9 +49,11 @@ def install(self):
     # Creation of the CPS Task Tool
     #################################################################
 
-    skins = ('cps_task_tracker',)
+    skins = ('cps_task_tracker', 'cmf_zpt_calendar', 'cmf_calendar')
     paths = {
         'cps_task_tracker': 'Products/CPSTaskTracker/skins/cps2_default',
+        'cmf_zpt_calendar': 'Products/CMFCalendar/skins/zpt_calendar',
+        'cmf_calendar': 'Products/CMFCalendar/skins/calendar',
     }
 
     for skin in skins:
@@ -100,9 +102,28 @@ def install(self):
     pr(" po files for CPSTaskTracker are searched in %s" % i18n_path)
     pr(" po files for CPSTaskTracker %s are expected" % str(languages))
 
-    # loading po files
+    # loading po files for the product itself.
     for lang in languages:
         po_filename = lang + '.po'
+        pr("   importing %s file" % po_filename)
+        po_path = os.path.join(i18n_path, po_filename)
+        try:
+            po_file = open(po_path)
+        except NameError:
+            pr("    %s file not found" % po_path)
+        po_path = os.path.join(i18n_path, po_filename)
+        try:
+            po_file = open(po_path)
+        except NameError:
+            pr("    %s file not found" % po_path)
+        else:
+            pr("  before  %s file imported" % po_path)
+            mcat.manage_import(lang, po_file)
+            pr("    %s file imported" % po_path)
+
+    # loading po files for the calendar product.
+    for lang in languages:
+        po_filename = 'Calendar-'+lang + '.po'
         pr("   importing %s file" % po_filename)
         po_path = os.path.join(i18n_path, po_filename)
         try:
@@ -233,6 +254,27 @@ def install(self):
 
         for pt, chain in wfs.items():
             wftool.setChainForPortalTypes([pt], chain)
+
+    #################################################
+    # CMF Calendar installation for the date
+    #################################################
+
+    # CMF Tools
+    pr("")
+    pr("### CMFCalendar update")
+    if not portalhas('cmfcalendar_installer'):
+        if portalhas('portal_calendar'):
+            portal.manage_delObjects(['portal_calendar'])
+        from Products.ExternalMethod.ExternalMethod import ExternalMethod
+        pr('Adding cmfcalendar installer')
+        cmfcalendar_installer = ExternalMethod('cmfcalendar_installer',
+                                               'CMFCalendar Updater',
+                                               'CMFCalendar.Install',
+                                               'install')
+        portal._setObject('cmfcalendar_installer', cmfcalendar_installer)
+        pr(portal.cmfcalendar_installer())
+    pr("### End of CMFCalendar update")
+    pr("")
 
     pr("End of specific CPSTaskTracker install")
     return pr('flush')
