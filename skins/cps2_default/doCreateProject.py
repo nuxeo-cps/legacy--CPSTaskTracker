@@ -5,6 +5,8 @@
 Create a new project
 """
 
+from zLOG import LOG, DEBUG
+
 #
 # XXX : not finished
 #
@@ -20,5 +22,4 @@ if REQUEST is not None and \
         new_project['description'] = description
         context.portal_tasks.addProject(new_project)
 
-
-return context.REQUEST.RESPONSE.redirect(context.absolute_url())
+return context.REQUEST.RESPONSE.redirect(context.absolute_url()+'/cps_task_tool_manage_projects_form')

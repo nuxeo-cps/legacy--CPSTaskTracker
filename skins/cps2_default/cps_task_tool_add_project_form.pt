@@ -10,23 +10,19 @@
 
 
 <metal:block fill-slot="header">
-  <tal:block condition="not:create">
-    <tal:block replace="python:mcat('_Modify_(object name)_')">
-      Modify
-    </tal:block>
-    «&nbsp;<span tal:replace="here/title_or_id">Title</span>&nbsp;»
-  </tal:block>
+  <h1>
+    <span tal:replace="python:mcat('_label_create_a_new_project')" />
+  </h1>
 </metal:block>
 
 <metal:block fill-slot="header_plus" />
 
 <metal:block fill-slot="main"
   tal:define="title python:(create and [''] or [here.Title()])[0];
-                 description python:(create and [''] or [here.Description()])[0];
-                 submitvalue python:create and mcat('_button_create_') or mcat('_button_modify_');
-                ">
+                 submitvalue python:mcat('_button_create_')">
 
-  <form action="." method="post" enctype="multipart/form-data" action="doCreateProject">
+<!-- CREATE PROJECT FORM -->
+<form method="post" action="doCreateProject">
   <metal:block use-macro="here/main_widgets/macros/form">
     <metal:block fill-slot="content">
       <metal:block use-macro="here/main_widgets/macros/form_property">
@@ -35,7 +31,8 @@
           Title
         </metal:block>
         <metal:block fill-slot="content">
-          <input type="text" name="title" value="title" tal:attributes="value title" />
+          <input type="text" name="title" value=""
+                 tal:attributes="value request/project_title|nothing" />
         </metal:block>
       </metal:block>
       <metal:block use-macro="here/main_widgets/macros/form_property">
@@ -44,17 +41,16 @@
           Description
         </metal:block>
         <metal:block fill-slot="content">
-          <textarea name="description:text" rows="5" cols="50" wrap="soft"
-           tal:content="description"></textarea>
+          <textarea name="description:text" rows="5" cols="50" wrap="soft"><span tal:replace="request/project_description|nothing" /></textarea>
         </metal:block>
       </metal:block>
     </metal:block>
   </metal:block>
-
-  <input class="mainbutton" type="submit" value="." tal:attributes="value submitvalue">
+  <input class="mainbutton" type="submit" value="." tal:attributes="value submitvalue" />
   <input class="mainbutton" type="button" name="cancel" onclick="history.back()"
-    tal:attributes="value python:mcat('_button_cancel_')">
-  </form>
+         tal:attributes="value python:mcat('_button_cancel_')" />
+</form>
+<!-- END OF CREATE PROJECT FORM -->
 </metal:block>
 </body>
 </html>
