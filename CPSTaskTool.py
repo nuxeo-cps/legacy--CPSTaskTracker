@@ -221,10 +221,22 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
     # PROJECT API
     ################################################
 
+    def _hasIndex(self, project_title):
+        """
+        Returnt the index of the project in the list
+        """
+        i = 0
+        for project in self.lprojects:
+            if project_title == project['title']:
+                return i
+            i+=1
+
+        return None
+
     security.declareProtected(ModifyPortalContent, "getProjects")
     def getProjects(self):
         """
-        Returns the list of projects alredy stored.
+        Returns the list of projects already stored.
         """
         return self.lprojects
 
@@ -233,23 +245,29 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         """
         Adds a brandly new project.
         """
+        stupid_flag = 0
         if new_project != {} and \
-           same_type(new_project, {}):
-            self.lprojects.append(new_projects)
+           type(new_project) == type({}):
+            i = 0
+            for project in self.lprojects:
+                if project['title'] == new_project['title']:
+                    stupid_flag = 1
+                    self.lprojects[i]['description'] = new_project['description']
+                i += 1
+            if not stupid_flag:
+                self.lprojects.append(new_project)
             return 1
         return 0
 
     security.declareProtected(ModifyPortalContent, "delProject")
-    def delProjects(self, title=[]):
+    def delProjects(self, titles=[]):
         """
         Removes projects given titles
         """
-        i = O
         for title in titles:
-            if self.lprojects['title'] == title:
-                del self.lprojects[i]
-                i -= 1
-            i +=1
+            index = self._hasIndex(title)
+            if index is not None:
+                del self.lprojects[index]
         return 1
 
 InitializeClass(CPSTaskTool)
