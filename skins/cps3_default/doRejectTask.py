@@ -10,10 +10,13 @@ mcat = context.Localizer.default
 def mcatIso(s):
     """Encode iso
     """
+
+    s_translated = mcat(s)
+    
     try:
-        return mcat(s).encode("ISO-8859-15", 'ignore')
+        return s_translated.encode("ISO-8859-15", 'ignore')
     except (UnicodeDecodeError,):
-        return mcat(s)
+        return s_translated
 
 creator_email = context.portal_directories.members.getEntry(context.Creator(), {}).get('email', None)
 current_member = context.portal_directories.members.getEntry(context.portal_membership.getAuthenticatedMember().getMemberId(), {})
