@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-07-26 14:11default\n"
+"POT-Creation-Date: 2004-07-26 14:17default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -504,6 +504,9 @@ msgid "label_priority_other"
 msgstr ""
 
 msgid "label_cpstask_text"
+msgstr ""
+
+msgid "_label_task_rejected"
 msgstr ""
 
 msgid "_label_the_task_has_been_rejected"

@@ -7,6 +7,7 @@
 # translation of en.po to
 # translation of en.po to
 # translation of en.po to
+# translation of en.po to
 # translation of en.po to Français
 # translation of en.po to FranÃ§ais
 # Gettext Message File for default.
@@ -16,8 +17,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-07-26 14:11default\n"
-"PO-Revision-Date: 2004-07-26 14:12+0200\n"
+"POT-Creation-Date: 2004-07-26 14:17default\n"
+"PO-Revision-Date: 2004-07-26 14:18+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -541,6 +542,10 @@ msgstr "Other"
 # ## labels ################################################################
 msgid "label_cpstask_text"
 msgstr "Text block"
+
+# ## labels ################################################################
+msgid "_label_task_rejected"
+msgstr "Task Rejection"
 
 # # actions ###############################################################
 msgid "_label_the_task_has_been_rejected"
