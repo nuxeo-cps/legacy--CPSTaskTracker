@@ -449,12 +449,5 @@ msgstr "Create"
 msgid "_label_no_project"
 msgstr "Currently, there is no project. You can create one by clicking the above link."
 
-#~ msgid "processed"
-#~ msgstr "processed"
-
-#~ msgid "accept"
-#~ msgstr "accept"
-
-#~ msgid "close"
-#~ msgstr "close"
-
+msgid "_label_reject_history"
+msgstr "Reject history"

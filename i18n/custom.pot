@@ -439,3 +439,6 @@ msgstr ""
 msgid "_label_no_project"
 msgstr ""
 
+msgid "_label_reject_history"
+msgstr ""
+
