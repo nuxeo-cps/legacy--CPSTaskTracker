@@ -172,7 +172,7 @@ class CPSTask(FlexibleDocument):
         """
         Check if member_id is assigned to this task
         """
-        portal = self.getPortalObject()
+        portal = self.portal_url.getPortalObject()
         member_id = self.getCurrentMemberId()
 
         # Checking if the task is closed or not
