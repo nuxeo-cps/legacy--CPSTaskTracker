@@ -33,9 +33,9 @@ from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 
-from Products.NuxCPSDocuments.BaseDocument import BaseDocument, \
-     BaseDocument_adder
-from Products.NuxCPSDocuments.FileDocument import FileDocument
+from Products.NuxCPSDocuments.BaseDocument import BaseDocument_adder
+from Products.NuxCPSFlexibleDocument.FlexibleDocument import FlexibleDocument
+
 
 factory_type_information = (
     {'id': 'CPS Task',
@@ -53,8 +53,7 @@ factory_type_information = (
                   'permissions': (View,)},
                  {'id': 'create',
                   'name': '_action_create_',
-                  'action': 'cps_task_create_form',
-
+                  'action': 'cps_task_create',
                   'visible': 0,
                   'permissions': ()},
                  {'id': 'edit',
@@ -79,7 +78,7 @@ factory_type_information = (
      },
     )
 
-class CPSTask(FileDocument):
+class CPSTask(FlexibleDocument):
     """
     CPS Task Type.
     """
@@ -89,7 +88,7 @@ class CPSTask(FileDocument):
 
     security = ClassSecurityInfo()
 
-    _properties = FileDocument._properties + (
+    _properties = FlexibleDocument._properties + (
         {'id':'start_task_date', 'type':'date', 'mode':'w', \
          'label':'Task begins'},
         {'id':'stop_task_date', 'type':'date', 'mode':'w', \
