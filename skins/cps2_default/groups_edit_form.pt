@@ -262,7 +262,7 @@ function clean_groups_selected() {
                <input type="button" onClick="javascript:clean_groups_selected()"
                  tal:attributes="value python:mcat('_button_clean_')" />
                <input type="button" onClick="window.close()"
-                 tal:attributes="value python:mcat('_button_close_')" />
+                 tal:attributes="value python:mcat('_button_close')" />
                <input type="submit" tal:attributes="value python:mcat('_button_validate_')" />
             </td>
            </form>
