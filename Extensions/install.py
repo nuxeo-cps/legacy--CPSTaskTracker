@@ -192,7 +192,7 @@ def install(self):
         portal['portal_actions'].addAction(
             id='Create a New Task',
             name='_action_create_new_tasks',
-            action='string: ${portal_url}/cps_task_create_form?base=CPS Task',
+            action='string: ${portal_url}/cps_task_create?base=CPS Task',
             condition='python:not portal.portal_membership.isAnonymousUser()',
             permission=('View',),
             category='global',
