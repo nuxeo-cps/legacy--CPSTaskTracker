@@ -24,6 +24,8 @@ o CPSTask
   o Members and groups popups reviewing.
   o Tests with the workflow. 
   o Checking for the indexation of the attached files
+  o recall action not here already
+  o cps_task_edit.py should check the properties (compulsory)
 o CPSTaskScreen 
   o Everything....
 
