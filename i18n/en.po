@@ -45,5 +45,6 @@ msgstr "Reject this task"
 msgid "_action_close_task"
 msgstr "Close this task"
 
-
+msgid "_action_current_status_"
+msgstr "Current status"
 

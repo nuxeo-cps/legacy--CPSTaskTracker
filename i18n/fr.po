@@ -45,3 +45,6 @@ msgstr "Rejeter cette tâche"
 msgid "_action_close_task"
 msgstr "Fermer cette tâche"
 
+msgid "_action_current_status_"
+msgstr "Statut courant"
+
