@@ -18,7 +18,6 @@
 #
 # $Id$
 
-import sys
 from Products.CMFCore import utils
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.CMFCorePermissions import AddPortalContent
@@ -47,21 +46,26 @@ fti = (
 registerDirectory('skins', globals())
 registerDirectory('www', globals())
 
-tools = (
-            CPSTaskTool.CPSTaskTool,
-        )
+tools = ( CPSTaskTool.CPSTaskTool,)
 
 def initialize(registrar):
     """
     Registering the content of the module
     """
+
+    #
+    # Task tool & repository for the tasks
+    #
     utils.ToolInit(
         'CPS TASK Tool',
         tools = tools,
-        product_name = 'eDOCTask',
+        product_name = 'CPSTaskTracker',
         icon = 'www/tool.png',
         ).initialize(registrar)
 
+    #
+    # Registering content : Task and the Task Screen
+    #
     utils.ContentInit(
         'CPSTaskTracker',
         content_types = contentClasses,
@@ -69,4 +73,3 @@ def initialize(registrar):
         extra_constructors = contentConstructors,
         fti = fti,
         ).initialize(registrar)
-
