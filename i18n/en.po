@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-04 14:07default\n"
-"PO-Revision-Date: 2003-11-04 13:56+0100\n"
+"POT-Creation-Date: 2003-11-05 01:25default\n"
+"PO-Revision-Date: 2003-11-05 01:26+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,17 @@ msgstr "Delete"
 # ## BUTTTONS ######################################################
 msgid "_button_submit_"
 msgstr "Change"
+
+msgid "_button_accept_"
+msgstr "Accept this task "
+
+# ## BUTTTONS ######################################################
+msgid "_button_reject_"
+msgstr "Reject this task"
+
+# ## BUTTTONS ######################################################
+msgid "_button_recall_"
+msgstr "Recall"
 
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
@@ -55,6 +66,13 @@ msgstr "Recall the assigned members"
 
 msgid "_reviewstate_waiting"
 msgstr "Waiting"
+
+msgid "_label_name"
+msgstr "Full name"
+
+# ## labels ################################################################
+msgid "_label_email"
+msgstr "Email"
 
 # ## labels ################################################################
 msgid "_label_my_tasks"
@@ -174,9 +192,35 @@ msgstr "Accepted by "
 msgid "_label_rejected_by"
 msgstr "Rejected by"
 
+msgid "_label_do_you_want_to_accpet_it"
+msgstr "Do you really want to accept it ?"
+
+msgid "_label_do_you_want_to_reject_it"
+msgstr "Do you really want to reject it ?"
+
 # ## labels ################################################################
 msgid "_label_status"
 msgstr "Status"
+
+msgid "_label_recall_explanation"
+msgstr "You can email the assigned ones by choosing the members who have to be recalled. <br /> You can as well access member's preferences by clicking the fullname field or sending an email to one of them by clicking the email one."
+
+msgid "_label_you_are_recalled_for_the_task"
+msgstr "You are recalled for the following task : "
+
+# ## labels ################################################################
+msgid "_label_recall"
+msgstr "Remainder"
+
+# ## labels ################################################################
+msgid "_label_mail_sent"
+msgstr "Emails have been sent."
+
+msgid "_label_error_while_sending_mail"
+msgstr "Error while sending mails. Contact the administrator of the portal."
+
+msgid "_action_accept"
+msgstr "Accept this task"
 
 msgid "_action_reject"
 msgstr "Reject this task"
@@ -253,3 +297,4 @@ msgstr "at"
 
 msgid "_c_h_"
 msgstr ":"
+

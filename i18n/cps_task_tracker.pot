@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-11-04 14:07default\n"
+"POT-Creation-Date: 2003-11-05 01:25default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -24,6 +24,15 @@ msgid "_button_delete"
 msgstr ""
 
 msgid "_button_submit_"
+msgstr ""
+
+msgid "_button_accept_"
+msgstr ""
+
+msgid "_button_reject_"
+msgstr ""
+
+msgid "_button_recall_"
 msgstr ""
 
 # ## PORTAL types ##########################################################
@@ -59,6 +68,12 @@ msgid "_reviewstate_waiting"
 msgstr ""
 
 # ## labels ################################################################
+msgid "_label_name"
+msgstr ""
+
+msgid "_label_email"
+msgstr ""
+
 msgid "_label_my_tasks"
 msgstr ""
 
@@ -170,7 +185,31 @@ msgstr ""
 msgid "_label_rejected_by"
 msgstr ""
 
+msgid "_label_do_you_want_to_accpet_it"
+msgstr ""
+
+msgid "_label_do_you_want_to_reject_it"
+msgstr ""
+
 msgid "_label_status"
+msgstr ""
+
+msgid "_label_recall_explanation"
+msgstr ""
+
+msgid "_label_you_are_recalled_for_the_task"
+msgstr ""
+
+msgid "_label_recall"
+msgstr ""
+
+msgid "_label_mail_sent"
+msgstr ""
+
+msgid "_label_error_while_sending_mail"
+msgstr ""
+
+msgid "_action_accept"
 msgstr ""
 
 msgid "_action_reject"
