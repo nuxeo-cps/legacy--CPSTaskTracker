@@ -1,4 +1,23 @@
 *******************************************
+** CPSTaskTracker V0.5.0 [R1 build 2003-11/15-01:20 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Task workflow status history.
+- Task breadcrumb computation depending on the context.
+Bug fixes:
+~~~~~~~~~~
+- task workflow state change
+- i18n wording
+- cosmetic
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSTaskTracker V0.4.1 [R1 build 2003-11/12-23:59 by anguenot]
 
 ZODB Requires:
