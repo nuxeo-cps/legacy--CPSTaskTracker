@@ -30,3 +30,20 @@ msgstr "Task Screen"
 msgid "_action_create_new_tasks"
 msgstr "Create a New Task"
 
+msgid "_action_recall_"
+msgstr "Recall the assigned members" 
+
+msgid "_action_accept"
+msgstr "Accept the task"
+
+msgid "_action_assign_task_to"
+msgstr "Re-assign the task"
+
+msgid "_action_reject"
+msgstr "Reject this task"
+
+msgid "_action_close_task"
+msgstr "Close this task"
+
+
+

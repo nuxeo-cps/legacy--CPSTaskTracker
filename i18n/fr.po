@@ -30,3 +30,18 @@ msgstr "Visualisateur de tâche "
 msgid "_action_create_new_tasks"
 msgstr "Créer une nouvelle tâche"
 
+msgid "_action_recall_"
+msgstr "Rappeller les membres assignés"
+
+msgid "_action_accept"
+msgstr "Accepter cette tâche"
+
+msgid "_action_assign_task_to"
+msgstr "Ré-assigner la tâche"
+
+msgid "_action_reject"
+msgstr "Rejeter cette tâche"
+
+msgid "_action_close_task"
+msgstr "Fermer cette tâche"
+
