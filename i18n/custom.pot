@@ -436,3 +436,6 @@ msgstr ""
 msgid "_transition_None"
 msgstr ""
 
+msgid "_label_no_project"
+msgstr ""
+

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-11-15 00:06default\n"
+"POT-Creation-Date: 2003-11-15 02:14default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -428,4 +428,7 @@ msgid "_transition_close"
 msgstr ""
 
 msgid "_transition_None"
+msgstr ""
+
+msgid "_label_no_project"
 msgstr ""

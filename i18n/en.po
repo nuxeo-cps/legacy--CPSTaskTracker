@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-15 00:06default\n"
-"PO-Revision-Date: 2003-11-15 00:06+0100\n"
+"POT-Creation-Date: 2003-11-15 02:14default\n"
+"PO-Revision-Date: 2003-11-15 02:15+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -161,9 +161,7 @@ msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr "Task affected to one of my groups"
 
 msgid "_heading_screener_message"
-msgstr ""
-"You can edit your skinner by following the <strong>Screener parameters</"
-"strong> action on the right"
+msgstr "You can edit your skinner by following the <strong>Screener parameters</strong> action on the right"
 
 msgid "_heading_configure"
 msgstr "Configure"
@@ -221,10 +219,7 @@ msgid "_label_status"
 msgstr "Status"
 
 msgid "_label_recall_explanation"
-msgstr ""
-"You can email the assigned ones by choosing the members who have to be "
-"recalled. <br /> You can as well access member's preferences by clicking the "
-"fullname field or sending an email to one of them by clicking the email one."
+msgstr "You can email the assigned ones by choosing the members who have to be recalled. <br /> You can as well access member's preferences by clicking the fullname field or sending an email to one of them by clicking the email one."
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
@@ -450,6 +445,9 @@ msgstr "Close "
 
 msgid "_transition_None"
 msgstr "Create"
+
+msgid "_label_no_project"
+msgstr "Currently, there is no project. You can create one by clicking the above link."
 
 #~ msgid "processed"
 #~ msgstr "processed"
