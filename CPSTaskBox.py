@@ -128,8 +128,8 @@ class CPSTaskBox(BaseBox):
         parameters date.
         """
         return [
-            {'title':'label_start_date', 'id':'start_date',},
-            {'title':'label_stop_date', 'id':'stop_date',},
+            {'title':'_label_start_date', 'id':'start_date',},
+            {'title':'_label_stop_date', 'id':'stop_date',},
             ]
 
     security.declareProtected("getSortOrder", View)
@@ -137,8 +137,8 @@ class CPSTaskBox(BaseBox):
         """
         Get the sorting order
         """
-        return [{'title':'label_asc', 'id':'asc'},
-                {'title':'label_desc', 'id':'desc'}
+        return [{'title':'_label_asc', 'id':'asc'},
+                {'title':'_label_desc', 'id':'desc'}
                 ]
 
     security.declareProtected("getSortOn", View)
@@ -146,9 +146,10 @@ class CPSTaskBox(BaseBox):
         """
         Get the sorting types
         """
-        return [{'title':'label_type', 'id':'type'},
-                {'title':'label_indicator', 'id':'indicator'},
-                {'title':'label_priority', 'id':'priority'},
+        return [{'title':'_label_none', 'id':'None'},
+                {'title':'_label_type', 'id':'type'},
+                {'title':'_label_indicator', 'id':'indicator'},
+                {'title':'_label_priority', 'id':'priority'},
                 ]
 
     security.declareProtected("sortTasks", "Modify portal content")
