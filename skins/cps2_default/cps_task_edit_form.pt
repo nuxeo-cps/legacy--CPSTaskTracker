@@ -8,12 +8,7 @@
   </metal:block>
 <body>
 
-
 <metal:block fill-slot="header">
-  <tal:block condition="create"
-    tal:content="python:mcat('heading_edit_task')">
-    Upload a File
-  </tal:block>
   <tal:block condition="not:create">
     <tal:block replace="python:mcat('_Modify_(object name)_')">
       Modify
@@ -89,7 +84,7 @@
       <metal:block use-macro="here/main_widgets/macros/form_property">
         <metal:block fill-slot="title"
           tal:content="string:Task Start">
-          Start
+          Task Start
         </metal:block>
         <metal:block fill-slot="content">
           <tal:block define="date here/get_date;
