@@ -1,43 +1,29 @@
 # $Id$
 
-## DESIGN 
+## DESIGN
 
-o Design for documentation  
-  o Use cases 
+o Design for documentation
   o Class Diagrams
   o docs
 
-## TESTS 
-
-o Setting Unit tests 
-  o Extensions/install.py script
-  o Setting first tests on the types/tool
-
 ## DEV
 
-o install 
-  o Installtion of the CPSTaskBox in the portal. 
-  o portal_catalog indexes for the CPSTask Type 
+o install
+  o portal_catalog indexes for the CPSTask Type
 
-o Workflow 
-  o Rights setting cause it's not working well for the moment.
-    (to permisive for the users.)
+o Repository
+  o Patching the OFS for the manage_delObjects within the portal_tasks. (Owner)
+    Check CPSMemberFork.
 
 o CPSTask
   o Cleaning and enhancing the task skins.
   o Checking for the indexation of the attached files
-  o recall action not here already
-  o cps_task_edit.py should check the properties (compulsory)
+  o recall assignees action
 
-o CPSTaskScreen 
-  o Validation against the requierments 
+o CPSTaskScreen
+  o Validation against the requierments
 
-o CPSTaskBox 
+o CPSTaskBox
   o Validation against the requierments.
 
 o i18n for *all* the skins.
-
-
-
-
- 
