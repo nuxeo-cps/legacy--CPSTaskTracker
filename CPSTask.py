@@ -40,7 +40,7 @@ from Products.NuxCPSFlexibleDocument.FlexibleDocument import FlexibleDocument
 factory_type_information = (
     {'id': 'CPS Task',
      'title': '_portal_type_CPS_Task',
-     'content_icon': 'document_icon.png',
+     'content_icon': 'task_icon.png',
      'product': 'CPSTaskTracker',
      'factory': 'addCPSTask',
      'meta_type': 'CPS Task',
