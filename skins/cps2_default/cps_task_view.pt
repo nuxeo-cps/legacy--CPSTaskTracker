@@ -145,6 +145,8 @@
 </tr>
 </table>
 
+<tal:block replace="structure here/flexibledocument_content_view" />
+
 <metal:block use-macro="here/main_widgets/macros/linksrender">
     Related links
 </metal:block>

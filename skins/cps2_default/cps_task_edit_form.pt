@@ -29,22 +29,62 @@
                  description python:(create and [''] or [here.Description()])[0];
                  submitvalue python:create and mcat('_button_create_') or mcat('_button_modify_');
                  action python:create and 'cpsdocument_create' or 'cpsdocument_edit';
+                 locked here/isDocumentLayoutLocked;
+                 types_info here/get_compatible_task_block_types;
+                 trans_types types_info/trans_types;
+                 block_types types_info/block_types;
+                 block_keys types_info/block_keys;
+                 button_valid python:mcat('_button_validate_');
+                 button_preview python:mcat('_button_preview_');
+                 button_delete python:mcat('_button_delete_');
+                 button_move_up python:mcat('_button_move_up_');
+                 button_move_down python:mcat('_button_move_down_');
+                 button_add python:mcat('_button_add_');
+                 change_type_message python:mcat('_fd_Change_to_type_');
+                 insert_message python:mcat('_fd_Insert_a_block_of_type_');
                 ">
 
+<!-- BEGINNING OF METADATA PART -->
+  <form
+      tal:omit-tag="locked"
+      action="flexibledocument_task_edit" method="POST"
+      enctype="multipart/form-data">
+
+      <metal:block use-macro="here/main_widgets/macros/form">
+        <metal:block fill-slot="content">
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title"
+              tal:content="python:mcat('_prop_title_')">
+              Title
+            </metal:block>
+            <metal:block fill-slot="content">
+              <input type="text" name="title" tal:attributes="value here/title" />
+            </metal:block>
+          </metal:block>
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title"
+              tal:content="python:mcat('_prop_description_')">
+              Description
+            </metal:block>
+            <metal:block fill-slot="content">
+              <textarea name="description:text" rows="5" cols="50" wrap="soft"
+                tal:content="here/description"></textarea>
+            </metal:block>
+          </metal:block>
+        </metal:block>
+      </metal:block>
+      <input class="mainbutton" type="submit"
+        tal:condition="not:locked"
+        tal:attributes="value button_valid" />
+    </form>
+<!-- END OF META DATA PART -->
+
+<!-- BEGINNING OF SPECIFIC TASK PROPERTIES -->
   <form action="." method="post" enctype="multipart/form-data"
         tal:attributes="action action">
 
   <metal:block use-macro="here/main_widgets/macros/form">
     <metal:block fill-slot="content">
-      <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="python:mcat('_prop_title_')">
-          Title
-        </metal:block>
-        <metal:block fill-slot="content">
-          <input type="text" name="title" value="title" tal:attributes="value title" />
-        </metal:block>
-      </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
         <metal:block fill-slot="title"
@@ -265,35 +305,6 @@
       <metal:block use-macro="here/main_widgets/macros/linkswidget">
           Related links
       </metal:block>
-
-      <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task references">
-          References (Documents)
-        </metal:block>
-
-        <metal:block fill-slot="content">
-          <tal:block condition="create">
-            <input type="file" name="file" size="25" />
-          </tal:block>
-          <tal:block condition="not:create">
-            <p><tal:block replace="python:mcat('_Currently:')">
-                Currently:</tal:block>
-              <tal:block condition="here/filename" replace="here/filename">Filename</tal:block>
-              <tal:block condition="not:here/filename"
-                tal:replace="python:mcat('_(document)_Untitled_')">
-                Untitled
-              </tal:block>
-            </p>
-            <tal:block define="name string:file; deletable nothing">
-              <metal:block use-macro="here/main_widgets/macros/binary_input">Binary in
-put</metal:block>
-            </tal:block>
-          </tal:block>
-        </metal:block>
-      </metal:block>
-
-
    </metal:block>
  </metal:block>
 
@@ -309,6 +320,134 @@ put</metal:block>
     tal:attributes="value python:mcat('_button_cancel_')">
 
   </form>
+<!-- END OF SPECIFIC TASK PROPERTIES -->
+
+<!-- FLEXIBLE PART OF THE DOCUMENT -->
+<form
+    tal:omit-tag="not:locked"
+    action="flexibledocument_task_edit" method="POST" enctype="multipart/form-data">
+<hr>
+    <tal:block
+      define="blocks python:here.getRenderedBlocks(render_type='form')">
+      <tal:block repeat="block blocks">
+        <tal:block define="
+          block_id block/block_id;
+          block_type block/block_type;
+          can_modify python:block_types[block_type]['slots']">
+          <a tal:attributes="name block_id"></a>
+          <form tal:condition="not:locked"
+            action="flexibledocument_task_addblock" method="GET">
+            <input type="hidden" name="before_block"
+              tal:attributes="value block_id">
+            <tal:block
+              replace="insert_message">
+              Insert a block of type
+            </tal:block>
+            <select name="block_type">
+              <tal:block repeat="block_key block_keys">
+                <option
+                  tal:attributes="value block_key"
+                  tal:condition="python:not block_types[block_key].get('invisible')"
+                  tal:content="python:mcat(block_types[block_key]['title'])" />
+              </tal:block>
+            </select>
+            <input class="mainbutton" type="submit"
+              tal:attributes="value button_add">
+          </form>
+          <form
+            tal:omit-tag="locked"
+            action="flexibledocument_task_edit" method="POST"
+            enctype="multipart/form-data"
+	    tal:attributes="name block/block_id">
+            <table bgcolor="#DDDDDD" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td>
+                  <tal:block replace="structure block/content" />
+                </td>
+              </tr>
+              <tr tal:condition="not:locked">
+                <td>
+                  <input type="button" class="mainbutton"
+                    tal:condition="can_modify"
+                    tal:attributes="
+                    onClick string:window.open('${here/absolute_url}/flexibledocument_block_preview?block_id=${block_id}', 'block_preview', 'toolbar=0');
+                    value button_preview;
+                    " />
+                  <input class="mainbutton" type="submit"
+                    tal:condition="not:repeat/block/start"
+                    tal:attributes="
+                      name string:move_up_${block_id};
+                      value button_move_up">
+                  <input class="mainbutton" type="submit"
+                    tal:condition="not:repeat/block/end"
+                    tal:attributes="
+                      name string:move_down_${block_id};
+                      value button_move_down">
+                  <input class="mainbutton" type="submit"
+                    tal:attributes="
+                      name string:delete_${block_id};
+                      value button_delete;
+                    ">
+                  <tal:block
+                    define="trans_type trans_types/?block_type"
+                    condition="python:(not locked) and len(trans_type)>1">
+                    <br />
+                    <tal:block replace="change_type_message">
+                      Change to type:
+                    </tal:block>
+                    <select
+                      tal:attributes="
+                        name string:change_type_${block_id}">
+                      <option
+                        tal:repeat="type trans_type"
+                        tal:attributes="
+                          value type/id;
+                          selected python:type['id'] == block_type"
+                        tal:content="type/title" />
+                    </select>
+                  </tal:block>
+                  <tal:block condition="can_modify">
+                    <br />
+                    <input class="mainbutton" type="submit"
+                      tal:attributes="value button_valid" />
+                  </tal:block>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </tal:block>
+      </tal:block>
+    </tal:block>
+    <input class="mainbutton" type="submit"
+      tal:condition="locked"
+      tal:attributes="value button_valid" />
+ </form>
+
+<!-- END OF FLEXIBLE PART -->
+<!-- To add files -->
+<tal:block define="locked here/isDocumentLayoutLocked;
+                   types_info here/get_compatible_task_block_types;
+                   block_keys types_info/block_keys;
+                   block_types types_info/block_types;
+                   button_add python:mcat('_button_add_')
+                   ">
+  <form action="flexibledocument_task_addblock"
+    tal:condition="not:locked">
+    <tal:block replace="python:mcat('_fd_Add_a_new_block_of_type_')">
+      Add a new block of type
+    </tal:block>
+    <select name="block_type">
+      <tal:block repeat="block_key block_keys">
+        <option
+          tal:attributes="value block_key"
+          tal:condition="python:not block_types[block_key].get('invisible')"
+          tal:content="python:mcat(block_types[block_key]['title'])" />
+      </tal:block>
+    </select>
+    <input class="mainbutton" type="submit"
+      tal:attributes="value button_add">
+  </form>
+</tal:block>
 
 </metal:block>
 
