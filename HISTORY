@@ -1,4 +1,24 @@
 *******************************************
+** CPSTaskTracker V0.3.5 [R1 build 2003-11/10-11:52 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Manager can create projects through 
+  the global action.
+- popups i18n
+Bug fixes:
+~~~~~~~~~~
+- Screener bug fix view
+- Fix bug affected tasks in the sorting API.
+- Repository security fix : workflow manages that now. 
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Breadcrumbs hidden now in the Task templates
+- API for the projects management.
+*******************************************
 ** CPSTaskTracker V0.3.4 [R1 build 2003-11/05-09:10 by anguenot]
 
 ZODB Requires:

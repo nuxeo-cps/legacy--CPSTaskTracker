@@ -3,15 +3,10 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Manager can create projects through 
-  the global action.
-- popups i18n
+-
 Bug fixes:
 ~~~~~~~~~~
-- Screener bug fix view
-- Fix bug affected tasks in the sorting API.
-- Repository security fix : workflow manages that now. 
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- Breadcrumbs hidden now in the Task templates
-- API for the projects management.
+-
