@@ -26,7 +26,9 @@ END DEBUG -->
 <table align="center" width="100%" cellpadding="2" cellspacing="2">
 <tr>
   <td bgcolor="#EEEEEE" width="30%">
-    <strong>Title</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_title')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/title" />
@@ -34,7 +36,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Start</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_start_date')" />
+    </strong>
   </td>
   <td >
     <span tal:define="start_date here/start_task_date|nothing"
@@ -43,7 +47,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Stop</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_stop_date')" />
+    </strong>
   </td>
   <td>
    <span tal:define="stop_date here/stop_task_date|nothing"
@@ -52,7 +58,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Priority</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_priority')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/task_priority" />
@@ -60,7 +68,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Indicator</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_indicator')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/task_indicator" />
@@ -68,7 +78,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Type</strong>
+    <strong>
+       <span tal:replace="python:mcat('_label_type')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/task_type" />
@@ -76,7 +88,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Assigned to Users</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_assigned_to_users')" />
+   </strong>
   </td>
   <td>
       <tal:block define="members python:here.getMemberIds()">
@@ -88,7 +102,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Assigned to Groups</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_assigned_to_groups')" />
+    </strong>
   </td>
   <td>
       <tal:block define="groups python:here.getGroupIds()">
@@ -100,7 +116,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Accepted By</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_accepted_by')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/getTheAssignedOne|nothing" />
@@ -109,7 +127,9 @@ END DEBUG -->
 
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Status</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_status')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/getStatus" />
@@ -118,7 +138,9 @@ END DEBUG -->
 
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Rejected by</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_rejected_by')" />
+    </strong>
   </td>
   <td>
     <tal:block define="task_rejecters here/getTaskRejecters" >
@@ -131,7 +153,9 @@ END DEBUG -->
 
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Project</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_project')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/task_project" />
@@ -139,7 +163,9 @@ END DEBUG -->
 </tr>
 <tr>
   <td bgcolor="#EEEEEE">
-    <strong>Task Goal</strong>
+    <strong>
+      <span tal:replace="python:mcat('_label_goal')" />
+    </strong>
   </td>
   <td>
     <span tal:replace="here/task_goal" />

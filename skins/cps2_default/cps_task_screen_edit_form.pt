@@ -65,15 +65,12 @@
     <input type="hidden" name="default_id_from" value="title" />
     <input type="hidden" name="default_title_from" value="description" />
   </tal:block>
-  <input class="mainbutton" type="submit" value="." tal:attributes="value submitvalue">
+  <input class="mainbutton" type="submit"
+         tal:attributes="value python:mcat('_button_submit_')">
   <input class="mainbutton" type="button" name="cancel" onclick="history.back()"
-    tal:attributes="value python:mcat('_button_cancel_')">
-
+         tal:attributes="value python:mcat('_button_cancel_')">
   </form>
-
 </metal:block>
-
-
 </body>
 </html>
 </tal:block>

@@ -142,7 +142,7 @@
           </metal:block>
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              <span tal:replace="python:mcat('_label_display_my_groups_affacted_tasks')" />
+              <span tal:replace="python:mcat('_label_display_my_groups_affected_tasks')" />
             </metal:block>
             <metal:block fill-slot="content">
               <input type="checkbox" checked
@@ -156,7 +156,8 @@
           <!-- END WHAT KIND OF -->
         </metal:block>
       </metal:block>
-    <input class="mainbutton" type="submit" />
+    <input class="mainbutton" type="submit"
+           tal:attributes="value python:mcat('_button_submit_')" />
     <input class="mainbutton" type="button" name="cancel" onclick="history.back()"
            tal:attributes="value python:mcat('_button_cancel_')" />
     </form>

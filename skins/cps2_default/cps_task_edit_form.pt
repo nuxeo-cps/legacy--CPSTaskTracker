@@ -82,9 +82,8 @@
     <metal:block fill-slot="content">
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Start">
-          Task Start
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_start_date')" />
         </metal:block>
         <metal:block fill-slot="content">
           <tal:block define="date here/get_date;
@@ -122,9 +121,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Deadline">
-          Task Deadline
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_stop_date')" />
         </metal:block>
         <metal:block fill-slot="content">
                   <tal:block define="date here/get_date;
@@ -162,9 +160,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Priority">
-          Task Priority
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_priority')" />
         </metal:block>
         <metal:block fill-slot="content">
           <select name="task_priority"
@@ -189,9 +186,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Indicator">
-          Task Priority
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_indicator')" />
         </metal:block>
         <metal:block fill-slot="content">
           <select name="task_indicator"
@@ -217,10 +213,9 @@
        </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Type">
-          Task Priority
-        </metal:block>
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_type')" />
+         </metal:block>
         <metal:block fill-slot="content">
           <select name="task_type"
                   tal:define="the_type here/task_type|nothing">
@@ -243,9 +238,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-                     tal:content="string:Task Assigned To Users">
-                      Task Assigned To Users
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_assigned_to_users')" />
         </metal:block>
         <metal:block fill-slot="content">
           <tal:block define="
@@ -307,9 +301,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-                     tal:content="string:Task Assigned To Groups">
-                     Task Assigned To Groups
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_assigned_to_groups')" />
         </metal:block>
         <metal:block fill-slot="content">
           <tal:block define="
@@ -371,9 +364,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Project">
-          Task Project
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_project')" />
         </metal:block>
         <metal:block fill-slot="content">
           <textarea name="task_project:text" rows="5" cols="50" wrap="soft"
@@ -382,9 +374,8 @@
       </metal:block>
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title"
-          tal:content="string:Task Goal">
-          Task Goal
+        <metal:block fill-slot="title">
+          <span tal:replace="python:mcat('_label_goal')" />
         </metal:block>
         <metal:block fill-slot="content">
           <textarea name="task_goal:text" rows="5" cols="50" wrap="soft"
