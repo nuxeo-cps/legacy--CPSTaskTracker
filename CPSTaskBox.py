@@ -158,6 +158,7 @@ class CPSTaskBox(BaseBox):
         return [{'title':'_label_none', 'id':'None'},
                 {'title':'_label_type', 'id':'type'},
                 {'title':'_label_priority', 'id':'priority'},
+                {'title':'_label_project', 'id':'project'},
                 ]
 
     security.declareProtected("changeScreenerProperties", ModifyPortalContent)

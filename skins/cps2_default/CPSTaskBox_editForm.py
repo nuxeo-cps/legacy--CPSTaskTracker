@@ -48,7 +48,7 @@ fields = common_fields + [
     },
     {
     'id': 'display_my_groups_affected_tasks',
-    'title': '_label_display_my_groups_affacted_tasks',
+    'title': '_label_display_my_groups_affected_tasks',
     'type': 'checkbox',
     'value': context.display_my_groups_affected_tasks,
     },
