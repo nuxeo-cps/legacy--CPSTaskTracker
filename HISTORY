@@ -1,4 +1,22 @@
 *******************************************
+** CPSTaskTracker V0.10.1 [R1 build 2004/05/26-17:09 by anguenot]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- remove i18n message id from task vocabularies. Vocabularies are not i18n yet.i
+- Rejected task should not appear anymore within the task screen
+- css class wasn't well set on the screener view template
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSTaskTracker V0.10.0 [R1 build 2004/05/03-07:20 by anguenot]
 
 Requires:

@@ -6,9 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- remove i18n message id from task vocabularies. Vocabularies are not i18n yet.i
-- Rejected task should not appear anymore within the task screen
-- css class wasn't well set on the screener view template
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
