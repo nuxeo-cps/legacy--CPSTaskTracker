@@ -20,17 +20,33 @@
 
 """
     CPS Task Tool
+    This tool will :
+     - acts as a repository for all the tasks
+     - we'll see for the rest.. ;)
 """
 
 from Globals import InitializeClass
+from AccessControl import ClassSecurityInfo
+
+from Products.BTreeFolder2.BTreeFolder2 import BTreeFolder2
+
+from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.utils import UniqueObject
 
-class CPSTaskTool(UniqueObject):
+class CPSTaskTool(UniqueObject, BTreeFolder2, PortalFolder):
     """
         Provides Task Repository
     """
 
     id = 'portal_tasks'
     meta_type = 'CPS Task Tool'
+
+    security = ClassSecurityInfo()
+
+    manage_options = BTreeFolder2.manage_options
+
+    def __init__(self):
+        BTreeFolder2.__init__(self, self.id)
+
 
 InitializeClass(CPSTaskTool)
