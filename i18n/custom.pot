@@ -377,4 +377,17 @@ msgstr ""
 msgid "_label_skinner"
 msgstr ""
 
+msgid "other"
+msgstr ""
 
+msgid "closed"
+msgstr ""
+
+msgid "assigned"
+msgstr ""
+
+msgid "late"
+msgstr ""
+
+msgid "opened"
+msgstr ""

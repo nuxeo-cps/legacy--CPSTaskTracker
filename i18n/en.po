@@ -385,3 +385,17 @@ msgstr "Other"
 msgid "_label_skinner"
 msgstr "Skinner "
 
+msgid "other"
+msgstr "other"
+
+msgid "closed"
+msgstr "Closed"
+
+msgid "assigned"
+msgstr "Assigned"
+
+msgid "late"
+msgstr "Late"
+
+msgid "opened"
+msgstr "Opened"

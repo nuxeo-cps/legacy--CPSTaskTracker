@@ -381,3 +381,17 @@ msgstr "Autre"
 msgid "_label_skinner"
 msgstr "Vue "
 
+msgid "other"
+msgstr "Autre"
+
+msgid "closed"
+msgstr "Fermée"
+
+msgid "assigned"
+msgstr "Assignée"
+
+msgid "late"
+msgstr "En retard"
+
+msgid "opened"
+msgstr "Ouverte"
