@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
 "POT-Creation-Date: 2003-11-05 01:39default\n"
-"PO-Revision-Date: 2003-11-05 01:42+0100\n"
+"PO-Revision-Date: 2003-11-08 00:16+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,7 +172,7 @@ msgid "_label_deadline"
 msgstr "Deadline"
 
 msgid "_label_project"
-msgstr "Project description"
+msgstr "Project"
 
 # ## labels ################################################################
 msgid "_label_goal"

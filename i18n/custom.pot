@@ -222,6 +222,9 @@ msgstr ""
 msgid "_action_close_task"
 msgstr ""
 
+msgid "_action_create_new_project"
+msgstr ""
+
 ### Calendar #########################################################
 
 msgid "_cday_Su"

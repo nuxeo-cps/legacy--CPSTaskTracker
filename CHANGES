@@ -3,10 +3,12 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- Manager can create projects through 
+  the global action.
 Bug fixes:
 ~~~~~~~~~~
--
+- Screener bug fix view
+- Fix bug affected tasks in the sorting API. 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Breadcrumbs hidden now in the Task templates
