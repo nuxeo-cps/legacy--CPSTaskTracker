@@ -40,7 +40,9 @@
         Recall the asssigned members
        </h1>
     </metal:block>
-    <metal:block fill-slot="main">
+    <metal:block fill-slot="main"
+                 tal:define="users here/getAllAssignedMembers">
+    <tal:block condition="users">
     <form action="doRecallAssigned" method="post" name="form">
       <br />
       <hr />
@@ -70,7 +72,7 @@
             </a>
           </td>
         </tr>
-        <tal:block repeat="user here/getAllAssignedMembers">
+        <tal:block repeat="user users">
           <tr tal:condition="repeat/user/odd">
             <td>
               <input type="checkbox" name="ids:list" value=""
@@ -118,6 +120,12 @@
       <input type="submit" name="submit" value=""
              tal:attributes="value python:mcat('_button_recall_')" />
     </form>
+    </tal:block>
+    <tal:block condition="not:users">
+      <hr />
+        <i align="justified" tal:content="structure python:mcat('_label_recall_no_users_assigned')" />
+      <hr />
+    </tal:block>
     </metal:block>
   </metal:block>
 </tal:block>
