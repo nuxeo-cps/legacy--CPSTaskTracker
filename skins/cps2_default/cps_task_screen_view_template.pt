@@ -1,4 +1,5 @@
-<tal:block define="current_action string:view">
+<tal:block define="current_action string:view;
+                   dummy python:here.saveScreenerBreadCrumb(request)">
 <html xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       metal:use-macro="here/main_template/macros/master">
@@ -8,14 +9,8 @@
 <body>
 
 <metal:block fill-slot="main">
-<!--
-  <p tal:content="structure python:mcat('_heading_screener_message')">
-    You can edit your skinner by following the <strong>Skinner parameters</strong> action on the right.
-  </p>
--->
   <tal:block define="task_lists python:here.portal_tasks.searchTasks(here.getParameters());
                      isManager python:mtool.checkPermission('Manage portal',portal_object)">
-
     <!-- BEGINNING OF MY TASKS -->
     <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []">
       <tal:block  define="tasks python:task_lists['my_tasks']">

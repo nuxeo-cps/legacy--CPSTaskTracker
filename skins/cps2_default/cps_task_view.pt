@@ -1,5 +1,7 @@
 <tal:block define="current_action string:view;
-                   dummy python:request.set('breadcrumb_set',[])">
+                   dummy python:request.set('breadcrumb_set',
+                                             here.getTaskBreadCrumb(request))
+                   ">
 <html xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       metal:use-macro="here/main_template/macros/master">
@@ -16,8 +18,8 @@
 </metal:block>
 
 <metal:block fill-slot="main">
-
 <!-- DEBUG
+<span tal:replace="structure request" />
 <span tal:replace="here/isAssigned" />
 <span tal:replace="here/isCreator" />
 <span tal:replace="here/isTheAssignedOne" />
