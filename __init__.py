@@ -68,7 +68,7 @@ def initialize(context):
         'CPS Task Tool',
         tools = tools,
         product_name = 'CPSTaskTracker',
-        icon = 'tool.png',
+        icon = 'todo.png',
         ).initialize(context)
 
     #
