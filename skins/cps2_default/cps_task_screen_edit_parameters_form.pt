@@ -5,7 +5,7 @@
     <base href="." tal:attributes="href string:${here/absolute_url}/" />
   </metal:block>
   <metal:block fill-slot="header">
-      <tal:block replace="python:mcat('Configure your screener')">
+      <tal:block replace="python:mcat('_heading_configure')">
         Configure
       </tal:block>
       «&nbsp;<span tal:replace="here/title_or_id">Title</span>&nbsp;»
@@ -17,43 +17,46 @@
           <!-- DATETIME PARAMETERS -->
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              Sort Tasks by date
+              <span tal:replace="python:mcat('_label_sort_date_on')" />
             </metal:block>
             <metal:block fill-slot="content">
               <select name="sort_date_on">
                 <option value="start_date"
                         tal:condition="python:here.sort_date_on != 'start_date'">
-                  Task start
+                  <span tal:replace="python:mcat('_label_start_date')" />
                 </option>
                 <option value="start_date" selected
                         tal:condition="python:here.sort_date_on == 'start_date'">
-                  Task start
+                  <span tal:replace="python:mcat('_label_start_date')" />
                 </option>
                 <option value="stop_date"
                         tal:condition="python:here.sort_date_on != 'stop_date'">
-                  Task stop
+                  <span tal:replace="python:mcat('_label_stop_date')" />
                 </option>
                 <option value="stop_date" selected
                         tal:condition="python:here.sort_date_on == 'stop_date'">
-                  Task stop
+                  <span tal:replace="python:mcat('_label_stop_date')" />
                 </option>
               </select>
+                <strong>
+                  <span tal:replace="python:mcat('_label_sort_order')" />
+                </strong>
               <select name="sort_order">
                 <option value="asc" selected
                         tal:condition="python:here.sort_order == 'asc'">
-                  Increasing
+                  <span tal:replace="python:mcat('_label_asc')" />
                 </option>
                 <option value="asc"
                         tal:condition="python:here.sort_order != 'asc'">
-                  Increasing
+                  <span tal:replace="python:mcat('_label_asc')" />
                 </option>
                 <option value="desc" selected
                         tal:condition="python:here.sort_order == 'desc'">
-                  Decreasing
+                  <span tal:replace="python:mcat('_label_desc')" />
                 </option>
                 <option value="desc"
                         tal:condition="python:here.sort_order != 'desc'">
-                  Decreasing
+                  <span tal:replace="python:mcat('_label_desc')" />
                 </option>
               </select>
             </metal:block>
@@ -62,36 +65,36 @@
           <!-- SORTING ON PARMETERS -->
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              Sort Tasks on
+              <span tal:replace="python:mcat('_label_sort_on')" />
             </metal:block>
             <metal:block fill-slot="content">
               <select name="sort_on">
                 <option value="a" selected>
-                  None
+                  <span tal:replace="python:mcat('_label_none')" />
                 </option>
                 <option value="priority" selected
                   tal:condition="python:here.sort_on == 'priority'">
-                  Priority
+                  <span tal:replace="python:mcat('_label_priority')" />
                 </option>
                 <option value="priority"
                   tal:condition="python:here.sort_on != 'priority'">
-                  Priority
+                  <span tal:replace="python:mcat('_label_priority')" />
                 </option>
                 <option value="type" selected
                    tal:condition="python:here.sort_on == 'type'">
-                  Type
+                  <span tal:replace="python:mcat('_label_type')" />
                 </option>
                 <option value="type"
                    tal:condition="python:here.sort_on != 'type'">
-                  Type
+                  <span tal:replace="python:mcat('_label_type')" />
                 </option>
                 <option value="indicator" selected
                   tal:condition="python:here.sort_on == 'indicator'">
-                  Indicator
+                  <span tal:replace="python:mcat('_label_indicator')" />
                 </option>
                 <option value="indicator"
                   tal:condition="python:here.sort_on != 'indicator'">
-                  Indicator
+                  <span tal:replace="python:mcat('_label_indicator')" />
                 </option>
               </select>
             </metal:block>
@@ -100,7 +103,7 @@
           <!-- WHAT KIND OF TASKS SHOULD WE DISPLAY -->
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              Display the tasks I created ?
+              <span tal:replace="python:mcat('_label_display_my_tasks')" />
             </metal:block>
             <metal:block fill-slot="content">
               <input type="checkbox" checked
@@ -113,7 +116,7 @@
           </metal:block>
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              Display the tasks I accepted ?
+              <span tal:replace="python:mcat('_label_display_my_accepted_tasks')" />
             </metal:block>
             <metal:block fill-slot="content">
               <input type="checkbox" checked
@@ -126,7 +129,7 @@
           </metal:block>
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              Display the tasks affected to me ?
+              <span tal:replace="python:mcat('_label_display_my_affected_tasks')" />
             </metal:block>
             <metal:block fill-slot="content">
               <input type="checkbox" checked
@@ -139,7 +142,7 @@
           </metal:block>
           <metal:block use-macro="here/main_widgets/macros/form_property">
             <metal:block fill-slot="title">
-              Display the tasks affected to one of my groups ?
+              <span tal:replace="python:mcat('_label_display_my_groups_affacted_tasks')" />
             </metal:block>
             <metal:block fill-slot="content">
               <input type="checkbox" checked

@@ -8,58 +8,62 @@
 <body>
 
 <metal:block fill-slot="main">
-  <p>
+<!--
+  <p tal:content="structure python:mcat('_heading_screener_message')">
     You can edit your skinner by following the <strong>Skinner parameters</strong> action on the right.
   </p>
+-->
   <tal:block define="task_lists python:here.portal_tasks.searchTasks(here.getParameters());
                      isManager python:mtool.checkPermission('Manage portal',portal_object)">
 
     <!-- BEGINNING OF MY TASKS -->
     <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []"
                define="tasks python:task_lists['my_tasks']">
-      <h2>
+      <h2 tal:content="python:mcat('_heading_task_i_created')">
         The tasks I created.
       </h2>
       <form action="cps_task_edit" method="POST">
-        <table border="0" align="center" width="100%" cellpadding="2"
-        cellspacing="1">
-        <tr bgcolor="#FF0000">
+        <table border="0" align="center" width="100%" cellpadding="2" cellspacing="1">
+        <tr bgcolor="#DDDDDD">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
           <td align="center">
             <span>&nbsp;</span>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Title</a>
+               <span tal:replace="python:mcat('_label_title')">Title</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Creator</a>
+               <span tal:replace="python:mcat('_label_creator')">Creator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Indicator</a>
+               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Priority</a>
+               <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Type</a>
+               <span tal:replace="python:mcat('_label_type')">Type</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Start date</a>
+               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Deadline</a>
+               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
              </strong>
           </td>
         </tr>
@@ -70,6 +74,18 @@
                 <input type="checkbox" name="ids:list"
                        tal:attributes="value task/id"
                        tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
               </td>
               <td>
                 <a href="."
@@ -105,6 +121,18 @@
                       tal:condition="python:task.isCreator() or isManager" />
              </td>
              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+              </td>
+             <td>
                <a href="."
                    tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
                   <span tal:replace="task/title_or_id" />
@@ -134,7 +162,9 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+           <input type="submit" value="_button_delete"
+             name="doDeleteTasks:method"
+             tal:attributes="value python:mcat('_button_delete')" />
          </td>
         </tr>
         <!-- END ACTION PANEL -->
@@ -146,49 +176,52 @@
     <!-- TASK ASSIGNED TO ME -->
     <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []"
                define="tasks python:task_lists['my_affected_tasks']">
-      <h2>
+      <h2 tal:content="python:mcat('_heading_task_affected_to_me')">
         The tasks affected to me.
       </h2>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
-        <tr bgcolor="#FF0000">
+        <tr bgcolor="#DDDDDD">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
           <td align="center">
             <span>&nbsp;</span>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Title</a>
+               <span tal:replace="python:mcat('_label_title')">Title</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Creator</a>
+               <span tal:replace="python:mcat('_label_creator')">Creator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Indicator</a>
+               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Priority</a>
+               <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Type</a>
+               <span tal:replace="python:mcat('_label_type')">Type</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Start date</a>
+               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Deadline</a>
+               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
              </strong>
           </td>
         </tr>
@@ -199,6 +232,18 @@
                 <input type="checkbox" name="ids:list"
                        tal:attributes="value task/id"
                        tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
               </td>
               <td>
                 <a href="."
@@ -234,6 +279,18 @@
                       tal:condition="python:task.isCreator() or isManager" />
              </td>
              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+              </td>
+             <td>
                <a href="."
                    tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
                   <span tal:replace="task/title_or_id" />
@@ -263,7 +320,9 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+           <input type="submit" value="_button_delete"
+             name="doDeleteTasks:method"
+             tal:attributes="value python:mcat('_button_delete')" />
          </td>
         </tr>
         <!-- END ACTION PANEL -->
@@ -276,49 +335,52 @@
     <tal:block
     condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []"
                define="tasks python:task_lists['my_groups_affected_tasks']">
-      <h2>
+      <h2 tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">
         The tasks affected to one of my groups.
       </h2>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
-        <tr bgcolor="#FF0000">
+        <tr bgcolor="#DDDDDD">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
           <td align="center">
             <span>&nbsp;</span>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Title</a>
+               <span tal:replace="python:mcat('_label_title')">Title</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Creator</a>
+               <span tal:replace="python:mcat('_label_creator')">Creator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Indicator</a>
+               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Priority</a>
+               <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Type</a>
+               <span tal:replace="python:mcat('_label_type')">Type</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Start date</a>
+               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Deadline</a>
+               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
              </strong>
           </td>
         </tr>
@@ -329,6 +391,18 @@
                 <input type="checkbox" name="ids:list"
                        tal:attributes="value task/id"
                        tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
               </td>
               <td>
                 <a href="."
@@ -364,6 +438,18 @@
                       tal:condition="python:task.isCreator() or isManager" />
              </td>
              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+              </td>
+             <td>
                <a href="."
                    tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
                   <span tal:replace="task/title_or_id" />
@@ -393,7 +479,9 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+           <input type="submit" value="_button_delete"
+             name="doDeleteTasks:method"
+             tal:attributes="value python:mcat('_button_delete')" />
          </td>
         </tr>
         <!-- END ACTION PANEL -->
@@ -405,49 +493,52 @@
     <!-- TASK I ACCEPTED -->
     <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []"
                define="tasks python:task_lists['my_accepted_tasks']">
-      <h2>
+      <h2 tal:content="python:mcat('_heading_task_i_accepted')">
         The tasks I accepted.
       </h2>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
-        <tr bgcolor="#FF0000">
+        <tr bgcolor="#DDDDDD">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
           <td align="center">
             <span>&nbsp;</span>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Title</a>
+               <span tal:replace="python:mcat('_label_title')">Title</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Creator</a>
+               <span tal:replace="python:mcat('_label_creator')">Creator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Indicator</a>
+               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Priority</a>
+               <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Type</a>
+               <span tal:replace="python:mcat('_label_type')">Type</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Start date</a>
+               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
              </strong>
           </td>
           <td align="center">
              <strong>
-               <a href=".">Deadline</a>
+               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
              </strong>
           </td>
         </tr>
@@ -458,6 +549,18 @@
                 <input type="checkbox" name="ids:list"
                        tal:attributes="value task/id"
                        tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                    <img src="red.gif"
+                         tal:condition="python:status == 'late'" />
+                    <img src="orange.gif"
+                         tal:condition="python:status == 'assigned'" />
+                    <img src="green.gif"
+                         tal:condition="python:status == 'opened'" />
+                    <img src="task_closed_icon.png"
+                         tal:condition="python:status == 'closed'" />
+                </tal:block>
               </td>
               <td>
                 <a href="."
@@ -493,6 +596,18 @@
                       tal:condition="python:task.isCreator() or isManager" />
              </td>
              <td>
+               <tal:block define="status python:task.getStatus()">
+                    <img src="red.gif"
+                         tal:condition="python:status == 'late'" />
+                    <img src="orange.gif"
+                         tal:condition="python:status == 'assigned'" />
+                    <img src="green.gif"
+                         tal:condition="python:status == 'opened'" />
+                    <img src="task_closed_icon.png"
+                         tal:condition="python:status == 'closed'" />
+               </tal:block>
+             </td>
+             <td>
                <a href="."
                    tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
                   <span tal:replace="task/title_or_id" />
@@ -522,7 +637,9 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+           <input type="submit" value="_button_delete"
+             name="doDeleteTasks:method"
+             tal:attributes="value python:mcat('_button_delete')" />
          </td>
         </tr>
         <!-- END ACTION PANEL -->
