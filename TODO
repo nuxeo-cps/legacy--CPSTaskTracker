@@ -16,13 +16,14 @@ o Setting Unit tests
 ## DEV
 
 o install 
-  o Installtation of the CPSTaskBox in the portal. 
+  o Installtion of the CPSTaskBox in the portal. 
+  o portal_catalog indexes for the CPSTask Type 
 
 o CPSTask
   o Cleaning and enhancing the task skins.
   o Members and groups popups reviewing.
   o Tests with the workflow. 
-
+  o Checking for the indexation of the attached files
 o CPSTaskScreen 
   o Everything....
 
