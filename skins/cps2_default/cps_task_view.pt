@@ -17,9 +17,8 @@
 
 <metal:block fill-slot="main">
 
-
-<span tal:replace="here/isAssigned" />
 <!-- DEBUG
+<span tal:replace="here/isAssigned" />
 <span tal:replace="here/isCreator" />
 <span tal:replace="here/isTheAssignedOne" />
 <span tal:replace="here/isLate" />
@@ -75,7 +74,7 @@ END DEBUG -->
     </strong>
   </td>
   <td>
-    <span tal:replace="here/task_type" />
+    <span tal:replace="python:mcat(here.task_type)" />
   </td>
 </tr>
 <tr>
@@ -124,7 +123,7 @@ END DEBUG -->
     </strong>
   </td>
   <td>
-    <span tal:replace="here/getStatus" />
+    <span tal:replace="python:mcat(here.getStatus())" />
   </td>
 </tr>
 
