@@ -1,0 +1,516 @@
+# ##########################################################
+# ################# DON'T EDIT THIS FILE! ##################
+# ##########################################################
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+msgid ""
+msgstr ""
+"Project-Id-Version: CPSTaskTracker\n"
+"POT-Creation-Date: 2004-07-26 14:17default\n"
+"PO-Revision-Date: 2004-09-30 16:04+0100\n"
+"Last-Translator: Fabio Nosari <fabnos@fastwebnet.it>\n"
+"Language-Team: Fabio Nosari <fabnos@fastwebnet.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-code: LL\n"
+"Language-name: Language\n"
+"Preferred-encodings: utf-8 latin1\n"
+"Domain: default\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+
+# ## BUTTTONS ######################################################
+msgid "_button_delete"
+msgstr "Elimina"
+
+msgid "_button_submit_"
+msgstr "Salva variazioni"
+
+msgid "_button_accept_"
+msgstr "Accetto"
+
+msgid "_button_reject_"
+msgstr "Rifiuto"
+
+msgid "_button_recall_"
+msgstr "Sollecito"
+
+msgid "_button_assign"
+msgstr "Assegno"
+
+msgid "_button_reinit"
+msgstr "Riapro"
+
+# ## PORTAL types ##########################################################
+msgid "_portal_type_CPS_Task"
+msgstr "Incarico"
+
+msgid "_portal_type_CPS_Task_Screen"
+msgstr "Visualizzatore di incarichi"
+
+msgid "_portal_type_task Box"
+msgstr "Contenitore di incarichi"
+
+# ## actions ###############################################################
+msgid "_action_reinit_"
+msgstr "Riapri questo incarico"
+
+msgid "_action_create_new_tasks"
+msgstr "Crea un nuovo incarico"
+
+msgid "_action_parameters"
+msgstr "Parametra il visualizzatore degli incarichi"
+
+msgid "_action_edit_"
+msgstr "Modifica"
+
+msgid "_action_assign_task_to"
+msgstr "Riapri questo incarico "
+
+msgid "_action_current_status_"
+msgstr "Stato attuale"
+
+msgid "_action_recall_"
+msgstr "Sollecita i collaboratori preposti"
+
+msgid "_reviewstate_waiting"
+msgstr "in attesa"
+
+msgid "_reviewstate_processed"
+msgstr "in corso"
+
+msgid "_reviewstate_closed"
+msgstr "chiuso"
+
+msgid "_action_history_"
+msgstr "Cronologico di stato dell'incarico"
+
+# ## labels ################################################################
+msgid "_label_name"
+msgstr "Nome completo"
+
+msgid "_label_email"
+msgstr "Email"
+
+msgid "_label_my_tasks"
+msgstr "Incarichi personali"
+
+msgid "_label_sort_date_on"
+msgstr "Data:"
+
+msgid "_label_sort_order"
+msgstr "Ordine:"
+
+msgid "_label_sort_on"
+msgstr "Criteri di visualizzazione:"
+
+msgid "_label_display_my_tasks"
+msgstr "Visualizza gli incarichi che hai creato:"
+
+msgid "_label_display_my_affected_tasks"
+msgstr "Visualizza gli incarichi che ti sei assegnato:"
+
+msgid "_label_display_my_groups_affected_tasks"
+msgstr "Visualizza gli incarichi assegnati a dei gruppi ai quali appartieni:"
+
+msgid "_label_display_my_accepted_tasks"
+msgstr "Visualizza gli incarichi che hai accettato:"
+
+msgid "_label_screener_display_my_tasks"
+msgstr "Incarichi personali"
+
+msgid "_label_screener_display_my_affected_tasks"
+msgstr "Incarichi che mi sono stati assegnati"
+
+msgid "_label_screener_display_my_groups_affected_tasks"
+msgstr "Incarichi assegnati ad uno dei miei gruppi"
+
+msgid "_label_screener_display_my_accepted_tasks"
+msgstr "Incarichi che ho accettato"
+
+msgid "_label_start_date"
+msgstr "Data di accessibilità"
+
+msgid "_label_stop_date"
+msgstr "Data di scadenza"
+
+msgid "_label_asc"
+msgstr "Crescente"
+
+msgid "_label_desc"
+msgstr "Decrescente"
+
+msgid "_label_none"
+msgstr "Nessuno"
+
+msgid "_label_type"
+msgstr "Tipo"
+
+msgid "_label_indicator"
+msgstr "Indicatore"
+
+msgid "_label_priority"
+msgstr "Priorità"
+
+msgid "_heading_task_i_created"
+msgstr "Incarichi che ho creato"
+
+msgid "_heading_task_affected_to_me"
+msgstr "Incarichi che mi sono assegnato:"
+
+msgid "_heading_task_i_accepted"
+msgstr "Incarichi che ho accettato:"
+
+msgid "_heading_task_affected_to_one_of_my_groups"
+msgstr "Incarichi assegnati ad uno dei miei gruppi:"
+
+msgid "_heading_screener_message"
+msgstr "You can edit your skinner by following the <strong>Screener parameters</strong> action on the rightVous pouvez éditer les paramètres du skinner en suivant le lien <strong>Paramétrer le visualisateur de tâches<stong> sur la droite. "
+
+msgid "_heading_configure"
+msgstr "Parametra:"
+
+msgid "_heading_create_a_task_screen"
+msgstr "Crea un visualizzatore di incarichi"
+
+msgid "_heading_recall_assigned_members"
+msgstr "Sollecita i collaboratori preposti"
+
+msgid "_label_title"
+msgstr "Titolo"
+
+msgid "_label_creator"
+msgstr "Creatore"
+
+msgid "_label_effective_date"
+msgstr "Data di accessibilità"
+
+msgid "_label_deadline"
+msgstr "Data di scadenza"
+
+msgid "_label_project"
+msgstr "Progetto"
+
+msgid "_label_goal"
+msgstr "Finalità del progetto"
+
+msgid "_label_assigned_to_users"
+msgstr "Assegnato ai collaboratori:"
+
+msgid "_label_assigned_to_groups"
+msgstr "Assegnato ai gruppi:"
+
+msgid "_label_accepted_by"
+msgstr "Accettato da:"
+
+msgid "_label_rejected_by"
+msgstr "Rifiutato da:"
+
+msgid "_label_do_you_want_to_accpet_it"
+msgstr "Vuoi procedere con la conferma?"
+
+msgid "_label_do_you_want_to_reject_it"
+msgstr "Vuoi procedere con la conferma?"
+
+msgid "_label_do_you_want_to_close_it"
+msgstr "Vuoi procedere con la conferma?"
+
+msgid "_label_status"
+msgstr "Stato:"
+
+msgid "_label_recall_explanation"
+msgstr "Dopo aver scelto gli utenti ai quali è stato assegnato l'incarico, puoi inviare loro un sollecito cliccando sul pulsante: <strong>Sollecito</strong>. <br> Allo stesso modo, puoi avere accesso alle informazioni personali degli utenti cliccando sul campo del  nome completo o  contattarli inviando una email cliccando sull'indirizzo postale di loro pertinenza. "
+
+msgid "_label_you_are_recalled_for_the_task"
+msgstr "Sei stato sollecitato per il seguente incarico:"
+
+msgid "_label_you_can_reassign_the_task_here"
+msgstr "In questa schermata puoi riassegnare l'incarico. <br> Questa nuova versione sostituirà i precedenti assegnamenti."
+
+msgid "_label_do_you_want_to_reinit_it"
+msgstr "Vuoi procedere con la conferma?"
+
+msgid "_label_recall"
+msgstr "Sollecita:"
+
+msgid "_label_mail_sent"
+msgstr "Le emails sono state inviate con successo."
+
+msgid "_label_error_while_sending_mail"
+msgstr "Si è verificato un errore durante l'invio della posta."
+
+msgid "_label_All/None_"
+msgstr "Tutti/Nessuno"
+
+msgid "_action_accept"
+msgstr "Accetta questo incarico"
+
+msgid "_action_reject"
+msgstr "Rifiuta questo incarico"
+
+msgid "_action_close_task"
+msgstr "Chiudi questo incarico"
+
+msgid "_action_create_new_project"
+msgstr "Amministra i progetti"
+
+# ## Calendar #########################################################
+msgid "_cday_Su"
+msgstr "Do"
+
+msgid "_cday_Mo"
+msgstr "Lu"
+
+msgid "_cday_Tu"
+msgstr "Ma"
+
+msgid "_cday_We"
+msgstr "Me"
+
+msgid "_cday_Th"
+msgstr "Gi"
+
+msgid "_cday_Fr"
+msgstr "Ve"
+
+msgid "_cday_Sa"
+msgstr "Sa"
+
+msgid "_cmonth_01"
+msgstr "Gennaio"
+
+msgid "_cmonth_02"
+msgstr "Febbraio"
+
+msgid "_cmonth_03"
+msgstr "Marzo"
+
+msgid "_cmonth_04"
+msgstr "Aprile"
+
+msgid "_cmonth_05"
+msgstr "Maggio"
+
+msgid "_cmonth_06"
+msgstr "Giugno"
+
+msgid "_cmonth_07"
+msgstr "Luglio"
+
+msgid "_cmonth_08"
+msgstr "Agosto"
+
+msgid "_cmonth_09"
+msgstr "Settembre"
+
+msgid "_cmonth_10"
+msgstr "Ottobre"
+
+msgid "_cmonth_11"
+msgstr "Novembre"
+
+msgid "_cmonth_12"
+msgstr "Dicembre"
+
+msgid "_cfmt_date_"
+msgstr "%d/%m/%Y"
+
+msgid "_cfmt_datetime_"
+msgstr "%d/%m/%Y  %Hh%M"
+
+msgid "_c_at_"
+msgstr "alle"
+
+msgid "_c_h_"
+msgstr "h:"
+
+# ## POPUPS ##################################################
+msgid "_searchmembers_tools_"
+msgstr "Utilità di ricerca dei collaboratori."
+
+msgid "_Members_criteria_"
+msgstr "Criteri di ricerca sui collaboratori."
+
+msgid "_dir_Groups_"
+msgstr "Gruppi"
+
+msgid "_(Add users ...) as_"
+msgstr "Aggiungi un collaboratore il cui:"
+
+msgid "_button_search_"
+msgstr "Ricerca"
+
+msgid "_select_members_from_search_"
+msgstr "Seleziona i collaboratori dalla ricerca"
+
+msgid "_button_add_"
+msgstr "Aggiungi"
+
+msgid "_No_entry_matches_your_request_"
+msgstr "La tua ricerca non restituisce alcun risultato."
+
+msgid "_members_selected_"
+msgstr "Collaboratori selezionati"
+
+msgid "_button_clean_"
+msgstr "Resetta"
+
+msgid "_button_close"
+msgstr "Chiudi"
+
+msgid "_button_validate_"
+msgstr "Convalida"
+
+msgid "_searchgroups_tools_"
+msgstr "Utilità di ricerca dei gruppi."
+
+msgid "_Groups_criteria_"
+msgstr "Criteri di ricerca sui gruppi."
+
+msgid "_select_groups_from_search_"
+msgstr "Seleziona i gruppi dalla ricerca"
+
+msgid "_groups_selected_"
+msgstr "Gruppi selezionati"
+
+# ## Projects #######################################################
+msgid "_label_create_a_new_project"
+msgstr "Crea un nuovo progetto"
+
+msgid "_label_manage_projects"
+msgstr "Amministrazione dei progetti"
+
+msgid "_label_description"
+msgstr "Descrizione:"
+
+msgid "_label_other"
+msgstr "Altro"
+
+# ## Skinners #######################################################
+msgid "_label_skinner"
+msgstr "Visualizza"
+
+msgid "other"
+msgstr "Altro"
+
+msgid "closed"
+msgstr "chiuso"
+
+msgid "assigned"
+msgstr "assegnato"
+
+msgid "late"
+msgstr "In ritardo"
+
+msgid "opened"
+msgstr "aperto"
+
+# ## Status History ############################################
+msgid "_heading_task_history"
+msgstr "Cronologia dello stato"
+
+msgid "_heading_current_state"
+msgstr "Stato attuale"
+
+msgid "_label_item_is"
+msgstr "Questo incarico è nello stato:"
+
+msgid "_label_state"
+msgstr "Stato:"
+
+msgid "_label_reviewing_history"
+msgstr "Cronologico delle versioni"
+
+msgid "_label_by"
+msgstr "da:"
+
+msgid "_portal_tasks"
+msgstr "Centrale degli incarichi"
+
+msgid "_transition_accept"
+msgstr "Accettato"
+
+msgid "_transition_assign"
+msgstr "Assegnato"
+
+msgid "_transition_close"
+msgstr "Chiuso"
+
+msgid "_transition_reject"
+msgstr "Rifiutato"
+
+msgid "_transition_None"
+msgstr "Crea"
+
+msgid "_transition_reinit"
+msgstr "Riaperto"
+
+msgid "_label_no_project"
+msgstr "Attualmente, non esistono progetti. <br> Puoi creare un nuovo progetto cliccando sul collegamento che ti viene proposto."
+
+msgid "_label_reject_history"
+msgstr "Cronologia dei rifiuti"
+
+msgid "_heading_task_related_to"
+msgstr "Incarichi relativi al progetto:"
+
+msgid "_label_only_this_project"
+msgstr "Visualizza gli incarichi relativi al progetto:"
+
+msgid "_label_recall_no_users_assigned"
+msgstr "Non hai ancora assegnato ad alcuno questo incarico."
+
+# ## Document fields
+msgid "label_cps_task_type"
+msgstr "Tipo:"
+
+msgid "label_cps_start_task_date"
+msgstr "Dal:"
+
+msgid "label_cps_task_priority"
+msgstr "Priorità:"
+
+msgid "label_cps_stop_task_date"
+msgstr "Al:"
+
+msgid "label_cps_task_goal"
+msgstr "Finalità del progetto:"
+
+msgid "label_cps_task_description"
+msgstr "Descrizione:"
+
+msgid "label_cps_task_members"
+msgstr "Impegna i seguenti collaboratori:"
+
+msgid "label_cps_task_groups"
+msgstr "Impegna i seguenti gruppi:"
+
+msgid "label_priority_high"
+msgstr "Alta"
+
+msgid "label_priority_normal"
+msgstr "Normale"
+
+msgid "label_priority_low"
+msgstr "Bassa"
+
+msgid "label_priority_internal"
+msgstr "Interno"
+
+msgid "label_priority_nuxeo"
+msgstr "Nuxeo"
+
+msgid "label_priority_other"
+msgstr "Altro"
+
+msgid "label_cpstask_text"
+msgstr "Blocco di testo"
+
+msgid "_label_task_rejected"
+msgstr "Incarichi rifiutati"
+
+msgid "_label_the_task_has_been_rejected"
+msgstr "Il seguente incarico è stato rifiutato:"
+
