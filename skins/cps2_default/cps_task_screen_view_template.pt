@@ -22,7 +22,7 @@
       <h2 tal:content="python:mcat('_heading_task_i_created')">
         The tasks I created.
       </h2>
-      <form action="cps_task_edit" method="POST">
+      <form action="." method="POST">
         <table border="0" align="center" width="100%" cellpadding="2" cellspacing="1">
         <tr bgcolor="#DDDDDD">
           <td align="center">
@@ -49,6 +49,11 @@
           <td align="center">
              <strong>
                <span tal:replace="python:mcat('_label_type')">Type</span>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <span tal:replace="python:mcat('_label_project')">Project</span>
              </strong>
           </td>
           <td align="center">
@@ -98,6 +103,9 @@
                 <span tal:replace="task/task_type" />
               </td>
               <td>
+                <span tal:replace="task/task_project" />
+              </td>
+              <td>
                 <span tal:replace="task/start_task_date" />
               </td>
               <td>
@@ -140,6 +148,9 @@
                <span tal:replace="task/task_type" />
              </td>
              <td>
+                <span tal:replace="task/task_project" />
+              </td>
+             <td>
                <span tal:replace="task/start_task_date" />
              </td>
              <td>
@@ -169,7 +180,7 @@
       <h2 tal:content="python:mcat('_heading_task_affected_to_me')">
         The tasks affected to me.
       </h2>
-      <form action="cps_task_edit" method="POST">
+      <form action="." method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
         <tr bgcolor="#DDDDDD">
@@ -201,6 +212,11 @@
           </td>
           <td align="center">
              <strong>
+               <span tal:replace="python:mcat('_label_project')">Project</span>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
                <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
              </strong>
           </td>
@@ -246,6 +262,9 @@
                 <span tal:replace="task/task_type" />
               </td>
               <td>
+                <span tal:replace="task/task_project" />
+              </td>
+              <td>
                 <span tal:replace="task/start_task_date" />
               </td>
               <td>
@@ -287,6 +306,9 @@
              <td>
                <span tal:replace="task/task_type" />
              </td>
+             <td>
+                <span tal:replace="task/task_project" />
+              </td>
              <td>
                <span tal:replace="task/start_task_date" />
              </td>
@@ -318,7 +340,7 @@
       <h2 tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">
         The tasks affected to one of my groups.
       </h2>
-      <form action="cps_task_edit" method="POST">
+      <form action="." method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
         <tr bgcolor="#DDDDDD">
@@ -346,6 +368,11 @@
           <td align="center">
              <strong>
                <span tal:replace="python:mcat('_label_type')">Type</span>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <span tal:replace="python:mcat('_label_project')">Project</span>
              </strong>
           </td>
           <td align="center">
@@ -395,6 +422,9 @@
                 <span tal:replace="task/task_type" />
               </td>
               <td>
+                <span tal:replace="task/task_project" />
+              </td>
+              <td>
                 <span tal:replace="task/start_task_date" />
               </td>
               <td>
@@ -437,6 +467,9 @@
                <span tal:replace="task/task_type" />
              </td>
              <td>
+                <span tal:replace="task/task_project" />
+              </td>
+             <td>
                <span tal:replace="task/start_task_date" />
              </td>
              <td>
@@ -466,7 +499,7 @@
       <h2 tal:content="python:mcat('_heading_task_i_accepted')">
         The tasks I accepted.
       </h2>
-      <form action="cps_task_edit" method="POST">
+      <form action="." method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
         <tr bgcolor="#DDDDDD">
@@ -494,6 +527,11 @@
           <td align="center">
              <strong>
                <span tal:replace="python:mcat('_label_type')">Type</span>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <span tal:replace="python:mcat('_label_project')">Project</span>
              </strong>
           </td>
           <td align="center">
@@ -541,6 +579,9 @@
               </td>
               <td>
                 <span tal:replace="task/task_type" />
+              </td>
+              <td>
+                <span tal:replace="task/task_project" />
               </td>
               <td>
                 <span tal:replace="task/start_task_date" />
@@ -584,6 +625,9 @@
              <td>
                <span tal:replace="task/task_type" />
              </td>
+             <td>
+                <span tal:replace="task/task_project" />
+              </td>
              <td>
                <span tal:replace="task/start_task_date" />
              </td>

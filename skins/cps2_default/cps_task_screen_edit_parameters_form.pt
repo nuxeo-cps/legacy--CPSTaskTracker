@@ -110,6 +110,14 @@
                    tal:condition="python:here.sort_on != 'type'">
                   <span tal:replace="python:mcat('_label_type')" />
                 </option>
+                <option value="project" selected
+                   tal:condition="python:here.sort_on == 'project'">
+                  <span tal:replace="python:mcat('_label_project')" />
+                </option>
+                <option value="project"
+                   tal:condition="python:here.sort_on != 'project'">
+                  <span tal:replace="python:mcat('_label_project')" />
+                </option>
               </select>
             </metal:block>
           </metal:block>
