@@ -1,4 +1,4 @@
-# (c) 2002 Nuxeo SARL <http://nuxeo.com>
+# (c) 2003 Nuxeo SARL <http://nuxeo.com>
 # (c) 2003 CEA <http://www.cea.fr>
 # Author: Julien Anguenot <ja@nuxeo.com>
 #
@@ -187,8 +187,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         if parameters.get('display_my_accepted_tasks'):
             task_lists['my_accepted_tasks'] = [x for x \
                                                in sorted_tasks \
-                                               if \
-                                               x.isTheAssignedOne()]
+                                               if x.isTheAssignedOne()]
         #
         # Cleaning the empty entries
         # For the visible if empty feature
