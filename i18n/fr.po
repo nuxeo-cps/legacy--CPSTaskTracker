@@ -429,6 +429,9 @@ msgstr "Acceptation"
 msgid "_transition_assign"
 msgstr "Assignation"
 
+msgid "_transition_reject"
+msgstr "Rejetée"
+
 # ## BUTTTONS ######################################################
 msgid "_transition_close"
 msgstr "Fermeture"

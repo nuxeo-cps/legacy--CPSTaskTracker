@@ -433,6 +433,9 @@ msgstr ""
 msgid "_transition_close"
 msgstr ""
 
+msgid "_transition_reject"
+msgstr ""
+
 msgid "_transition_None"
 msgstr ""
 
