@@ -22,6 +22,7 @@ not_allowed = 0
 psm = 'task_deleted'
 
 for id in ids:
+    # XXX : fixing rights on the repository itself.
     try:
         ptasks.manage_delObjects([id])
     except:
