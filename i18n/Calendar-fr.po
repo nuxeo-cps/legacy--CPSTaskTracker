@@ -1,73 +1,149 @@
+#, fuzzy
+msgid "_portal_type_CPS_Task"
+msgstr "Bote Agenda"
+
+#, fuzzy
+msgid "_portal_type_CPS_Task_Screen"
+msgstr "Bote Agenda"
+
+#, fuzzy
+msgid "_portal_type_task Box"
+msgstr "Bote Agenda"
+
+# # actions ###############################################################
+msgid "_action_create_new_tasks"
+msgstr ""
+
+msgid "_action_parameters"
+msgstr ""
+
+msgid "_action_edit_"
+msgstr ""
+
+# ## labels ################################################################
+msgid "_label_my_tasks"
+msgstr ""
+
+msgid "_label_sort_date_on"
+msgstr ""
+
+msgid "_label_sort_order"
+msgstr ""
+
+msgid "_label_sort_on"
+msgstr ""
+
+msgid "_label_display_my_tasks"
+msgstr ""
+
+msgid "_label_display_my_affected_tasks"
+msgstr ""
+
+msgid "_label_display_my_groups_affacted_tasks"
+msgstr ""
+
+msgid "_label_display_my_accepted_tasks"
+msgstr ""
+
+msgid "_label_start_date"
+msgstr ""
+
+msgid "_label_stop_date"
+msgstr ""
+
+msgid "_label_asc"
+msgstr ""
+
+msgid "_label_desc"
+msgstr ""
+
+msgid "_label_none"
+msgstr ""
+
+msgid "_label_type"
+msgstr ""
+
+msgid "_label_indicator"
+msgstr ""
+
+msgid "_label_priority"
+msgstr ""
+
+msgid "_heading_task_i_created"
+msgstr ""
+
+msgid "_heading_task_affected_to_me"
+msgstr ""
+
+msgid "_heading_task_i_accepted"
+msgstr ""
+
+msgid "_heading_task_affected_to_one_of_my_groups"
+msgstr ""
+
 # $Id$
+#~ msgid "_cday_Su"
+#~ msgstr "Di"
 
-msgid "_cday_Su"
-msgstr "Di"
+#~ msgid "_cday_Mo"
+#~ msgstr "Lu"
 
-msgid "_cday_Mo"
-msgstr "Lu"
+#~ msgid "_cday_Tu"
+#~ msgstr "Ma"
 
-msgid "_cday_Tu"
-msgstr "Ma"
+#~ msgid "_cday_We"
+#~ msgstr "Me"
 
-msgid "_cday_We"
-msgstr "Me"
+#~ msgid "_cday_Th"
+#~ msgstr "Je"
 
-msgid "_cday_Th"
-msgstr "Je"
+#~ msgid "_cday_Fr"
+#~ msgstr "Ve"
 
-msgid "_cday_Fr"
-msgstr "Ve"
+#~ msgid "_cday_Sa"
+#~ msgstr "Sa"
 
-msgid "_cday_Sa"
-msgstr "Sa"
+#~ msgid "_cmonth_01"
+#~ msgstr "Janvier"
 
-msgid "_cmonth_01"
-msgstr "Janvier"
+#~ msgid "_cmonth_02"
+#~ msgstr "Fvrier"
 
-msgid "_cmonth_02"
-msgstr "Février"
+#~ msgid "_cmonth_03"
+#~ msgstr "Mars"
 
-msgid "_cmonth_03"
-msgstr "Mars"
+#~ msgid "_cmonth_04"
+#~ msgstr "Avril"
 
-msgid "_cmonth_04"
-msgstr "Avril"
+#~ msgid "_cmonth_05"
+#~ msgstr "Mai"
 
-msgid "_cmonth_05"
-msgstr "Mai"
+#~ msgid "_cmonth_06"
+#~ msgstr "Juin"
 
-msgid "_cmonth_06"
-msgstr "Juin"
+#~ msgid "_cmonth_07"
+#~ msgstr "Juillet"
 
-msgid "_cmonth_07"
-msgstr "Juillet"
+#~ msgid "_cmonth_08"
+#~ msgstr "Aot"
 
-msgid "_cmonth_08"
-msgstr "Août"
+#~ msgid "_cmonth_09"
+#~ msgstr "Septembre"
 
-msgid "_cmonth_09"
-msgstr "Septembre"
+#~ msgid "_cmonth_10"
+#~ msgstr "Octobre"
 
-msgid "_cmonth_10"
-msgstr "Octobre"
+#~ msgid "_cmonth_11"
+#~ msgstr "Novembre"
 
-msgid "_cmonth_11"
-msgstr "Novembre"
+#~ msgid "_cmonth_12"
+#~ msgstr "Dcembre"
 
-msgid "_cmonth_12"
-msgstr "Décembre"
+#~ msgid "_cfmt_date_"
+#~ msgstr "%d/%m/%Y"
 
-msgid "_cfmt_date_"
-msgstr "%d/%m/%Y"
+#~ msgid "_cfmt_datetime_"
+#~ msgstr "%d/%m/%Y  %Hh%M"
 
-msgid "_cfmt_datetime_"
-msgstr "%d/%m/%Y à %Hh%M"
-
-msgid "_c_at_"
-msgstr "à"
-
-msgid "_c_h_"
-msgstr "h"
-
-msgid "_portal_type_Calendar Box"
-msgstr "Boîte Agenda"
+#~ msgid "_c_h_"
+#~ msgstr "h"

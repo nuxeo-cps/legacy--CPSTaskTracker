@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-10-11 20:20default\n"
+"POT-Creation-Date: 2003-10-29 20:19default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -19,13 +19,83 @@ msgstr ""
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
 
-# # portal types ##########################################################
+# ## PORTAL types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr ""
 
 msgid "_portal_type_CPS_Task_Screen"
 msgstr ""
 
-# # actions ###############################################################
+msgid "_portal_type_task Box"
+msgstr ""
+
+# ## actions ###############################################################
 msgid "_action_create_new_tasks"
+msgstr ""
+
+msgid "_action_parameters"
+msgstr ""
+
+msgid "_action_edit_"
+msgstr ""
+
+# ## labels ################################################################
+msgid "_label_my_tasks"
+msgstr ""
+
+msgid "_label_sort_date_on"
+msgstr ""
+
+msgid "_label_sort_order"
+msgstr ""
+
+msgid "_label_sort_on"
+msgstr ""
+
+msgid "_label_display_my_tasks"
+msgstr ""
+
+msgid "_label_display_my_affected_tasks"
+msgstr ""
+
+msgid "_label_display_my_groups_affacted_tasks"
+msgstr ""
+
+msgid "_label_display_my_accepted_tasks"
+msgstr ""
+
+msgid "_label_start_date"
+msgstr ""
+
+msgid "_label_stop_date"
+msgstr ""
+
+msgid "_label_asc"
+msgstr ""
+
+msgid "_label_desc"
+msgstr ""
+
+msgid "_label_none"
+msgstr ""
+
+msgid "_label_type"
+msgstr ""
+
+msgid "_label_indicator"
+msgstr ""
+
+msgid "_label_priority"
+msgstr ""
+
+msgid "_heading_task_i_created"
+msgstr ""
+
+msgid "_heading_task_affected_to_me"
+msgstr ""
+
+msgid "_heading_task_i_accepted"
+msgstr ""
+
+msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr ""
