@@ -364,7 +364,7 @@ class CPSTask(FlexibleDocument):
 
         return res
 
-    security.declareProtected("sendMail", View)
+    security.declareProtected("sendMail", "ModifyPortalContent")
     def sendMailTo(self, content="", emails=[], from_address="", subject=""):
         """
         Send a mail
