@@ -159,18 +159,14 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                       'my_groups_affected_tasks':[],
                       'my_accepted_tasks':[],
                       }
-
         if parameters.get('display_my_tasks'):
             task_lists['my_tasks'] = [x for x in sorted_tasks if x.isCreator()]
-        elif parameters.get('display_my_affected_tasks'):
+        if parameters.get('display_my_affected_tasks'):
             task_lists['my_affected_tasks'] = [x for x in sorted_tasks if member_id in x.getMemberIds()]
-        elif parameters.get('display_my_groups_affected_tasks'):
+        if parameters.get('display_my_groups_affected_tasks'):
             task_lists['my_groups_affected_tasks'] = [x for x in sorted_tasks if x.isAssigned()]
-        elif parameters.get('display_my_accepted_tasks'):
+        if parameters.get('display_my_accepted_tasks'):
             task_lists['my_groups_affected_tasks'] = [x for x in sorted_tasks if x.isTheAssignedOne()]
-        else:
-            # dev/null case.
-            pass
 
         return task_lists
 
@@ -187,10 +183,12 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         # Sorting the tasks against the parameters
         #
         sorted_tasks = self._sortTaskObjects(tasks, parameters)
+        LOG("SORTED TASKS", DEBUG, sorted_tasks)
         #
         # Spliting to different lists depending on the choice the user did.
         #
         task_lists = self._getTaskLists(sorted_tasks, parameters)
+        LOG("TASKS LIST", DEBUG, task_lists)
         return task_lists
 
 InitializeClass(CPSTaskTool)
