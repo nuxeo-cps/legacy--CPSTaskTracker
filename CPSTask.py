@@ -114,8 +114,8 @@ class CPSTask(FlexibleDocument):
     start_task_date = ''
     stop_task_date  = ''
     task_priority   = 'normal'
-    task_type       = ''
-    task_project    = 'none'
+    task_type       = 'other'
+    task_project    = 'other'
     task_goal       = ''
     members = ''
     groups  = ''
@@ -251,8 +251,7 @@ class CPSTask(FlexibleDocument):
         Is the task late according to the deadline.
         """
         today = DateTime()
-        task_deadline = DateTime(str(self.stop_task_date) + " 0:00am")
-        return today >= task_deadline
+        return self.stop_task_date < today
 
     security.declareProtected('getStatus', View)
     def getStatus(self):
