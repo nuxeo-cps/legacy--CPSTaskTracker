@@ -73,7 +73,10 @@
                      tal:attributes="value python:user.get('email', '')" />
             </td>
             <td>
+               <a href=""
+              tal:attributes="href python:base_url+'cpsdirectory_entry_view?dirname=members&id='+user.get('id', '')">
               <span tal:replace="python:user.get('fullname', '')" />
+               </a>
             </td>
             <td>
                <a href=""
