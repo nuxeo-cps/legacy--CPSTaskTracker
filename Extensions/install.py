@@ -196,10 +196,12 @@ def install(self):
             pr("   Installation   ")
 
     #####################################################
-    # Actions : my tasks
+    # Actions
     #####################################################
 
-    # Verification of the action and addinf if neccesarly
+    #
+    # Create a new task.
+    #
     action_found = 0
     for action in portal['portal_actions'].listActions():
         if action.id == 'Create a New Task':
@@ -214,7 +216,26 @@ def install(self):
             permission=('View',),
             category='global',
             visible=1)
-        pr(" Added Action My Tasks")
+        pr(" Added Action : Create a new task ")
+
+    #
+    # Create a new project
+    #
+    action_found = 0
+    for action in portal['portal_actions'].listActions():
+        if action.id == 'Create a New Project':
+            action_found = 1
+
+    if not action_found:
+        portal['portal_actions'].addAction(
+            id='Create a New Project',
+            name='_action_create_new_project',
+            action='string: ${portal_url}/cps_task_tool_manage_projects_form',
+            condition='',
+            permission=('Manage portal',),
+            category='global',
+            visible=1)
+        pr(" Added Action : create a new project ")
 
     ##########################################
     # IMPORTING THE WORKFLOW
