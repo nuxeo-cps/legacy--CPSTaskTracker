@@ -28,7 +28,7 @@
   tal:define="title python:(create and [''] or [here.Title()])[0];
                  description python:(create and [''] or [here.Description()])[0];
                  submitvalue python:create and mcat('_button_create_') or mcat('_button_modify_');
-                 action python:create and 'cpsdocument_create' or 'cpsdocument_edit';
+                 action python:create and 'cpsdocument_create' or 'cps_task_edit';
                  locked here/isDocumentLayoutLocked;
                  types_info here/get_compatible_task_block_types;
                  trans_types types_info/trans_types;
