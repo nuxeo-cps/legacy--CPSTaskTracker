@@ -10,7 +10,7 @@
     <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []"
                define="tasks python:task_lists['my_tasks']">
       <strong>
-        The tasks I created.
+        <span tal:content="python:mcat('_heading_task_i_created')">The tasks I created.</span>
       </strong>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
@@ -64,7 +64,7 @@
     <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []"
                define="tasks python:task_lists['my_affected_tasks']">
       <strong>
-        The tasks affected to me.
+        <span tal:content="python:mcat('_heading_task_affected_to_me')">The tasks affected to me.</span>
       </strong>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
@@ -118,9 +118,10 @@
     <tal:block
     condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []"
                define="tasks python:task_lists['my_groups_affected_tasks']">
-      <h2>
-        The tasks affected to one of my groups.
-      </h2>
+      <strong>
+        <span tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">The
+    tasks affected to one of my groups.</span>
+      </strong>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
         cellspacing="1">
@@ -174,7 +175,8 @@
     <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []"
                define="tasks python:task_lists['my_accepted_tasks']">
       <strong>
-        The tasks I accepted.
+        <span tal:content="python:mcat('_heading_task_i_accepted')">The
+    tasks I accepted.</span>
       </strong>
       <form action="cps_task_edit" method="POST">
         <table border="0" align="center" width="100%" cellpadding="2"
