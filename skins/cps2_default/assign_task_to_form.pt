@@ -15,102 +15,144 @@
 </metal:block>
 
 <metal:block fill-slot="main">
+<p>You can re-assign this task now.</p>
 <form action="doChangeAssigned" method="post">
-  <p>You can re-assign this task now.</p>
-  <metal:block use-macro="here/main_widgets/macros/form_property">
+  <metal:block use-macro="here/main_widgets/macros/form">
+    <metal:block fill-slot="content">
+
+      <metal:block use-macro="here/main_widgets/macros/form_property">
         <metal:block fill-slot="title"
                      tal:content="string:Task Assigned To Users">
                       Task Assigned To Users
         </metal:block>
         <metal:block fill-slot="content">
-          <textarea readonly id="members"
-                    name="members:text"
-                    rows="3" cols="30" tal:content="here/getMembersAsText|nothing"></textarea>
-          <input type="hidden" size="1" value=""
-                 id="hidden_members"
-                 name="members">
+          <tal:block define="
+            members here/members|nothing;
+            text python:members and members[1] or '';
+            dtool here/portal_metadirectories;
+            directory dtool/members;
+            allids python:[x['id_'] for x in directory.searchEntry()];
+            old_ids python:(text not in ('',) and text.split('\r\n')) or [];
+            ids python:[obj for obj in old_ids if obj in allids];
+            new_text python:'\r\n'.join(ids);
+            founds python:[directory.searchEntry(**{'id_': id}) for id in ids];">
+            <tal:block define="
+                       full_text_list python:[props[0][directory.display_prop] for props in founds];
+                       full_text python:'\n'.join(full_text_list);
+                       full_text_popup python:'$$'.join(full_text_list);
+                       full_ids_list python:[props[0][directory.entry_prop] for props in founds];
+                       full_ids python:'$$'.join(full_ids_list);
+                       ">
+              <textarea readonly
+                        tal:attributes="name string:members;
+                                        id string:members"
+                        tal:content="full_text">
+              </textarea>
+              <input type="hidden" size="1"
+                     tal:attributes="name string:members;id string:hidden_members;value new_text">
 
-          <script language="JavaScript" type="text/javascript"><!--
+                <script language="JavaScript" type="text/javascript"><!--
 
-             function open_mb_selector(input_id) {
+                  function open_mb_selector(input_id) {
+                    ids = document.getElementById('hidden_'+input_id).value.replace(/\n/g,'$$$$');
+                    fulls = document.getElementById(input_id).value.replace(/\n/g,'$$$$');
+                    //ids = ids.substring(0, ids.length-2);
+                    //fulls = fulls.substring(0, fulls.length-2); // $$
+                    args = 'input_id='+input_id+'&ids='+ids+'&fulls='+fulls;
+                    selector_window = window.open('members_edit_form?'+args, 'members', 'toolbar=0, scrollbars=0, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=450, height=420')
 
-               ids = document.getElementById('hidden_'+input_id).value.replace(/\n/g,'$$$$');
-               fulls = document.getElementById(input_id).value.replace(/\n/g,'$$$$');
-               ids = ids.substring(0, ids.length-2);
-               fulls = fulls.substring(0, fulls.length-2); // $$
-               args = 'input_id='+input_id+'&ids='+ids+'&fulls='+fulls;
+                    if(!selector_window.opener) selector_window.opener = window
+                  }
 
-               selector_window = window.open('members_edit_form?'+args, 'members', 'toolbar=0, scrollbars=0, location=0, statusbar=0,menubar=0, resizable=1, dependent=1, width=450, height=420')
+                  function clean_textarea_user(input_id) {
+                    c = document.getElementById(input_id);
+                    c.value = '';
+                    d = document.getElementById('hidden_'+input_id);
+                    d.value = '';
 
+                  }
 
-               if(!selector_window.opener) selector_window.opener = window
-             }
+                -->
+                </script>
 
-             function clean_textarea_user(input_id) {
-               c = document.getElementById(input_id);
-               c.value = '';
-               d = document.getElementById('hidden_'+input_id);
-               d.value = '';
+                <a tal:attributes="href string:javascript:open_mb_selector('members')">
+                  <img border="0" src="img_box_edit.png" />
+                </a>
 
-             }
-
-           -->
-           </script>
-
-           <a href="javascript:open_mb_selector('members')">
-            <img border="0" src="img_box_edit.png" />
-           </a>
+            </tal:block>
+          </tal:block>
          </metal:block>
       </metal:block>
+
       <metal:block use-macro="here/main_widgets/macros/form_property">
         <metal:block fill-slot="title"
                      tal:content="string:Task Assigned To Groups">
                      Task Assigned To Groups
         </metal:block>
         <metal:block fill-slot="content">
-          <textarea readonly id="groups"
-                    name="groups:text"
-                    rows="3" cols="30" tal:content="here/getGroupsAsText|nothing"></textarea>
-          <input type="hidden" size="1" value=""
-                 id="hidden_groups"
-                 name="groups">
-          <script language="JavaScript" type="text/javascript"><!--
+          <tal:block define="
+            groups here/groups|nothing;
+            text python:groups and groups[1] or '';
+            dtool here/portal_metadirectories;
+            directory dtool/groups;
+            allids python:[x['id_'] for x in directory.searchEntry()];
+            old_ids python:(text not in ('',) and text.split('\r\n')) or [];
+            ids python:[obj for obj in old_ids if obj in allids];
+            new_text python:'\r\n'.join(ids);
+            founds python:[directory.searchEntry(**{'id_': id}) for id in ids];">
+            <tal:block define="
+                       full_text_list python:[props[0][directory.display_prop] for props in founds];
+                       full_text python:'\n'.join(full_text_list);
+                       full_text_popup python:'$$'.join(full_text_list);
+                       full_ids_list python:[props[0][directory.entry_prop] for props in founds];
+                       full_ids python:'$$'.join(full_ids_list);
+                       ">
+              <textarea readonly
+                        tal:attributes="name string:groups;
+                                        id string:groups"
+                        tal:content="full_text">
+              </textarea>
+              <input type="hidden" size="1"
+                     tal:attributes="name string:groups;id string:hidden_groups;value new_text">
 
-             function open_gr_selector(input_id) {
+                <script language="JavaScript" type="text/javascript"><!--
 
-               ids = document.getElementById('hidden_'+input_id).value.replace(/\n/g,'$$$$');
-               fulls = document.getElementById(input_id).value.replace(/\n/g,'$$$$');
-               ids = ids.substring(0, ids.length-2);
-               fulls = fulls.substring(0, fulls.length-2); // $$
+                  function open_gr_selector(input_id) {
+                    ids = document.getElementById('hidden_'+input_id).value.replace(/\n/g,'$$$$');
+                    fulls = document.getElementById(input_id).value.replace(/\n/g,'$$$$');
+                    //ids = ids.substring(0, ids.length-2);
+                    //fulls = fulls.substring(0, fulls.length-2); // $$
+                    args = 'input_id='+input_id+'&ids='+ids+'&fulls='+fulls;
+                    selector_window = window.open('groups_edit_form?'+args, 'groups', 'toolbar=0, scrollbars=0, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=450, height=420')
 
-               args = 'input_id='+input_id+'&ids='+ids+'&fulls='+fulls;
+                    if(!selector_window.opener) selector_window.opener = window
+                  }
 
-               selector_window = window.open('groups_edit_form?'+args,'members', 'toolbar=0, scrollbars=0, location=0, statusbar=0,menubar=0, resizable=1, dependent=1, width=450, height=420')
+                  function clean_textarea_user(input_id) {
+                    c = document.getElementById(input_id);
+                    c.value = '';
+                    d = document.getElementById('hidden_'+input_id);
+                    d.value = '';
 
+                  }
 
-               if(!selector_window.opener) selector_window.opener = window
-             }
+                -->
+                </script>
 
-             function clean_textarea_user(input_id) {
-               c = document.getElementById(input_id);
-               c.value = '';
-               d = document.getElementById('hidden_'+input_id);
-               d.value = '';
+                <a tal:attributes="href string:javascript:open_gr_selector('groups')">
+                  <img border="0" src="img_box_edit.png" />
+                </a>
 
-             }
-
-           -->
-           </script>
-          <a href="javascript:open_gr_selector('groups')">
-            <img border="0" src="img_box_edit.png" />
-           </a>
+            </tal:block>
+          </tal:block>
        </metal:block>
       </metal:block>
 
-  <input type="submit" name="submit" value="assign" >
+     <input class="mainbutton" type="submit" name="submit" value="assign" >
+  </metal:block>
+ </metal:block>
 </form>
 </metal:block>
-
 </body>
 </html>
 </tal:block>
