@@ -1,0 +1,73 @@
+# $Id$
+
+msgid "_cday_Su"
+msgstr "Su"
+
+msgid "_cday_Mo"
+msgstr "Mo"
+
+msgid "_cday_Tu"
+msgstr "Tu"
+
+msgid "_cday_We"
+msgstr "We"
+
+msgid "_cday_Th"
+msgstr "Th"
+
+msgid "_cday_Fr"
+msgstr "Fr"
+
+msgid "_cday_Sa"
+msgstr "Sa"
+
+msgid "_cmonth_01"
+msgstr "January"
+
+msgid "_cmonth_02"
+msgstr "Febuary"
+
+msgid "_cmonth_03"
+msgstr "March"
+
+msgid "_cmonth_04"
+msgstr "April"
+
+msgid "_cmonth_05"
+msgstr "May"
+
+msgid "_cmonth_06"
+msgstr "June"
+
+msgid "_cmonth_07"
+msgstr "July"
+
+msgid "_cmonth_08"
+msgstr "August"
+
+msgid "_cmonth_09"
+msgstr "September"
+
+msgid "_cmonth_10"
+msgstr "October"
+
+msgid "_cmonth_11"
+msgstr "November"
+
+msgid "_cmonth_12"
+msgstr "December"
+
+msgid "_cfmt_date_"
+msgstr "%m/%d/%Y"
+
+msgid "_cfmt_datetime_"
+msgstr "%m/%d/%Y at %H:%M" 
+
+msgid "_c_at_"
+msgstr "at"
+
+msgid "_c_h_"
+msgstr ":"
+
+msgid "_portal_type_Calendar Box"
+msgstr "Calendar Box"
