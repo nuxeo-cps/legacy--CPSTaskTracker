@@ -6,7 +6,7 @@
 
 cps_task_type = {
     'title': 'portal_type_CPS_Task_title',
-    'description': 'portam_type_CPS_Task_description',
+    'description': 'portal_type_CPS_Task_description',
     'content_icon': 'task_icon.png',
     'content_meta_type': 'CPS Task',
     'product': 'CPSTaskTracker',
@@ -20,8 +20,8 @@ cps_task_type = {
     'cps_proxy_type': 'document',
     'cps_display_as_document_in_listing': 0,
     'schemas': ['metadata', 'common', 'cps_task', 'flexible_content'],
-    'layouts': ['cps_task', 'flexible_content'],
-    'flexible_layouts': ['flexible_content:flexible_content'],
+    'layouts': ['cps_task', 'task_flexible_content'],
+    'flexible_layouts': ['task_flexible_content:flexible_content'],
     'storage_methods': [],
 }
 
