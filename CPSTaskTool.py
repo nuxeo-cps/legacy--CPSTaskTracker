@@ -159,14 +159,13 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
         """
 
         portal_membership = self.portal_membership
+        if portal_membership.isAnonymousUser():
+            return 0
         member = portal_membership.getAuthenticatedMember()
         member_id = member.getMemberId()
 
-        task_lists = {'my_tasks':[],
-                      'my_affected_tasks':[],
-                      'my_groups_affected_tasks':[],
-                      'my_accepted_tasks':[],
-                      }
+        task_lists = {}
+        
         if parameters.get('display_my_tasks'):
             task_lists['my_tasks'] = [x for x in sorted_tasks \
                                       if x.isCreator()]

@@ -1,14 +1,14 @@
 <tal:block define="mcat nocall:here/portal_messages;
                    mtool nocall:here/portal_membership;
                    portal_url nocall:here/portal_url;
-                   portal_object portal_url/getPortalObject">
-
-  <tal:block define="task_lists python:here.portal_tasks.searchTasks(here.getParameters());
-                     isManager python:mtool.checkPermission('Manage portal',portal_object)">
+                   portal_object portal_url/getPortalObject;
+                   task_lists python:here.portal_tasks.searchTasks(here.getParameters());
+                   isManager python:mtool.checkPermission('Manage portal',portal_object)"
+           condition="not:here/portal_membership/isAnonymousUser">
 
     <!-- BEGINNING OF MY TASKS -->
-    <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []"
-               define="tasks python:task_lists['my_tasks']">
+    <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []">
+    <tal:block define="tasks python:task_lists['my_tasks']">
       <strong>
         <span tal:content="python:mcat('_heading_task_i_created')">The tasks I created.</span>
       </strong>
@@ -39,11 +39,12 @@
         </table>
       </form>
     </tal:block>
+    </tal:block>
     <!-- END OF MY TASKS -->
 
     <!-- TASK ASSIGNED TO ME -->
-    <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []"
-               define="tasks python:task_lists['my_affected_tasks']">
+    <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []">
+      <tal:block define="tasks python:task_lists['my_affected_tasks']">
       <strong>
         <span tal:content="python:mcat('_heading_task_affected_to_me')">The tasks affected to me.</span>
       </strong>
@@ -74,12 +75,13 @@
         </table>
       </form>
     </tal:block>
+    </tal:block>
     <!-- TASK ASSIGNED TO ME -->
 
     <!-- TASK ASSIGNED TO ONE OF MY GROUPS -->
     <tal:block
-    condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []"
-               define="tasks python:task_lists['my_groups_affected_tasks']">
+    condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []">
+      <tal:block define="tasks python:task_lists['my_groups_affected_tasks']">
       <strong>
         <span tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">The
     tasks affected to one of my groups.</span>
@@ -112,11 +114,12 @@
         </table>
       </form>
     </tal:block>
+    </tal:block>
     <!-- TASK ASSIGNED TO ONEOF MY GROUPS -->
 
     <!-- TASK I ACCEPTED -->
-    <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []"
-               define="tasks python:task_lists['my_accepted_tasks']">
+    <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []">
+      <tal:block define="tasks python:task_lists['my_accepted_tasks']">
       <strong>
         <span tal:content="python:mcat('_heading_task_i_accepted')">The
     tasks I accepted.</span>
@@ -147,10 +150,7 @@
          </tal:block>
         </table>
       </form>
+     </tal:block>
     </tal:block>
     <!-- TASK I ACCEPTED -->
-
-  </tal:block>
-
-
 </tal:block>
