@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-10-29 20:19default\n"
+"POT-Creation-Date: 2003-10-29 22:05default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -64,6 +64,18 @@ msgstr ""
 msgid "_label_display_my_accepted_tasks"
 msgstr ""
 
+msgid "_label_screener_display_my_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_affected_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_groups_affacted_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_accepted_tasks"
+msgstr ""
+
 msgid "_label_start_date"
 msgstr ""
 
@@ -98,4 +110,26 @@ msgid "_heading_task_i_accepted"
 msgstr ""
 
 msgid "_heading_task_affected_to_one_of_my_groups"
+msgstr ""
+
+msgid "_heading_screener_message"
+msgstr ""
+
+msgid "_heading_configure"
+msgstr ""
+
+msgid "_label_title"
+msgstr ""
+
+msgid "_label_creator"
+msgstr ""
+
+msgid "_label_effective_date"
+msgstr ""
+
+msgid "_label_deadline"
+msgstr ""
+
+# ## BUTTTONS ######################################################
+msgid "_button_delete"
 msgstr ""

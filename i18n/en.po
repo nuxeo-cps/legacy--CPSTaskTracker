@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-10-29 20:19default\n"
-"PO-Revision-Date: 2003-10-29 20:20+0100\n"
+"POT-Creation-Date: 2003-10-29 22:05default\n"
+"PO-Revision-Date: 2003-10-29 22:30+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,6 +65,18 @@ msgstr "Display the tasks affected to one of my groups "
 msgid "_label_display_my_accepted_tasks"
 msgstr "Display the task I accepted"
 
+msgid "_label_screener_display_my_tasks"
+msgstr "Tasks I created"
+
+msgid "_label_screener_display_my_affected_tasks"
+msgstr "Tasks affected to me"
+
+msgid "_label_screener_display_my_groups_affacted_tasks"
+msgstr "Tasks assigned to one of me groups"
+
+msgid "_label_screener_display_my_accepted_tasks"
+msgstr "Tasks I accepted"
+
 msgid "_label_start_date"
 msgstr "Effective Date"
 
@@ -101,6 +113,30 @@ msgstr "Tasks I accepted"
 
 msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr "Task affected to one of my groups"
+
+msgid "_heading_screener_message"
+msgstr ""
+"You can edit your skinner by following the <strong>Screener parameters</"
+"strong> action on the right"
+
+msgid "_heading_configure"
+msgstr "Configure"
+
+msgid "_label_title"
+msgstr "Title"
+
+msgid "_label_creator"
+msgstr "Creator"
+
+msgid "_label_effective_date"
+msgstr "Effective Date"
+
+msgid "_label_deadline"
+msgstr "Deadline"
+
+# ## BUTTTONS ######################################################
+msgid "_button_delete"
+msgstr "Delete"
 
 #~ msgid "_action_recall_"
 #~ msgstr "Recall the assigned members"

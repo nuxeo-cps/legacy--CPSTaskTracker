@@ -3,10 +3,14 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- Task Box functional
+- icons 
+- etc....
 Bug fixes:
 ~~~~~~~~~~
--
+- Screener sorting problems
+- Rights on repository fixed for members.
+- +++++....
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- 
