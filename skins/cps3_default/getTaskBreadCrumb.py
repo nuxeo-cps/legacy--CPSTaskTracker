@@ -2,14 +2,18 @@
 ##parameters=REQUEST=None
 #$Id$
 
-"""
-Builts the bredcrumbs.
+"""Builts the breadcrumbs.
+
 Will be empty except when we're coming
 from the task screener.
 """
 
+from zLOG import LOG, INFO
+
+
 default_bc = [{'url': context.absolute_url(),
-               'title': context.title_or_id()
+               'title': context.title_or_id(),
+               'longtitle': context.title_or_id()
                }]
 
 if REQUEST is None:
@@ -26,11 +30,13 @@ else:
                     # When you we just create a task.
                     #
                     item['title'] = context.title_or_id()
+                    item['longtitle'] = context.title_or_id()
                     stupid = 1
             if stupid == 0:
                 del bc[0]
                 bc.append({'url': context.absolute_url(),
-                           'title': context.title_or_id()
+                           'title': context.title_or_id(),
+                           'longtitle': context.title_or_id()
                            })
             return bc
         else:
