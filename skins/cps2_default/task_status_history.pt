@@ -47,6 +47,23 @@ state.
 		 tal:replace="rhComments">Comments</div>
     </div>
 </div>
+
+<div tal:condition="here/task_rejecter|nothing">
+<h3>
+  <strong>
+    <span tal:replace="python:mcat('_label_reject_history')">
+      Reject task history
+    </span>
+  </strong>
+</h3>
+  <div tal:repeat="item here/task_rejecter">
+    <span tal:replace="python:here.get_date(item['date'])['all']" />
+    &nbsp;
+    <span tal:replace="python:mcat('_label_by')"  />
+    &nbsp;
+    <strong tal:content="item/id" />
+  </div>
+</div>
  </div>
 </div>
 </body>
