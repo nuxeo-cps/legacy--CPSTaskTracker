@@ -14,17 +14,19 @@ from re import match
 fmt = "%m/%d/%Y"
 lang = context.portal_messages.get_selected_language()
 
-if cdate and match(r'^[0-9]{4,4}/[0-9]?[0-9]/[0-9]?[0-9]$', cdate):
+if cdate:
     if lang == 'fr':
-        y, m, d = cdate.split('/')
+        d, m, y = cdate.split('/')
         fmt = "%d/%m/%Y"
     else:
-        y, m, d = cdate.split('/')
+        m, d, y = cdate.split('/')
         fmt = "%m/%d/%Y"
+
     try:
         dtv = DateTime(int(y), int(m), int(d), 0, 0)
     except:
-        dtv = DateTime()
+        y, m, d = cdate.split('/')
+        dtv = DateTime(int(y), int(m), int(d), 0, 0)
 else:
     dtv = DateTime()
     if lang == 'fr':
@@ -33,4 +35,5 @@ else:
 return {'day':dtv.day(),
         'month':dtv.month(),
         'year':dtv.year(),
-        'all':dtv.strftime(fmt)}
+        'all':dtv.strftime(fmt),
+        'for_storing': dtv.strftime("%m/%d/%Y")}
