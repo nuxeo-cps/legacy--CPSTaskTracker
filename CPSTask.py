@@ -116,8 +116,8 @@ class CPSTask(FlexibleDocument):
 
     start_task_date = ''
     stop_task_date  = ''
-    task_priority   = ''
-    task_indicator  = ''
+    task_priority   = 'normal'
+    task_indicator  = 'normal'
     task_type       = ''
     task_project    = ''
     task_goal       = ''
