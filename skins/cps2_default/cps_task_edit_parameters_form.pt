@@ -355,7 +355,7 @@
                         tal:content="project/title">
                       Task Project
                     </option>
-                    <option value="." checked
+                    <option value="." selected
                         tal:condition="python:the_project == project['title']"
                         tal:attributes="value project/title"
                         tal:content="project/title">
