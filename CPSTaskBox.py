@@ -21,6 +21,7 @@
 from zLOG import LOG, DEBUG
 
 from AccessControl import ClassSecurityInfo
+from Globals import InitializeClass
 
 from Products.CMFCore.CMFCorePermissions import View
 from Products.CMFCore.CMFCorePermissions import ModifyPortalContent
@@ -28,33 +29,33 @@ from Products.CMFCore.CMFCorePermissions import ModifyPortalContent
 from Products.NuxPortal.BaseBox import BaseBox
 
 factory_type_information = (
-    {'id': CPS Task Box,
-     'description': 'Customizable CPS Box for displaying the tasks related to the user.',
-     'title': 'Task Box',
+    {'id': 'CPS Task Box',
+     'title': '_portal_type_task Box',
+     'description': ('A Task Box.'),
+     'meta_type': 'CPS Task Box',
      'content_icon': 'box_icon.gif',
      'product': 'CPSTaskTracker',
      'factory': 'addCPSTaskBox',
-     'meta_type': CPS Task Box,
-     'immediate_view': 'cps_task_box_edit_form',
+     'immediate_view': 'CPSTaskBox_editForm',
      'filter_content_types': 0,
      'actions': ({'id': 'view',
-                  'name': 'Voir',
+                  'name': 'View',
                   'action': 'basebox_view',
                   'permissions': (View,)},
                  {'id': 'edit',
-                  'name': 'Modifier',
-                  'action': 'cps_task_box_edit_form',
+                  'name': 'Edit',
+                  'action': 'CPSTaskBox_editForm',
                   'permissions': (ModifyPortalContent,)},
                  {'id': 'render_title',
                   'name': 'Render title',
-                  'action': 'cps_task_box_render_title',
+                  'action': 'CPSTaskBox_renderTitle',
                   'visible': 0,
-                  'permissions': (View,)},
+                  'permissions': ()},
                  {'id': 'render_body',
                   'name': 'Render body',
-                  'action': 'cps_task_box_render_body',
+                  'action': 'CPSTaskBox_renderBody',
                   'visible': 0,
-                  'permissions': (View,)},
+                  'permissions': ()},
                  {'id': 'isportalbox',
                   'name': 'isportalbox',
                   'action': 'isportalbox',
@@ -64,37 +65,132 @@ factory_type_information = (
      },
     )
 
-
 class CPSTaskBox(BaseBox):
     """
-    A customizable CPS Box for CPStask type.
+    A Calendar Box simply returns a text.
     """
-
-    meta_type = "CPS Task Box"
-    portal_type = meta_type
+    meta_type = 'CPS Task Box'
+    # XXX Hack for CMF 1.3
+    portal_type = 'CPS Task Box'
 
     security = ClassSecurityInfo()
 
-    _properties = (
-        {'id':'title', 'type':'string', 'mode':'w', 'label':'Title'},
-        {'id':'description', 'type':'text', 'mode':'w', 'label':'Description'},
+    _properties = BaseBox._properties + (
+        {'id':'title', 'type':'string', 'mode':'w',
+         'label':'Title'},
+        {'id':'sort_date_on', 'type':'string', 'mode':'w', \
+         'label':'Sort on date'},
+        {'id':'sort_order', 'type':'string', 'mode':'w', \
+         'label':'Sort order'},
+        {'id':'sort_on', 'type':'string', 'mode':'w', \
+         'label':'Sort on'},
+        {'id':'display_my_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display my tasks ?'},
+        {'id':'display_my_affected_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display the tasks affected to me ?'},
+        {'id':'display_my_groups_affected_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display the tasks affected to a one if my groups ?'},
+        {'id':'display_my_accepted_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display the tasks I accepted ?'},
         )
 
-    def __init__(self, id,
+    #
+    # Initialization of the properties
+    #
+
+    # start_date, end_date
+    sort_date_on = "start_date"
+    # asc, desc
+    sort_order   = "asc"
+
+    # type, indicator or priority
+    sort_on = "a" # For the alpha sorting algo
+
+    display_my_tasks = 1
+    display_my_affected_tasks = 1
+    display_my_groups_affected_tasks = 1
+    display_my_accepted_tasks = 1
+
+
+    def __init__(self,
+                 id,
                  title='',
+                 display_my_tasks=1,
                  **kw):
         apply(BaseBox.__init__, (self, id), kw)
         self.title = title
+        self.display_my_tasks = display_my_tasks
+
+    security.declareProtected("getSortDateOn", View)
+    def getSortDateOn(self):
+        """
+        Return the possible values for the sort
+        parameters date.
+        """
+        return [
+            {'title':'label_start_date', 'id':'start_date',},
+            {'title':'label_stop_date', 'id':'stop_date',},
+            ]
+
+    security.declareProtected("getSortOrder", View)
+    def getSortOrder(self):
+        """
+        Get the sorting order
+        """
+        return [{'title':'label_asc', 'id':'asc'},
+                {'title':'label_desc', 'id':'desc'}
+                ]
+
+    security.declareProtected("getSortOn", View)
+    def getSortOn(self):
+        """
+        Get the sorting types
+        """
+        return [{'title':'label_type', 'id':'type'},
+                {'title':'label_indicator', 'id':'indicator'},
+                {'title':'label_priority', 'id':'priority'},
+                ]
+
+    security.declareProtected("sortTasks", "Modify portal content")
+    def changeScreenerProperties(self, form):
+        """
+        Change the properties of the sreener
+        """
+        self.sort_date_on = form.get('sort_date_on', 'start_date')
+        self.sort_order = form.get('sort_order', 'asc')
+        self.sort_on = form.get('sort_on', '')
+        self.display_my_tasks = form.get('display_my_tasks', 0) and 1
+        self.display_my_affected_tasks = form.get('display_my_affected_tasks', 0) and 1
+        self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0) and 1
+        self.display_my_accepted_tasks = form.get('display_my_accepted_tasks', 0) and 1
+
+    security.declareProtected("getParameters", "Modify portal content")
+    def getParameters(self):
+        """
+        Return a dictionnary containing the sorting
+        parameters.
+        To be passed to the portak_tasks search API
+        """
+
+        struct = {}
+        struct['sort_date_on'] = self.sort_date_on
+        struct['sort_order'] = self.sort_order
+        struct['sort_on'] = self.sort_on
+        struct['display_my_tasks'] = self.display_my_tasks
+        struct['display_my_affected_tasks'] = self.display_my_affected_tasks
+        struct['display_my_groups_affected_tasks'] = self.display_my_groups_affected_tasks
+        struct['display_my_accepted_tasks'] = self.display_my_accepted_tasks
+
+        return struct
+
 
 InitializeClass(CPSTaskBox)
 
 
 def addCPSTaskBox(dispatcher, id, REQUEST=None, **kw):
-    """Add a CPS Task Box."""
+    """Add a Calendar Box."""
     ob = CPSTaskBox(id, **kw)
-    container = dispatcher.Destination()
-    container._setObject(id, ob)
+    dispatcher._setObject(id, ob)
     if REQUEST is not None:
         url = dispatcher.DestinationURL()
         REQUEST.RESPONSE.redirect('%s/manage_main' % url)
-
