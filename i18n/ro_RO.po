@@ -1,0 +1,513 @@
+# ##########################################################
+# ################# DON'T EDIT THIS FILE! ##################
+# ##########################################################
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+msgid ""
+msgstr ""
+"Project-Id-Version: default\n"
+"POT-Creation-Date: 2004-07-26 14:17default\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Your Name <your@email>\n"
+"Language-Team: Name <email>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-code: LL\n"
+"Language-name: Language\n"
+"Preferred-encodings: utf-8 latin1\n"
+"Domain: default\n"
+
+# ## BUTTTONS ######################################################
+msgid "_button_delete"
+msgstr ""
+
+msgid "_button_submit_"
+msgstr ""
+
+msgid "_button_accept_"
+msgstr ""
+
+msgid "_button_reject_"
+msgstr ""
+
+msgid "_button_recall_"
+msgstr ""
+
+msgid "_button_assign"
+msgstr ""
+
+msgid "_button_reinit"
+msgstr ""
+
+# ## PORTAL types ##########################################################
+msgid "_portal_type_CPS_Task"
+msgstr ""
+
+msgid "_portal_type_CPS_Task_Screen"
+msgstr ""
+
+msgid "_portal_type_task Box"
+msgstr ""
+
+# ## actions ###############################################################
+msgid "_action_reinit_"
+msgstr ""
+
+msgid "_action_create_new_tasks"
+msgstr ""
+
+msgid "_action_parameters"
+msgstr ""
+
+msgid "_action_edit_"
+msgstr ""
+
+msgid "_action_assign_task_to"
+msgstr ""
+
+msgid "_action_current_status_"
+msgstr ""
+
+msgid "_action_recall_"
+msgstr ""
+
+msgid "_reviewstate_waiting"
+msgstr ""
+
+msgid "_reviewstate_processed"
+msgstr ""
+
+msgid "_reviewstate_closed"
+msgstr ""
+
+msgid "_action_history_"
+msgstr ""
+
+# ## labels ################################################################
+msgid "_label_name"
+msgstr ""
+
+msgid "_label_email"
+msgstr ""
+
+msgid "_label_my_tasks"
+msgstr ""
+
+msgid "_label_sort_date_on"
+msgstr ""
+
+msgid "_label_sort_order"
+msgstr ""
+
+msgid "_label_sort_on"
+msgstr ""
+
+msgid "_label_display_my_tasks"
+msgstr ""
+
+msgid "_label_display_my_affected_tasks"
+msgstr ""
+
+msgid "_label_display_my_groups_affected_tasks"
+msgstr ""
+
+msgid "_label_display_my_accepted_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_affected_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_groups_affected_tasks"
+msgstr ""
+
+msgid "_label_screener_display_my_accepted_tasks"
+msgstr ""
+
+msgid "_label_start_date"
+msgstr ""
+
+msgid "_label_stop_date"
+msgstr ""
+
+msgid "_label_asc"
+msgstr ""
+
+msgid "_label_desc"
+msgstr ""
+
+msgid "_label_none"
+msgstr ""
+
+msgid "_label_type"
+msgstr ""
+
+msgid "_label_indicator"
+msgstr ""
+
+msgid "_label_priority"
+msgstr ""
+
+msgid "_heading_task_i_created"
+msgstr ""
+
+msgid "_heading_task_affected_to_me"
+msgstr ""
+
+msgid "_heading_task_i_accepted"
+msgstr ""
+
+msgid "_heading_task_affected_to_one_of_my_groups"
+msgstr ""
+
+msgid "_heading_screener_message"
+msgstr ""
+
+msgid "_heading_configure"
+msgstr ""
+
+msgid "_heading_create_a_task_screen"
+msgstr ""
+
+msgid "_heading_recall_assigned_members"
+msgstr ""
+
+msgid "_label_title"
+msgstr ""
+
+msgid "_label_creator"
+msgstr ""
+
+msgid "_label_effective_date"
+msgstr ""
+
+msgid "_label_deadline"
+msgstr ""
+
+msgid "_label_project"
+msgstr ""
+
+msgid "_label_goal"
+msgstr ""
+
+msgid "_label_assigned_to_users"
+msgstr ""
+
+msgid "_label_assigned_to_groups"
+msgstr ""
+
+msgid "_label_accepted_by"
+msgstr ""
+
+msgid "_label_rejected_by"
+msgstr ""
+
+msgid "_label_do_you_want_to_accpet_it"
+msgstr ""
+
+msgid "_label_do_you_want_to_reject_it"
+msgstr ""
+
+msgid "_label_do_you_want_to_close_it"
+msgstr ""
+
+msgid "_label_status"
+msgstr ""
+
+msgid "_label_recall_explanation"
+msgstr ""
+
+msgid "_label_you_are_recalled_for_the_task"
+msgstr ""
+
+msgid "_label_you_can_reassign_the_task_here"
+msgstr ""
+
+msgid "_label_do_you_want_to_reinit_it"
+msgstr ""
+
+msgid "_label_recall"
+msgstr ""
+
+msgid "_label_mail_sent"
+msgstr ""
+
+msgid "_label_error_while_sending_mail"
+msgstr ""
+
+msgid "_label_All/None_"
+msgstr ""
+
+msgid "_action_accept"
+msgstr ""
+
+msgid "_action_reject"
+msgstr ""
+
+msgid "_action_close_task"
+msgstr ""
+
+msgid "_action_create_new_project"
+msgstr ""
+
+# ## Calendar #########################################################
+msgid "_cday_Su"
+msgstr ""
+
+msgid "_cday_Mo"
+msgstr ""
+
+msgid "_cday_Tu"
+msgstr ""
+
+msgid "_cday_We"
+msgstr ""
+
+msgid "_cday_Th"
+msgstr ""
+
+msgid "_cday_Fr"
+msgstr ""
+
+msgid "_cday_Sa"
+msgstr ""
+
+msgid "_cmonth_01"
+msgstr ""
+
+msgid "_cmonth_02"
+msgstr ""
+
+msgid "_cmonth_03"
+msgstr ""
+
+msgid "_cmonth_04"
+msgstr ""
+
+msgid "_cmonth_05"
+msgstr ""
+
+msgid "_cmonth_06"
+msgstr ""
+
+msgid "_cmonth_07"
+msgstr ""
+
+msgid "_cmonth_08"
+msgstr ""
+
+msgid "_cmonth_09"
+msgstr ""
+
+msgid "_cmonth_10"
+msgstr ""
+
+msgid "_cmonth_11"
+msgstr ""
+
+msgid "_cmonth_12"
+msgstr ""
+
+msgid "_cfmt_date_"
+msgstr ""
+
+msgid "_cfmt_datetime_"
+msgstr ""
+
+msgid "_c_at_"
+msgstr ""
+
+msgid "_c_h_"
+msgstr ""
+
+# ## POPUPS ##################################################
+msgid "_searchmembers_tools_"
+msgstr ""
+
+msgid "_Members_criteria_"
+msgstr ""
+
+msgid "_dir_Groups_"
+msgstr ""
+
+msgid "_(Add users ...) as_"
+msgstr ""
+
+msgid "_button_search_"
+msgstr ""
+
+msgid "_select_members_from_search_"
+msgstr ""
+
+msgid "_button_add_"
+msgstr ""
+
+msgid "_No_entry_matches_your_request_"
+msgstr ""
+
+msgid "_members_selected_"
+msgstr ""
+
+msgid "_button_clean_"
+msgstr ""
+
+msgid "_button_close"
+msgstr ""
+
+msgid "_button_validate_"
+msgstr ""
+
+msgid "_searchgroups_tools_"
+msgstr ""
+
+msgid "_Groups_criteria_"
+msgstr ""
+
+msgid "_select_groups_from_search_"
+msgstr ""
+
+msgid "_groups_selected_"
+msgstr ""
+
+# ## Projects #######################################################
+msgid "_label_create_a_new_project"
+msgstr ""
+
+msgid "_label_manage_projects"
+msgstr ""
+
+msgid "_label_description"
+msgstr ""
+
+msgid "_label_other"
+msgstr ""
+
+# ## Skinners #######################################################
+msgid "_label_skinner"
+msgstr ""
+
+msgid "other"
+msgstr ""
+
+msgid "closed"
+msgstr ""
+
+msgid "assigned"
+msgstr ""
+
+msgid "late"
+msgstr ""
+
+msgid "opened"
+msgstr ""
+
+# ## Status History ############################################
+msgid "_heading_task_history"
+msgstr ""
+
+msgid "_heading_current_state"
+msgstr ""
+
+msgid "_label_item_is"
+msgstr ""
+
+msgid "_label_state"
+msgstr ""
+
+msgid "_label_reviewing_history"
+msgstr ""
+
+msgid "_label_by"
+msgstr ""
+
+msgid "_portal_tasks"
+msgstr ""
+
+msgid "_transition_accept"
+msgstr ""
+
+msgid "_transition_assign"
+msgstr ""
+
+msgid "_transition_close"
+msgstr ""
+
+msgid "_transition_reject"
+msgstr ""
+
+msgid "_transition_None"
+msgstr ""
+
+msgid "_transition_reinit"
+msgstr ""
+
+msgid "_label_no_project"
+msgstr ""
+
+msgid "_label_reject_history"
+msgstr ""
+
+msgid "_heading_task_related_to"
+msgstr ""
+
+msgid "_label_only_this_project"
+msgstr ""
+
+msgid "_label_recall_no_users_assigned"
+msgstr ""
+
+# ## Document fields
+msgid "label_cps_task_type"
+msgstr ""
+
+msgid "label_cps_start_task_date"
+msgstr ""
+
+msgid "label_cps_task_priority"
+msgstr ""
+
+msgid "label_cps_stop_task_date"
+msgstr ""
+
+msgid "label_cps_task_goal"
+msgstr ""
+
+msgid "label_cps_task_description"
+msgstr ""
+
+msgid "label_cps_task_members"
+msgstr ""
+
+msgid "label_cps_task_groups"
+msgstr ""
+
+msgid "label_priority_high"
+msgstr ""
+
+msgid "label_priority_normal"
+msgstr ""
+
+msgid "label_priority_low"
+msgstr ""
+
+msgid "label_priority_internal"
+msgstr ""
+
+msgid "label_priority_nuxeo"
+msgstr ""
+
+msgid "label_priority_other"
+msgstr ""
+
+msgid "label_cpstask_text"
+msgstr ""
+
+msgid "_label_task_rejected"
+msgstr ""
+
+msgid "_label_the_task_has_been_rejected"
+msgstr ""
