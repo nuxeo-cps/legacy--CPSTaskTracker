@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-10 16:21default\n"
-"PO-Revision-Date: 2003-11-10 16:12+0100\n"
+"POT-Creation-Date: 2003-11-10 19:11default\n"
+"PO-Revision-Date: 2003-11-10 18:38+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -374,3 +374,13 @@ msgstr "Select groups from search"
 # ## labels ################################################################
 msgid "_groups_selected_"
 msgstr "Groups selected"
+
+# # actions ###############################################################
+msgid "_label_create_a_new_project"
+msgstr "Create a new project"
+
+msgid "_label_manage_projects"
+msgstr "Manage projects"
+
+msgid "_label_description"
+msgstr "Description"

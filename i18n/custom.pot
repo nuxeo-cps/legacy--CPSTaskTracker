@@ -358,4 +358,15 @@ msgstr ""
 msgid "_groups_selected_"
 msgstr ""
 
+### Projects #######################################################
+
+msgid "_label_create_a_new_project"
+msgstr ""
+
+msgid "_label_manage_projects"
+msgstr ""
+
+msgid "_label_description"
+msgstr ""
+
 

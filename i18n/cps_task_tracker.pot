@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-11-10 16:21default\n"
+"POT-Creation-Date: 2003-11-10 19:11default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -353,4 +353,14 @@ msgid "_select_groups_from_search_"
 msgstr ""
 
 msgid "_groups_selected_"
+msgstr ""
+
+# ## Projects #######################################################
+msgid "_label_create_a_new_project"
+msgstr ""
+
+msgid "_label_manage_projects"
+msgstr ""
+
+msgid "_label_description"
 msgstr ""
