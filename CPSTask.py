@@ -18,8 +18,14 @@
 #
 # $Id$
 
+__author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
+
 """
-  CPS Task Type.
+CPS Task Type.
+You can access the software requierements specifications within
+the docs sub-directory of the product.
+Notice that this type is following a given workflow defined in
+the Install sub-directory of this product.
 """
 
 import string
@@ -139,6 +145,16 @@ class CPSTask(FlexibleDocument):
         # No members assigned to this task
         return []
 
+    security.declarePrivate("getCurrentMemberId")
+    def getCurrentMemberId(self):
+        """
+        Return the current logged in member
+        """
+        portal = self.portal_url.getPortalObject()
+        member = portal.portal_membership.getAuthenticatedMember()
+
+        return member.getMemberId()
+
     security.declarePublic("getGroupIds")
     def getGroupIds(self):
         """
@@ -156,8 +172,7 @@ class CPSTask(FlexibleDocument):
         """
         Check if member_id is assigned to this task
         """
-        portal = self.portal_url.getPortalObject()
-        member_id = portal.portal_membership.getAuthenticatedMember().getMemberId()
+        member_id = self.getCurrentMemberId()
 
         # Checking if the task is closed or not
         if self.isClosed():
@@ -194,8 +209,7 @@ class CPSTask(FlexibleDocument):
         """
         Check if member_id is the creator of the task
         """
-        portal = self.portal_url.getPortalObject()
-        member_id = portal.portal_membership.getAuthenticatedMember().getMemberId()
+        member_id = self.getCurrentMemberId()
         return member_id == self.Creator()
 
     security.declarePublic("acceptTask")
@@ -204,9 +218,7 @@ class CPSTask(FlexibleDocument):
         Someone is accepting the task from the people who were
         assigned to it.
         """
-        portal = self.portal_url.getPortalObject()
-        member_id = portal.portal_membership.getAuthenticatedMember().getMemberId()
-
+        member_id = self.getCurrentMemberId()
         self.the_assigned = member_id
 
     security.declarePublic("getTheAssignedOne")
@@ -221,9 +233,7 @@ class CPSTask(FlexibleDocument):
         """
         Check if the user the one who accepted the task
         """
-        portal = self.portal_url.getPortalObject()
-        member_id = portal.portal_membership.getAuthenticatedMember().getMemberId()
-
+        member_id = self.getCurrentMemberId()
         return member_id == self.the_assigned
 
     security.declarePublic("closeTask")
@@ -256,6 +266,7 @@ class CPSTask(FlexibleDocument):
         """
         Return the status of the task.
         """
+
         #
         # OPENED : not assigned yet.
         # ASSIGNED : no comment
@@ -303,19 +314,37 @@ class CPSTask(FlexibleDocument):
         """
         The user rejects the task
         """
-
-        portal = self.portal_url.getPortalObject()
-        member_id = portal.portal_membership.getAuthenticatedMember().getMemberId()
-
+        member_id = self.getCurrentMemberId()
         self.task_rejecter.append(member_id)
+        return 1 # No use since now.
 
     security.declarePublic("getTaskRejecters")
     def getTaskRejecters(self):
         """
         Return the list of people who rejected the task already
         """
-
         return self.task_rejecter
+
+    security.declareProtected("getAssignedEmails", ModifyPortalContent)
+    def getAssignedEmails(self):
+        """
+        Return assigned member emails.
+        Used to recall them they got sthg to do.
+        """
+
+        res = []
+        member_ids = self.getMemberIds()
+
+        mtool = self.portal_metadirectories
+        member_directory = mtool.members
+
+        for member_id in member_ids:
+            member = member_directory.getEntry(member_id)
+            #member_email = member['email']
+            res.append(member)
+
+        return res
+
 
 InitializeClass(CPSTask)
 
