@@ -3,8 +3,7 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Screener now is functional. (Parameters) 
-- Sorting API (TaskTool)
+-
 Bug fixes:
 ~~~~~~~~~~
 -

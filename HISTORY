@@ -1,4 +1,20 @@
 *******************************************
+** CPSTaskTracker V0.2.0 [R1 build 2003-10/28-14:08 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Screener now is functional. (Parameters) 
+- Sorting API (TaskTool)
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+*******************************************
 ** CPSTaskTracker V0.1.1 [R1 build 2003-10/27-19:30 by anguenot]
 
 ZODB Requires:
