@@ -7,6 +7,8 @@ New features:
 Bug fixes:
 ~~~~~~~~~~
 - Creating a task within a screener context : fixing bad breadcrumb.
+- Security declaration fix for isLate.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Patch from the CEA : sorting prioroties ans avoiding doublons.
+- One more condition for the method isLate depending on the close state.
