@@ -13,26 +13,8 @@ o Design for documentation
 
 ## DEV
 
-o install
-  o portal_catalog indexes for the CPSTask Type
-
 o CPSTask
   o Checking for the indexation of the attached files
-  o sorting against projects + projects management.
-  o Cosmetics
-    o Re-skinning the templates like the one for recall the assignees.
-  o bug when you have one create/affected task. It appears within the group tasks.
-
-o CPSTaskScreen
-  o Skinners ?
-  o les bouton d'effacement ne fonctionnent pas ???
-
-o CPSTaskBox
-  o Skinners ?
-  o Le bouton 'visible si vide' de la boite de tâche est sans effet ( on veut cette option ? )
 
 o Workflow
   o Defining the task workflow in Python within the installer
-
-o Cosmetic
-  o Putting nicer icons for the task box. (task state indicator)
