@@ -1,6 +1,8 @@
 <tal:block define="current_action string:edit;
-                   create options/create|nothing">
-<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+                   create options/create|nothing;
+                   dummy python:request.set('breadcrumb_set',[]);
+                    ">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal" 
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       metal:use-macro="here/main_template/macros/master">
   <metal:block fill-slot="base">
@@ -368,8 +370,8 @@
           <span tal:replace="python:mcat('_label_project')" />
         </metal:block>
         <metal:block fill-slot="content">
-          <textarea name="task_project:text" rows="5" cols="50" wrap="soft"
-                    tal:content="here/task_project|nothing"></textarea>
+          <input name="task_project" value=""
+                 tal:attributes="value here/task_project|nothing" />
         </metal:block>
       </metal:block>
 
