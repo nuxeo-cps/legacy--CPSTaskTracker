@@ -31,7 +31,7 @@
                 </tal:block>
                 &nbsp;
                 <a href="."
-                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}?skip_bc=1">
                   <span tal:replace="task/title_or_id" />
                 </a>
               </td>
@@ -67,7 +67,7 @@
                 </tal:block>
                 &nbsp;
                 <a href="."
-                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}?skip_bc=1">
                   <span tal:replace="task/title_or_id" />
                 </a>
               </td>
@@ -106,7 +106,7 @@
                 </tal:block>
                 &nbsp;
                 <a href="."
-                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}?skip_bc=1">
                   <span tal:replace="task/title_or_id" />
                 </a>
               </td>
@@ -143,7 +143,7 @@
                 </tal:block>
                 &nbsp;
                 <a href="."
-                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}?skip_bc=1">
                   <span tal:replace="task/title_or_id" />
                 </a>
               </td>
