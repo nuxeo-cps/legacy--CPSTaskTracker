@@ -15,6 +15,8 @@ o Design for documentation
 
 o CPSTask
   o Checking for the indexation of the attached files
+  o Breadcrumbs manipulation from task screener.
+  o History of the task.
 
 o Workflow
   o Defining the task workflow in Python within the installer

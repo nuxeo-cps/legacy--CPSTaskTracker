@@ -6,7 +6,10 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Projects Management : odd rows not clickable
+- CPSTask : Project field buggy while render in edit mode.
+- CPSTask : security fix (wrong order within declarations)
+- ++
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
