@@ -5,18 +5,8 @@ o means TODO
 x means DONE
 ################
 
-## DESIGN
-
-o Design for documentation
-  o Class Diagrams
-  o docs
-
-## DEV
-
 o CPSTask
   o Checking for the indexation of the attached files
-  o Breadcrumbs manipulation from task screener.
-  o History of the task.
 
 o Workflow
   o Defining the task workflow in Python within the installer

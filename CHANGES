@@ -3,10 +3,13 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- Task workflow status history.
+- Task breadcrumb computation depending on the context.
 Bug fixes:
 ~~~~~~~~~~
--
+- task workflow state change
+- i18n wording
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
+
