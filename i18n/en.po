@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-10 19:11default\n"
-"PO-Revision-Date: 2003-11-10 18:38+0100\n"
+"POT-Creation-Date: 2003-11-11 18:08default\n"
+"PO-Revision-Date: 2003-11-11 18:21+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -221,8 +221,7 @@ msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
 
 msgid "_label_you_can_reassign_the_task_here"
-msgstr ""
-"You can re-assign the task here. It will replace the previous assignment."
+msgstr "You can re-assign the task here. It will replace the previous assignment."
 
 # ## labels ################################################################
 msgid "_label_recall"
@@ -384,3 +383,7 @@ msgstr "Manage projects"
 
 msgid "_label_description"
 msgstr "Description"
+
+msgid "_label_other"
+msgstr "Other"
+

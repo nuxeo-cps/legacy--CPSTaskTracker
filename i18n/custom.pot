@@ -369,4 +369,9 @@ msgstr ""
 msgid "_label_description"
 msgstr ""
 
+msgid "_label_other"
+msgstr ""
+
+msgid "_label_display_my_groups_affected_tasks"
+msgstr ""
 
