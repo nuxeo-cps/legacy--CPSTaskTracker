@@ -39,7 +39,7 @@ msgstr "Rejeter cette tâche"
 
 # ## BUTTTONS ######################################################
 msgid "_button_recall_"
-msgstr "Rappeller"
+msgstr "Rappeler"
 
 msgid "_button_assign"
 msgstr "Affecter"
@@ -78,7 +78,7 @@ msgid "_action_current_status_"
 msgstr "Statut courant"
 
 msgid "_action_recall_"
-msgstr "Rappeller les membres assignés"
+msgstr "Rappeler les membres assignés"
 
 msgid "_reviewstate_waiting"
 msgstr "En attente."
@@ -187,7 +187,7 @@ msgid "_heading_create_a_task_screen"
 msgstr "Créer un visualisateur de tâches."
 
 msgid "_heading_recall_assigned_members"
-msgstr "Rappeller les personnes assignées"
+msgstr "Rappeler les personnes assignées"
 
 msgid "_label_title"
 msgstr "Titre"
