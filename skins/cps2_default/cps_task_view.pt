@@ -71,16 +71,6 @@ END DEBUG -->
 <tr>
   <td bgcolor="#EEEEEE">
     <strong>
-      <span tal:replace="python:mcat('_label_indicator')" />
-    </strong>
-  </td>
-  <td>
-    <span tal:replace="here/task_indicator" />
-  </td>
-</tr>
-<tr>
-  <td bgcolor="#EEEEEE">
-    <strong>
        <span tal:replace="python:mcat('_label_type')" />
     </strong>
   </td>

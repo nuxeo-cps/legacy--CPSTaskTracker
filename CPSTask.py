@@ -95,8 +95,6 @@ class CPSTask(FlexibleDocument):
          'label':'Task ends'},
         {'id':'task_priority', 'type':'string', 'mode':'w', \
          'label':'Task Priority'},
-        {'id':'task_indicator', 'type':'string', 'mode':'w', \
-         'label':'Task Indicator'},
         {'id':'task_type', 'type':'string', 'mode':'w', \
          'label':'Task Type'},
         {'id':'task_project', 'type':'string', 'mode':'w', \
@@ -116,9 +114,8 @@ class CPSTask(FlexibleDocument):
     start_task_date = ''
     stop_task_date  = ''
     task_priority   = 'normal'
-    task_indicator  = 'normal'
     task_type       = ''
-    task_project    = ''
+    task_project    = 'none'
     task_goal       = ''
     members = ''
     groups  = ''

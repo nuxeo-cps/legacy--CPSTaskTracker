@@ -43,11 +43,6 @@
           </td>
           <td align="center">
              <strong>
-               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
                <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
@@ -97,9 +92,6 @@
                 <span tal:replace="task/Creator" />
               </td>
               <td>
-                <span tal:replace="task/task_indicator" />
-              </td>
-              <td>
                 <span tal:replace="task/task_priority" />
               </td>
               <td>
@@ -140,9 +132,6 @@
              </td>
              <td>
                <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_indicator" />
              </td>
              <td>
                <span tal:replace="task/task_priority" />
@@ -202,11 +191,6 @@
           </td>
           <td align="center">
              <strong>
-               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
                <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
@@ -256,9 +240,6 @@
                 <span tal:replace="task/Creator" />
               </td>
               <td>
-                <span tal:replace="task/task_indicator" />
-              </td>
-              <td>
                 <span tal:replace="task/task_priority" />
               </td>
               <td>
@@ -299,9 +280,6 @@
              </td>
              <td>
                <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_indicator" />
              </td>
              <td>
                <span tal:replace="task/task_priority" />
@@ -362,11 +340,6 @@
           </td>
           <td align="center">
              <strong>
-               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
                <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
@@ -416,9 +389,6 @@
                 <span tal:replace="task/Creator" />
               </td>
               <td>
-                <span tal:replace="task/task_indicator" />
-              </td>
-              <td>
                 <span tal:replace="task/task_priority" />
               </td>
               <td>
@@ -459,9 +429,6 @@
              </td>
              <td>
                <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_indicator" />
              </td>
              <td>
                <span tal:replace="task/task_priority" />
@@ -521,11 +488,6 @@
           </td>
           <td align="center">
              <strong>
-               <span tal:replace="python:mcat('_label_indicator')">Indicator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
                <span tal:replace="python:mcat('_label_priority')">Priority</span>
              </strong>
           </td>
@@ -575,9 +537,6 @@
                 <span tal:replace="task/Creator" />
               </td>
               <td>
-                <span tal:replace="task/task_indicator" />
-              </td>
-              <td>
                 <span tal:replace="task/task_priority" />
               </td>
               <td>
@@ -618,9 +577,6 @@
              </td>
              <td>
                <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_indicator" />
              </td>
              <td>
                <span tal:replace="task/task_priority" />

@@ -154,7 +154,6 @@ class CPSTaskBox(BaseBox):
         """
         return [{'title':'_label_none', 'id':'None'},
                 {'title':'_label_type', 'id':'type'},
-                {'title':'_label_indicator', 'id':'indicator'},
                 {'title':'_label_priority', 'id':'priority'},
                 ]
 

@@ -6,7 +6,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       metal:use-macro="here/main_template/macros/master">
   <metal:block fill-slot="base">
-    <base href="." tal:attributes="href string:${here/absolute_url}/">
+    <base href="." tal:attributes="href string:${here/absolute_url}/" />
   </metal:block>
 <body>
 
@@ -189,33 +189,6 @@
 
       <metal:block use-macro="here/main_widgets/macros/form_property">
         <metal:block fill-slot="title">
-          <span tal:replace="python:mcat('_label_indicator')" />
-        </metal:block>
-        <metal:block fill-slot="content">
-          <select name="task_indicator"
-                  tal:define="the_indicator here/task_indicator|nothing">
-
-            <option value="normal" tal:content="string:normal"
-                    tal:condition="python:the_indicator != 'normal'">normal</option>
-            <option value="normal" tal:content="string:normal" selected
-                    tal:condition="python:the_indicator == 'normal'">normal</option>
-
-            <option value="critical" tal:content="string:critical"
-                    tal:condition="python:the_indicator !='critical'">critical</option>
-            <option value="critical" tal:content="string:critical" selected
-                    tal:condition="python:the_indicator == 'critical'">critical</option>
-
-            <option value="late" tal:content="string:late"
-                    tal:condition="python:the_indicator != 'late'">late</option>
-            <option value="late" tal:content="string:late" selected
-                    tal:condition="python:the_indicator == 'late'">late</option>
-
-          </select>
-        </metal:block>
-       </metal:block>
-
-      <metal:block use-macro="here/main_widgets/macros/form_property">
-        <metal:block fill-slot="title">
           <span tal:replace="python:mcat('_label_type')" />
          </metal:block>
         <metal:block fill-slot="content">
@@ -267,7 +240,8 @@
                         tal:content="full_text">
               </textarea>
               <input type="hidden" size="1"
-                     tal:attributes="name string:members;id string:hidden_members;value new_text">
+                     tal:attributes="name string:members;id
+        string:hidden_members;value new_text" />
 
                 <script language="JavaScript" type="text/javascript"><!--
 
@@ -330,7 +304,8 @@
                         tal:content="full_text">
               </textarea>
               <input type="hidden" size="1"
-                     tal:attributes="name string:groups;id string:hidden_groups;value new_text">
+                     tal:attributes="name string:groups;id
+        string:hidden_groups;value new_text" />
 
                 <script language="JavaScript" type="text/javascript"><!--
 
@@ -370,8 +345,28 @@
           <span tal:replace="python:mcat('_label_project')" />
         </metal:block>
         <metal:block fill-slot="content">
-          <input name="task_project" value=""
-                 tal:attributes="value here/task_project|nothing" />
+          <select name="task_project"
+                  tal:define="the_project here/task_project|nothing" >
+                  <tal:block repeat="project here/portal_tasks/getProjects">
+                    <option value="."
+                        tal:condition="python:the_project != project['title']"
+                        tal:attributes="value project/title"
+                        tal:content="project/title">
+                      Task Project
+                    </option>
+                    <option value="." checked
+                        tal:condition="python:the_project == project['title']"
+                        tal:attributes="value project/title"
+                        tal:content="project/title">
+                      Task project
+                    </option>
+                 </tal:block>
+                 <option value="." checked
+                        tal:attributes="value string:none"
+                        tal:content="python:mcat('_label_other')">
+                      Task project
+                 </option>
+          </select>
         </metal:block>
       </metal:block>
 
@@ -393,7 +388,7 @@
 
 
 
-  <input type="hidden" name="type_name" value="CPS Task">
+  <input type="hidden" name="type_name" value="CPS Task" />
   <tal:block condition="create">
     <input type="hidden" name="default_id_from" value="title" />
     <input type="hidden" name="default_title_from" value="description" />

@@ -88,14 +88,6 @@
                    tal:condition="python:here.sort_on != 'type'">
                   <span tal:replace="python:mcat('_label_type')" />
                 </option>
-                <option value="indicator" selected
-                  tal:condition="python:here.sort_on == 'indicator'">
-                  <span tal:replace="python:mcat('_label_indicator')" />
-                </option>
-                <option value="indicator"
-                  tal:condition="python:here.sort_on != 'indicator'">
-                  <span tal:replace="python:mcat('_label_indicator')" />
-                </option>
               </select>
             </metal:block>
           </metal:block>
