@@ -28,7 +28,8 @@ class TestGlobalInstall(CPSTaskTrackerTestCase.CPSTaskTrackerTestCase):
 
     def testSkinsFixture(self):
         stool = getToolByName(self.portal, 'portal_skins')
-        self.assertEqual('cps_task_tracker' in stool.objectIds(), 1)
+        self.assertEqual('cps_task_tracker_default' in stool.objectIds(), 1)
+        self.assertEqual('cps_task_tracker_documents' in stool.objectIds(), 1)
 
     def testWorkflowInstallation(self):
         """Test task workflow installation
