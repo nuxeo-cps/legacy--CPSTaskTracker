@@ -95,9 +95,7 @@ msgid "_label_display_my_affected_tasks"
 msgstr "Afficher les tâches qui me sont affectées "
 
 msgid "_label_display_my_groups_affected_tasks"
-msgstr ""
-"Afficher les tâches qui sont affectées à un des groupes auxquels "
-"j'appartiens."
+msgstr "Afficher les tâches qui sont affectées à un des groupes auxquels j'appartiens."
 
 msgid "_label_display_my_accepted_tasks"
 msgstr "Afficher les tâches que j'ai acceptées. "
@@ -211,12 +209,7 @@ msgid "_label_status"
 msgstr "Statut"
 
 msgid "_label_recall_explanation"
-msgstr ""
-"Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le "
-"boutton <strong>Rappeller</strong> après avoir choisit les membres.<br /"
-">Vous pouvez également accéder aux informations relatives à chaque membres "
-"en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à "
-"un membre donné en cliquant le champ email. "
+msgstr "Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le boutton <strong>Rappeller</strong> après avoir choisit les membres.<br />Vous pouvez également accéder aux informations relatives à chaque membres en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à un membre donné en cliquant le champ email. "
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Ceci est un rappel vous concernant pour la tâche suivante : "
@@ -383,7 +376,7 @@ msgid "_label_description"
 msgstr "Déscription"
 
 msgid "_label_other"
-msgstr "Aucun"
+msgstr "Autre"
 
 msgid "_label_skinner"
 msgstr "Vue "
