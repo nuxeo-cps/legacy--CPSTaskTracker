@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-11-11 18:57default\n"
+"POT-Creation-Date: 2003-11-15 00:06default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -68,6 +68,15 @@ msgid "_action_recall_"
 msgstr ""
 
 msgid "_reviewstate_waiting"
+msgstr ""
+
+msgid "_reviewstate_processed"
+msgstr ""
+
+msgid "_reviewstate_closed"
+msgstr ""
+
+msgid "_action_history_"
 msgstr ""
 
 # ## labels ################################################################
@@ -370,4 +379,53 @@ msgstr ""
 
 # ## Skinners #######################################################
 msgid "_label_skinner"
+msgstr ""
+
+msgid "other"
+msgstr ""
+
+msgid "closed"
+msgstr ""
+
+msgid "assigned"
+msgstr ""
+
+msgid "late"
+msgstr ""
+
+msgid "opened"
+msgstr ""
+
+# ## Status History ############################################
+msgid "_heading_task_history"
+msgstr ""
+
+msgid "_heading_current_state"
+msgstr ""
+
+msgid "_label_item_is"
+msgstr ""
+
+msgid "_label_state"
+msgstr ""
+
+msgid "_label_reviewing_history"
+msgstr ""
+
+msgid "_label_by"
+msgstr ""
+
+msgid "_portal_tasks"
+msgstr ""
+
+msgid "_transition_accept"
+msgstr ""
+
+msgid "_transition_assign"
+msgstr ""
+
+msgid "_transition_close"
+msgstr ""
+
+msgid "_transition_None"
 msgstr ""

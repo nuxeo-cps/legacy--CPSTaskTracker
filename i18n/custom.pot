@@ -70,6 +70,15 @@ msgstr ""
 msgid "_reviewstate_waiting"
 msgstr ""
 
+msgid "_reviewstate_processed"
+msgstr ""
+
+msgid "_reviewstate_closed"
+msgstr ""
+
+msgid "_action_history_"
+msgstr ""
+
 ### labels ################################################################
 
 msgid "_label_name"
@@ -391,3 +400,39 @@ msgstr ""
 
 msgid "opened"
 msgstr ""
+
+### Status History ############################################
+
+msgid "_heading_task_history"
+msgstr ""
+
+msgid "_heading_current_state"
+msgstr ""
+
+msgid "_label_item_is"
+msgstr ""
+
+msgid "_label_state"
+msgstr ""
+
+msgid "_label_reviewing_history"
+msgstr ""
+
+msgid "_label_by"
+msgstr ""
+
+msgid "_portal_tasks"
+msgstr ""
+
+msgid "_transition_accept"
+msgstr ""
+
+msgid "_transition_assign"
+msgstr ""
+
+msgid "_transition_close"
+msgstr ""
+
+msgid "_transition_None"
+msgstr ""
+

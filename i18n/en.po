@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-11 18:57default\n"
-"PO-Revision-Date: 2003-11-11 18:57+0100\n"
+"POT-Creation-Date: 2003-11-15 00:06default\n"
+"PO-Revision-Date: 2003-11-15 00:06+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,6 +69,15 @@ msgstr "Recall the assigned members"
 
 msgid "_reviewstate_waiting"
 msgstr "Waiting"
+
+msgid "_reviewstate_processed"
+msgstr "in process"
+
+msgid "_reviewstate_closed"
+msgstr "Closed"
+
+msgid "_action_history_"
+msgstr "Status history"
 
 msgid "_label_name"
 msgstr "Full name"
@@ -152,7 +161,9 @@ msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr "Task affected to one of my groups"
 
 msgid "_heading_screener_message"
-msgstr "You can edit your skinner by following the <strong>Screener parameters</strong> action on the right"
+msgstr ""
+"You can edit your skinner by following the <strong>Screener parameters</"
+"strong> action on the right"
 
 msgid "_heading_configure"
 msgstr "Configure"
@@ -210,7 +221,10 @@ msgid "_label_status"
 msgstr "Status"
 
 msgid "_label_recall_explanation"
-msgstr "You can email the assigned ones by choosing the members who have to be recalled. <br /> You can as well access member's preferences by clicking the fullname field or sending an email to one of them by clicking the email one."
+msgstr ""
+"You can email the assigned ones by choosing the members who have to be "
+"recalled. <br /> You can as well access member's preferences by clicking the "
+"fullname field or sending an email to one of them by clicking the email one."
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
@@ -399,3 +413,50 @@ msgstr "Late"
 
 msgid "opened"
 msgstr "Opened"
+
+msgid "_heading_task_history"
+msgstr "Task status history"
+
+msgid "_heading_current_state"
+msgstr "Current status "
+
+# ## labels ################################################################
+msgid "_label_item_is"
+msgstr "This item is in "
+
+# ## labels ################################################################
+msgid "_label_state"
+msgstr "State"
+
+msgid "_label_reviewing_history"
+msgstr "Reviewing history"
+
+msgid "_label_by"
+msgstr "by"
+
+# # portal types ##########################################################
+msgid "_portal_tasks"
+msgstr "Task center"
+
+msgid "_transition_accept"
+msgstr "Accept"
+
+msgid "_transition_assign"
+msgstr "Assign "
+
+# ## BUTTTONS ######################################################
+msgid "_transition_close"
+msgstr "Close "
+
+msgid "_transition_None"
+msgstr "Create"
+
+#~ msgid "processed"
+#~ msgstr "processed"
+
+#~ msgid "accept"
+#~ msgstr "accept"
+
+#~ msgid "close"
+#~ msgstr "close"
+
