@@ -16,8 +16,13 @@
 
 <metal:block fill-slot="main">
 <form action="doAcceptTask" method="post">
-  <p>Do you really want to accept it ?</p>
-<input type="submit" name="submit" value="accept" />
+  <p>
+    <span tal:replace="python:mcat('_label_do_you_want_to_accpet_it')">
+      Do you really want to accept it ?
+    </span>
+  </p>
+  <input type="submit" name="submit" value=""
+         tal:attributes="value python:mcat('_button_accept_')" />
 </form>
 </metal:block>
 
