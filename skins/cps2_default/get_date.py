@@ -6,6 +6,7 @@
 Return the date according to the current language
 """
 
+from zLOG import LOG, DEBUG
 
 from DateTime import DateTime
 from re import match
@@ -13,12 +14,12 @@ from re import match
 fmt = "%m/%d/%Y"
 lang = context.portal_messages.get_selected_language()
 
-if cdate and match(r'^[0-9]?[0-9]/[0-9]?[0-9]/[0-9]{4,4}$', cdate):
+if cdate and match(r'^[0-9]{4,4}/[0-9]?[0-9]/[0-9]?[0-9]$', cdate):
     if lang == 'fr':
-        d, m, y = cdate.split('/')
+        y, m, d = cdate.split('/')
         fmt = "%d/%m/%Y"
     else:
-        m, d, y = cdate.split('/')
+        y, m, d = cdate.split('/')
         fmt = "%m/%d/%Y"
     try:
         dtv = DateTime(int(y), int(m), int(d), 0, 0)
