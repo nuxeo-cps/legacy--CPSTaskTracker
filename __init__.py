@@ -34,6 +34,74 @@ the docs sub-directory of the product.
 from AccessControl import ModuleSecurityInfo
 ModuleSecurityInfo('zLOG').declarePublic('LOG', 'DEBUG')
 
+##############################################
+# PATCHING THE OFS.
+##############################################
+
+# I have to give the member the "Delete objects"
+# permissions for them being able to delete their own tasks.
+# But I don't want them to that for someone else's task.
+
+from OFS.ObjectManager import ObjectManager
+from AccessControl import ClassSecurityInfo
+from Globals import MessageDialog
+
+security = ClassSecurityInfo()
+
+security.declareProtected("View", "manage_delObjects")
+def manage_delObjects(self, ids=[], REQUEST=None):
+        """
+        Delete a subordinate object
+        The objects specified in 'ids' get deleted.
+        """
+
+        #
+        # Testing if we are in the portal_tasks
+        # And then if it's the owner of the task
+        # trying to delete.
+        #
+
+        new_ids = []
+        if self.id == "portal_tasks":
+            member = self.portal_membership.getAuthenticatedMember()
+            roles_in_context = member.getRolesInContext(self)
+            for id in ids:
+                ob = self._getOb(id, self)
+                if member.getMemberId() == ob.Creator() or \
+                       "Manager" in roles_in_context:
+                    new_ids.append(id)
+                # Commit
+                ids = new_ids
+        if type(ids) is type(''): ids=[ids]
+        if not ids:
+            return MessageDialog(title='No items specified',
+                   message='No items were specified!',
+                   action ='./manage_main',)
+        try:    p=self._reserved_names
+        except: p=()
+        for n in ids:
+            if n in p:
+                return MessageDialog(title='Not Deletable',
+                       message='<EM>%s</EM> cannot be deleted.' % escape(n),
+                       action ='./manage_main',)
+        while ids:
+            id=ids[-1]
+            v=self._getOb(id, self)
+            if v is self:
+                raise 'BadRequest', '%s does not exist' % escape(ids[-1])
+            self._delObject(id)
+            del ids[-1]
+        if REQUEST is not None:
+            return self.manage_main(self, REQUEST, update_menu=1)
+
+
+ObjectManager.manage_delObjects = manage_delObjects
+
+########################################################
+# END OF PATCHING THE OFS
+########################################################
+
+
 import sys
 
 from Products.CMFCore.utils import ToolInit, ContentInit
