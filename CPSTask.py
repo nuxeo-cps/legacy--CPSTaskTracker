@@ -252,7 +252,7 @@ class CPSTask(FlexibleDocument):
         """
         return self.is_closed
 
-    security.declarePrivate("isClosed")
+    security.declarePrivate("isLate")
     def isLate(self):
         """
         Is the task late according to the deadline.

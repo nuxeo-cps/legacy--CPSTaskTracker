@@ -56,12 +56,12 @@ factory_type_information = (
                   'name': 'Render title',
                   'action': 'CPSTaskBox_renderTitle',
                   'visible': 0,
-                  'permissions': ()},
+                  'permissions': (View,)},
                  {'id': 'render_body',
                   'name': 'Render body',
                   'action': 'CPSTaskBox_renderBody',
                   'visible': 0,
-                  'permissions': ()},
+                  'permissions': (View,)},
                  {'id': 'isportalbox',
                   'name': 'isportalbox',
                   'action': 'isportalbox',
@@ -124,7 +124,7 @@ class CPSTaskBox(BaseBox):
         apply(BaseBox.__init__, (self, id), kw)
         self.title = title
 
-    security.declareProtected("getSortDateOn", View)
+    security.declarePublic("getSortDateOn")
     def getSortDateOn(self):
         """
         Return the possible values for the sort
@@ -135,7 +135,7 @@ class CPSTaskBox(BaseBox):
             {'title':'_label_stop_date', 'id':'stop_date',},
             ]
 
-    security.declareProtected("getSortOrder", View)
+    security.declarePublic("getSortOrder")
     def getSortOrder(self):
         """
         Get the sorting order parameters
@@ -145,7 +145,7 @@ class CPSTaskBox(BaseBox):
                 {'title':'_label_desc', 'id':'desc'}
                 ]
 
-    security.declareProtected("getSortOn", View)
+    security.declarePublic("getSortOn")
     def getSortOn(self):
         """
         Get the sorting types
@@ -156,7 +156,7 @@ class CPSTaskBox(BaseBox):
                 {'title':'_label_priority', 'id':'priority'},
                 ]
 
-    security.declareProtected("sortTasks", "Modify portal content")
+    security.declareProtected("changeScreenerProperties", ModifyPortalContent)
     def changeScreenerProperties(self, form):
         """
         Change the properties of the sreener
@@ -174,7 +174,7 @@ class CPSTaskBox(BaseBox):
 
         return 1 # useless since now.
 
-    security.declareProtected("getParameters", "Modify portal content")
+    security.declareProtected("getParameters", View)
     def getParameters(self):
         """
         Return a dictionnary containing the sorting

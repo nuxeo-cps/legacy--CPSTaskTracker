@@ -133,7 +133,7 @@ class CPSTaskScreen(BaseDocument):
         """
         BaseDocument.__init__(self, id, **kw)
 
-    security.declareProtected("sortTasks", "Modify portal content")
+    security.declareProtected("changeScreenerProperties", ModifyPortalContent)
     def changeScreenerProperties(self, form):
         """
         Change the properties of the sreener
@@ -146,7 +146,7 @@ class CPSTaskScreen(BaseDocument):
         self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0) and 1
         self.display_my_accepted_tasks = form.get('display_my_accepted_tasks', 0) and 1
 
-    security.declareProtected("getParameters", "Modify portal content")
+    security.declareProtected("getParameters", View)
     def getParameters(self):
         """
         Return a dictionnary containing the sorting
