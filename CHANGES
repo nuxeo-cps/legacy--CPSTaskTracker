@@ -6,7 +6,9 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Task WF : Renamming pending to waiting to avoid conflicts with notification 
+  of documents.
+- CPSTask : portal was missing within the isAssigned method.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
