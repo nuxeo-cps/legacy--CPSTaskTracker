@@ -54,16 +54,17 @@ class CPSTask(CPSDocument):
 
     _properties = CPSDocument._properties
 
-    the_assigned = None   # the one who accepted it.
-    is_closed = 0         # flag to see if the task has been closed.
-    task_rejecter = []    # People who rejected the task
-
     def __init__(self, id, **kw):
         """CPSTask constructor
 
         Call the CPSDocument constructor
         and then setup some attributes.
         """
+        
+        self.the_assigned = None   # the one who accepted it.
+        self.is_closed = 0         # flag to see if the task has been closed.
+        self.task_rejecter = []    # People who rejected the task
+    
         CPSDocument.__init__(self, id, **kw)
 
     security.declarePublic('getMemberIds')
