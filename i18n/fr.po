@@ -111,7 +111,7 @@ msgid "_label_sort_on"
 msgstr "Trier sur "
 
 msgid "_label_display_my_tasks"
-msgstr "Afficher les tâches que j'ai crées "
+msgstr "Afficher les tâches que j'ai créées "
 
 msgid "_label_display_my_affected_tasks"
 msgstr "Afficher les tâches qui me sont affectées "
@@ -125,7 +125,7 @@ msgid "_label_display_my_accepted_tasks"
 msgstr "Afficher les tâches que j'ai acceptées. "
 
 msgid "_label_screener_display_my_tasks"
-msgstr "Afficher les tâches que j'ai crées  "
+msgstr "Afficher les tâches que j'ai créées  "
 
 msgid "_label_screener_display_my_affected_tasks"
 msgstr "Afficher les tâches qui me sont affectées  "
@@ -164,7 +164,7 @@ msgid "_label_priority"
 msgstr "Priorité"
 
 msgid "_heading_task_i_created"
-msgstr "Tâches que j'ai crées"
+msgstr "Tâches que j'ai créées"
 
 msgid "_heading_task_affected_to_me"
 msgstr "Tâches qui me sont assignées"
@@ -177,7 +177,7 @@ msgstr "Tâches affectées à un de mes groupes"
 
 msgid "_heading_screener_message"
 msgstr ""
-"Vous pouvez éditer les pramètres du skinner en suivant le liens "
+"Vous pouvez éditer les paramètres du skinner en suivant le lien "
 "<strong>Paramétrer le visualisateur de tâches<stong> sur la droite. "
 
 msgid "_heading_configure"
@@ -196,7 +196,7 @@ msgid "_label_creator"
 msgstr "Créateur"
 
 msgid "_label_effective_date"
-msgstr "Date éffective"
+msgstr "Date effective"
 
 msgid "_label_deadline"
 msgstr "Date d'échéance"
@@ -235,8 +235,8 @@ msgstr "Statut"
 msgid "_label_recall_explanation"
 msgstr ""
 "Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le "
-"boutton <strong>Rappeller</strong> après avoir choisit les membres.<br /"
-">Vous pouvez également accéder aux informations relatives à chaque membres "
+"bouton <strong>Rappeler</strong> après avoir choisi les membres.<br /"
+">Vous pouvez également accéder aux informations relatives à chaque membre "
 "en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à "
 "un membre donné en cliquant le champ email. "
 
@@ -256,7 +256,7 @@ msgid "_label_mail_sent"
 msgstr "Les courriels ont été envoyés."
 
 msgid "_label_error_while_sending_mail"
-msgstr "Problème lors de l'envoi descourriels. Contactez l'administrateur du portail."
+msgstr "Problème lors de l'envoi des courriels. Contactez l'administrateur du portail."
 
 msgid "_label_All/None_"
 msgstr "Tous/Aucun"
@@ -300,7 +300,7 @@ msgid "_cmonth_01"
 msgstr "Janvier"
 
 msgid "_cmonth_02"
-msgstr "Fvrier"
+msgstr "Février"
 
 msgid "_cmonth_03"
 msgstr "Mars"
@@ -318,7 +318,7 @@ msgid "_cmonth_07"
 msgstr "Juillet"
 
 msgid "_cmonth_08"
-msgstr "Aot"
+msgstr "Août"
 
 msgid "_cmonth_09"
 msgstr "Septembre"
@@ -330,7 +330,7 @@ msgid "_cmonth_11"
 msgstr "Novembre"
 
 msgid "_cmonth_12"
-msgstr "Dcembre"
+msgstr "Décembre"
 
 msgid "_cfmt_date_"
 msgstr "%d/%m/%Y"
@@ -349,7 +349,7 @@ msgid "_searchmembers_tools_"
 msgstr "Outil de recherche de membres"
 
 msgid "_Members_criteria_"
-msgstr "Critére de recherche sur les membres."
+msgstr "Critère de recherche sur les membres."
 
 msgid "_dir_Groups_"
 msgstr "Groupes"
@@ -388,7 +388,7 @@ msgid "_searchgroups_tools_"
 msgstr "Outil de recherche de groupes"
 
 msgid "_Groups_criteria_"
-msgstr "Critére de recherche sur les groupes"
+msgstr "Critère de recherche sur les groupes"
 
 msgid "_select_groups_from_search_"
 msgstr "Sélectionner les groupes à partir de la recherche."
@@ -405,7 +405,7 @@ msgid "_label_manage_projects"
 msgstr "Gérer les projets"
 
 msgid "_label_description"
-msgstr "Déscription"
+msgstr "Description"
 
 msgid "_label_other"
 msgstr "Autre"
