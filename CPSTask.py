@@ -334,7 +334,7 @@ class CPSTask(FlexibleDocument):
         """
         return self.task_rejecter
 
-    security.declareProtected("getAssignedEmails", ModifyPortalContent)
+    security.declareProtected(ModifyPortalContent, "getAssignedEmails")
     def getAllAssignedMembers(self):
         """
         Return assigned members.
@@ -372,7 +372,7 @@ class CPSTask(FlexibleDocument):
 
         return res
 
-    security.declareProtected("sendMail", "ModifyPortalContent")
+    security.declareProtected(ModifyPortalContent, "sendMail")
     def sendMailTo(self, content="", emails=[], from_address="", subject=""):
         """
         Send a mail
