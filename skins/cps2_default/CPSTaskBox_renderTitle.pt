@@ -7,7 +7,7 @@
   </td>
   <td align="left">
     <font color="#FFFFFF">
-      <strong  tal:content="python:mcat('label_my_tasks')" />
+      <strong  tal:content="here/title_or_id" />
     </font>
   </td>
 </tr>
