@@ -18,12 +18,13 @@
 #
 # $Id$
 
-from Products.CMFCore import utils
+import sys
+
+from Products.CMFCore.utils import ToolInit, ContentInit
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.CMFCorePermissions import AddPortalContent
 
 import CPSTaskTool
-
 import CPSTask
 import CPSTaskScreen
 
@@ -46,30 +47,30 @@ fti = (
 registerDirectory('skins', globals())
 registerDirectory('www', globals())
 
-tools = ( CPSTaskTool.CPSTaskTool,)
+tools = ( CPSTaskTool.CPSTaskTool,
+          )
 
-def initialize(registrar):
+def initialize(context):
     """
     Registering the content of the module
     """
-
     #
     # Task tool & repository for the tasks
     #
-    utils.ToolInit(
-        'CPS TASK Tool',
+    ToolInit(
+        'CPS Task Tool',
         tools = tools,
         product_name = 'CPSTaskTracker',
-        icon = 'www/tool.png',
-        ).initialize(registrar)
+        icon = 'tool.png',
+        ).initialize(context)
 
     #
     # Registering content : Task and the Task Screen
     #
-    utils.ContentInit(
-        'CPSTaskTracker',
+    ContentInit(
+        'CPS Task Tracker',
         content_types = contentClasses,
         permission = AddPortalContent,
         extra_constructors = contentConstructors,
         fti = fti,
-        ).initialize(registrar)
+        ).initialize(context)
