@@ -1,0 +1,51 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+<body>
+<div metal:fill-slot="main">
+<div class="Desktop"
+     tal:define="review_state python: here.portal_workflow.getInfoFor(here, 'review_state');
+        	     review_history python:here.portal_workflow.getInfoFor(here,'review_history');
+                 mcat nocall:here/portal_messages;
+                ">
+<h1 tal:content="python:mcat('_heading_task_history')">
+   Task status history
+</h1>
+<h2 tal:content="python:mcat('_heading_current_state')">
+  Current state
+</h2>
+<span tal:replace="python:mcat('_label_item_is')">
+  this item is in
+</span><b>&nbsp;<span tal:replace="python:mcat('_reviewstate_'+review_state)">Private</span></b>
+<span tal:replace="python:mcat('_label_state')">
+state.
+</span>
+<div tal:condition="review_history|nothing">
+      <h3>
+        <strong>
+          <span tal:replace="python:mcat('_label_reviewing_history')">
+            Reviewing history
+          </span>
+        </strong>
+      </h3>
+    <div tal:repeat="items python: here.reverseList(review_history)">
+	  <span tal:replace="python:here.get_date(items['time'].strftime('%Y/%m/%d'))['all']" />
+      <strong>
+	    <span tal:define="action items/action"
+              tal:replace="python:mcat('_transition_'+str(action))" />
+      </strong>
+      <span tal:condition="items/effective_date|nothing">
+        (effective: <span tal:replace="python: items['effective_date'].aCommon()"></span>)
+      </span>
+     <span tal:replace="python:mcat('_label_by')">by</span>
+     <i>
+       <span tal:replace="items/actor">Actor</span><br>
+     </i>
+      <div tal:define="rhComments items/comments"
+		 tal:replace="rhComments">Comments</div>
+    </div>
+</div>
+ </div>
+</div>
+</body>
+</html>
