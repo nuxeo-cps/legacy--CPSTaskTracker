@@ -1,4 +1,22 @@
 *******************************************
+** CPSTaskTracker V0.11.0 [R1 build 2004/07/26-12:22 by anguenot]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- i18n
+- #0001265 :  Si quelqu'un refuse une tache que j'ai assigné à ce dernier + d'autres, rien ne m'informe !
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSTaskTracker V0.10.2 [R1 build 2004/07/18-23:55 by anguenot]
 
 Requires:
