@@ -27,7 +27,7 @@ INSTALLER :
    _ install_cps3.py
 
 It checks NuxCPS component presence for CPS2 and CPSCore for CPS3 to decide
-which version of CPS is iun use.
+which version of CPS is in use.
 
 CLASSES :
 ----------
