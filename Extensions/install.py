@@ -165,7 +165,7 @@ def install(self):
     #################################################################
 
     pr("Verifying portal types")
-    newptypes = ('CPS Task', 'CPS Task Screen')
+    newptypes = ('CPS Task', 'CPS Task Screen',)
     ttool = portal.portal_types
     if 'Workgroup' in ttool.objectIds():
         workspaceACT = list(ttool['Workgroup'].allowed_content_types)
@@ -190,7 +190,8 @@ def install(self):
 
     ptypes = {
         'CPSTaskTracker':('CPS Task',
-                          'CPS Task Screen'
+                          'CPS Task Screen',
+                          'CPS Task Box',
                           )
         }
 
