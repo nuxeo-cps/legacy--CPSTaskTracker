@@ -18,6 +18,6 @@ id = context.computeId()
 task_repository.invokeFactory(type_name, id)
 
 new_task = getattr(task_repository, id)
-return REQUEST.RESPONSE.redirect('%s/%s/cpsdocument_edit_form' %
+return REQUEST.RESPONSE.redirect('%s/%s/cpstask_edit_form' %
                                  (task_repository.absolute_url(),
                                   id))
