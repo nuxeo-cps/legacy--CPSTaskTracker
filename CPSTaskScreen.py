@@ -30,7 +30,8 @@ from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 
-from Products.NuxCPSDocuments.BaseDocument import BaseDocument, BaseDocument_adder
+from Products.NuxCPSDocuments.BaseDocument import BaseDocument, \
+     BaseDocument_adder
 
 factory_type_information = (
     {'id': 'CPS Task Screen',
@@ -47,8 +48,12 @@ factory_type_information = (
                   'action': 'cps_task_screen_view',
                   'permissions': (View,)},
                  {'id': 'edit',
-                  'name': '_action_modify_',
+                  'name': '_action_edit_',
                   'action': 'cps_task_screen_edit_form',
+                  'permissions': (ModifyPortalContent,)},
+                 {'id': 'action_parameters',
+                  'name': 'action_parameters',
+                  'action': 'cps_task_screen_edit_parameters_form',
                   'permissions': (ModifyPortalContent,)},
                  {'id': 'create',
                   'name': '_action_create_',
@@ -74,18 +79,87 @@ class CPSTaskScreen(BaseDocument):
     CPS Task Screen
     """
     meta_type = 'CPS Task Screen'
-
     portal_type = 'CPS Task Screen'
 
     security = ClassSecurityInfo()
 
     #
-    # Filtering properties mostly added in here
+    # Filtering properties
     #
+
     _properties = BaseDocument._properties + (
+        {'id':'sort_date_on', 'type':'string', 'mode':'w', \
+         'label':'Sort on date'},
+        {'id':'sort_order', 'type':'string', 'mode':'w', \
+         'label':'Sort order'},
+        {'id':'sort_on', 'type':'string', 'mode':'w', \
+         'label':'Sort on'},
+        {'id':'display_my_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display my tasks ?'},
+        {'id':'display_my_affected_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display the tasks affected to me ?'},
+        {'id':'display_my_groups_affected_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display the tasks affected to a one if my groups ?'},
+        {'id':'display_my_accepted_tasks', 'type':'boolean', 'mode':'w', \
+         'label':'Display the tasks I accepted ?'},
         )
 
+    #
+    # Initialization of the properties
+    #
 
+    # start_date, end_date
+    sort_date_on = "start_date"
+    # asc, desc
+    sort_order   = "asc"
+
+    # type, indicator or priority
+    sort_on = "a" # For the alpha sorting algo
+
+    display_my_tasks = 1
+    display_my_affected_tasks = 1
+    display_my_groups_affected_tasks = 1
+    display_my_accepted_tasks = 1
+
+    def __init__(self, id, **kw):
+        """
+        BaseDocument constructor +
+        parameters ??
+        XXX : TODO
+        """
+        BaseDocument.__init__(self, id, **kw)
+
+    security.declareProtected("sortTasks", "Modify portal content")
+    def changeScreenerProperties(self, form):
+        """
+        Change the properties of the sreener
+        """
+        self.sort_date_on = form.get('sort_date_on', 'start_date')
+        self.sort_order = form.get('sort_order', 'asc')
+        self.sort_on = form.get('sort_on', '')
+        self.display_my_tasks = form.get('display_my_tasks', 0)
+        self.display_my_affected_tasks = form.get('display_my_affected_tasks', 0)
+        self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0)
+        self.display_my_accepted_tasks = form.get('display_accepted_tasks', 0)
+
+    security.declareProtected("getParameters", "Modify portal content")
+    def getParameters(self):
+        """
+        Return a dictionnary containing the sorting
+        parameters.
+        To be passed to the portak_tasks search API
+        """
+
+        struct = {}
+        struct['sort_date_on'] = self.sort_date_on
+        struct['sort_order'] = self.sort_order
+        struct['sort_on'] = self.sort_on
+        struct['display_my_tasks'] = self.display_my_tasks
+        struct['display_my_affected_tasks'] = self.display_my_affected_tasks
+        struct['display_my_groups_affected_tasks'] = self.display_my_groups_affected_tasks
+        struct['display_my_accepted_tasks'] = self.display_my_accepted_tasks
+
+        return struct
 
 InitializeClass(CPSTaskScreen)
 
