@@ -30,7 +30,8 @@ from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 
-from Products.NuxCPSDocuments.BaseDocument import BaseDocument, BaseDocument_adder
+from Products.NuxCPSDocuments.BaseDocument import BaseDocument_adder
+from Products.NuxCPSDocuments.FileDocument import FileDocument
 
 factory_type_information = (
     {'id': 'CPS Task',
@@ -55,11 +56,6 @@ factory_type_information = (
                   'action': 'cps_task_create_form',
                   'visible': 0,
                   'permissions': ()},
-                 {'id': 'content_view',
-                  'name': 'content_view',
-                  'action': 'cps_task_content_view',
-                  'visible': 0,
-                  'permissions': (View, )},
                  {'id': 'isdocument',
                   'name': 'isdocument',
                   'action': 'isdocument',
@@ -74,7 +70,7 @@ factory_type_information = (
      },
     )
 
-class CPSTask(BaseDocument):
+class CPSTask(FileDocument):
     """
     CPS Task
     """
@@ -83,6 +79,8 @@ class CPSTask(BaseDocument):
     portal_type = 'CPS Task'
 
     security = ClassSecurityInfo()
+
+    
 
 InitializeClass(CPSTask)
 
