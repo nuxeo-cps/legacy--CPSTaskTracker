@@ -1,0 +1,116 @@
+<tal:block define="current_action string:view">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="base">
+    <base href="." tal:attributes="href string:${here/absolute_url}/" />
+  </metal:block>
+<body>
+
+
+<metal:block fill-slot="header">
+   <h1 tal:content="here/title_or_id">
+       Title
+   </h1>
+</metal:block>
+
+<metal:block fill-slot="main">
+<form action="doChangeAssigned" method="post">
+  <p>You can re-assign this task now.</p>
+  <metal:block use-macro="here/main_widgets/macros/form_property">
+        <metal:block fill-slot="title"
+                     tal:content="string:Task Assigned To Users">
+                      Task Assigned To Users
+        </metal:block>
+        <metal:block fill-slot="content">
+          <textarea readonly id="members"
+                    name="members:text"
+                    rows="3" cols="30" tal:content="here/getMembersAsText|nothing"></textarea>
+          <input type="hidden" size="1" value=""
+                 id="hidden_members"
+                 name="members">
+
+          <script language="JavaScript" type="text/javascript"><!--
+
+             function open_mb_selector(input_id) {
+
+               ids = document.getElementById('hidden_'+input_id).value.replace(/\n/g,'$$$$');
+               fulls = document.getElementById(input_id).value.replace(/\n/g,'$$$$');
+               ids = ids.substring(0, ids.length-2);
+               fulls = fulls.substring(0, fulls.length-2); // $$
+               args = 'input_id='+input_id+'&ids='+ids+'&fulls='+fulls;
+
+               selector_window = window.open('members_edit_form?'+args, 'members', 'toolbar=0, scrollbars=0, location=0, statusbar=0,menubar=0, resizable=1, dependent=1, width=450, height=420')
+
+
+               if(!selector_window.opener) selector_window.opener = window
+             }
+
+             function clean_textarea_user(input_id) {
+               c = document.getElementById(input_id);
+               c.value = '';
+               d = document.getElementById('hidden_'+input_id);
+               d.value = '';
+
+             }
+
+           -->
+           </script>
+
+           <a href="javascript:open_mb_selector('members')">
+            <img border="0" src="img_box_edit.png" />
+           </a>
+         </metal:block>
+      </metal:block>
+      <metal:block use-macro="here/main_widgets/macros/form_property">
+        <metal:block fill-slot="title"
+                     tal:content="string:Task Assigned To Groups">
+                     Task Assigned To Groups
+        </metal:block>
+        <metal:block fill-slot="content">
+          <textarea readonly id="groups"
+                    name="groups:text"
+                    rows="3" cols="30" tal:content="here/getGroupsAsText|nothing"></textarea>
+          <input type="hidden" size="1" value=""
+                 id="hidden_groups"
+                 name="groups">
+          <script language="JavaScript" type="text/javascript"><!--
+
+             function open_gr_selector(input_id) {
+
+               ids = document.getElementById('hidden_'+input_id).value.replace(/\n/g,'$$$$');
+               fulls = document.getElementById(input_id).value.replace(/\n/g,'$$$$');
+               ids = ids.substring(0, ids.length-2);
+               fulls = fulls.substring(0, fulls.length-2); // $$
+
+               args = 'input_id='+input_id+'&ids='+ids+'&fulls='+fulls;
+
+               selector_window = window.open('groups_edit_form?'+args,'members', 'toolbar=0, scrollbars=0, location=0, statusbar=0,menubar=0, resizable=1, dependent=1, width=450, height=420')
+
+
+               if(!selector_window.opener) selector_window.opener = window
+             }
+
+             function clean_textarea_user(input_id) {
+               c = document.getElementById(input_id);
+               c.value = '';
+               d = document.getElementById('hidden_'+input_id);
+               d.value = '';
+
+             }
+
+           -->
+           </script>
+          <a href="javascript:open_gr_selector('groups')">
+            <img border="0" src="img_box_edit.png" />
+           </a>
+       </metal:block>
+      </metal:block>
+
+  <input type="submit" name="submit" value="assign" >
+</form>
+</metal:block>
+
+</body>
+</html>
+</tal:block>
