@@ -3,14 +3,10 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- History for the reject action
-- Possibility to filter on a given project
+-
 Bug fixes:
 ~~~~~~~~~~
-- Creating a task within a screener context : fixing bad breadcrumb.
-- Security declaration fix for isLate.
-- Project field for the cps_task_edit_parameters.pt
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- Patch from the CEA : sorting prioroties ans avoiding doublons.
-- One more condition for the method isLate depending on the close state.
+-
