@@ -16,10 +16,13 @@
 
 <metal:block fill-slot="main">
 
+<!-- DEBUG
 <span tal:replace="here/isAssigned" />
 <span tal:replace="here/isCreator" />
 <span tal:replace="here/isTheAssignedOne" />
+END DEBUG -->
 
+<br />
 <table align="center" width="100%" cellpadding="2" cellspacing="2">
 <tr>
   <td bgcolor="#EEEEEE" width="30%">
@@ -34,7 +37,8 @@
     <strong>Task Start</strong>
   </td>
   <td >
-    <span tal:replace="here/start_task_date" />
+    <span tal:define="start_date here/start_task_date|nothing"
+          tal:replace="python:here.get_date(str(start_date))['all']" />
   </td>
 </tr>
 <tr>
@@ -42,7 +46,8 @@
     <strong>Task Stop</strong>
   </td>
   <td>
-    <span tal:replace="here/stop_task_date" />
+   <span tal:define="stop_date here/stop_task_date|nothing"
+          tal:replace="python:here.get_date(str(stop_date))['all']" />
   </td>
 </tr>
 <tr>
