@@ -9,4 +9,4 @@ Bug fixes:
 - Creating a task within a screener context : fixing bad breadcrumb.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Patch from the CEA : sorting prioroties ans avoiding doublons.
