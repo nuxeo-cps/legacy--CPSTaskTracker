@@ -449,3 +449,5 @@ msgstr "Historique des rejets"
 msgid "_heading_task_related_to"
 msgstr "Tâches relatives au projet"
 
+msgid "_label_only_this_project"
+msgstr "Afficher les tâches relatives au projet"
