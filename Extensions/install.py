@@ -51,7 +51,7 @@ def install(self):
 
     skins = ('cps_task_tracker',)
     paths = {
-        'cps_task_tracker': 'Products/CPSTaskTracker/skins/',
+        'cps_task_tracker': 'Products/CPSTaskTracker/skins/cps2_default',
     }
 
     for skin in skins:
@@ -142,7 +142,10 @@ def install(self):
     else:
         #raise str("DependanceError"), str('Workspace')
         pass
-    for ptype in newptypes:
+    #
+    # Only the CPSTaskScreen allowed within Workspaces
+    #
+    for ptype in ['CPS Task Screen']:
         if (ptype not in  workspaceACT):
             pr("Allowing %s in workgroup" %ptype)
             workspaceACT.append(ptype)
@@ -182,49 +185,54 @@ def install(self):
     # Verification of the action and addinf if neccesarly
     action_found = 0
     for action in portal['portal_actions'].listActions():
-        if action.id == 'My Tasks':
+        if action.id == 'Create a New Task':
             action_found = 1
 
     if not action_found:
         portal['portal_actions'].addAction(
-            id='My Tasks',
-            name='_action_my_tasks',
-            action='string: ${portal_url}/cps_task_screen_view',
+            id='Create a New Task',
+            name='_action_create_new_tasks',
+            action='string: ${portal_url}/cps_task_create_form?base=CPS Task',
             condition='python:not portal.portal_membership.isAnonymousUser()',
             permission=('View',),
             category='global',
             visible=1)
         pr(" Added Action My Tasks")
 
+    ##########################################
+    # IMPORTING THE WORKFLOW
+    ##########################################
+
+    def package_home(name):
+        """ Returns path to Products.name"""
+        m = sys.modules['Products.%s' % name]
+        return (m.__path__[0])
+
+    def tryimport(container, name, zexpdir, suffix='xml', pr=None):
+        zexppath = os.path.join(zexpdir, '%s.%s' % (name, suffix))
+        container._importObjectFromFile(zexppath)
+        pr(" Import of %s.%s" % (name, suffix))
+
+    cps_home = package_home('CPSTaskTracker')
+    zexpdir = os.path.join(cps_home, 'Install')
+
+    if portal.portal_workflow is not None:
+        # Ws for the tasks
+        if 'task_wf' in portal.portal_workflow.objectIds():
+            portal.portal_workflow.manage_delObjects('task_wf')
+        tryimport(portal.portal_workflow, 'task_wf', zexpdir, suffix='xml', pr=pr)
+
+
+        wfs = {
+            'CPS Task' : 'task_wf',
+            'CPS Task Screen' : '',
+            }
+
+        wftool = portal.portal_workflow
+        pr("Updating workflow schemas")
+
+        for pt, chain in wfs.items():
+            wftool.setChainForPortalTypes([pt], chain)
+
     pr("End of specific CPSTaskTracker install")
     return pr('flush')
-
-
-    ######################################################
-    # Workfow and registering  the types within
-    ######################################################
-
-
-    # # check workflow association
-    # pr("Verifying local workflow association")
-    # if not '.cps_workflow_configuration' in portal[workspaces_id].objectIds():
-    #     raise DependanceError, 'no .cps_workflow_configuration in Workspace'
-    # else:
-    #     wfc = getattr(portal[workspaces_id], '.cps_workflow_configuration')
-    #
-    # for ptype in newptypes:
-    #     pr("  Add %s chain to portal type %s in %s of %s" %('workspace_content_wf',
-    #          ptype, '.cps_workflow_configuration', workspaces_id))
-    #     wfc.manage_addChain(portal_type=ptype,
-    #                         chain='workspace_content_wf')
-    #
-    # if not '.cps_workflow_configuration' in portal[sections_id].objectIds():
-    #     raise DependanceError, 'no .cps_workflow_configuration in Section'
-    # else:
-    #     wfc = getattr(portal[sections_id], '.cps_workflow_configuration')
-    #
-    # for ptype in newptypes:
-    #     pr("  Add %s chain to portal type %s in %s of %s" %('section_content_wf',
-    #          ptype, '.cps_workflow_configuration', sections_id))
-    #     wfc.manage_addChain(portal_type=ptype,
-    #                         chain='section_content_wf')
