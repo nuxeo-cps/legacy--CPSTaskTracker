@@ -397,7 +397,7 @@ class CPSInstaller(CPSInstaller):
         self.portal['portal_actions'].addAction(
             id='create_new_task',
             name='_action_create_new_tasks',
-            action='string: ${portal_url}/cps_task_create',
+            action='string: ${portal_url}/portal_tasks/content_create?type_name=CPS Task',
             condition="python:not portal.portal_membership.isAnonymousUser()",
             permission=(TaskCreate,),
             category='user',
