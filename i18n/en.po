@@ -456,7 +456,7 @@ msgid "_label_reject_history"
 msgstr "Reject history"
 
 msgid "_heading_task_related_to"
-msgid "Task related to the project : "
+msgstr "Task related to the project : "
 
 msgid "_label_only_this_project"
 msgstr "Display the tasks related to"
