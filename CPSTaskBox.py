@@ -56,12 +56,12 @@ factory_type_information = (
                   'name': 'Render title',
                   'action': 'CPSTaskBox_renderTitle',
                   'visible': 0,
-                  'permissions': (View,)},
+                  'permissions': ()},
                  {'id': 'render_body',
                   'name': 'Render body',
                   'action': 'CPSTaskBox_renderBody',
                   'visible': 0,
-                  'permissions': (View,)},
+                  'permissions': ()},
                  {'id': 'isportalbox',
                   'name': 'isportalbox',
                   'action': 'isportalbox',
@@ -98,6 +98,8 @@ class CPSTaskBox(BaseBox):
         {'id':'display_my_accepted_tasks', 'type':'boolean', 'mode':'w', \
          'label':'Display the tasks I accepted ?'},
         )
+
+    visible_if_empty = 0
 
     #
     # Initialization of the properties
