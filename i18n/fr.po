@@ -272,7 +272,7 @@ msgstr "Fermer cette tâche"
 
 # # actions ###############################################################
 msgid "_action_create_new_project"
-msgstr "Gérer les projects"
+msgstr "Gérer les projets"
 
 # ## Calendar ###############################################################
 msgid "_cday_Su"
