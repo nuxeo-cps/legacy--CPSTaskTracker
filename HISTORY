@@ -1,4 +1,22 @@
 *******************************************
+** CPSTaskTracker V0.4.1 [R1 build 2003-11/12-23:59 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Projects Management : odd rows not clickable
+- CPSTask : Project field buggy while render in edit mode.
+- CPSTask : security fix (wrong order within declarations)
+- ++
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+*******************************************
 ** CPSTaskTracker V0.4.0 [R1 build 2003-11/12-04:03 by anguenot]
 
 ZODB Requires:
