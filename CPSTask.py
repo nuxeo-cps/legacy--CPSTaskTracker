@@ -1,4 +1,4 @@
-# (c) 2002 Nuxeo SARL <http://nuxeo.com>
+# (c) 2003 Nuxeo SARL <http://nuxeo.com>
 # (c) 2003 CEA <http://www.cea.fr>
 # Author:Julien Anguenot <ja@nuxeo.com>
 #
@@ -233,6 +233,15 @@ class CPSTask(FlexibleDocument):
         Someone is accepting the task from the people who were
         assigned to it.
         """
+
+        #
+        # Changing the task state
+        #
+
+        portal = self.portal_url.getPortalObject()
+        wftool = portal.portal_workflow
+        wftool.doActionFor(self, 'accept', wf_id="task_wf")
+
         member_id = self.getCurrentMemberId()
         self.the_assigned = member_id
 
@@ -256,6 +265,15 @@ class CPSTask(FlexibleDocument):
         """
         Close the task.
         """
+
+        #
+        # Changing the task state
+        #
+
+        portal = self.portal_url.getPortalObject()
+        wftool = portal.portal_workflow
+        wftool.doActionFor(self, 'close', wf_id="task_wf")
+
         if self.isTheAssignedOne():
             self.is_closed = 1
             self.the_assigned = None
@@ -302,6 +320,14 @@ class CPSTask(FlexibleDocument):
         """
         After the task had been closed we can re-assigned it to others
         """
+
+        #
+        # Changing WF state
+        #
+
+        portal = self.portal_url.getPortalObject()
+        wftool = portal.portal_workflow
+        wftool.doActionFor(self, 'assign', wf_id="task_wf")
 
         #
         # Re-assigning
