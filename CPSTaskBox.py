@@ -97,6 +97,8 @@ class CPSTaskBox(BaseBox):
          'label':'Display the tasks affected to a one if my groups ?'},
         {'id':'display_my_accepted_tasks', 'type':'boolean', 'mode':'w', \
          'label':'Display the tasks I accepted ?'},
+        {'id':'skinner', 'type':'string', 'mode':'w', \
+         'label':'Skinner'},
         )
 
     visible_if_empty = 0
@@ -114,6 +116,7 @@ class CPSTaskBox(BaseBox):
     display_my_groups_affected_tasks = 1
     display_my_accepted_tasks = 1
 
+    skinner = "nuxeo"
 
     def __init__(self,
                  id,
@@ -172,6 +175,8 @@ class CPSTaskBox(BaseBox):
             'display_my_groups_affected_tasks', 0) and 1
         self.display_my_accepted_tasks = form.get(\
             'display_my_accepted_tasks', 0) and 1
+
+        self.skinner = form.get('skinner', 'nuxeo')
 
         return 1 # useless since now.
 
