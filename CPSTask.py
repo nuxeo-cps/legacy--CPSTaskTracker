@@ -1,0 +1,93 @@
+# (c) 2002 Nuxeo SARL <http://nuxeo.com>
+# (c) 2003 CEA <http://www.cea.fr>
+# Author:Julien Anguenot <ja@nuxeo.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as published
+# by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+#
+# $Id$
+
+"""
+  CPS Task
+"""
+
+from zLOG import LOG, DEBUG
+
+from Globals import InitializeClass
+from AccessControl import ClassSecurityInfo
+
+from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
+
+from Products.NuxCPSDocuments.BaseDocument import BaseDocument, BaseDocument_adder
+
+factory_type_information = (
+    {'id': 'CPS Task',
+     'title': '_portal_type_CPS_Task',
+     'content_icon': 'document_icon.png',
+     'product': 'CPSTaskTracker',
+     'factory': 'addCPSTask',
+     'meta_type': 'CPS Task',
+     'immediate_view': 'cps_task_edit_form',
+     'allow_discussion': 1,
+     'filter_content_types': 0,
+     'actions': ({'id': 'view',
+                  'name': '_action_view_',
+                  'action': 'cps_task_view',
+                  'permissions': (View,)},
+                 {'id': 'edit',
+                  'name': '_action_modify_',
+                  'action': 'cps_task_edit_form',
+                  'permissions': (ModifyPortalContent,)},
+                 {'id': 'create',
+                  'name': '_action_create_',
+                  'action': 'cps_task_create_form',
+                  'visible': 0,
+                  'permissions': ()},
+                 {'id': 'content_view',
+                  'name': 'content_view',
+                  'action': 'cps_task_content_view',
+                  'visible': 0,
+                  'permissions': (View, )},
+                 {'id': 'isdocument',
+                  'name': 'isdocument',
+                  'action': 'isdocument',
+                  'visible': 0,
+                  'permissions': ()},
+                 {'id': 'issearchabledocument',
+                  'name': 'issearchabledocument',
+                  'action': 'issearchabledocument',
+                  'visible': 0,
+                  'permissions': ()},
+                 ),
+     },
+    )
+
+class CPSTask(BaseDocument):
+    """
+    CPS Task
+    """
+    meta_type = 'CPS Task'
+
+    portal_type = 'CPS Task'
+
+    security = ClassSecurityInfo()
+
+InitializeClass(CPSTask)
+
+
+def addCPSTask(dispatcher, id, REQUEST=None, **kw):
+    """Add CPS Task."""
+    ob = CPSTask(id, **kw)
+    return BaseDocument_adder(dispatcher, id, ob, REQUEST=REQUEST)
