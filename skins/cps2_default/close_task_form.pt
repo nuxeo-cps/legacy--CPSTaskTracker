@@ -17,8 +17,13 @@
 
 <metal:block fill-slot="main">
 <form action="doCloseTask" method="post">
-  <p>Do you really want to close it ?</p>
-<input type="submit" name="submit" value="close" />
+  <p>
+    <span tal:replace="python:mcat('_label_do_you_want_to_close_it')">
+      Do you really want to close it ?
+    </span>
+  </p>
+<input type="submit" name="submit" value="."
+       tal:attributes="value python:mcat('_button_close')" />
 </form>
 </metal:block>
 
