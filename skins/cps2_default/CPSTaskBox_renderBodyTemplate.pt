@@ -1,0 +1,156 @@
+<tal:block define="mcat nocall:here/portal_messages;
+                   mtool nocall:here/portal_membership;
+                   portal_url nocall:here/portal_url;
+                   portal_object portal_url/getPortalObject;
+                   task_lists python:here.portal_tasks.searchTasks(here.getParameters());
+                   isManager python:mtool.checkPermission('Manage portal',portal_object)"
+           condition="not:here/portal_membership/isAnonymousUser">
+
+    <!-- BEGINNING OF MY TASKS -->
+    <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []">
+    <tal:block define="tasks python:task_lists['my_tasks']">
+      <strong>
+        <span tal:content="python:mcat('_heading_task_i_created')">The tasks I created.</span>
+      </strong>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tal:block repeat="task tasks">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+                &nbsp;
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+           </tr>
+         </tal:block>
+        </table>
+      </form>
+    </tal:block>
+    </tal:block>
+    <!-- END OF MY TASKS -->
+
+    <!-- TASK ASSIGNED TO ME -->
+    <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []">
+      <tal:block define="tasks python:task_lists['my_affected_tasks']">
+      <strong>
+        <span tal:content="python:mcat('_heading_task_affected_to_me')">The tasks affected to me.</span>
+      </strong>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tal:block repeat="task tasks">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+                &nbsp;
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+           </tr>
+         </tal:block>
+        </table>
+      </form>
+    </tal:block>
+    </tal:block>
+    <!-- TASK ASSIGNED TO ME -->
+
+    <!-- TASK ASSIGNED TO ONE OF MY GROUPS -->
+    <tal:block
+    condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []">
+      <tal:block define="tasks python:task_lists['my_groups_affected_tasks']">
+      <strong>
+        <span tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">The
+    tasks affected to one of my groups.</span>
+      </strong>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+         <tal:block repeat="task tasks">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:define="src string:red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+                &nbsp;
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+           </tr>
+         </tal:block>
+        </table>
+      </form>
+    </tal:block>
+    </tal:block>
+    <!-- TASK ASSIGNED TO ONEOF MY GROUPS -->
+
+    <!-- TASK I ACCEPTED -->
+    <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []">
+      <tal:block define="tasks python:task_lists['my_accepted_tasks']">
+      <strong>
+        <span tal:content="python:mcat('_heading_task_i_accepted')">The
+    tasks I accepted.</span>
+      </strong>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tal:block repeat="task tasks">
+          <tr bgcolor="#EEEEEE">
+              <td>
+                <tal:block define="status python:task.getStatus()">
+                  <img src="red.gif"
+                       tal:condition="python:status == 'late'" />
+                  <img src="orange.gif"
+                       tal:condition="python:status == 'assigned'" />
+                  <img src="green.gif"
+                       tal:condition="python:status == 'opened'" />
+                  <img src="task_closed_icon.png"
+                       tal:condition="python:status == 'closed'" />
+                </tal:block>
+                &nbsp;
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+           </tr>
+         </tal:block>
+        </table>
+      </form>
+     </tal:block>
+    </tal:block>
+    <!-- TASK I ACCEPTED -->
+</tal:block>

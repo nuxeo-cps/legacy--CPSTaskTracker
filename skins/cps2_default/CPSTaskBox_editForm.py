@@ -7,6 +7,13 @@ mcat = context.portal_messages
 
 fields = common_fields + [
     {
+    'id': 'skinner',
+    'title': '_label_skinner',
+    'type': 'select',
+    'value': context.skinner,
+    'options': [{'title':x['title'], 'id':x['title']} for x in context.getTaskBoxSkinners()],
+    },
+    {
     'id': 'sort_date_on',
     'title': '_label_sort_date_on',
     'type': 'select',
