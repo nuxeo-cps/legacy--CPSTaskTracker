@@ -1,0 +1,20 @@
+<tal:block define="mcat nocall:here/portal_messages">
+  <metal:block xmlns:tal="http://xml.zope.org/namespaces/tal"
+               xmlns:metal="http://xml.zope.org/namespaces/metal"
+               use-macro="here/main_template/macros/master">
+    <metal:block fill-slot="base">
+      <base href="." tal:attributes="href string:${here/absolute_url}/" />
+    </metal:block>
+    <metal:block fill-slot="header">
+       <h1 tal:content="python:mcat('_heading_recall_assigned_members')">
+        Recall the asssigned members
+       </h1>
+    </metal:block>
+    <metal:block fill-slot="main">
+    <form action="doRecallAssigned" method="post">
+      <span tal:replace="here/getAssignedEmails" />
+      <input type="submit" name="submit" value="close" />
+    </form>
+    </metal:block>
+  </metal:block>
+</tal:block>
