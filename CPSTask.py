@@ -191,8 +191,10 @@ class CPSTask(FlexibleDocument):
         if self.getGroupIds() == []:
             return 0
         for group_id in self.getGroupIds():
+            LOG("GROUP ID", DEBUG, group_id)
             if group_id != '':
                 group = portal.acl_users.getGroupById(group_id)
+                LOG("USERS", DEBUG, group.getUsers())
                 if member_id in group.getUsers():
                     return 1
 
