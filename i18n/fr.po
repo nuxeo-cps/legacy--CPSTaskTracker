@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2003-11-05 01:25default\n"
-"PO-Revision-Date: 2003-11-05 01:27+0100\n"
+"POT-Creation-Date: 2003-11-05 01:39default\n"
+"PO-Revision-Date: 2003-11-05 01:42+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -202,7 +202,7 @@ msgid "_label_status"
 msgstr "Statut"
 
 msgid "_label_recall_explanation"
-msgstr "Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le boutton <strong>Rappeller</strong> après avoir choisit les membres. <br /> Vous pouvez également accéder aux informations relatives à chaque membres en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à un membre donné en cliquant le champ email. "
+msgstr "Vous pouvez envoyer un rappel aux membres assignés à la tâche en pressant le boutton <strong>Rappeller</strong> après avoir choisit les membres.<br />Vous pouvez également accéder aux informations relatives à chaque membres en cliquant sur le champ <i>Nom Complet</i> et également envoyer un mail à un membre donné en cliquant le champ email. "
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Ceci est un rappel vous concernant pour la tâche suivante : "
@@ -215,6 +215,9 @@ msgstr "Les courriels ont été envoyés."
 
 msgid "_label_error_while_sending_mail"
 msgstr "Problème lors de l'envoi descourriels. Contactez l'administrateur du portail."
+
+msgid "_label_All/None_"
+msgstr "Tous/Aucun"
 
 msgid "_action_accept"
 msgstr "Accepter cette tâche"

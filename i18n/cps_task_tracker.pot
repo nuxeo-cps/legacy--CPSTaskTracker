@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-11-05 01:25default\n"
+"POT-Creation-Date: 2003-11-05 01:39default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -207,6 +207,9 @@ msgid "_label_mail_sent"
 msgstr ""
 
 msgid "_label_error_while_sending_mail"
+msgstr ""
+
+msgid "_label_All/None_"
 msgstr ""
 
 msgid "_action_accept"

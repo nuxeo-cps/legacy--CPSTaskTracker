@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-05 01:25default\n"
-"PO-Revision-Date: 2003-11-05 01:26+0100\n"
+"POT-Creation-Date: 2003-11-05 01:39default\n"
+"PO-Revision-Date: 2003-11-05 01:42+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -218,6 +218,9 @@ msgstr "Emails have been sent."
 
 msgid "_label_error_while_sending_mail"
 msgstr "Error while sending mails. Contact the administrator of the portal."
+
+msgid "_label_All/None_"
+msgstr "All/None"
 
 msgid "_action_accept"
 msgstr "Accept this task"
