@@ -150,36 +150,6 @@ class CPSTask(FlexibleDocument):
         # No groups assigned to this task
         return []
 
-    security.declarePublic("getMembersAsText")
-    def getMembersAsText(self):
-        """
-        Return the list of members assigned to the task
-        for displaying it
-        """
-        text = ""
-        if self.members != '':
-            if type(self.members[0]) is ListType:
-                for member in self.members[0]:
-                    text += member + "\r\n"
-            else:
-                text += self.members[0] + "\r\n"
-        return text
-
-    security.declarePublic("getGroupsAsText")
-    def getGroupsAsText(self):
-        """
-        Return the list of Groups assigned to the task
-        for displaying it
-        """
-        text = ""
-        if self.groups != '':
-            if type(self.groups[0]) is ListType:
-                for group in self.groups[0]:
-                    text += group +"\n"
-            else:
-                text += self.groups[0] + "\n"
-        return text
-
     security.declarePublic("isAssigned")
     def isAssigned(self):
         """
@@ -188,40 +158,26 @@ class CPSTask(FlexibleDocument):
         portal = self.portal_url.getPortalObject()
         member_id = portal.portal_membership.getAuthenticatedMember().getMemberId()
 
-        #
         # Checking if the task is closed or not
-        #
-
         if self.isClosed():
             return 0
 
-        #
         # Checking if someone already accepted the task
-        #
-
         the_assigned = self.getTheAssignedOne()
         if  the_assigned is not None:
             return 0
 
-        #
         # Checking if the user rejected the task
-        #
-
         if member_id in self.task_rejecter:
             return 0
 
-        #
         # Checking within the assigned members.
-        #
-
         if member_id in self.getMemberIds():
             return 1
-
         #
         # Loop over the groups to see if the user
         # belongs to one of the groups
         #
-
         if self.getGroupIds() == []:
             return 0
         for group_id in self.getGroupIds():
