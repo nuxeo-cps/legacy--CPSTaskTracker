@@ -354,6 +354,11 @@ class CPSTask(FlexibleDocument):
         """
         The user rejects the task
         """
+
+        portal = self.portal_url.getPortalObject()
+        wftool = portal.portal_workflow
+        wftool.doActionFor(self, 'reject', wf_id="task_wf")
+
         now = DateTime().strftime("%Y/%m/%d")
         member_id = self.getCurrentMemberId()
         struct = {'id':member_id, 'date':now}
