@@ -8,128 +8,529 @@
 <body>
 
 <metal:block fill-slot="main">
+  <p>
+    You can edit your skinner by following the <strong>Skinner parameters</strong> action on the right.
+  </p>
+  <tal:block define="task_lists python:here.portal_tasks.searchTasks(here.getParameters());
+                     isManager python:mtool.checkPermission('Manage portal',portal_object)">
 
-  <tal:block define="tasks python:here.portal_tasks.searchTasks();
-                     isManager python:mtool.checkPermission('Manage portal', portal_object)">
-    <form action="cps_task_edit" method="POST">
-      <table border="0" align="center" width="100%" cellpadding="2"
-      cellspacing="1">
-      <tr bgcolor="#FF0000">
-        <td align="center">
-          <span>&nbsp;</span>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Title</a>
-           </strong>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Creator</a>
-           </strong>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Indicator</a>
-           </strong>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Priority</a>
-           </strong>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Type</a>
-           </strong>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Start date</a>
-           </strong>
-        </td>
-        <td align="center">
-           <strong>
-             <a href=".">Deadline</a>
-           </strong>
-        </td>
-      </tr>
-      <tal:block repeat="task tasks">
-      <tal:block condition="repeat/task/even">
-         <tr bgcolor="#EEEEEE">
-            <td>
-              <input type="checkbox" name="ids:list"
-                     tal:attributes="value task/id"
-                     tal:condition="python:task.isCreator() or isManager" />
-            </td>
-            <td>
-              <strong>
-                <span tal:replace="task/title_or_id" />
-              </strong>
-            </td>
-            <td>
-              <span tal:replace="task/Creator" />
-            </td>
-            <td>
-              <span tal:replace="task/task_indicator" />
-            </td>
-            <td>
-              <span tal:replace="task/task_priority" />
-            </td>
-            <td>
-              <span tal:replace="task/task_type" />
-            </td>
-            <td>
-              <span tal:replace="task/start_task_date" />
-            </td>
-            <td>
-              <span tal:replace="task/stop_task_date" />
-            </td>
-         </tr>
-      </tal:block>
-      <tal:block condition="repeat/task/odd">
-        <tr>
-           <td>
-             <input type="checkbox" name="ids:list"
-                    tal:attributes="value task/id"
-                    tal:condition="python:task.isCreator() or isManager" />
-           </td>
-           <td>
+    <!-- BEGINNING OF MY TASKS -->
+    <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []"
+               define="tasks python:task_lists['my_tasks']">
+      <h2>
+        The tasks I created.
+      </h2>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tr bgcolor="#FF0000">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
+          <td align="center">
              <strong>
-               <span tal:replace="task/title_or_id" />
+               <a href=".">Title</a>
              </strong>
-           </td>
-           <td>
-             <span tal:replace="task/Creator" />
-           </td>
-           <td>
-             <span tal:replace="task/task_indicator" />
-           </td>
-           <td>
-             <span tal:replace="task/task_priority" />
-           </td>
-           <td>
-             <span tal:replace="task/task_type" />
-           </td>
-           <td>
-             <span tal:replace="task/start_task_date" />
-           </td>
-           <td>
-             <span tal:replace="task/stop_task_date" />
-           </td>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Creator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Indicator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Priority</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Type</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Start date</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Deadline</a>
+             </strong>
+          </td>
         </tr>
-      </tal:block>
-      </tal:block>
+        <tal:block repeat="task tasks">
+        <tal:block condition="repeat/task/even">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <input type="checkbox" name="ids:list"
+                       tal:attributes="value task/id"
+                       tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+              <td>
+                <span tal:replace="task/Creator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_indicator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_priority" />
+              </td>
+              <td>
+                <span tal:replace="task/task_type" />
+              </td>
+              <td>
+                <span tal:replace="task/start_task_date" />
+              </td>
+              <td>
+                <span tal:replace="task/stop_task_date" />
+              </td>
+           </tr>
+        </tal:block>
+        <tal:block condition="repeat/task/odd">
+          <tr>
+             <td>
+               <input type="checkbox" name="ids:list"
+                      tal:attributes="value task/id"
+                      tal:condition="python:task.isCreator() or isManager" />
+             </td>
+             <td>
+               <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+             </td>
+             <td>
+               <span tal:replace="task/Creator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_indicator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_priority" />
+             </td>
+             <td>
+               <span tal:replace="task/task_type" />
+             </td>
+             <td>
+               <span tal:replace="task/start_task_date" />
+             </td>
+             <td>
+               <span tal:replace="task/stop_task_date" />
+             </td>
+          </tr>
+        </tal:block>
+        </tal:block>
+        <!-- ACTION PANEL -->
+        <tr>
+         <td colspan="9" align="right">
+           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+         </td>
+        </tr>
+        <!-- END ACTION PANEL -->
+        </table>
+      </form>
+    </tal:block>
+    <!-- END OF MY TASKS -->
 
-      <!-- ACTION PANEL -->
-      <tr>
-       <td colspan="9" align="right">
-         <input type="submit" value="button_delete" name="doDeleteTasks:method" />
-       </td>
-      </tr>
-      <!-- END ACTION PANEL -->
-      </table>
-    </form>
+    <!-- TASK ASSIGNED TO ME -->
+    <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []"
+               define="tasks python:task_lists['my_affected_tasks']">
+      <h2>
+        The tasks affected to me.
+      </h2>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tr bgcolor="#FF0000">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Title</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Creator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Indicator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Priority</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Type</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Start date</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Deadline</a>
+             </strong>
+          </td>
+        </tr>
+        <tal:block repeat="task tasks">
+        <tal:block condition="repeat/task/even">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <input type="checkbox" name="ids:list"
+                       tal:attributes="value task/id"
+                       tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+              <td>
+                <span tal:replace="task/Creator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_indicator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_priority" />
+              </td>
+              <td>
+                <span tal:replace="task/task_type" />
+              </td>
+              <td>
+                <span tal:replace="task/start_task_date" />
+              </td>
+              <td>
+                <span tal:replace="task/stop_task_date" />
+              </td>
+           </tr>
+        </tal:block>
+        <tal:block condition="repeat/task/odd">
+          <tr>
+             <td>
+               <input type="checkbox" name="ids:list"
+                      tal:attributes="value task/id"
+                      tal:condition="python:task.isCreator() or isManager" />
+             </td>
+             <td>
+               <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+             </td>
+             <td>
+               <span tal:replace="task/Creator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_indicator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_priority" />
+             </td>
+             <td>
+               <span tal:replace="task/task_type" />
+             </td>
+             <td>
+               <span tal:replace="task/start_task_date" />
+             </td>
+             <td>
+               <span tal:replace="task/stop_task_date" />
+             </td>
+          </tr>
+        </tal:block>
+        </tal:block>
+        <!-- ACTION PANEL -->
+        <tr>
+         <td colspan="9" align="right">
+           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+         </td>
+        </tr>
+        <!-- END ACTION PANEL -->
+        </table>
+      </form>
+    </tal:block>
+    <!-- TASK ASSIGNED TO ME -->
+
+    <!-- TASK ASSIGNED TO ONE OF MY GROUPS -->
+    <tal:block
+    condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []"
+               define="tasks python:task_lists['my_groups_affected_tasks']">
+      <h2>
+        The tasks affected to one of my groups.
+      </h2>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tr bgcolor="#FF0000">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Title</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Creator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Indicator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Priority</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Type</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Start date</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Deadline</a>
+             </strong>
+          </td>
+        </tr>
+        <tal:block repeat="task tasks">
+        <tal:block condition="repeat/task/even">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <input type="checkbox" name="ids:list"
+                       tal:attributes="value task/id"
+                       tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+              <td>
+                <span tal:replace="task/Creator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_indicator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_priority" />
+              </td>
+              <td>
+                <span tal:replace="task/task_type" />
+              </td>
+              <td>
+                <span tal:replace="task/start_task_date" />
+              </td>
+              <td>
+                <span tal:replace="task/stop_task_date" />
+              </td>
+           </tr>
+        </tal:block>
+        <tal:block condition="repeat/task/odd">
+          <tr>
+             <td>
+               <input type="checkbox" name="ids:list"
+                      tal:attributes="value task/id"
+                      tal:condition="python:task.isCreator() or isManager" />
+             </td>
+             <td>
+               <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+             </td>
+             <td>
+               <span tal:replace="task/Creator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_indicator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_priority" />
+             </td>
+             <td>
+               <span tal:replace="task/task_type" />
+             </td>
+             <td>
+               <span tal:replace="task/start_task_date" />
+             </td>
+             <td>
+               <span tal:replace="task/stop_task_date" />
+             </td>
+          </tr>
+        </tal:block>
+        </tal:block>
+        <!-- ACTION PANEL -->
+        <tr>
+         <td colspan="9" align="right">
+           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+         </td>
+        </tr>
+        <!-- END ACTION PANEL -->
+        </table>
+      </form>
+    </tal:block>
+    <!-- TASK ASSIGNED TO ONEOF MY GROUPS -->
+
+    <!-- TASK I ACCEPTED -->
+    <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []"
+               define="tasks python:task_lists['my_accepted_tasks']">
+      <h2>
+        The tasks I accepted.
+      </h2>
+      <form action="cps_task_edit" method="POST">
+        <table border="0" align="center" width="100%" cellpadding="2"
+        cellspacing="1">
+        <tr bgcolor="#FF0000">
+          <td align="center">
+            <span>&nbsp;</span>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Title</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Creator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Indicator</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Priority</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Type</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Start date</a>
+             </strong>
+          </td>
+          <td align="center">
+             <strong>
+               <a href=".">Deadline</a>
+             </strong>
+          </td>
+        </tr>
+        <tal:block repeat="task tasks">
+        <tal:block condition="repeat/task/even">
+           <tr bgcolor="#EEEEEE">
+              <td>
+                <input type="checkbox" name="ids:list"
+                       tal:attributes="value task/id"
+                       tal:condition="python:task.isCreator() or isManager" />
+              </td>
+              <td>
+                <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+              </td>
+              <td>
+                <span tal:replace="task/Creator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_indicator" />
+              </td>
+              <td>
+                <span tal:replace="task/task_priority" />
+              </td>
+              <td>
+                <span tal:replace="task/task_type" />
+              </td>
+              <td>
+                <span tal:replace="task/start_task_date" />
+              </td>
+              <td>
+                <span tal:replace="task/stop_task_date" />
+              </td>
+           </tr>
+        </tal:block>
+        <tal:block condition="repeat/task/odd">
+          <tr>
+             <td>
+               <input type="checkbox" name="ids:list"
+                      tal:attributes="value task/id"
+                      tal:condition="python:task.isCreator() or isManager" />
+             </td>
+             <td>
+               <a href="."
+                   tal:attributes="href string:${portal_url}/portal_tasks/${task/id}">
+                  <span tal:replace="task/title_or_id" />
+                </a>
+             </td>
+             <td>
+               <span tal:replace="task/Creator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_indicator" />
+             </td>
+             <td>
+               <span tal:replace="task/task_priority" />
+             </td>
+             <td>
+               <span tal:replace="task/task_type" />
+             </td>
+             <td>
+               <span tal:replace="task/start_task_date" />
+             </td>
+             <td>
+               <span tal:replace="task/stop_task_date" />
+             </td>
+          </tr>
+        </tal:block>
+        </tal:block>
+        <!-- ACTION PANEL -->
+        <tr>
+         <td colspan="9" align="right">
+           <input type="submit" value="button_delete" name="doDeleteTasks:method" />
+         </td>
+        </tr>
+        <!-- END ACTION PANEL -->
+        </table>
+      </form>
+    </tal:block>
+    <!-- TASK I ACCEPTED -->
+
   </tal:block>
 
   <metal:block use-macro="here/main_widgets/macros/discussion" />
