@@ -1,4 +1,19 @@
 *******************************************
+** CPSTaskTracker V0.8.0 [R1 build 2003-11/21-20:09 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Manager can edit the member's task
+Bug fixes:
+~~~~~~~~~~
+- Cosmetic
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+*******************************************
 ** CPSTaskTracker V0.7.0 [R1 build 2003-11/18-22:12 by anguenot]
 
 ZODB Requires:

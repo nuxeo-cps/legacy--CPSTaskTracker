@@ -3,10 +3,10 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Manager can edit the member's task
+-
 Bug fixes:
 ~~~~~~~~~~
-- Cosmetic
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -
