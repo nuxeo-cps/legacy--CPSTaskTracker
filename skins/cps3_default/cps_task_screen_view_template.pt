@@ -264,7 +264,7 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="_button_delete"
+           <input type="submit" value="_button_delete" class="standalone"
              name="doDeleteTasks:method"
              tal:attributes="value python:mcat('_button_delete')" />
          </td>
@@ -424,7 +424,7 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="_button_delete"
+           <input type="submit" value="_button_delete" class="standalone"
              name="doDeleteTasks:method"
              tal:attributes="value python:mcat('_button_delete')" />
          </td>
@@ -583,7 +583,7 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="_button_delete"
+           <input type="submit" value="_button_delete" class="standalone"
              name="doDeleteTasks:method"
              tal:attributes="value python:mcat('_button_delete')" />
          </td>
@@ -743,7 +743,7 @@
         <!-- ACTION PANEL -->
         <tr>
          <td colspan="9" align="right">
-           <input type="submit" value="_button_delete"
+           <input type="submit" value="_button_delete" class="standalone"
              name="doDeleteTasks:method"
              tal:attributes="value python:mcat('_button_delete')" />
          </td>
