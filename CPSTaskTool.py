@@ -193,7 +193,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 #                                                if x.isTheAssignedOne()]
 
 
-        # <FJ>                                  
+        # <FJ>
         # Avoid duplicated items with some kind of priority
         # my_accepted_tasks > my_affected_tasks > my_groups_affected_tasks > my_tasks
         out=[]
@@ -202,43 +202,52 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
                 if item.isTheAssignedOne():
                     out.append(item)
                     sorted_tasks.remove(item)
-                    
+
         task_lists['my_accepted_tasks']=out
         LOG('TaskTool', INFO, 'my accepted tasks : "%s"' % str(out))
 
-            
+
         out=[]
         if parameters.get('display_my_affected_tasks'):
             for item in sorted_tasks:
                 if member_id in item.getMemberIds():
                     out.append(item)
                     sorted_tasks.remove(item)
-                    
+
         task_lists['my_affected_tasks']=out
         LOG('TaskTool', INFO, 'my affected tasks : "%s"' % str(out))
-                            
+
         out=[]
         if parameters.get('display_my_groups_affected_tasks'):
             for item in sorted_tasks:
                 if member_id in item.getUserGroupsAssigned():
                     out.append(item)
                     sorted_tasks.remove(item)
-                    
+
         task_lists['my_groups_affected_tasks']=out
         LOG('TaskTool', INFO, 'groups affected tasks : "%s"' % str(out))
-                
+
         out=[]
         if parameters.get('display_my_tasks'):
             for item in sorted_tasks:
                 if item.isCreator():
                     out.append(item)
                     sorted_tasks.remove(item)
-                    
+
         task_lists['my_tasks']=out
         LOG('TaskTool', INFO, 'my tasks : "%s"' % str(out))
         # </FJ>
-                                                   
-        
+
+        out=[]
+        if parameters.get('display_on_project') != 'none':
+            for item in sorted_tasks:
+                if item.task_project == parameters.get('display_on_project'):
+                    out.append(item)
+
+        task_lists['display_on_project']=out
+        LOG('TaskTool', INFO, 'Project %s: "%s"' % (parameters.get('display_on_project'),str(out)))
+
+
         #
         # Cleaning the empty entries
         # For the visible if empty feature
@@ -251,6 +260,8 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             del task_lists['my_accepted_tasks']
         if task_lists.get('my_groups_affected_tasks') == []:
             del task_lists['my_groups_affected_tasks']
+        if task_lists.get('display_on_project') == []:
+            del task_lists['display_on_project']
 
 
         return task_lists

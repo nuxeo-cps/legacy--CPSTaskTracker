@@ -175,6 +175,29 @@
                      tal:condition="not:here/display_my_groups_affected_tasks" />
             </metal:block>
           </metal:block>
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              <span tal:replace="python:mcat('_label_only_this_project')" />
+            </metal:block>
+            <metal:block fill-slot="content">
+              <select name="display_on_project"
+                  tal:define="the_project here/display_on_project|nothing" >
+                  <option selected
+                        tal:attributes="value string:''"
+                        tal:content="python:''">
+                      Task project
+                    </option>
+                  <tal:block repeat="project here/portal_tasks/getProjects">
+                    <option
+                        tal:attributes="value project/title;
+                                        selected python:the_project == project['title']"
+                        tal:content="project/title">
+                      Task project
+                    </option>
+                 </tal:block>
+              </select>
+            </metal:block>
+          </metal:block>
           <!-- END WHAT KIND OF -->
         </metal:block>
       </metal:block>
