@@ -12,7 +12,7 @@ Check the example in the getCustomTaskBoxSkinners
 
 box_skinners = []
 
-nuxeo_skin = {'title':'nuxeo',
+nuxeo_skin = {'title':'default',
               'zpt':'CPSTaskBox_renderBodyTemplate'}
 
 box_skinners.append(nuxeo_skin)

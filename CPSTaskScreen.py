@@ -130,7 +130,7 @@ class CPSTaskScreen(BaseDocument):
     display_my_accepted_tasks = 1
     display_on_project = ""
 
-    skinner = 'nuxeo'
+    skinner = 'default'
 
     def __init__(self, id, **kw):
         """
@@ -151,7 +151,7 @@ class CPSTaskScreen(BaseDocument):
         self.display_my_groups_affected_tasks = form.get('display_my_groups_affected_tasks', 0) and 1
         self.display_my_accepted_tasks = form.get('display_my_accepted_tasks', 0) and 1
         self.display_on_project = form.get('display_on_project',"")
-        self.skinner = form.get('skinner', 'nuxeo')
+        self.skinner = form.get('skinner', 'default')
 
     security.declareProtected("getParameters", View)
     def getParameters(self):

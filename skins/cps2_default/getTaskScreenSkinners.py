@@ -12,7 +12,7 @@ Just follow the same struct as below.
 
 screen_skinners = []
 
-nuxeo_skin = {'title':'nuxeo',
+nuxeo_skin = {'title':'default',
               'zpt':'cps_task_screen_view_template'}
 
 screen_skinners.append(nuxeo_skin)
