@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2003-11-10 12:45default\n"
-"PO-Revision-Date: 2003-11-10 12:46+0100\n"
+"POT-Creation-Date: 2003-11-10 16:21default\n"
+"PO-Revision-Date: 2003-11-10 16:22+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,9 @@ msgstr "Rejeter cette tâche"
 # ## BUTTTONS ######################################################
 msgid "_button_recall_"
 msgstr "Rappeller"
+
+msgid "_button_assign"
+msgstr "Affecter"
 
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
@@ -92,9 +95,7 @@ msgid "_label_display_my_affected_tasks"
 msgstr "Afficher les tâches qui me sont affectées "
 
 msgid "_label_display_my_groups_affected_tasks"
-msgstr ""
-"Afficher les tâches qui sont affectées à un des groupes auxquels "
-"j'appartiens."
+msgstr "Afficher les tâches qui sont affectées à un des groupes auxquels j'appartiens."
 
 msgid "_label_display_my_accepted_tasks"
 msgstr "Afficher les tâches que j'ai acceptées. "
@@ -158,6 +159,9 @@ msgstr ""
 msgid "_heading_configure"
 msgstr "Configure"
 
+msgid "_heading_create_a_task_screen"
+msgstr "Créer un visualisateur de tâches."
+
 msgid "_heading_recall_assigned_members"
 msgstr "Rappeller les personnes assignées"
 
@@ -198,6 +202,9 @@ msgstr "Etes-vous certain de vouloir accepter la tâche ?"
 msgid "_label_do_you_want_to_reject_it"
 msgstr "Etes-vous certain de vouloir rejeter la tâche ?"
 
+msgid "_label_do_you_want_to_close_it"
+msgstr "Etes-vous certain de vouloir fermer la tâche ?"
+
 msgid "_label_status"
 msgstr "Statut"
 
@@ -211,6 +218,9 @@ msgstr ""
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Ceci est un rappel vous concernant pour la tâche suivante : "
+
+msgid "_label_you_can_reassign_the_task_here"
+msgstr "Vous pouvez réaffecter la tâche Ceci remplacera les affectations précédentes."
 
 msgid "_label_recall"
 msgstr "Rappel"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-11-10 12:45default\n"
+"POT-Creation-Date: 2003-11-10 16:21default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -33,6 +33,9 @@ msgid "_button_reject_"
 msgstr ""
 
 msgid "_button_recall_"
+msgstr ""
+
+msgid "_button_assign"
 msgstr ""
 
 # ## PORTAL types ##########################################################
@@ -152,6 +155,9 @@ msgstr ""
 msgid "_heading_configure"
 msgstr ""
 
+msgid "_heading_create_a_task_screen"
+msgstr ""
+
 msgid "_heading_recall_assigned_members"
 msgstr ""
 
@@ -191,6 +197,9 @@ msgstr ""
 msgid "_label_do_you_want_to_reject_it"
 msgstr ""
 
+msgid "_label_do_you_want_to_close_it"
+msgstr ""
+
 msgid "_label_status"
 msgstr ""
 
@@ -198,6 +207,9 @@ msgid "_label_recall_explanation"
 msgstr ""
 
 msgid "_label_you_are_recalled_for_the_task"
+msgstr ""
+
+msgid "_label_you_can_reassign_the_task_here"
 msgstr ""
 
 msgid "_label_recall"

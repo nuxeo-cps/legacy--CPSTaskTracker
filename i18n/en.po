@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-11-10 12:45default\n"
-"PO-Revision-Date: 2003-11-10 12:46+0100\n"
+"POT-Creation-Date: 2003-11-10 16:21default\n"
+"PO-Revision-Date: 2003-11-10 16:12+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,9 @@ msgstr "Reject this task"
 # ## BUTTTONS ######################################################
 msgid "_button_recall_"
 msgstr "Recall"
+
+msgid "_button_assign"
+msgstr "Assign"
 
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
@@ -156,6 +159,9 @@ msgstr ""
 msgid "_heading_configure"
 msgstr "Configure"
 
+msgid "_heading_create_a_task_screen"
+msgstr "Create a task screener."
+
 msgid "_heading_recall_assigned_members"
 msgstr "Recall the assigned members "
 
@@ -198,6 +204,9 @@ msgstr "Do you really want to accept it ?"
 msgid "_label_do_you_want_to_reject_it"
 msgstr "Do you really want to reject it ?"
 
+msgid "_label_do_you_want_to_close_it"
+msgstr "Do you really want to close it ?"
+
 # ## labels ################################################################
 msgid "_label_status"
 msgstr "Status"
@@ -210,6 +219,10 @@ msgstr ""
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
+
+msgid "_label_you_can_reassign_the_task_here"
+msgstr ""
+"You can re-assign the task here. It will replace the previous assignment."
 
 # ## labels ################################################################
 msgid "_label_recall"
@@ -361,4 +374,3 @@ msgstr "Select groups from search"
 # ## labels ################################################################
 msgid "_groups_selected_"
 msgstr "Groups selected"
-

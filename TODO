@@ -21,6 +21,7 @@ o CPSTask
   o sorting against projects + projects management.
   o Cosmetics
     o Re-skinning the templates like the one for recall the assignees.
+  o bug when you have one create/affected task. It appears within the group tasks.
 
 o CPSTaskScreen
   o Skinners ?
