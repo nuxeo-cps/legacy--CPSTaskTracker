@@ -6,7 +6,7 @@ tests:
 clean:
 	find . -name '*~' | xargs rm -f
 	find . -name '*.pyc' | xargs rm -f
-	rm -rf doc/api
+	rm -rf docs/api
 
 doc:
-	happydoc -d doc/api *.py
+	happydoc -d docs/api *.py
