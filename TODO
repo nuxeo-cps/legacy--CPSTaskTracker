@@ -1,5 +1,10 @@
 # $Id$
 
+################
+o means TODO
+x means DONE
+################
+
 ## DESIGN
 
 o Design for documentation
@@ -14,21 +19,38 @@ o install
 o Repository
   o Patching the OFS for the manage_delObjects within the portal_tasks. (Owner)
     Check CPSMemberFork.
+  o security fix for members (too many rights)
 
 o CPSTask
-  o Cleaning and enhancing the task skins.
+  x Cleaning and enhancing the task skins.
   o Checking for the indexation of the attached files
-  o recall assignees action not finished
-  o date in french ??
+  x recall assignees action not finished
+  x date in french pb.
+  o La vue 'status' ne fonctionne pas (task_status)
+  o il faut maniper le breadcrumb pour qu'il ne donne pas le chemin
+     physique dans l'instance lorqu'on visualise une tâche
+  o il ne faut pas que les assignés ne puissent modifier les paramètres de la
+    tâche -> action réservée à l'admin
+  o il ne faut pas que l'action '_action_recall_' soit visible alors que la tâche est terminée.
+  o Groups/tasks problems.
+  o popups i18n.
 
 o CPSTaskScreen
-  o Validation against the requierments
+  o Skinners ?
+  x i18n ok
+  o les bouton d'effacement ne fonctionnent pas
 
 o CPSTaskBox
-  o Validation against the requierments.
-
-o check i18n for *all* the skins (and UTF-8 encoding)
+  o Skinners ?
+  x i18n ok.
+  x Problem when the task box is defined at a global scope.(Anonymous can't access the site)
+  o Le bouton 'visible si vide' de la boite de tâche est sans effet
+  x la boite de tâche n'affiche pas son titre
 
 o Workflow
   o Defining the task workflow in Python within the installer
-  o fixing the pending state and status history.
+  x fixing the pending state
+  o status history.
+
+o Cosmetic
+  o Putting nicer icons for the task box. (task state indicator)
