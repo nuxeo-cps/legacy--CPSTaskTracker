@@ -512,3 +512,7 @@ msgstr ""
 
 msgid "label_cpstask_text"
 msgstr ""
+
+msgid "_label_the_task_has_been_rejected"
+msgstr ""
+
