@@ -34,21 +34,24 @@ from Products.CMFCore.CMFCorePermissions import AddPortalContent
 import CPSTaskTool
 import CPSTask
 import CPSTaskScreen
+import CPSTaskBox
 
 contentClasses = (
     CPSTask.CPSTask,
     CPSTaskScreen.CPSTaskScreen,
+    CPSTaskBox.CPSTaskBox,
     )
 
 contentConstructors = (
     CPSTask.addCPSTask,
     CPSTaskScreen.addCPSTaskScreen,
+    CPSTaskBox.addCPSTaskBox,
     )
 
 fti = (
     CPSTask.factory_type_information +
     CPSTaskScreen.factory_type_information +
-    ()
+    CPSTaskBox.factory_type_information + ()
     )
 
 registerDirectory('skins', globals())
