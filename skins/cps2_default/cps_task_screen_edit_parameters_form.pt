@@ -1,0 +1,161 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="base">
+    <base href="." tal:attributes="href string:${here/absolute_url}/" />
+  </metal:block>
+  <metal:block fill-slot="header">
+      <tal:block replace="python:mcat('Configure your screener')">
+        Configure
+      </tal:block>
+      «&nbsp;<span tal:replace="here/title_or_id">Title</span>&nbsp;»
+  </metal:block>
+  <metal:block fill-slot="main">
+    <form action="." method="post" tal:attributes="action string:doChangeScreenerProperties">
+      <metal:block use-macro="here/main_widgets/macros/form">
+        <metal:block fill-slot="content">
+          <!-- DATETIME PARAMETERS -->
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              Sort Tasks by date
+            </metal:block>
+            <metal:block fill-slot="content">
+              <select name="sort_date_on">
+                <option value="start_date"
+                        tal:condition="python:here.sort_date_on != 'start_date'">
+                  Task start
+                </option>
+                <option value="start_date" selected
+                        tal:condition="python:here.sort_date_on == 'start_date'">
+                  Task start
+                </option>
+                <option value="stop_date"
+                        tal:condition="python:here.sort_date_on != 'stop_date'">
+                  Task stop
+                </option>
+                <option value="stop_date" selected
+                        tal:condition="python:here.sort_date_on == 'stop_date'">
+                  Task stop
+                </option>
+              </select>
+              <select name="sort_order">
+                <option value="asc" selected
+                        tal:condition="python:here.sort_order == 'asc'">
+                  Increasing
+                </option>
+                <option value="asc"
+                        tal:condition="python:here.sort_order != 'asc'">
+                  Increasing
+                </option>
+                <option value="desc" selected
+                        tal:condition="python:here.sort_order == 'desc'">
+                  Decreasing
+                </option>
+                <option value="desc"
+                        tal:condition="python:here.sort_order != 'desc'">
+                  Decreasing
+                </option>
+              </select>
+            </metal:block>
+          </metal:block>
+          <!-- END OF DATETIME PARAMETERS -->
+          <!-- SORTING ON PARMETERS -->
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              Sort Tasks on
+            </metal:block>
+            <metal:block fill-slot="content">
+              <select name="sort_on">
+                <option value="a" selected>
+                  None
+                </option>
+                <option value="priority" selected
+                  tal:condition="python:here.sort_on == 'priority'">
+                  Priority
+                </option>
+                <option value="priority"
+                  tal:condition="python:here.sort_on != 'priority'">
+                  Priority
+                </option>
+                <option value="type" selected
+                   tal:condition="python:here.sort_on == 'type'">
+                  Type
+                </option>
+                <option value="type"
+                   tal:condition="python:here.sort_on != 'type'">
+                  Type
+                </option>
+                <option value="indicator" selected
+                  tal:condition="python:here.sort_on == 'indicator'">
+                  Indicator
+                </option>
+                <option value="indicator"
+                  tal:condition="python:here.sort_on != 'indicator'">
+                  Indicator
+                </option>
+              </select>
+            </metal:block>
+          </metal:block>
+          <!-- END OF SORTING ON PARAMETERS -->
+          <!-- WHAT KIND OF TASKS SHOULD WE DISPLAY -->
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              Display the tasks I created ?
+            </metal:block>
+            <metal:block fill-slot="content">
+              <input type="checkbox" checked
+                     name="display_my_tasks"
+                     tal:condition="here/display_my_tasks" />
+              <input type="checkbox"
+                     name="display_my_tasks"
+                     tal:condition="not:here/display_my_tasks" />
+            </metal:block>
+          </metal:block>
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              Display the tasks I accepted ?
+            </metal:block>
+            <metal:block fill-slot="content">
+              <input type="checkbox" checked
+                     name="display_my_accepted_tasks"
+                     tal:condition="here/display_my_accepted_tasks" />
+              <input type="checkbox"
+                     name="display_my_accepted_tasks"
+                     tal:condition="not:here/display_my_accepted_tasks" />
+            </metal:block>
+          </metal:block>
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              Display the tasks affected to me ?
+            </metal:block>
+            <metal:block fill-slot="content">
+              <input type="checkbox" checked
+                     name="display_my_affected_tasks"
+                     tal:condition="here/display_my_affected_tasks" />
+              <input type="checkbox"
+                     name="display_my_affected_tasks"
+                     tal:condition="not:here/display_my_affected_tasks" />
+            </metal:block>
+          </metal:block>
+          <metal:block use-macro="here/main_widgets/macros/form_property">
+            <metal:block fill-slot="title">
+              Display the tasks affected to one of my groups ?
+            </metal:block>
+            <metal:block fill-slot="content">
+              <input type="checkbox" checked
+                     name="display_my_groups_affected_tasks"
+                     tal:condition="here/display_my_groups_affected_tasks" />
+              <input type="checkbox"
+                     name="display_my_groups_affected_tasks"
+                     tal:condition="not:here/display_my_groups_affected_tasks" />
+            </metal:block>
+          </metal:block>
+          <!-- END WHAT KIND OF -->
+        </metal:block>
+      </metal:block>
+    <input class="mainbutton" type="submit" />
+    <input class="mainbutton" type="button" name="cancel" onclick="history.back()"
+           tal:attributes="value python:mcat('_button_cancel_')" />
+    </form>
+  </metal:block>
+</html>
