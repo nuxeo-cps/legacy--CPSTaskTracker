@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-08-24 15:05default\n"
+"POT-Creation-Date: 2003-10-11 20:20default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -27,5 +27,5 @@ msgid "_portal_type_CPS_Task_Screen"
 msgstr ""
 
 # # actions ###############################################################
-msgid "_action_my_tasks"
+msgid "_action_create_new_tasks"
 msgstr ""

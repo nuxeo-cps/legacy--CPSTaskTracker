@@ -1,12 +1,12 @@
 # translation of fr.po to Français
 # Gettext Message File for default.
 # Your Name <your@email>, Year
-# Julien Anguenot <ja@nuxeo.com>, 2003
+# Julien Anguenot <ja@nuxeo.com>, 2003.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2003-08-24 15:05default\n"
-"PO-Revision-Date: 2003-08-24 15:05+0200\n"
+"POT-Creation-Date: 2003-10-11 20:20default\n"
+"PO-Revision-Date: 2003-10-11 20:21+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Language-name: Language\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
-"X-Generator: KBabel 1.0\n"
+"X-Generator: KBabel 1.0.2\n"
 
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
@@ -27,6 +27,6 @@ msgid "_portal_type_CPS_Task_Screen"
 msgstr "Visualisateur de tâche "
 
 # # actions ###############################################################
-msgid "_action_my_tasks"
-msgstr "Mes Tâches"
+msgid "_action_create_new_tasks"
+msgstr "Créer une nouvelle tâche"
 
