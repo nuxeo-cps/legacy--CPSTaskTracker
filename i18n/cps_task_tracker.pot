@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-03-30 15:14default\n"
+"POT-Creation-Date: 2004-07-19 01:46default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -18,6 +18,83 @@ msgstr ""
 "Language-name: Language\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
+
+#.   <h1 condition="creation">
+#.         Create a document of type
+#.         ${type_name}
+#.       </h1>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+msgid "Create a document of type ${type_name}"
+msgstr ""
+
+#.   <block condition="edition">Edit ${title (tal content="here/title_or_id")}</block>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+msgid "Edit ${title}"
+msgstr ""
+
+#.   <option value="." content="widget/title_or_id" attributes="value widget/getWidgetId" condition="widget/is_i18n">Type</option>
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "Type"
+msgstr ""
+
+#.   <block content="type_info/Title" define="type_name request/type_name;
+#.                           type_info python:here.portal_types[type_name]">Type Title</block>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+msgid "Type Title"
+msgstr ""
+
+#.   <input name="addwidget_button" type="submit" class="context" value="button_add" />
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "button_add"
+msgstr ""
+
+#.   <input name="cpsdocument_edit_button" type="submit" class="standalone" value="button_change" condition="not:creation" />
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "button_change"
+msgstr ""
+
+#.   <input name="cpsdocument_create_button" type="submit" class="standalone" value="button_create" condition="creation" />
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "button_create"
+msgstr ""
+
+#.   <input type="submit" class="destructive" value="button_delete" attributes="name string:deleterow_${repeat/row/index};
+#.                                 onclick python:'return window.confirm(\'%s\')' %
+#.                                   (cpsmcat('description_confirm_delete'), )" />
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "button_delete"
+msgstr ""
+
+#.   <input type="submit" class="context moveDown" value="button_move_down" attributes="name string:downrow_${repeat/row/index}" condition="not:repeat/row/end" />
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "button_move_down"
+msgstr ""
+
+#.   <input type="submit" class="context moveUp" value="button_move_up" attributes="name string:uprow_${repeat/row/index}" condition="not:repeat/row/start" />
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "button_move_up"
+msgstr ""
+
+#.   <em style="color: red" content="err">err</em>
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "err"
+msgstr ""
+
+#.   <span condition="metadata">heading_metadata_edit</span>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+msgid "heading_metadata_edit"
+msgstr ""
+
+#.   <span content="widget/help" condition="widget/is_i18n">i18_key-help_for_this_field</span>
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "i18_key-help_for_this_field"
+msgstr ""
+
+#.   <span class="dlabel" content="widget/label" condition="widget/is_i18n">label</span>
+#.   <span content="widget/label_edit" condition="widget/is_i18n">label</span>
+#: from ../skins/cps3_documents/layout_cpstask_lib.pt
+msgid "label"
+msgstr ""
 
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
@@ -501,4 +578,7 @@ msgid "label_priority_nuxeo"
 msgstr ""
 
 msgid "label_priority_other"
+msgstr ""
+
+msgid "label_cpstask_text"
 msgstr ""

@@ -509,3 +509,6 @@ msgstr ""
 
 msgid "label_priority_other"
 msgstr ""
+
+msgid "label_cpstask_text"
+msgstr ""
