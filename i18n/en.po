@@ -454,3 +454,6 @@ msgstr "Currently, there is no project. You can create one by clicking the above
 
 msgid "_label_reject_history"
 msgstr "Reject history"
+
+msgid "_heading_task_related_to"
+msgid "Task related to the project : "

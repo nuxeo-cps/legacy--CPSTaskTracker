@@ -445,3 +445,7 @@ msgstr "Il n'y a aucun projet existant. Vous pouvez en créer en suivant le lien 
 
 msgid "_label_reject_history"
 msgstr "Historique des rejets"
+
+msgid "_heading_task_related_to"
+msgstr "Tâches relatives au projet"
+
