@@ -31,6 +31,7 @@
 <br />
 <!-- LIST OF PROJECTS -->
 <form method="post" action="doDeleteProjects">
+<tal:block condition="here/portal_tasks/getProjects">
   <table border="0" align="center" width="100%" cellpadding="2" cellspacing="1">
     <tr bgcolor="#DDDDDD">
       <td>&nbsp;</td>
@@ -81,7 +82,11 @@
       </td>
     </tr>
   </table>
+</tal:block>
 </form>
+<tal:block condition="not:here/portal_tasks/getProjects">
+  <span tal:replace="python:mcat('_label_no_project')" />
+</tal:block>
 <!-- END OF LIST OF PROJECT -->
 </metal:block>
 </body>
