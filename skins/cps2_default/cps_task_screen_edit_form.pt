@@ -9,7 +9,7 @@
 <body>
 <metal:block fill-slot="header">
   <tal:block condition="create"
-    tal:content="python:mcat('centxchat')">
+    tal:content="python:mcat('_heading_create_a_task_screen')">
     Create a task screen.
   </tal:block>
   <tal:block condition="not:create">
