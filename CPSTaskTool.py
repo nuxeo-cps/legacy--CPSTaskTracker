@@ -135,11 +135,6 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
             func = (lambda self, x,y:
                     self.map_priority[x.task_priority]\
                     <= self.map_priority[y.task_priority])
-        elif parameters['sort_on'] == 'project':
-            # Alpha
-            func = (lambda self, x,y:
-                    x.task_project[0].lower\
-                    <= y.task_project.lower[0])
         elif parameters['sort_on'] == 'type':
             # Case on the type -> Alpha sorting.
             func = (lambda self, x,y: x.task_type[0].lower()\
