@@ -2,17 +2,7 @@
                    task_lists python:here.portal_tasks.searchTasks(here.getParameters())"
            condition="python:not here.portal_membership.isAnonymousUser() and not
                    ((not here.visible_if_empty) and (not task_lists))" >
-<table border="0" align="center" valign="center" width="100%" cellspacing="0">
-<tr bgcolor="#000000">
-  <td align="left" width="20">
-    <img src="."
-       tal:attributes="src string:todo.png" />
-  </td>
-  <td align="right">
-    <font color="#FFFFFF">
-      <strong  tal:content="here/title_or_id" />
-    </font>
-  </td>
-</tr>
-</table>
+  <img tal:attributes="src string:${here/portal_url}/todo.png" />
+  &nbsp;
+  <tal:block tal:replace="here/title_or_id" />
 </tal:block>

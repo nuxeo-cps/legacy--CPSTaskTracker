@@ -79,4 +79,4 @@ if REQUEST is not None and \
         stupid_psm = mcat('_label_error_while_sending_mail')
 
 psm = '/?portal_status_message=%s' %(stupid_psm)
-return context.REQUEST.RESPONSE.redirect(context.absolute_url()+psm)
+return context.REQUEST.RESPONSE.redirect(context.absolute_url() + psm)

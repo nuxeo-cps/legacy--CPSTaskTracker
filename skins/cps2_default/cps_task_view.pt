@@ -12,9 +12,7 @@
 
 
 <metal:block fill-slot="header">
-   <h1 tal:content="here/title_or_id">
-       Title
-   </h1>
+  <tal:block tal:replace="here/title_or_id" />
 </metal:block>
 
 <metal:block fill-slot="main">
@@ -25,6 +23,8 @@
 <span tal:replace="here/isTheAssignedOne" />
 <span tal:replace="here/isLate" />
 END DEBUG -->
+<small tal:content="here/description|nothing"/>
+<br />
 <br />
 <table align="center" width="100%" cellpadding="2" cellspacing="2">
 <tr>
