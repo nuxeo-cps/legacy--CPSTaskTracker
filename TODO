@@ -27,3 +27,6 @@ o CPSTaskBox
   o Validation against the requierments.
 
 o i18n for *all* the skins.
+
+o Workflow 
+  o Defining the task workflow in Python within the installer

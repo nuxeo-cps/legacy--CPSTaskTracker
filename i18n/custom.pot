@@ -118,6 +118,9 @@ msgstr ""
 msgid "_heading_configure"
 msgstr ""
 
+msgid "_heading_recall_assigned_members"
+msgstr ""
+
 msgid "_label_title"
 msgstr ""
 

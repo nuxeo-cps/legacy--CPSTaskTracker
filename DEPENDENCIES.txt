@@ -6,5 +6,6 @@ Below are the dependencies :
  - CPS-2.1 or greater (CPS2 family) Still to be defined ! 
  - BTreeFolder2-0.5.0 or greater
  - CMFCalendar (for skins)
+ - NuxCPSFlexibleDocument (version 1)
 
 
