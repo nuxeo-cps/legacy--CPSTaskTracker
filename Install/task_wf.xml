@@ -1,44 +1,44 @@
 <?xml version="1.0"?>
 <ZopeData>
-  <record id="30797" aka="AAAAAAAAeE0=">
+  <record id="30984" aka="AAAAAAAAeQg=">
     <pickle>
       <tuple>
-        <tuple id="30797.3">
-          <string id="30797.1" encoding="repr">Products.DCWorkflow.DCWorkflow</string>
-          <string id="30797.2" encoding="repr">DCWorkflowDefinition</string>
+        <tuple id="30984.3">
+          <string id="30984.1" encoding="repr">Products.DCWorkflow.DCWorkflow</string>
+          <string id="30984.2" encoding="repr">DCWorkflowDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30797.4">
+      <dictionary id="30984.4">
         <item>
-            <key> <string id="30797.5" encoding="repr">permissions</string> </key>
+            <key> <string id="30984.5" encoding="repr">permissions</string> </key>
             <value>
               <tuple>
-                <string id="30797.6" encoding="repr">Access contents information</string>
-                <string id="30797.7" encoding="repr">Modify portal content</string>
-                <string id="30797.8" encoding="repr">View</string>
+                <string id="30984.6" encoding="repr">Access contents information</string>
+                <string id="30984.7" encoding="repr">Modify portal content</string>
+                <string id="30984.8" encoding="repr">View</string>
               </tuple>
             </value>
         </item>
         <item>
-            <key> <string id="30797.9" encoding="repr">initial_state</string> </key>
-            <value> <string id="30797.10" encoding="repr">waiting</string> </value>
+            <key> <string id="30984.9" encoding="repr">initial_state</string> </key>
+            <value> <string id="30984.10" encoding="repr">waiting</string> </value>
         </item>
         <item>
-            <key> <string id="30797.11" encoding="repr">id</string> </key>
-            <value> <string id="30797.12" encoding="repr">task_wf</string> </value>
+            <key> <string id="30984.11" encoding="repr">id</string> </key>
+            <value> <string id="30984.12" encoding="repr">task_wf</string> </value>
         </item>
         <item>
-            <key> <string id="30797.13" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30984.13" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30797.14">
+              <dictionary id="30984.14">
                 <item>
-                    <key> <string id="30797.15" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30984.15" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30797.16">
-                        <string id="30797.17" encoding="repr">Owner</string>
+                      <list id="30984.16">
+                        <string id="30984.17" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -46,406 +46,238 @@
             </value>
         </item>
         <item>
-            <key> <string id="30797.18" encoding="repr">transitions</string> </key>
+            <key> <string id="30984.18" encoding="repr">transitions</string> </key>
             <value>
               <persistent>
-                <tuple id="30797.22">
-                  <string id="30797.19" encoding="base64">AAAAAAAAeE4=</string>
-                  <tuple>
-                    <string id="30797.20" encoding="repr">Products.DCWorkflow.Transitions</string>
-                    <string id="30797.21" encoding="repr">Transitions</string>
+                <tuple id="30984.23">
+                  <string id="30984.19" encoding="base64">AAAAAAAAeQk=</string>
+                  <tuple id="30984.22">
+                    <string id="30984.20" encoding="repr">Products.DCWorkflow.Transitions</string>
+                    <string id="30984.21" encoding="repr">Transitions</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30797.23" encoding="repr">_objects</string> </key>
+            <key> <string id="30984.24" encoding="repr">_objects</string> </key>
             <value>
               <tuple>
-                <dictionary id="30797.24">
+                <dictionary id="30984.25">
                   <item>
-                      <key> <string id="30797.25" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30797.26" encoding="repr">Workflow States</string> </value>
+                      <key> <string id="30984.26" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30984.27" encoding="repr">Workflow States</string> </value>
                   </item>
                   <item>
-                      <key> <reference id="30797.11"/> </key>
-                      <value> <string id="30797.27" encoding="repr">states</string> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30797.28">
-                  <item>
-                      <key> <reference id="30797.25"/> </key>
-                      <value> <string id="30797.29" encoding="repr">Workflow Transitions</string> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30797.11"/> </key>
-                      <value> <reference id="30797.18"/> </value>
+                      <key> <reference id="30984.11"/> </key>
+                      <value> <string id="30984.28" encoding="repr">states</string> </value>
                   </item>
                 </dictionary>
-                <dictionary id="30797.30">
+                <dictionary id="30984.29">
                   <item>
-                      <key> <reference id="30797.25"/> </key>
-                      <value> <string id="30797.31" encoding="repr">Workflow Variables</string> </value>
+                      <key> <reference id="30984.26"/> </key>
+                      <value> <string id="30984.30" encoding="repr">Workflow Transitions</string> </value>
                   </item>
                   <item>
-                      <key> <reference id="30797.11"/> </key>
-                      <value> <string id="30797.32" encoding="repr">variables</string> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30797.33">
-                  <item>
-                      <key> <reference id="30797.25"/> </key>
-                      <value> <string id="30797.34" encoding="repr">Worklists</string> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30797.11"/> </key>
-                      <value> <string id="30797.35" encoding="repr">worklists</string> </value>
+                      <key> <reference id="30984.11"/> </key>
+                      <value> <reference id="30984.18"/> </value>
                   </item>
                 </dictionary>
-                <dictionary id="30797.36">
+                <dictionary id="30984.31">
                   <item>
-                      <key> <reference id="30797.25"/> </key>
-                      <value> <string id="30797.37" encoding="repr">Workflow Scripts</string> </value>
+                      <key> <reference id="30984.26"/> </key>
+                      <value> <string id="30984.32" encoding="repr">Workflow Variables</string> </value>
                   </item>
                   <item>
-                      <key> <reference id="30797.11"/> </key>
-                      <value> <string id="30797.38" encoding="repr">scripts</string> </value>
+                      <key> <reference id="30984.11"/> </key>
+                      <value> <string id="30984.33" encoding="repr">variables</string> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30984.34">
+                  <item>
+                      <key> <reference id="30984.26"/> </key>
+                      <value> <string id="30984.35" encoding="repr">Worklists</string> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30984.11"/> </key>
+                      <value> <string id="30984.36" encoding="repr">worklists</string> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30984.37">
+                  <item>
+                      <key> <reference id="30984.26"/> </key>
+                      <value> <string id="30984.38" encoding="repr">Workflow Scripts</string> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30984.11"/> </key>
+                      <value> <string id="30984.39" encoding="repr">scripts</string> </value>
                   </item>
                 </dictionary>
               </tuple>
             </value>
         </item>
         <item>
-            <key> <reference id="30797.38"/> </key>
+            <key> <reference id="30984.39"/> </key>
             <value>
               <persistent>
-                <tuple id="30797.42">
-                  <string id="30797.39" encoding="base64">AAAAAAAAeE8=</string>
-                  <tuple>
-                    <string id="30797.40" encoding="repr">Products.DCWorkflow.Scripts</string>
-                    <string id="30797.41" encoding="repr">Scripts</string>
+                <tuple id="30984.44">
+                  <string id="30984.40" encoding="base64">AAAAAAAAeQo=</string>
+                  <tuple id="30984.43">
+                    <string id="30984.41" encoding="repr">Products.DCWorkflow.Scripts</string>
+                    <string id="30984.42" encoding="repr">Scripts</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <reference id="30797.27"/> </key>
+            <key> <reference id="30984.28"/> </key>
             <value>
               <persistent>
-                <tuple id="30797.46">
-                  <string id="30797.43" encoding="base64">AAAAAAAAeFA=</string>
-                  <tuple>
-                    <string id="30797.44" encoding="repr">Products.DCWorkflow.States</string>
-                    <string id="30797.45" encoding="repr">States</string>
+                <tuple id="30984.49">
+                  <string id="30984.45" encoding="base64">AAAAAAAAeQs=</string>
+                  <tuple id="30984.48">
+                    <string id="30984.46" encoding="repr">Products.DCWorkflow.States</string>
+                    <string id="30984.47" encoding="repr">States</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <reference id="30797.32"/> </key>
+            <key> <reference id="30984.33"/> </key>
             <value>
               <persistent>
-                <tuple id="30797.50">
-                  <string id="30797.47" encoding="base64">AAAAAAAAeFE=</string>
-                  <tuple>
-                    <string id="30797.48" encoding="repr">Products.DCWorkflow.Variables</string>
-                    <string id="30797.49" encoding="repr">Variables</string>
+                <tuple id="30984.54">
+                  <string id="30984.50" encoding="base64">AAAAAAAAeQw=</string>
+                  <tuple id="30984.53">
+                    <string id="30984.51" encoding="repr">Products.DCWorkflow.Variables</string>
+                    <string id="30984.52" encoding="repr">Variables</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30797.51" encoding="repr">title</string> </key>
-            <value> <string id="30797.52" encoding="repr">CMF default workflow [Classic]</string> </value>
+            <key> <string id="30984.55" encoding="repr">title</string> </key>
+            <value> <string id="30984.56" encoding="repr">CMF default workflow [Classic]</string> </value>
         </item>
         <item>
-            <key> <reference id="30797.35"/> </key>
+            <key> <reference id="30984.36"/> </key>
             <value>
               <persistent>
-                <tuple id="30797.57">
-                  <string id="30797.53" encoding="base64">AAAAAAAAeFI=</string>
-                  <tuple id="30797.56">
-                    <string id="30797.54" encoding="repr">Products.DCWorkflow.Worklists</string>
-                    <string id="30797.55" encoding="repr">Worklists</string>
+                <tuple id="30984.61">
+                  <string id="30984.57" encoding="base64">AAAAAAAAeQ0=</string>
+                  <tuple id="30984.60">
+                    <string id="30984.58" encoding="repr">Products.DCWorkflow.Worklists</string>
+                    <string id="30984.59" encoding="repr">Worklists</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30797.58" encoding="repr">state_var</string> </key>
-            <value> <string id="30797.59" encoding="repr">review_state</string> </value>
+            <key> <string id="30984.62" encoding="repr">state_var</string> </key>
+            <value> <string id="30984.63" encoding="repr">review_state</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30798" aka="AAAAAAAAeE4=">
+  <record id="30985" aka="AAAAAAAAeQk=">
     <pickle>
       <tuple>
-        <tuple id="30798.3">
-          <string id="30798.1" encoding="repr">Products.DCWorkflow.Transitions</string>
-          <string id="30798.2" encoding="repr">Transitions</string>
+        <tuple id="30985.3">
+          <string id="30985.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="30985.2" encoding="repr">Transitions</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30798.4">
+      <dictionary id="30985.4">
         <item>
-            <key> <string id="30798.5" encoding="repr">_mapping</string> </key>
+            <key> <string id="30985.5" encoding="repr">_mapping</string> </key>
             <value>
-              <dictionary id="30798.6">
+              <dictionary id="30985.6">
                 <item>
-                    <key> <string id="30798.7" encoding="repr">reject</string> </key>
+                    <key> <string id="30985.7" encoding="repr">close</string> </key>
                     <value>
                       <persistent>
-                        <tuple id="30798.11">
-                          <string id="30798.8" encoding="base64">AAAAAAAAeFM=</string>
-                          <tuple id="30798.10">
-                            <reference id="30798.1"/>
-                            <string id="30798.9" encoding="repr">TransitionDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30798.12" encoding="repr">accept</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30798.16">
-                          <string id="30798.13" encoding="base64">AAAAAAAAeFQ=</string>
-                          <tuple id="30798.15">
-                            <reference id="30798.1"/>
-                            <string id="30798.14" encoding="repr">TransitionDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30798.17" encoding="repr">assign</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30798.21">
-                          <string id="30798.18" encoding="base64">AAAAAAAAeFU=</string>
-                          <tuple id="30798.20">
-                            <reference id="30798.1"/>
-                            <string id="30798.19" encoding="repr">TransitionDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30798.22" encoding="repr">zzinfo</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30798.26">
-                          <string id="30798.23" encoding="base64">AAAAAAAAeFY=</string>
-                          <tuple id="30798.25">
-                            <reference id="30798.1"/>
-                            <string id="30798.24" encoding="repr">TransitionDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30798.27" encoding="repr">close</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30798.31">
-                          <string id="30798.28" encoding="base64">AAAAAAAAeFc=</string>
-                          <tuple id="30798.30">
-                            <reference id="30798.1"/>
-                            <string id="30798.29" encoding="repr">TransitionDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30798.32" encoding="repr">id</string> </key>
-            <value> <string id="30798.33" encoding="repr">transitions</string> </value>
-        </item>
-        <item>
-            <key> <string id="30798.34" encoding="repr">_objects</string> </key>
-            <value>
-              <tuple>
-                <dictionary id="30798.35">
-                  <item>
-                      <key> <string id="30798.36" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30798.37" encoding="repr">Workflow Transition</string> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30798.32"/> </key>
-                      <value> <reference id="30798.12"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30798.38">
-                  <item>
-                      <key> <reference id="30798.36"/> </key>
-                      <value> <reference id="30798.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30798.32"/> </key>
-                      <value> <reference id="30798.7"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30798.39">
-                  <item>
-                      <key> <reference id="30798.36"/> </key>
-                      <value> <reference id="30798.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30798.32"/> </key>
-                      <value> <reference id="30798.27"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30798.40">
-                  <item>
-                      <key> <reference id="30798.36"/> </key>
-                      <value> <reference id="30798.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30798.32"/> </key>
-                      <value> <reference id="30798.17"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30798.41">
-                  <item>
-                      <key> <string id="30798.42" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30798.43" encoding="repr">Workflow Transition</string> </value>
-                  </item>
-                  <item>
-                      <key> <string id="30798.44" encoding="repr">id</string> </key>
-                      <value> <reference id="30798.22"/> </value>
-                  </item>
-                </dictionary>
-              </tuple>
-            </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30799" aka="AAAAAAAAeE8=">
-    <pickle>
-      <tuple>
-        <tuple id="30799.3">
-          <string id="30799.1" encoding="repr">Products.DCWorkflow.Scripts</string>
-          <string id="30799.2" encoding="repr">Scripts</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30799.4">
-        <item>
-            <key> <string id="30799.5" encoding="repr">_mapping</string> </key>
-            <value>
-              <dictionary id="30799.6">
-                <item>
-                    <key> <string id="30799.7" encoding="repr">wf_script_accept_task</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30799.12">
-                          <string id="30799.8" encoding="base64">AAAAAAAAeFg=</string>
-                          <tuple id="30799.11">
-                            <string id="30799.9" encoding="repr">Products.PythonScripts.PythonScript</string>
-                            <string id="30799.10" encoding="repr">PythonScript</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30799.13" encoding="repr">id</string> </key>
-            <value> <string id="30799.14" encoding="repr">scripts</string> </value>
-        </item>
-        <item>
-            <key> <string id="30799.15" encoding="repr">_objects</string> </key>
-            <value>
-              <tuple>
-                <dictionary id="30799.16">
-                  <item>
-                      <key> <string id="30799.17" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30799.18" encoding="repr">Script (Python)</string> </value>
-                  </item>
-                  <item>
-                      <key> <string id="30799.19" encoding="repr">id</string> </key>
-                      <value> <reference id="30799.7"/> </value>
-                  </item>
-                </dictionary>
-              </tuple>
-            </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30800" aka="AAAAAAAAeFA=">
-    <pickle>
-      <tuple>
-        <tuple id="30800.3">
-          <string id="30800.1" encoding="repr">Products.DCWorkflow.States</string>
-          <string id="30800.2" encoding="repr">States</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30800.4">
-        <item>
-            <key> <string id="30800.5" encoding="repr">_mapping</string> </key>
-            <value>
-              <dictionary id="30800.6">
-                <item>
-                    <key> <string id="30800.7" encoding="repr">closed</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30800.10">
-                          <string id="30800.8" encoding="base64">AAAAAAAAeFo=</string>
+                        <tuple>
+                          <string id="30985.8" encoding="base64">AAAAAAAAeRI=</string>
                           <tuple>
-                            <reference id="30800.1"/>
-                            <string id="30800.9" encoding="repr">StateDefinition</string>
+                            <reference id="30985.1"/>
+                            <string id="30985.9" encoding="repr">TransitionDefinition</string>
                           </tuple>
                         </tuple>
                       </persistent>
                     </value>
                 </item>
                 <item>
-                    <key> <string id="30800.11" encoding="repr">processed</string> </key>
+                    <key> <string id="30985.10" encoding="repr">accept</string> </key>
                     <value>
                       <persistent>
-                        <tuple id="30800.15">
-                          <string id="30800.12" encoding="base64">AAAAAAAAeFs=</string>
-                          <tuple id="30800.14">
-                            <reference id="30800.1"/>
-                            <string id="30800.13" encoding="repr">StateDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30800.16" encoding="repr">waiting</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30800.19">
-                          <string id="30800.17" encoding="base64">AAAAAAAAeFk=</string>
+                        <tuple>
+                          <string id="30985.11" encoding="base64">AAAAAAAAeQ8=</string>
                           <tuple>
-                            <reference id="30800.1"/>
-                            <string id="30800.18" encoding="repr">StateDefinition</string>
+                            <reference id="30985.1"/>
+                            <string id="30985.12" encoding="repr">TransitionDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30985.13" encoding="repr">assign</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple>
+                          <string id="30985.14" encoding="base64">AAAAAAAAeRA=</string>
+                          <tuple>
+                            <reference id="30985.1"/>
+                            <string id="30985.15" encoding="repr">TransitionDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30985.16" encoding="repr">recall</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple>
+                          <string id="30985.17" encoding="base64">AAAAAAAAeS4=</string>
+                          <tuple>
+                            <reference id="30985.1"/>
+                            <string id="30985.18" encoding="repr">TransitionDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30985.19" encoding="repr">reject</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple>
+                          <string id="30985.20" encoding="base64">AAAAAAAAeQ4=</string>
+                          <tuple>
+                            <reference id="30985.1"/>
+                            <string id="30985.21" encoding="repr">TransitionDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30985.22" encoding="repr">zzinfo</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple>
+                          <string id="30985.23" encoding="base64">AAAAAAAAeRE=</string>
+                          <tuple>
+                            <reference id="30985.1"/>
+                            <string id="30985.24" encoding="repr">TransitionDefinition</string>
                           </tuple>
                         </tuple>
                       </persistent>
@@ -455,41 +287,71 @@
             </value>
         </item>
         <item>
-            <key> <string id="30800.20" encoding="repr">id</string> </key>
-            <value> <string id="30800.21" encoding="repr">states</string> </value>
+            <key> <string id="30985.25" encoding="repr">id</string> </key>
+            <value> <string id="30985.26" encoding="repr">transitions</string> </value>
         </item>
         <item>
-            <key> <string id="30800.22" encoding="repr">_objects</string> </key>
+            <key> <string id="30985.27" encoding="repr">_objects</string> </key>
             <value>
               <tuple>
-                <dictionary id="30800.23">
+                <dictionary id="30985.28">
                   <item>
-                      <key> <string id="30800.24" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30800.25" encoding="repr">Workflow State</string> </value>
+                      <key> <string id="30985.29" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30985.30" encoding="repr">Workflow Transition</string> </value>
                   </item>
                   <item>
-                      <key> <string id="30800.26" encoding="repr">id</string> </key>
-                      <value> <reference id="30800.16"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30800.27">
-                  <item>
-                      <key> <string id="30800.28" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30800.29" encoding="repr">Workflow State</string> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30800.20"/> </key>
-                      <value> <reference id="30800.7"/> </value>
+                      <key> <reference id="30985.25"/> </key>
+                      <value> <reference id="30985.10"/> </value>
                   </item>
                 </dictionary>
-                <dictionary id="30800.30">
+                <dictionary id="30985.31">
                   <item>
-                      <key> <reference id="30800.28"/> </key>
-                      <value> <reference id="30800.29"/> </value>
+                      <key> <reference id="30985.29"/> </key>
+                      <value> <reference id="30985.30"/> </value>
                   </item>
                   <item>
-                      <key> <reference id="30800.20"/> </key>
-                      <value> <reference id="30800.11"/> </value>
+                      <key> <reference id="30985.25"/> </key>
+                      <value> <reference id="30985.19"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30985.32">
+                  <item>
+                      <key> <reference id="30985.29"/> </key>
+                      <value> <reference id="30985.30"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30985.25"/> </key>
+                      <value> <reference id="30985.7"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30985.33">
+                  <item>
+                      <key> <reference id="30985.29"/> </key>
+                      <value> <reference id="30985.30"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30985.25"/> </key>
+                      <value> <reference id="30985.13"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30985.34">
+                  <item>
+                      <key> <string id="30985.35" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30985.36" encoding="repr">Workflow Transition</string> </value>
+                  </item>
+                  <item>
+                      <key> <string id="30985.37" encoding="repr">id</string> </key>
+                      <value> <reference id="30985.22"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30985.38">
+                  <item>
+                      <key> <string id="30985.39" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30985.40" encoding="repr">Workflow Transition</string> </value>
+                  </item>
+                  <item>
+                      <key> <string id="30985.41" encoding="repr">id</string> </key>
+                      <value> <reference id="30985.16"/> </value>
                   </item>
                 </dictionary>
               </tuple>
@@ -498,87 +360,31 @@
       </dictionary>
     </pickle>
   </record>
-  <record id="30801" aka="AAAAAAAAeFE=">
+  <record id="30986" aka="AAAAAAAAeQo=">
     <pickle>
       <tuple>
-        <tuple id="30801.3">
-          <string id="30801.1" encoding="repr">Products.DCWorkflow.Variables</string>
-          <string id="30801.2" encoding="repr">Variables</string>
+        <tuple id="30986.3">
+          <string id="30986.1" encoding="repr">Products.DCWorkflow.Scripts</string>
+          <string id="30986.2" encoding="repr">Scripts</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30801.4">
+      <dictionary id="30986.4">
         <item>
-            <key> <string id="30801.5" encoding="repr">_mapping</string> </key>
+            <key> <string id="30986.5" encoding="repr">_mapping</string> </key>
             <value>
-              <dictionary id="30801.6">
+              <dictionary id="30986.6">
                 <item>
-                    <key> <string id="30801.7" encoding="repr">review_history</string> </key>
+                    <key> <string id="30986.7" encoding="repr">wf_script_accept_task</string> </key>
                     <value>
                       <persistent>
-                        <tuple id="30801.11">
-                          <string id="30801.8" encoding="base64">AAAAAAAAeFw=</string>
-                          <tuple id="30801.10">
-                            <reference id="30801.1"/>
-                            <string id="30801.9" encoding="repr">VariableDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30801.12" encoding="repr">comments</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30801.16">
-                          <string id="30801.13" encoding="base64">AAAAAAAAeF0=</string>
-                          <tuple id="30801.15">
-                            <reference id="30801.1"/>
-                            <string id="30801.14" encoding="repr">VariableDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30801.17" encoding="repr">time</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30801.21">
-                          <string id="30801.18" encoding="base64">AAAAAAAAeF4=</string>
-                          <tuple id="30801.20">
-                            <reference id="30801.1"/>
-                            <string id="30801.19" encoding="repr">VariableDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30801.22" encoding="repr">actor</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30801.26">
-                          <string id="30801.23" encoding="base64">AAAAAAAAeF8=</string>
-                          <tuple id="30801.25">
-                            <reference id="30801.1"/>
-                            <string id="30801.24" encoding="repr">VariableDefinition</string>
-                          </tuple>
-                        </tuple>
-                      </persistent>
-                    </value>
-                </item>
-                <item>
-                    <key> <string id="30801.27" encoding="repr">action</string> </key>
-                    <value>
-                      <persistent>
-                        <tuple id="30801.31">
-                          <string id="30801.28" encoding="base64">AAAAAAAAeGA=</string>
-                          <tuple id="30801.30">
-                            <reference id="30801.1"/>
-                            <string id="30801.29" encoding="repr">VariableDefinition</string>
+                        <tuple id="30986.12">
+                          <string id="30986.8" encoding="base64">AAAAAAAAeRM=</string>
+                          <tuple id="30986.11">
+                            <string id="30986.9" encoding="repr">Products.PythonScripts.PythonScript</string>
+                            <string id="30986.10" encoding="repr">PythonScript</string>
                           </tuple>
                         </tuple>
                       </persistent>
@@ -588,61 +394,21 @@
             </value>
         </item>
         <item>
-            <key> <string id="30801.32" encoding="repr">id</string> </key>
-            <value> <string id="30801.33" encoding="repr">variables</string> </value>
+            <key> <string id="30986.13" encoding="repr">id</string> </key>
+            <value> <string id="30986.14" encoding="repr">scripts</string> </value>
         </item>
         <item>
-            <key> <string id="30801.34" encoding="repr">_objects</string> </key>
+            <key> <string id="30986.15" encoding="repr">_objects</string> </key>
             <value>
               <tuple>
-                <dictionary id="30801.35">
+                <dictionary id="30986.16">
                   <item>
-                      <key> <string id="30801.36" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30801.37" encoding="repr">Workflow Variable</string> </value>
+                      <key> <string id="30986.17" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30986.18" encoding="repr">Script (Python)</string> </value>
                   </item>
                   <item>
-                      <key> <reference id="30801.32"/> </key>
-                      <value> <reference id="30801.27"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30801.38">
-                  <item>
-                      <key> <reference id="30801.36"/> </key>
-                      <value> <reference id="30801.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30801.32"/> </key>
-                      <value> <reference id="30801.22"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30801.39">
-                  <item>
-                      <key> <reference id="30801.36"/> </key>
-                      <value> <reference id="30801.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30801.32"/> </key>
-                      <value> <reference id="30801.12"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30801.40">
-                  <item>
-                      <key> <reference id="30801.36"/> </key>
-                      <value> <reference id="30801.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30801.32"/> </key>
-                      <value> <reference id="30801.7"/> </value>
-                  </item>
-                </dictionary>
-                <dictionary id="30801.41">
-                  <item>
-                      <key> <reference id="30801.36"/> </key>
-                      <value> <reference id="30801.37"/> </value>
-                  </item>
-                  <item>
-                      <key> <reference id="30801.32"/> </key>
-                      <value> <reference id="30801.17"/> </value>
+                      <key> <string id="30986.19" encoding="repr">id</string> </key>
+                      <value> <reference id="30986.7"/> </value>
                   </item>
                 </dictionary>
               </tuple>
@@ -651,31 +417,59 @@
       </dictionary>
     </pickle>
   </record>
-  <record id="30802" aka="AAAAAAAAeFI=">
+  <record id="30987" aka="AAAAAAAAeQs=">
     <pickle>
       <tuple>
-        <tuple id="30802.3">
-          <string id="30802.1" encoding="repr">Products.DCWorkflow.Worklists</string>
-          <string id="30802.2" encoding="repr">Worklists</string>
+        <tuple id="30987.3">
+          <string id="30987.1" encoding="repr">Products.DCWorkflow.States</string>
+          <string id="30987.2" encoding="repr">States</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30802.4">
+      <dictionary id="30987.4">
         <item>
-            <key> <string id="30802.5" encoding="repr">_mapping</string> </key>
+            <key> <string id="30987.5" encoding="repr">_mapping</string> </key>
             <value>
-              <dictionary id="30802.6">
+              <dictionary id="30987.6">
                 <item>
-                    <key> <string id="30802.7" encoding="repr">reviewer_queue</string> </key>
+                    <key> <string id="30987.7" encoding="repr">closed</string> </key>
                     <value>
                       <persistent>
-                        <tuple id="30802.11">
-                          <string id="30802.8" encoding="base64">AAAAAAAAeGE=</string>
-                          <tuple id="30802.10">
-                            <reference id="30802.1"/>
-                            <string id="30802.9" encoding="repr">WorklistDefinition</string>
+                        <tuple id="30987.11">
+                          <string id="30987.8" encoding="base64">AAAAAAAAeRQ=</string>
+                          <tuple id="30987.10">
+                            <reference id="30987.1"/>
+                            <string id="30987.9" encoding="repr">StateDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30987.12" encoding="repr">processed</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30987.16">
+                          <string id="30987.13" encoding="base64">AAAAAAAAeRU=</string>
+                          <tuple id="30987.15">
+                            <reference id="30987.1"/>
+                            <string id="30987.14" encoding="repr">StateDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30987.17" encoding="repr">waiting</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30987.21">
+                          <string id="30987.18" encoding="base64">AAAAAAAAeRY=</string>
+                          <tuple id="30987.20">
+                            <reference id="30987.1"/>
+                            <string id="30987.19" encoding="repr">StateDefinition</string>
                           </tuple>
                         </tuple>
                       </persistent>
@@ -685,21 +479,41 @@
             </value>
         </item>
         <item>
-            <key> <string id="30802.12" encoding="repr">id</string> </key>
-            <value> <string id="30802.13" encoding="repr">worklists</string> </value>
+            <key> <string id="30987.22" encoding="repr">id</string> </key>
+            <value> <string id="30987.23" encoding="repr">states</string> </value>
         </item>
         <item>
-            <key> <string id="30802.14" encoding="repr">_objects</string> </key>
+            <key> <string id="30987.24" encoding="repr">_objects</string> </key>
             <value>
               <tuple>
-                <dictionary id="30802.15">
+                <dictionary id="30987.25">
                   <item>
-                      <key> <string id="30802.16" encoding="repr">meta_type</string> </key>
-                      <value> <string id="30802.17" encoding="repr">Worklist</string> </value>
+                      <key> <string id="30987.26" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30987.27" encoding="repr">Workflow State</string> </value>
                   </item>
                   <item>
-                      <key> <reference id="30802.12"/> </key>
-                      <value> <reference id="30802.7"/> </value>
+                      <key> <string id="30987.28" encoding="repr">id</string> </key>
+                      <value> <reference id="30987.17"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30987.29">
+                  <item>
+                      <key> <string id="30987.30" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30987.31" encoding="repr">Workflow State</string> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30987.22"/> </key>
+                      <value> <reference id="30987.7"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30987.32">
+                  <item>
+                      <key> <reference id="30987.30"/> </key>
+                      <value> <reference id="30987.31"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30987.22"/> </key>
+                      <value> <reference id="30987.12"/> </value>
                   </item>
                 </dictionary>
               </tuple>
@@ -708,35 +522,245 @@
       </dictionary>
     </pickle>
   </record>
-  <record id="30803" aka="AAAAAAAAeFM=">
+  <record id="30988" aka="AAAAAAAAeQw=">
     <pickle>
       <tuple>
-        <tuple id="30803.3">
-          <string id="30803.1" encoding="repr">Products.DCWorkflow.Transitions</string>
-          <string id="30803.2" encoding="repr">TransitionDefinition</string>
+        <tuple id="30988.3">
+          <string id="30988.1" encoding="repr">Products.DCWorkflow.Variables</string>
+          <string id="30988.2" encoding="repr">Variables</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30803.4">
+      <dictionary id="30988.4">
         <item>
-            <key> <string id="30803.5" encoding="repr">actbox_url</string> </key>
-            <value> <string id="30803.6" encoding="repr">%(content_url)s/reject_task_form</string> </value>
-        </item>
-        <item>
-            <key> <string id="30803.7" encoding="repr">id</string> </key>
-            <value> <string id="30803.8" encoding="repr">reject</string> </value>
-        </item>
-        <item>
-            <key> <string id="30803.9" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30988.5" encoding="repr">_mapping</string> </key>
             <value>
-              <dictionary id="30803.10">
+              <dictionary id="30988.6">
                 <item>
-                    <key> <string id="30803.11" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30988.7" encoding="repr">review_history</string> </key>
                     <value>
-                      <list id="30803.12">
-                        <string id="30803.13" encoding="repr">Owner</string>
+                      <persistent>
+                        <tuple id="30988.11">
+                          <string id="30988.8" encoding="base64">AAAAAAAAeRc=</string>
+                          <tuple id="30988.10">
+                            <reference id="30988.1"/>
+                            <string id="30988.9" encoding="repr">VariableDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30988.12" encoding="repr">comments</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30988.16">
+                          <string id="30988.13" encoding="base64">AAAAAAAAeRg=</string>
+                          <tuple id="30988.15">
+                            <reference id="30988.1"/>
+                            <string id="30988.14" encoding="repr">VariableDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30988.17" encoding="repr">time</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30988.21">
+                          <string id="30988.18" encoding="base64">AAAAAAAAeRk=</string>
+                          <tuple id="30988.20">
+                            <reference id="30988.1"/>
+                            <string id="30988.19" encoding="repr">VariableDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30988.22" encoding="repr">actor</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30988.26">
+                          <string id="30988.23" encoding="base64">AAAAAAAAeRo=</string>
+                          <tuple id="30988.25">
+                            <reference id="30988.1"/>
+                            <string id="30988.24" encoding="repr">VariableDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+                <item>
+                    <key> <string id="30988.27" encoding="repr">action</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30988.31">
+                          <string id="30988.28" encoding="base64">AAAAAAAAeRs=</string>
+                          <tuple id="30988.30">
+                            <reference id="30988.1"/>
+                            <string id="30988.29" encoding="repr">VariableDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30988.32" encoding="repr">id</string> </key>
+            <value> <string id="30988.33" encoding="repr">variables</string> </value>
+        </item>
+        <item>
+            <key> <string id="30988.34" encoding="repr">_objects</string> </key>
+            <value>
+              <tuple>
+                <dictionary id="30988.35">
+                  <item>
+                      <key> <string id="30988.36" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30988.37" encoding="repr">Workflow Variable</string> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30988.32"/> </key>
+                      <value> <reference id="30988.27"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30988.38">
+                  <item>
+                      <key> <reference id="30988.36"/> </key>
+                      <value> <reference id="30988.37"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30988.32"/> </key>
+                      <value> <reference id="30988.22"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30988.39">
+                  <item>
+                      <key> <reference id="30988.36"/> </key>
+                      <value> <reference id="30988.37"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30988.32"/> </key>
+                      <value> <reference id="30988.12"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30988.40">
+                  <item>
+                      <key> <reference id="30988.36"/> </key>
+                      <value> <reference id="30988.37"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30988.32"/> </key>
+                      <value> <reference id="30988.7"/> </value>
+                  </item>
+                </dictionary>
+                <dictionary id="30988.41">
+                  <item>
+                      <key> <reference id="30988.36"/> </key>
+                      <value> <reference id="30988.37"/> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30988.32"/> </key>
+                      <value> <reference id="30988.17"/> </value>
+                  </item>
+                </dictionary>
+              </tuple>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="30989" aka="AAAAAAAAeQ0=">
+    <pickle>
+      <tuple>
+        <tuple id="30989.3">
+          <string id="30989.1" encoding="repr">Products.DCWorkflow.Worklists</string>
+          <string id="30989.2" encoding="repr">Worklists</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="30989.4">
+        <item>
+            <key> <string id="30989.5" encoding="repr">_mapping</string> </key>
+            <value>
+              <dictionary id="30989.6">
+                <item>
+                    <key> <string id="30989.7" encoding="repr">reviewer_queue</string> </key>
+                    <value>
+                      <persistent>
+                        <tuple id="30989.11">
+                          <string id="30989.8" encoding="base64">AAAAAAAAeRw=</string>
+                          <tuple id="30989.10">
+                            <reference id="30989.1"/>
+                            <string id="30989.9" encoding="repr">WorklistDefinition</string>
+                          </tuple>
+                        </tuple>
+                      </persistent>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30989.12" encoding="repr">id</string> </key>
+            <value> <string id="30989.13" encoding="repr">worklists</string> </value>
+        </item>
+        <item>
+            <key> <string id="30989.14" encoding="repr">_objects</string> </key>
+            <value>
+              <tuple>
+                <dictionary id="30989.15">
+                  <item>
+                      <key> <string id="30989.16" encoding="repr">meta_type</string> </key>
+                      <value> <string id="30989.17" encoding="repr">Worklist</string> </value>
+                  </item>
+                  <item>
+                      <key> <reference id="30989.12"/> </key>
+                      <value> <reference id="30989.7"/> </value>
+                  </item>
+                </dictionary>
+              </tuple>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="30994" aka="AAAAAAAAeRI=">
+    <pickle>
+      <tuple>
+        <tuple id="30994.3">
+          <string id="30994.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="30994.2" encoding="repr">TransitionDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="30994.4">
+        <item>
+            <key> <string id="30994.5" encoding="repr">actbox_url</string> </key>
+            <value> <string id="30994.6" encoding="repr">%(content_url)s/close_task_form</string> </value>
+        </item>
+        <item>
+            <key> <string id="30994.7" encoding="repr">id</string> </key>
+            <value> <string id="30994.8" encoding="repr">close</string> </value>
+        </item>
+        <item>
+            <key> <string id="30994.9" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="30994.10">
+                <item>
+                    <key> <string id="30994.11" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="30994.12">
+                        <string id="30994.13" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -744,83 +768,83 @@
             </value>
         </item>
         <item>
-            <key> <string id="30803.14" encoding="repr">actbox_name</string> </key>
-            <value> <string id="30803.15" encoding="repr">_action_reject</string> </value>
+            <key> <string id="30994.14" encoding="repr">actbox_name</string> </key>
+            <value> <string id="30994.15" encoding="repr">_action_close_task</string> </value>
         </item>
         <item>
-            <key> <string id="30803.16" encoding="repr">after_script_name</string> </key>
+            <key> <string id="30994.16" encoding="repr">after_script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30803.17" encoding="repr">guard</string> </key>
+            <key> <string id="30994.17" encoding="repr">guard</string> </key>
             <value>
               <persistent>
-                <tuple id="30803.22">
-                  <string id="30803.18" encoding="base64">AAAAAAAAeGI=</string>
-                  <tuple id="30803.21">
-                    <string id="30803.19" encoding="repr">Products.DCWorkflow.Guard</string>
-                    <string id="30803.20" encoding="repr">Guard</string>
+                <tuple id="30994.22">
+                  <string id="30994.18" encoding="base64">AAAAAAAAeSE=</string>
+                  <tuple id="30994.21">
+                    <string id="30994.19" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="30994.20" encoding="repr">Guard</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30803.23" encoding="repr">script_name</string> </key>
+            <key> <string id="30994.23" encoding="repr">script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30803.24" encoding="repr">actbox_category</string> </key>
-            <value> <string id="30803.25" encoding="repr">workflow</string> </value>
+            <key> <string id="30994.24" encoding="repr">actbox_category</string> </key>
+            <value> <string id="30994.25" encoding="repr">workflow</string> </value>
         </item>
         <item>
-            <key> <string id="30803.26" encoding="repr">title</string> </key>
+            <key> <string id="30994.26" encoding="repr">title</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30803.27" encoding="repr">description</string> </key>
+            <key> <string id="30994.27" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30803.28" encoding="repr">trigger_type</string> </key>
+            <key> <string id="30994.28" encoding="repr">trigger_type</string> </key>
             <value> <int>1</int> </value>
         </item>
         <item>
-            <key> <string id="30803.29" encoding="repr">new_state_id</string> </key>
+            <key> <string id="30994.29" encoding="repr">new_state_id</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30804" aka="AAAAAAAAeFQ=">
+  <record id="30991" aka="AAAAAAAAeQ8=">
     <pickle>
       <tuple>
-        <tuple id="30804.3">
-          <string id="30804.1" encoding="repr">Products.DCWorkflow.Transitions</string>
-          <string id="30804.2" encoding="repr">TransitionDefinition</string>
+        <tuple id="30991.3">
+          <string id="30991.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="30991.2" encoding="repr">TransitionDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30804.4">
+      <dictionary id="30991.4">
         <item>
-            <key> <string id="30804.5" encoding="repr">actbox_url</string> </key>
-            <value> <string id="30804.6" encoding="repr">%(content_url)s/accept_task_form</string> </value>
+            <key> <string id="30991.5" encoding="repr">actbox_url</string> </key>
+            <value> <string id="30991.6" encoding="repr">%(content_url)s/accept_task_form</string> </value>
         </item>
         <item>
-            <key> <string id="30804.7" encoding="repr">id</string> </key>
-            <value> <string id="30804.8" encoding="repr">accept</string> </value>
+            <key> <string id="30991.7" encoding="repr">id</string> </key>
+            <value> <string id="30991.8" encoding="repr">accept</string> </value>
         </item>
         <item>
-            <key> <string id="30804.9" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30991.9" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30804.10">
+              <dictionary id="30991.10">
                 <item>
-                    <key> <string id="30804.11" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30991.11" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30804.12">
-                        <string id="30804.13" encoding="repr">Owner</string>
+                      <list id="30991.12">
+                        <string id="30991.13" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -828,83 +852,83 @@
             </value>
         </item>
         <item>
-            <key> <string id="30804.14" encoding="repr">actbox_name</string> </key>
-            <value> <string id="30804.15" encoding="repr">_action_accept</string> </value>
+            <key> <string id="30991.14" encoding="repr">actbox_name</string> </key>
+            <value> <string id="30991.15" encoding="repr">_action_accept</string> </value>
         </item>
         <item>
-            <key> <string id="30804.16" encoding="repr">after_script_name</string> </key>
+            <key> <string id="30991.16" encoding="repr">after_script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30804.17" encoding="repr">guard</string> </key>
+            <key> <string id="30991.17" encoding="repr">guard</string> </key>
             <value>
               <persistent>
-                <tuple id="30804.22">
-                  <string id="30804.18" encoding="base64">AAAAAAAAeGM=</string>
-                  <tuple id="30804.21">
-                    <string id="30804.19" encoding="repr">Products.DCWorkflow.Guard</string>
-                    <string id="30804.20" encoding="repr">Guard</string>
+                <tuple id="30991.22">
+                  <string id="30991.18" encoding="base64">AAAAAAAAeR4=</string>
+                  <tuple id="30991.21">
+                    <string id="30991.19" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="30991.20" encoding="repr">Guard</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30804.23" encoding="repr">script_name</string> </key>
+            <key> <string id="30991.23" encoding="repr">script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30804.24" encoding="repr">actbox_category</string> </key>
-            <value> <string id="30804.25" encoding="repr">workflow</string> </value>
+            <key> <string id="30991.24" encoding="repr">actbox_category</string> </key>
+            <value> <string id="30991.25" encoding="repr">workflow</string> </value>
         </item>
         <item>
-            <key> <string id="30804.26" encoding="repr">title</string> </key>
+            <key> <string id="30991.26" encoding="repr">title</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30804.27" encoding="repr">description</string> </key>
+            <key> <string id="30991.27" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30804.28" encoding="repr">trigger_type</string> </key>
+            <key> <string id="30991.28" encoding="repr">trigger_type</string> </key>
             <value> <int>1</int> </value>
         </item>
         <item>
-            <key> <string id="30804.29" encoding="repr">new_state_id</string> </key>
-            <value> <string id="30804.30" encoding="repr">processed</string> </value>
+            <key> <string id="30991.29" encoding="repr">new_state_id</string> </key>
+            <value> <string id="30991.30" encoding="repr">processed</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30805" aka="AAAAAAAAeFU=">
+  <record id="30992" aka="AAAAAAAAeRA=">
     <pickle>
       <tuple>
-        <tuple id="30805.3">
-          <string id="30805.1" encoding="repr">Products.DCWorkflow.Transitions</string>
-          <string id="30805.2" encoding="repr">TransitionDefinition</string>
+        <tuple id="30992.3">
+          <string id="30992.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="30992.2" encoding="repr">TransitionDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30805.4">
+      <dictionary id="30992.4">
         <item>
-            <key> <string id="30805.5" encoding="repr">actbox_url</string> </key>
-            <value> <string id="30805.6" encoding="repr">%(content_url)s/assign_task_to_form</string> </value>
+            <key> <string id="30992.5" encoding="repr">actbox_url</string> </key>
+            <value> <string id="30992.6" encoding="repr">%(content_url)s/assign_task_to_form</string> </value>
         </item>
         <item>
-            <key> <string id="30805.7" encoding="repr">id</string> </key>
-            <value> <string id="30805.8" encoding="repr">assign</string> </value>
+            <key> <string id="30992.7" encoding="repr">id</string> </key>
+            <value> <string id="30992.8" encoding="repr">assign</string> </value>
         </item>
         <item>
-            <key> <string id="30805.9" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30992.9" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30805.10">
+              <dictionary id="30992.10">
                 <item>
-                    <key> <string id="30805.11" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30992.11" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30805.12">
-                        <string id="30805.13" encoding="repr">Owner</string>
+                      <list id="30992.12">
+                        <string id="30992.13" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -912,83 +936,83 @@
             </value>
         </item>
         <item>
-            <key> <string id="30805.14" encoding="repr">actbox_name</string> </key>
-            <value> <string id="30805.15" encoding="repr">_action_assign_task_to</string> </value>
+            <key> <string id="30992.14" encoding="repr">actbox_name</string> </key>
+            <value> <string id="30992.15" encoding="repr">_action_assign_task_to</string> </value>
         </item>
         <item>
-            <key> <string id="30805.16" encoding="repr">after_script_name</string> </key>
+            <key> <string id="30992.16" encoding="repr">after_script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30805.17" encoding="repr">guard</string> </key>
+            <key> <string id="30992.17" encoding="repr">guard</string> </key>
             <value>
               <persistent>
-                <tuple id="30805.22">
-                  <string id="30805.18" encoding="base64">AAAAAAAAeGQ=</string>
-                  <tuple id="30805.21">
-                    <string id="30805.19" encoding="repr">Products.DCWorkflow.Guard</string>
-                    <string id="30805.20" encoding="repr">Guard</string>
+                <tuple id="30992.22">
+                  <string id="30992.18" encoding="base64">AAAAAAAAeR8=</string>
+                  <tuple id="30992.21">
+                    <string id="30992.19" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="30992.20" encoding="repr">Guard</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30805.23" encoding="repr">script_name</string> </key>
+            <key> <string id="30992.23" encoding="repr">script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30805.24" encoding="repr">actbox_category</string> </key>
-            <value> <string id="30805.25" encoding="repr">workflow</string> </value>
+            <key> <string id="30992.24" encoding="repr">actbox_category</string> </key>
+            <value> <string id="30992.25" encoding="repr">workflow</string> </value>
         </item>
         <item>
-            <key> <string id="30805.26" encoding="repr">title</string> </key>
+            <key> <string id="30992.26" encoding="repr">title</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30805.27" encoding="repr">description</string> </key>
+            <key> <string id="30992.27" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30805.28" encoding="repr">trigger_type</string> </key>
+            <key> <string id="30992.28" encoding="repr">trigger_type</string> </key>
             <value> <int>1</int> </value>
         </item>
         <item>
-            <key> <string id="30805.29" encoding="repr">new_state_id</string> </key>
-            <value> <string id="30805.30" encoding="repr">pending</string> </value>
+            <key> <string id="30992.29" encoding="repr">new_state_id</string> </key>
+            <value> <string id="30992.30" encoding="repr">pending</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30806" aka="AAAAAAAAeFY=">
+  <record id="31022" aka="AAAAAAAAeS4=">
     <pickle>
       <tuple>
-        <tuple id="30806.3">
-          <string id="30806.1" encoding="repr">Products.DCWorkflow.Transitions</string>
-          <string id="30806.2" encoding="repr">TransitionDefinition</string>
+        <tuple id="31022.3">
+          <string id="31022.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="31022.2" encoding="repr">TransitionDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30806.4">
+      <dictionary id="31022.4">
         <item>
-            <key> <string id="30806.5" encoding="repr">actbox_url</string> </key>
-            <value> <string encoding="repr"></string> </value>
+            <key> <string id="31022.5" encoding="repr">actbox_url</string> </key>
+            <value> <string id="31022.6" encoding="repr">%(content_url)s/cps_task_recall_assigned_form</string> </value>
         </item>
         <item>
-            <key> <string id="30806.6" encoding="repr">id</string> </key>
-            <value> <string id="30806.7" encoding="repr">zzinfo</string> </value>
+            <key> <string id="31022.7" encoding="repr">id</string> </key>
+            <value> <string id="31022.8" encoding="repr">recall</string> </value>
         </item>
         <item>
-            <key> <string id="30806.8" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="31022.9" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30806.9">
+              <dictionary id="31022.10">
                 <item>
-                    <key> <string id="30806.10" encoding="repr">anguenot</string> </key>
+                    <key> <string id="31022.11" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30806.11">
-                        <string id="30806.12" encoding="repr">Owner</string>
+                      <list id="31022.12">
+                        <string id="31022.13" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -996,83 +1020,83 @@
             </value>
         </item>
         <item>
-            <key> <string id="30806.13" encoding="repr">actbox_name</string> </key>
+            <key> <string id="31022.14" encoding="repr">actbox_name</string> </key>
+            <value> <string id="31022.15" encoding="repr">_action_recall_</string> </value>
+        </item>
+        <item>
+            <key> <string id="31022.16" encoding="repr">after_script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30806.14" encoding="repr">after_script_name</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30806.15" encoding="repr">guard</string> </key>
+            <key> <string id="31022.17" encoding="repr">guard</string> </key>
             <value>
               <persistent>
                 <tuple>
-                  <string id="30806.16" encoding="base64">AAAAAAAAeHc=</string>
+                  <string id="31022.18" encoding="base64">AAAAAAAAeS8=</string>
                   <tuple>
-                    <string id="30806.17" encoding="repr">Products.DCWorkflow.Guard</string>
-                    <string id="30806.18" encoding="repr">Guard</string>
+                    <string id="31022.19" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="31022.20" encoding="repr">Guard</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30806.19" encoding="repr">script_name</string> </key>
+            <key> <string id="31022.21" encoding="repr">script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30806.20" encoding="repr">actbox_category</string> </key>
+            <key> <string id="31022.22" encoding="repr">actbox_category</string> </key>
+            <value> <string id="31022.23" encoding="repr">workflow</string> </value>
+        </item>
+        <item>
+            <key> <string id="31022.24" encoding="repr">title</string> </key>
+            <value> <string id="31022.25" encoding="repr">Recall the assigned members</string> </value>
+        </item>
+        <item>
+            <key> <string id="31022.26" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30806.21" encoding="repr">title</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30806.22" encoding="repr">description</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30806.23" encoding="repr">trigger_type</string> </key>
+            <key> <string id="31022.27" encoding="repr">trigger_type</string> </key>
             <value> <int>1</int> </value>
         </item>
         <item>
-            <key> <string id="30806.24" encoding="repr">new_state_id</string> </key>
+            <key> <string id="31022.28" encoding="repr">new_state_id</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30807" aka="AAAAAAAAeFc=">
+  <record id="30990" aka="AAAAAAAAeQ4=">
     <pickle>
       <tuple>
-        <tuple id="30807.3">
-          <string id="30807.1" encoding="repr">Products.DCWorkflow.Transitions</string>
-          <string id="30807.2" encoding="repr">TransitionDefinition</string>
+        <tuple id="30990.3">
+          <string id="30990.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="30990.2" encoding="repr">TransitionDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30807.4">
+      <dictionary id="30990.4">
         <item>
-            <key> <string id="30807.5" encoding="repr">actbox_url</string> </key>
-            <value> <string id="30807.6" encoding="repr">%(content_url)s/close_task_form</string> </value>
+            <key> <string id="30990.5" encoding="repr">actbox_url</string> </key>
+            <value> <string id="30990.6" encoding="repr">%(content_url)s/reject_task_form</string> </value>
         </item>
         <item>
-            <key> <string id="30807.7" encoding="repr">id</string> </key>
-            <value> <string id="30807.8" encoding="repr">close</string> </value>
+            <key> <string id="30990.7" encoding="repr">id</string> </key>
+            <value> <string id="30990.8" encoding="repr">reject</string> </value>
         </item>
         <item>
-            <key> <string id="30807.9" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30990.9" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30807.10">
+              <dictionary id="30990.10">
                 <item>
-                    <key> <string id="30807.11" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30990.11" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30807.12">
-                        <string id="30807.13" encoding="repr">Owner</string>
+                      <list id="30990.12">
+                        <string id="30990.13" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -1080,89 +1104,173 @@
             </value>
         </item>
         <item>
-            <key> <string id="30807.14" encoding="repr">actbox_name</string> </key>
-            <value> <string id="30807.15" encoding="repr">_action_close_task</string> </value>
+            <key> <string id="30990.14" encoding="repr">actbox_name</string> </key>
+            <value> <string id="30990.15" encoding="repr">_action_reject</string> </value>
         </item>
         <item>
-            <key> <string id="30807.16" encoding="repr">after_script_name</string> </key>
+            <key> <string id="30990.16" encoding="repr">after_script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30807.17" encoding="repr">guard</string> </key>
+            <key> <string id="30990.17" encoding="repr">guard</string> </key>
             <value>
               <persistent>
-                <tuple id="30807.22">
-                  <string id="30807.18" encoding="base64">AAAAAAAAeGY=</string>
-                  <tuple id="30807.21">
-                    <string id="30807.19" encoding="repr">Products.DCWorkflow.Guard</string>
-                    <string id="30807.20" encoding="repr">Guard</string>
+                <tuple id="30990.22">
+                  <string id="30990.18" encoding="base64">AAAAAAAAeR0=</string>
+                  <tuple id="30990.21">
+                    <string id="30990.19" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="30990.20" encoding="repr">Guard</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30807.23" encoding="repr">script_name</string> </key>
+            <key> <string id="30990.23" encoding="repr">script_name</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30807.24" encoding="repr">actbox_category</string> </key>
-            <value> <string id="30807.25" encoding="repr">workflow</string> </value>
+            <key> <string id="30990.24" encoding="repr">actbox_category</string> </key>
+            <value> <string id="30990.25" encoding="repr">workflow</string> </value>
         </item>
         <item>
-            <key> <string id="30807.26" encoding="repr">title</string> </key>
+            <key> <string id="30990.26" encoding="repr">title</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30807.27" encoding="repr">description</string> </key>
+            <key> <string id="30990.27" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30807.28" encoding="repr">trigger_type</string> </key>
+            <key> <string id="30990.28" encoding="repr">trigger_type</string> </key>
             <value> <int>1</int> </value>
         </item>
         <item>
-            <key> <string id="30807.29" encoding="repr">new_state_id</string> </key>
+            <key> <string id="30990.29" encoding="repr">new_state_id</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30808" aka="AAAAAAAAeFg=">
+  <record id="30993" aka="AAAAAAAAeRE=">
     <pickle>
       <tuple>
-        <tuple id="30808.3">
-          <string id="30808.1" encoding="repr">Products.PythonScripts.PythonScript</string>
-          <string id="30808.2" encoding="repr">PythonScript</string>
+        <tuple id="30993.3">
+          <string id="30993.1" encoding="repr">Products.DCWorkflow.Transitions</string>
+          <string id="30993.2" encoding="repr">TransitionDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30808.4">
+      <dictionary id="30993.4">
         <item>
-            <key> <string id="30808.5" encoding="repr">func_code</string> </key>
+            <key> <string id="30993.5" encoding="repr">actbox_url</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.6" encoding="repr">id</string> </key>
+            <value> <string id="30993.7" encoding="repr">zzinfo</string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.8" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <object id="30808.7">
+              <dictionary id="30993.9">
+                <item>
+                    <key> <string id="30993.10" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="30993.11">
+                        <string id="30993.12" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30993.13" encoding="repr">actbox_name</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.14" encoding="repr">after_script_name</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.15" encoding="repr">guard</string> </key>
+            <value>
+              <persistent>
+                <tuple id="30993.20">
+                  <string id="30993.16" encoding="base64">AAAAAAAAeSA=</string>
+                  <tuple id="30993.19">
+                    <string id="30993.17" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="30993.18" encoding="repr">Guard</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30993.21" encoding="repr">script_name</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.22" encoding="repr">actbox_category</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.23" encoding="repr">title</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.24" encoding="repr">description</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+        <item>
+            <key> <string id="30993.25" encoding="repr">trigger_type</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="30993.26" encoding="repr">new_state_id</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="30995" aka="AAAAAAAAeRM=">
+    <pickle>
+      <tuple>
+        <tuple id="30995.3">
+          <string id="30995.1" encoding="repr">Products.PythonScripts.PythonScript</string>
+          <string id="30995.2" encoding="repr">PythonScript</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="30995.4">
+        <item>
+            <key> <string id="30995.5" encoding="repr">func_code</string> </key>
+            <value>
+              <object id="30995.7">
                 <klass>
-                  <global id="30808.6" name="FuncCode" module="Shared.DC.Scripts.Signature"/>
+                  <global id="30995.6" name="FuncCode" module="Shared.DC.Scripts.Signature"/>
                 </klass>
                 <tuple/>
                 <state>
-                  <dictionary id="30808.8">
+                  <dictionary id="30995.8">
                     <item>
-                        <key> <string id="30808.9" encoding="repr">co_varnames</string> </key>
+                        <key> <string id="30995.9" encoding="repr">co_varnames</string> </key>
                         <value>
-                          <tuple id="30808.14">
-                            <string id="30808.10" encoding="repr">_getattr_</string>
-                            <string id="30808.11" encoding="repr">_getattr</string>
-                            <string id="30808.12" encoding="repr">object</string>
-                            <string id="30808.13" encoding="repr">XXXXXXXXXXXXXXX</string>
+                          <tuple id="30995.14">
+                            <string id="30995.10" encoding="repr">_getattr_</string>
+                            <string id="30995.11" encoding="repr">_getattr</string>
+                            <string id="30995.12" encoding="repr">object</string>
+                            <string id="30995.13" encoding="repr">XXXXXXXXXXXXXXX</string>
                           </tuple>
                         </value>
                     </item>
                     <item>
-                        <key> <string id="30808.15" encoding="repr">co_argcount</string> </key>
+                        <key> <string id="30995.15" encoding="repr">co_argcount</string> </key>
                         <value> <int>0</int> </value>
                     </item>
                   </dictionary>
@@ -1171,22 +1279,22 @@
             </value>
         </item>
         <item>
-            <key> <string id="30808.16" encoding="repr">_params</string> </key>
+            <key> <string id="30995.16" encoding="repr">_params</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30808.17" encoding="repr">id</string> </key>
-            <value> <string id="30808.18" encoding="repr">wf_script_accept_task</string> </value>
+            <key> <string id="30995.17" encoding="repr">id</string> </key>
+            <value> <string id="30995.18" encoding="repr">wf_script_accept_task</string> </value>
         </item>
         <item>
-            <key> <string id="30808.19" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30995.19" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30808.20">
+              <dictionary id="30995.20">
                 <item>
-                    <key> <string id="30808.21" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30995.21" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30808.22">
-                        <string id="30808.23" encoding="repr">Owner</string>
+                      <list id="30995.22">
+                        <string id="30995.23" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -1194,34 +1302,34 @@
             </value>
         </item>
         <item>
-            <key> <string id="30808.24" encoding="repr">_bind_names</string> </key>
+            <key> <string id="30995.24" encoding="repr">_bind_names</string> </key>
             <value>
-              <object id="30808.26">
+              <object id="30995.26">
                 <klass>
-                  <global id="30808.25" name="NameAssignments" module="Shared.DC.Scripts.Bindings"/>
+                  <global id="30995.25" name="NameAssignments" module="Shared.DC.Scripts.Bindings"/>
                 </klass>
                 <tuple/>
                 <state>
-                  <dictionary id="30808.27">
+                  <dictionary id="30995.27">
                     <item>
-                        <key> <string id="30808.28" encoding="repr">_asgns</string> </key>
+                        <key> <string id="30995.28" encoding="repr">_asgns</string> </key>
                         <value>
-                          <dictionary id="30808.29">
+                          <dictionary id="30995.29">
                             <item>
-                                <key> <string id="30808.30" encoding="repr">name_container</string> </key>
-                                <value> <string id="30808.31" encoding="repr">container</string> </value>
+                                <key> <string id="30995.30" encoding="repr">name_container</string> </key>
+                                <value> <string id="30995.31" encoding="repr">container</string> </value>
                             </item>
                             <item>
-                                <key> <string id="30808.32" encoding="repr">name_subpath</string> </key>
-                                <value> <string id="30808.33" encoding="repr">traverse_subpath</string> </value>
+                                <key> <string id="30995.32" encoding="repr">name_subpath</string> </key>
+                                <value> <string id="30995.33" encoding="repr">traverse_subpath</string> </value>
                             </item>
                             <item>
-                                <key> <string id="30808.34" encoding="repr">name_context</string> </key>
-                                <value> <string id="30808.35" encoding="repr">context</string> </value>
+                                <key> <string id="30995.34" encoding="repr">name_m_self</string> </key>
+                                <value> <string id="30995.35" encoding="repr">script</string> </value>
                             </item>
                             <item>
-                                <key> <string id="30808.36" encoding="repr">name_m_self</string> </key>
-                                <value> <string id="30808.37" encoding="repr">script</string> </value>
+                                <key> <string id="30995.36" encoding="repr">name_context</string> </key>
+                                <value> <string id="30995.37" encoding="repr">context</string> </value>
                             </item>
                           </dictionary>
                         </value>
@@ -1232,14 +1340,14 @@
             </value>
         </item>
         <item>
-            <key> <string id="30808.38" encoding="repr">func_defaults</string> </key>
+            <key> <string id="30995.38" encoding="repr">func_defaults</string> </key>
             <value>
               <none/>
             </value>
         </item>
         <item>
-            <key> <string id="30808.39" encoding="repr">_code</string> </key>
-            <value> <string id="30808.40" encoding="base64">YwAAAAABABAAcxMAAAB/AAB/AQBkAQCEAABaAABkAABTKAIAAABOYwAABAAEABMAcycAAAB/AQB0
+            <key> <string id="30995.39" encoding="repr">_code</string> </key>
+            <value> <string id="30995.40" encoding="base64">YwAAAAABABAAcxMAAAB/AAB/AQBkAQCEAABaAABkAABTKAIAAABOYwAABAAEABMAcycAAAB/AQB0
 AAB9AQB8AQB/BAB0AgBkAQCDAgCDAAABfwUAdAMAAWQAAFMoAgAAAE5zCgAAAGFjY2VwdFRhc2so
 BAAAAHMJAAAAX2dldGF0dHJfcwgAAABfZ2V0YXR0cnMGAAAAb2JqZWN0cw8AAABYWFhYWFhYWFhY
 WFhYWFgoBAAAAHMJAAAAX2dldGF0dHJfcwgAAABfZ2V0YXR0cnMGAAAAb2JqZWN0cw8AAABYWFhY
@@ -1249,8 +1357,8 @@ cxUAAAB3Zl9zY3JpcHRfYWNjZXB0X3Rhc2soAAAAACgAAAAAcw8AAABTY3JpcHQgKFB5dGhvbilz
 CAAAADxtb2R1bGU+AQBzAAAAAA==</string> </value>
         </item>
         <item>
-            <key> <string id="30808.41" encoding="repr">_body</string> </key>
-            <value> <string id="30808.42" encoding="repr"># Ok I took this task\n
+            <key> <string id="30995.41" encoding="repr">_body</string> </key>
+            <value> <string id="30995.42" encoding="repr"># Ok I took this task\n
 # Not possible to choose it for the others after \n
 \n
 object.acceptTask()\n
@@ -1258,57 +1366,57 @@ XXXXXXXXXXXXXXX\n
 </string> </value>
         </item>
         <item>
-            <key> <string id="30808.43" encoding="repr">Script_magic</string> </key>
+            <key> <string id="30995.43" encoding="repr">Script_magic</string> </key>
             <value> <int>3</int> </value>
         </item>
         <item>
-            <key> <string id="30808.44" encoding="repr">warnings</string> </key>
+            <key> <string id="30995.44" encoding="repr">warnings</string> </key>
             <value>
               <tuple/>
             </value>
         </item>
         <item>
-            <key> <string id="30808.45" encoding="repr">errors</string> </key>
+            <key> <string id="30995.45" encoding="repr">errors</string> </key>
             <value>
               <tuple/>
             </value>
         </item>
         <item>
-            <key> <string id="30808.46" encoding="repr">Python_magic</string> </key>
-            <value> <string id="30808.47" encoding="base64">KusNCg==</string> </value>
+            <key> <string id="30995.46" encoding="repr">Python_magic</string> </key>
+            <value> <string id="30995.47" encoding="base64">KusNCg==</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30810" aka="AAAAAAAAeFo=">
+  <record id="30996" aka="AAAAAAAAeRQ=">
     <pickle>
       <tuple>
-        <tuple id="30810.3">
-          <string id="30810.1" encoding="repr">Products.DCWorkflow.States</string>
-          <string id="30810.2" encoding="repr">StateDefinition</string>
+        <tuple id="30996.3">
+          <string id="30996.1" encoding="repr">Products.DCWorkflow.States</string>
+          <string id="30996.2" encoding="repr">StateDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30810.4">
+      <dictionary id="30996.4">
         <item>
-            <key> <string id="30810.5" encoding="repr">title</string> </key>
+            <key> <string id="30996.5" encoding="repr">title</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30810.6" encoding="repr">id</string> </key>
-            <value> <string id="30810.7" encoding="repr">closed</string> </value>
+            <key> <string id="30996.6" encoding="repr">id</string> </key>
+            <value> <string id="30996.7" encoding="repr">closed</string> </value>
         </item>
         <item>
-            <key> <string id="30810.8" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30996.8" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30810.9">
+              <dictionary id="30996.9">
                 <item>
-                    <key> <string id="30810.10" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30996.10" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30810.11">
-                        <string id="30810.12" encoding="repr">Owner</string>
+                      <list id="30996.11">
+                        <string id="30996.12" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -1316,50 +1424,50 @@ XXXXXXXXXXXXXXX\n
             </value>
         </item>
         <item>
-            <key> <string id="30810.13" encoding="repr">transitions</string> </key>
+            <key> <string id="30996.13" encoding="repr">transitions</string> </key>
             <value>
               <tuple>
-                <string id="30810.14" encoding="repr">assign</string>
-                <string id="30810.15" encoding="repr">zzinfo</string>
+                <string id="30996.14" encoding="repr">assign</string>
+                <string id="30996.15" encoding="repr">zzinfo</string>
               </tuple>
             </value>
         </item>
         <item>
-            <key> <string id="30810.16" encoding="repr">description</string> </key>
+            <key> <string id="30996.16" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30811" aka="AAAAAAAAeFs=">
+  <record id="30997" aka="AAAAAAAAeRU=">
     <pickle>
       <tuple>
-        <tuple id="30811.3">
-          <string id="30811.1" encoding="repr">Products.DCWorkflow.States</string>
-          <string id="30811.2" encoding="repr">StateDefinition</string>
+        <tuple id="30997.3">
+          <string id="30997.1" encoding="repr">Products.DCWorkflow.States</string>
+          <string id="30997.2" encoding="repr">StateDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30811.4">
+      <dictionary id="30997.4">
         <item>
-            <key> <string id="30811.5" encoding="repr">title</string> </key>
+            <key> <string id="30997.5" encoding="repr">title</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
         <item>
-            <key> <string id="30811.6" encoding="repr">id</string> </key>
-            <value> <string id="30811.7" encoding="repr">processed</string> </value>
+            <key> <string id="30997.6" encoding="repr">id</string> </key>
+            <value> <string id="30997.7" encoding="repr">processed</string> </value>
         </item>
         <item>
-            <key> <string id="30811.8" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30997.8" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30811.9">
+              <dictionary id="30997.9">
                 <item>
-                    <key> <string id="30811.10" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30997.10" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30811.11">
-                        <string id="30811.12" encoding="repr">Owner</string>
+                      <list id="30997.11">
+                        <string id="30997.12" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -1367,60 +1475,60 @@ XXXXXXXXXXXXXXX\n
             </value>
         </item>
         <item>
-            <key> <string id="30811.13" encoding="repr">transitions</string> </key>
+            <key> <string id="30997.13" encoding="repr">transitions</string> </key>
             <value>
               <tuple>
-                <string id="30811.14" encoding="repr">close</string>
-                <string id="30811.15" encoding="repr">zzinfo</string>
+                <string id="30997.14" encoding="repr">close</string>
+                <string id="30997.15" encoding="repr">zzinfo</string>
               </tuple>
             </value>
         </item>
         <item>
-            <key> <string id="30811.16" encoding="repr">description</string> </key>
+            <key> <string id="30997.16" encoding="repr">description</string> </key>
             <value> <string encoding="repr"></string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30809" aka="AAAAAAAAeFk=">
+  <record id="30998" aka="AAAAAAAAeRY=">
     <pickle>
       <tuple>
-        <tuple id="30809.3">
-          <string id="30809.1" encoding="repr">Products.DCWorkflow.States</string>
-          <string id="30809.2" encoding="repr">StateDefinition</string>
+        <tuple id="30998.3">
+          <string id="30998.1" encoding="repr">Products.DCWorkflow.States</string>
+          <string id="30998.2" encoding="repr">StateDefinition</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30809.4">
+      <dictionary id="30998.4">
         <item>
-            <key> <string id="30809.5" encoding="repr">permission_roles</string> </key>
+            <key> <string id="30998.5" encoding="repr">permission_roles</string> </key>
             <value>
               <persistent>
-                <tuple id="30809.10">
-                  <string id="30809.6" encoding="base64">AAAAAAAAeGc=</string>
-                  <tuple id="30809.9">
-                    <string id="30809.7" encoding="repr">Persistence</string>
-                    <string id="30809.8" encoding="repr">PersistentMapping</string>
+                <tuple>
+                  <string id="30998.6" encoding="base64">AAAAAAAAeSI=</string>
+                  <tuple>
+                    <string id="30998.7" encoding="repr">Persistence</string>
+                    <string id="30998.8" encoding="repr">PersistentMapping</string>
                   </tuple>
                 </tuple>
               </persistent>
             </value>
         </item>
         <item>
-            <key> <string id="30809.11" encoding="repr">id</string> </key>
-            <value> <string id="30809.12" encoding="repr">waiting</string> </value>
+            <key> <string id="30998.9" encoding="repr">id</string> </key>
+            <value> <string id="30998.10" encoding="repr">waiting</string> </value>
         </item>
         <item>
-            <key> <string id="30809.13" encoding="repr">__ac_local_roles__</string> </key>
+            <key> <string id="30998.11" encoding="repr">__ac_local_roles__</string> </key>
             <value>
-              <dictionary id="30809.14">
+              <dictionary id="30998.12">
                 <item>
-                    <key> <string id="30809.15" encoding="repr">anguenot</string> </key>
+                    <key> <string id="30998.13" encoding="repr">anguenot</string> </key>
                     <value>
-                      <list id="30809.16">
-                        <string id="30809.17" encoding="repr">Owner</string>
+                      <list id="30998.14">
+                        <string id="30998.15" encoding="repr">Owner</string>
                       </list>
                     </value>
                 </item>
@@ -1428,563 +1536,469 @@ XXXXXXXXXXXXXXX\n
             </value>
         </item>
         <item>
-            <key> <string id="30809.18" encoding="repr">transitions</string> </key>
-            <value>
-              <tuple id="30809.24">
-                <string id="30809.19" encoding="repr">accept</string>
-                <string id="30809.20" encoding="repr">assign</string>
-                <string id="30809.21" encoding="repr">close</string>
-                <string id="30809.22" encoding="repr">reject</string>
-                <string id="30809.23" encoding="repr">zzinfo</string>
-              </tuple>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30809.25" encoding="repr">title</string> </key>
-            <value> <string id="30809.26" encoding="repr">Waiting for reviewer</string> </value>
-        </item>
-        <item>
-            <key> <string id="30809.27" encoding="repr">description</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30812" aka="AAAAAAAAeFw=">
-    <pickle>
-      <tuple>
-        <tuple id="30812.3">
-          <string id="30812.1" encoding="repr">Products.DCWorkflow.Variables</string>
-          <string id="30812.2" encoding="repr">VariableDefinition</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30812.4">
-        <item>
-            <key> <string id="30812.5" encoding="repr">for_catalog</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-        <item>
-            <key> <string id="30812.6" encoding="repr">id</string> </key>
-            <value> <string id="30812.7" encoding="repr">review_history</string> </value>
-        </item>
-        <item>
-            <key> <string id="30812.8" encoding="repr">for_status</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-        <item>
-            <key> <string id="30812.9" encoding="repr">info_guard</string> </key>
-            <value>
-              <none/>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30812.10" encoding="repr">__ac_local_roles__</string> </key>
-            <value>
-              <dictionary id="30812.11">
-                <item>
-                    <key> <string id="30812.12" encoding="repr">anguenot</string> </key>
-                    <value>
-                      <list id="30812.13">
-                        <string id="30812.14" encoding="repr">Owner</string>
-                      </list>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30812.15" encoding="repr">default_value</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30812.16" encoding="repr">default_expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30812.21">
-                  <string id="30812.17" encoding="base64">AAAAAAAAeGg=</string>
-                  <tuple id="30812.20">
-                    <string id="30812.18" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30812.19" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30812.22" encoding="repr">description</string> </key>
-            <value> <string id="30812.23" encoding="repr">Provides access to workflow history</string> </value>
-        </item>
-        <item>
-            <key> <string id="30812.24" encoding="repr">update_always</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30813" aka="AAAAAAAAeF0=">
-    <pickle>
-      <tuple>
-        <tuple id="30813.3">
-          <string id="30813.1" encoding="repr">Products.DCWorkflow.Variables</string>
-          <string id="30813.2" encoding="repr">VariableDefinition</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30813.4">
-        <item>
-            <key> <string id="30813.5" encoding="repr">for_catalog</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-        <item>
-            <key> <string id="30813.6" encoding="repr">id</string> </key>
-            <value> <string id="30813.7" encoding="repr">comments</string> </value>
-        </item>
-        <item>
-            <key> <string id="30813.8" encoding="repr">for_status</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-        <item>
-            <key> <string id="30813.9" encoding="repr">info_guard</string> </key>
-            <value>
-              <none/>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30813.10" encoding="repr">__ac_local_roles__</string> </key>
-            <value>
-              <dictionary id="30813.11">
-                <item>
-                    <key> <string id="30813.12" encoding="repr">anguenot</string> </key>
-                    <value>
-                      <list id="30813.13">
-                        <string id="30813.14" encoding="repr">Owner</string>
-                      </list>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30813.15" encoding="repr">default_value</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30813.16" encoding="repr">default_expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30813.21">
-                  <string id="30813.17" encoding="base64">AAAAAAAAeGk=</string>
-                  <tuple id="30813.20">
-                    <string id="30813.18" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30813.19" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30813.22" encoding="repr">description</string> </key>
-            <value> <string id="30813.23" encoding="repr">Comments about the last transition</string> </value>
-        </item>
-        <item>
-            <key> <string id="30813.24" encoding="repr">update_always</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30814" aka="AAAAAAAAeF4=">
-    <pickle>
-      <tuple>
-        <tuple id="30814.3">
-          <string id="30814.1" encoding="repr">Products.DCWorkflow.Variables</string>
-          <string id="30814.2" encoding="repr">VariableDefinition</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30814.4">
-        <item>
-            <key> <string id="30814.5" encoding="repr">for_catalog</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-        <item>
-            <key> <string id="30814.6" encoding="repr">id</string> </key>
-            <value> <string id="30814.7" encoding="repr">time</string> </value>
-        </item>
-        <item>
-            <key> <string id="30814.8" encoding="repr">for_status</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-        <item>
-            <key> <string id="30814.9" encoding="repr">info_guard</string> </key>
-            <value>
-              <none/>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30814.10" encoding="repr">__ac_local_roles__</string> </key>
-            <value>
-              <dictionary id="30814.11">
-                <item>
-                    <key> <string id="30814.12" encoding="repr">anguenot</string> </key>
-                    <value>
-                      <list id="30814.13">
-                        <string id="30814.14" encoding="repr">Owner</string>
-                      </list>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30814.15" encoding="repr">default_value</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30814.16" encoding="repr">default_expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30814.21">
-                  <string id="30814.17" encoding="base64">AAAAAAAAeGo=</string>
-                  <tuple id="30814.20">
-                    <string id="30814.18" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30814.19" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30814.22" encoding="repr">description</string> </key>
-            <value> <string id="30814.23" encoding="repr">Time of the last transition</string> </value>
-        </item>
-        <item>
-            <key> <string id="30814.24" encoding="repr">update_always</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30815" aka="AAAAAAAAeF8=">
-    <pickle>
-      <tuple>
-        <tuple id="30815.3">
-          <string id="30815.1" encoding="repr">Products.DCWorkflow.Variables</string>
-          <string id="30815.2" encoding="repr">VariableDefinition</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30815.4">
-        <item>
-            <key> <string id="30815.5" encoding="repr">for_catalog</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-        <item>
-            <key> <string id="30815.6" encoding="repr">id</string> </key>
-            <value> <string id="30815.7" encoding="repr">actor</string> </value>
-        </item>
-        <item>
-            <key> <string id="30815.8" encoding="repr">for_status</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-        <item>
-            <key> <string id="30815.9" encoding="repr">info_guard</string> </key>
-            <value>
-              <none/>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30815.10" encoding="repr">__ac_local_roles__</string> </key>
-            <value>
-              <dictionary id="30815.11">
-                <item>
-                    <key> <string id="30815.12" encoding="repr">anguenot</string> </key>
-                    <value>
-                      <list id="30815.13">
-                        <string id="30815.14" encoding="repr">Owner</string>
-                      </list>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30815.15" encoding="repr">default_value</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30815.16" encoding="repr">default_expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30815.21">
-                  <string id="30815.17" encoding="base64">AAAAAAAAeGs=</string>
-                  <tuple id="30815.20">
-                    <string id="30815.18" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30815.19" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30815.22" encoding="repr">description</string> </key>
-            <value> <string id="30815.23" encoding="repr">The ID of the user who performed the last transition</string> </value>
-        </item>
-        <item>
-            <key> <string id="30815.24" encoding="repr">update_always</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30816" aka="AAAAAAAAeGA=">
-    <pickle>
-      <tuple>
-        <tuple id="30816.3">
-          <string id="30816.1" encoding="repr">Products.DCWorkflow.Variables</string>
-          <string id="30816.2" encoding="repr">VariableDefinition</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30816.4">
-        <item>
-            <key> <string id="30816.5" encoding="repr">for_catalog</string> </key>
-            <value> <int>0</int> </value>
-        </item>
-        <item>
-            <key> <string id="30816.6" encoding="repr">id</string> </key>
-            <value> <string id="30816.7" encoding="repr">action</string> </value>
-        </item>
-        <item>
-            <key> <string id="30816.8" encoding="repr">for_status</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-        <item>
-            <key> <string id="30816.9" encoding="repr">info_guard</string> </key>
-            <value>
-              <none/>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30816.10" encoding="repr">__ac_local_roles__</string> </key>
-            <value>
-              <dictionary id="30816.11">
-                <item>
-                    <key> <string id="30816.12" encoding="repr">anguenot</string> </key>
-                    <value>
-                      <list id="30816.13">
-                        <string id="30816.14" encoding="repr">Owner</string>
-                      </list>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30816.15" encoding="repr">default_value</string> </key>
-            <value> <string encoding="repr"></string> </value>
-        </item>
-        <item>
-            <key> <string id="30816.16" encoding="repr">default_expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30816.21">
-                  <string id="30816.17" encoding="base64">AAAAAAAAeGw=</string>
-                  <tuple id="30816.20">
-                    <string id="30816.18" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30816.19" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30816.22" encoding="repr">description</string> </key>
-            <value> <string id="30816.23" encoding="repr">The last transition</string> </value>
-        </item>
-        <item>
-            <key> <string id="30816.24" encoding="repr">update_always</string> </key>
-            <value> <int>1</int> </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30817" aka="AAAAAAAAeGE=">
-    <pickle>
-      <tuple>
-        <tuple id="30817.3">
-          <string id="30817.1" encoding="repr">Products.DCWorkflow.Worklists</string>
-          <string id="30817.2" encoding="repr">WorklistDefinition</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30817.4">
-        <item>
-            <key> <string id="30817.5" encoding="repr">actbox_url</string> </key>
-            <value> <string id="30817.6" encoding="repr">%(portal_url)s/search?review_state=pending</string> </value>
-        </item>
-        <item>
-            <key> <string id="30817.7" encoding="repr">var_matches</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30817.12">
-                  <string id="30817.8" encoding="base64">AAAAAAAAeG4=</string>
-                  <tuple id="30817.11">
-                    <string id="30817.9" encoding="repr">Persistence</string>
-                    <string id="30817.10" encoding="repr">PersistentMapping</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30817.13" encoding="repr">id</string> </key>
-            <value> <string id="30817.14" encoding="repr">reviewer_queue</string> </value>
-        </item>
-        <item>
-            <key> <string id="30817.15" encoding="repr">__ac_local_roles__</string> </key>
-            <value>
-              <dictionary id="30817.16">
-                <item>
-                    <key> <string id="30817.17" encoding="repr">anguenot</string> </key>
-                    <value>
-                      <list id="30817.18">
-                        <string id="30817.19" encoding="repr">Owner</string>
-                      </list>
-                    </value>
-                </item>
-              </dictionary>
-            </value>
-        </item>
-        <item>
-            <key> <string id="30817.20" encoding="repr">actbox_category</string> </key>
-            <value> <string id="30817.21" encoding="repr">global</string> </value>
-        </item>
-        <item>
-            <key> <string id="30817.22" encoding="repr">description</string> </key>
-            <value> <string id="30817.23" encoding="repr">Reviewer tasks</string> </value>
-        </item>
-        <item>
-            <key> <string id="30817.24" encoding="repr">actbox_name</string> </key>
-            <value> <string id="30817.25" encoding="repr">Pending (%(count)d)</string> </value>
-        </item>
-        <item>
-            <key> <string id="30817.26" encoding="repr">guard</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30817.31">
-                  <string id="30817.27" encoding="base64">AAAAAAAAeG0=</string>
-                  <tuple id="30817.30">
-                    <string id="30817.28" encoding="repr">Products.DCWorkflow.Guard</string>
-                    <string id="30817.29" encoding="repr">Guard</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30818" aka="AAAAAAAAeGI=">
-    <pickle>
-      <tuple>
-        <tuple id="30818.3">
-          <string id="30818.1" encoding="repr">Products.DCWorkflow.Guard</string>
-          <string id="30818.2" encoding="repr">Guard</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30818.4">
-        <item>
-            <key> <string id="30818.5" encoding="repr">expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30818.10">
-                  <string id="30818.6" encoding="base64">AAAAAAAAeG8=</string>
-                  <tuple id="30818.9">
-                    <string id="30818.7" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30818.8" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30819" aka="AAAAAAAAeGM=">
-    <pickle>
-      <tuple>
-        <tuple id="30819.3">
-          <string id="30819.1" encoding="repr">Products.DCWorkflow.Guard</string>
-          <string id="30819.2" encoding="repr">Guard</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30819.4">
-        <item>
-            <key> <string id="30819.5" encoding="repr">expr</string> </key>
-            <value>
-              <persistent>
-                <tuple id="30819.10">
-                  <string id="30819.6" encoding="base64">AAAAAAAAeHA=</string>
-                  <tuple id="30819.9">
-                    <string id="30819.7" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30819.8" encoding="repr">Expression</string>
-                  </tuple>
-                </tuple>
-              </persistent>
-            </value>
-        </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30820" aka="AAAAAAAAeGQ=">
-    <pickle>
-      <tuple>
-        <tuple id="30820.3">
-          <string id="30820.1" encoding="repr">Products.DCWorkflow.Guard</string>
-          <string id="30820.2" encoding="repr">Guard</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30820.4">
-        <item>
-            <key> <string id="30820.5" encoding="repr">roles</string> </key>
+            <key> <string id="30998.16" encoding="repr">transitions</string> </key>
             <value>
               <tuple>
-                <string id="30820.6" encoding="repr">Owner</string>
+                <string id="30998.17" encoding="repr">accept</string>
+                <string id="30998.18" encoding="repr">assign</string>
+                <string id="30998.19" encoding="repr">close</string>
+                <string id="30998.20" encoding="repr">recall</string>
+                <string id="30998.21" encoding="repr">reject</string>
+                <string id="30998.22" encoding="repr">zzinfo</string>
               </tuple>
             </value>
         </item>
         <item>
-            <key> <string id="30820.7" encoding="repr">expr</string> </key>
+            <key> <string id="30998.23" encoding="repr">title</string> </key>
+            <value> <string id="30998.24" encoding="repr">Waiting for reviewer</string> </value>
+        </item>
+        <item>
+            <key> <string id="30998.25" encoding="repr">description</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="30999" aka="AAAAAAAAeRc=">
+    <pickle>
+      <tuple>
+        <tuple id="30999.3">
+          <string id="30999.1" encoding="repr">Products.DCWorkflow.Variables</string>
+          <string id="30999.2" encoding="repr">VariableDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="30999.4">
+        <item>
+            <key> <string id="30999.5" encoding="repr">for_catalog</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="30999.6" encoding="repr">id</string> </key>
+            <value> <string id="30999.7" encoding="repr">review_history</string> </value>
+        </item>
+        <item>
+            <key> <string id="30999.8" encoding="repr">for_status</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="30999.9" encoding="repr">info_guard</string> </key>
+            <value>
+              <none/>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30999.10" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="30999.11">
+                <item>
+                    <key> <string id="30999.12" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="30999.13">
+                        <string id="30999.14" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30999.15" encoding="repr">default_expr</string> </key>
             <value>
               <persistent>
-                <tuple id="30820.12">
-                  <string id="30820.8" encoding="base64">AAAAAAAAeHE=</string>
-                  <tuple id="30820.11">
-                    <string id="30820.9" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30820.10" encoding="repr">Expression</string>
+                <tuple id="30999.20">
+                  <string id="30999.16" encoding="base64">AAAAAAAAeSM=</string>
+                  <tuple id="30999.19">
+                    <string id="30999.17" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="30999.18" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="30999.21" encoding="repr">description</string> </key>
+            <value> <string id="30999.22" encoding="repr">Provides access to workflow history</string> </value>
+        </item>
+        <item>
+            <key> <string id="30999.23" encoding="repr">update_always</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="30999.24" encoding="repr">default_value</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31000" aka="AAAAAAAAeRg=">
+    <pickle>
+      <tuple>
+        <tuple id="31000.3">
+          <string id="31000.1" encoding="repr">Products.DCWorkflow.Variables</string>
+          <string id="31000.2" encoding="repr">VariableDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31000.4">
+        <item>
+            <key> <string id="31000.5" encoding="repr">for_catalog</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="31000.6" encoding="repr">id</string> </key>
+            <value> <string id="31000.7" encoding="repr">comments</string> </value>
+        </item>
+        <item>
+            <key> <string id="31000.8" encoding="repr">for_status</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31000.9" encoding="repr">info_guard</string> </key>
+            <value>
+              <none/>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31000.10" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="31000.11">
+                <item>
+                    <key> <string id="31000.12" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="31000.13">
+                        <string id="31000.14" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31000.15" encoding="repr">default_expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31000.20">
+                  <string id="31000.16" encoding="base64">AAAAAAAAeSQ=</string>
+                  <tuple id="31000.19">
+                    <string id="31000.17" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31000.18" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31000.21" encoding="repr">description</string> </key>
+            <value> <string id="31000.22" encoding="repr">Comments about the last transition</string> </value>
+        </item>
+        <item>
+            <key> <string id="31000.23" encoding="repr">update_always</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31000.24" encoding="repr">default_value</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31001" aka="AAAAAAAAeRk=">
+    <pickle>
+      <tuple>
+        <tuple id="31001.3">
+          <string id="31001.1" encoding="repr">Products.DCWorkflow.Variables</string>
+          <string id="31001.2" encoding="repr">VariableDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31001.4">
+        <item>
+            <key> <string id="31001.5" encoding="repr">for_catalog</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="31001.6" encoding="repr">id</string> </key>
+            <value> <string id="31001.7" encoding="repr">time</string> </value>
+        </item>
+        <item>
+            <key> <string id="31001.8" encoding="repr">for_status</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31001.9" encoding="repr">info_guard</string> </key>
+            <value>
+              <none/>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31001.10" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="31001.11">
+                <item>
+                    <key> <string id="31001.12" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="31001.13">
+                        <string id="31001.14" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31001.15" encoding="repr">default_expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31001.20">
+                  <string id="31001.16" encoding="base64">AAAAAAAAeSU=</string>
+                  <tuple id="31001.19">
+                    <string id="31001.17" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31001.18" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31001.21" encoding="repr">description</string> </key>
+            <value> <string id="31001.22" encoding="repr">Time of the last transition</string> </value>
+        </item>
+        <item>
+            <key> <string id="31001.23" encoding="repr">update_always</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31001.24" encoding="repr">default_value</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31002" aka="AAAAAAAAeRo=">
+    <pickle>
+      <tuple>
+        <tuple id="31002.3">
+          <string id="31002.1" encoding="repr">Products.DCWorkflow.Variables</string>
+          <string id="31002.2" encoding="repr">VariableDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31002.4">
+        <item>
+            <key> <string id="31002.5" encoding="repr">for_catalog</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="31002.6" encoding="repr">id</string> </key>
+            <value> <string id="31002.7" encoding="repr">actor</string> </value>
+        </item>
+        <item>
+            <key> <string id="31002.8" encoding="repr">for_status</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31002.9" encoding="repr">info_guard</string> </key>
+            <value>
+              <none/>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31002.10" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="31002.11">
+                <item>
+                    <key> <string id="31002.12" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="31002.13">
+                        <string id="31002.14" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31002.15" encoding="repr">default_expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31002.20">
+                  <string id="31002.16" encoding="base64">AAAAAAAAeSY=</string>
+                  <tuple id="31002.19">
+                    <string id="31002.17" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31002.18" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31002.21" encoding="repr">description</string> </key>
+            <value> <string id="31002.22" encoding="repr">The ID of the user who performed the last transition</string> </value>
+        </item>
+        <item>
+            <key> <string id="31002.23" encoding="repr">update_always</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31002.24" encoding="repr">default_value</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31003" aka="AAAAAAAAeRs=">
+    <pickle>
+      <tuple>
+        <tuple id="31003.3">
+          <string id="31003.1" encoding="repr">Products.DCWorkflow.Variables</string>
+          <string id="31003.2" encoding="repr">VariableDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31003.4">
+        <item>
+            <key> <string id="31003.5" encoding="repr">for_catalog</string> </key>
+            <value> <int>0</int> </value>
+        </item>
+        <item>
+            <key> <string id="31003.6" encoding="repr">id</string> </key>
+            <value> <string id="31003.7" encoding="repr">action</string> </value>
+        </item>
+        <item>
+            <key> <string id="31003.8" encoding="repr">for_status</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31003.9" encoding="repr">info_guard</string> </key>
+            <value>
+              <none/>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31003.10" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="31003.11">
+                <item>
+                    <key> <string id="31003.12" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="31003.13">
+                        <string id="31003.14" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31003.15" encoding="repr">default_expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31003.20">
+                  <string id="31003.16" encoding="base64">AAAAAAAAeSc=</string>
+                  <tuple id="31003.19">
+                    <string id="31003.17" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31003.18" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31003.21" encoding="repr">description</string> </key>
+            <value> <string id="31003.22" encoding="repr">The last transition</string> </value>
+        </item>
+        <item>
+            <key> <string id="31003.23" encoding="repr">update_always</string> </key>
+            <value> <int>1</int> </value>
+        </item>
+        <item>
+            <key> <string id="31003.24" encoding="repr">default_value</string> </key>
+            <value> <string encoding="repr"></string> </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31004" aka="AAAAAAAAeRw=">
+    <pickle>
+      <tuple>
+        <tuple id="31004.3">
+          <string id="31004.1" encoding="repr">Products.DCWorkflow.Worklists</string>
+          <string id="31004.2" encoding="repr">WorklistDefinition</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31004.4">
+        <item>
+            <key> <string id="31004.5" encoding="repr">actbox_url</string> </key>
+            <value> <string id="31004.6" encoding="repr">%(portal_url)s/search?review_state=pending</string> </value>
+        </item>
+        <item>
+            <key> <string id="31004.7" encoding="repr">id</string> </key>
+            <value> <string id="31004.8" encoding="repr">reviewer_queue</string> </value>
+        </item>
+        <item>
+            <key> <string id="31004.9" encoding="repr">__ac_local_roles__</string> </key>
+            <value>
+              <dictionary id="31004.10">
+                <item>
+                    <key> <string id="31004.11" encoding="repr">anguenot</string> </key>
+                    <value>
+                      <list id="31004.12">
+                        <string id="31004.13" encoding="repr">Owner</string>
+                      </list>
+                    </value>
+                </item>
+              </dictionary>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31004.14" encoding="repr">actbox_category</string> </key>
+            <value> <string id="31004.15" encoding="repr">global</string> </value>
+        </item>
+        <item>
+            <key> <string id="31004.16" encoding="repr">description</string> </key>
+            <value> <string id="31004.17" encoding="repr">Reviewer tasks</string> </value>
+        </item>
+        <item>
+            <key> <string id="31004.18" encoding="repr">actbox_name</string> </key>
+            <value> <string id="31004.19" encoding="repr">Pending (%(count)d)</string> </value>
+        </item>
+        <item>
+            <key> <string id="31004.20" encoding="repr">guard</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31004.25">
+                  <string id="31004.21" encoding="base64">AAAAAAAAeSk=</string>
+                  <tuple id="31004.24">
+                    <string id="31004.22" encoding="repr">Products.DCWorkflow.Guard</string>
+                    <string id="31004.23" encoding="repr">Guard</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+        <item>
+            <key> <string id="31004.26" encoding="repr">var_matches</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31004.31">
+                  <string id="31004.27" encoding="base64">AAAAAAAAeSg=</string>
+                  <tuple id="31004.30">
+                    <string id="31004.28" encoding="repr">Persistence</string>
+                    <string id="31004.29" encoding="repr">PersistentMapping</string>
                   </tuple>
                 </tuple>
               </persistent>
@@ -1993,50 +2007,93 @@ XXXXXXXXXXXXXXX\n
       </dictionary>
     </pickle>
   </record>
-  <record id="30839" aka="AAAAAAAAeHc=">
+  <record id="31009" aka="AAAAAAAAeSE=">
     <pickle>
       <tuple>
-        <tuple id="30839.3">
-          <string id="30839.1" encoding="repr">Products.DCWorkflow.Guard</string>
-          <string id="30839.2" encoding="repr">Guard</string>
+        <tuple id="31009.3">
+          <string id="31009.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31009.2" encoding="repr">Guard</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30839.4">
+      <dictionary id="31009.4">
         <item>
-            <key> <string id="30839.5" encoding="repr">roles</string> </key>
+            <key> <string id="31009.5" encoding="repr">expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31009.10">
+                  <string id="31009.6" encoding="base64">AAAAAAAAeS0=</string>
+                  <tuple id="31009.9">
+                    <string id="31009.7" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31009.8" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31006" aka="AAAAAAAAeR4=">
+    <pickle>
+      <tuple>
+        <tuple id="31006.3">
+          <string id="31006.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31006.2" encoding="repr">Guard</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31006.4">
+        <item>
+            <key> <string id="31006.5" encoding="repr">expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31006.10">
+                  <string id="31006.6" encoding="base64">AAAAAAAAeSs=</string>
+                  <tuple id="31006.9">
+                    <string id="31006.7" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31006.8" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31007" aka="AAAAAAAAeR8=">
+    <pickle>
+      <tuple>
+        <tuple id="31007.3">
+          <string id="31007.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31007.2" encoding="repr">Guard</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31007.4">
+        <item>
+            <key> <string id="31007.5" encoding="repr">roles</string> </key>
             <value>
               <tuple>
-                <string id="30839.6" encoding="repr">Authenticated</string>
+                <string id="31007.6" encoding="repr">Owner</string>
               </tuple>
             </value>
         </item>
-      </dictionary>
-    </pickle>
-  </record>
-  <record id="30822" aka="AAAAAAAAeGY=">
-    <pickle>
-      <tuple>
-        <tuple id="30822.3">
-          <string id="30822.1" encoding="repr">Products.DCWorkflow.Guard</string>
-          <string id="30822.2" encoding="repr">Guard</string>
-        </tuple>
-        <none/>
-      </tuple>
-    </pickle>
-    <pickle>
-      <dictionary id="30822.4">
         <item>
-            <key> <string id="30822.5" encoding="repr">expr</string> </key>
+            <key> <string id="31007.7" encoding="repr">expr</string> </key>
             <value>
               <persistent>
-                <tuple id="30822.10">
-                  <string id="30822.6" encoding="base64">AAAAAAAAeHI=</string>
-                  <tuple id="30822.9">
-                    <string id="30822.7" encoding="repr">Products.CMFCore.Expression</string>
-                    <string id="30822.8" encoding="repr">Expression</string>
+                <tuple id="31007.12">
+                  <string id="31007.8" encoding="base64">AAAAAAAAeSw=</string>
+                  <tuple id="31007.11">
+                    <string id="31007.9" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31007.10" encoding="repr">Expression</string>
                   </tuple>
                 </tuple>
               </persistent>
@@ -2045,49 +2102,130 @@ XXXXXXXXXXXXXXX\n
       </dictionary>
     </pickle>
   </record>
-  <record id="30823" aka="AAAAAAAAeGc=">
+  <record id="31023" aka="AAAAAAAAeS8=">
     <pickle>
       <tuple>
-        <tuple id="30823.3">
-          <string id="30823.1" encoding="repr">Persistence</string>
-          <string id="30823.2" encoding="repr">PersistentMapping</string>
+        <tuple id="31023.3">
+          <string id="31023.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31023.2" encoding="repr">Guard</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30823.4">
+      <dictionary id="31023.4">
         <item>
-            <key> <string id="30823.5" encoding="repr">_container</string> </key>
+            <key> <string id="31023.5" encoding="repr">expr</string> </key>
             <value>
-              <dictionary id="30823.6">
+              <persistent>
+                <tuple>
+                  <string id="31023.6" encoding="base64">AAAAAAAAeTA=</string>
+                  <tuple>
+                    <string id="31023.7" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31023.8" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31005" aka="AAAAAAAAeR0=">
+    <pickle>
+      <tuple>
+        <tuple id="31005.3">
+          <string id="31005.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31005.2" encoding="repr">Guard</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31005.4">
+        <item>
+            <key> <string id="31005.5" encoding="repr">expr</string> </key>
+            <value>
+              <persistent>
+                <tuple id="31005.10">
+                  <string id="31005.6" encoding="base64">AAAAAAAAeSo=</string>
+                  <tuple id="31005.9">
+                    <string id="31005.7" encoding="repr">Products.CMFCore.Expression</string>
+                    <string id="31005.8" encoding="repr">Expression</string>
+                  </tuple>
+                </tuple>
+              </persistent>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31008" aka="AAAAAAAAeSA=">
+    <pickle>
+      <tuple>
+        <tuple id="31008.3">
+          <string id="31008.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31008.2" encoding="repr">Guard</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31008.4">
+        <item>
+            <key> <string id="31008.5" encoding="repr">roles</string> </key>
+            <value>
+              <tuple>
+                <string id="31008.6" encoding="repr">Authenticated</string>
+              </tuple>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31010" aka="AAAAAAAAeSI=">
+    <pickle>
+      <tuple>
+        <tuple id="31010.3">
+          <string id="31010.1" encoding="repr">Persistence</string>
+          <string id="31010.2" encoding="repr">PersistentMapping</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31010.4">
+        <item>
+            <key> <string id="31010.5" encoding="repr">_container</string> </key>
+            <value>
+              <dictionary id="31010.6">
                 <item>
-                    <key> <string id="30823.7" encoding="repr">View</string> </key>
+                    <key> <string id="31010.7" encoding="repr">View</string> </key>
                     <value>
-                      <list id="30823.8">
-                        <string id="30823.9" encoding="repr">Manager</string>
-                        <string id="30823.10" encoding="repr">Owner</string>
-                        <string id="30823.11" encoding="repr">Reviewer</string>
+                      <list id="31010.8">
+                        <string id="31010.9" encoding="repr">Manager</string>
+                        <string id="31010.10" encoding="repr">Owner</string>
+                        <string id="31010.11" encoding="repr">Reviewer</string>
                       </list>
                     </value>
                 </item>
                 <item>
-                    <key> <string id="30823.12" encoding="repr">Access contents information</string> </key>
+                    <key> <string id="31010.12" encoding="repr">Access contents information</string> </key>
                     <value>
-                      <list id="30823.13">
-                        <reference id="30823.9"/>
-                        <reference id="30823.10"/>
-                        <reference id="30823.11"/>
+                      <list id="31010.13">
+                        <reference id="31010.9"/>
+                        <reference id="31010.10"/>
+                        <reference id="31010.11"/>
                       </list>
                     </value>
                 </item>
                 <item>
-                    <key> <string id="30823.14" encoding="repr">Modify portal content</string> </key>
+                    <key> <string id="31010.14" encoding="repr">Modify portal content</string> </key>
                     <value>
                       <tuple>
-                        <reference id="30823.9"/>
-                        <string id="30823.15" encoding="repr">Member</string>
-                        <reference id="30823.11"/>
+                        <reference id="31010.9"/>
+                        <string id="31010.15" encoding="repr">Member</string>
+                        <reference id="31010.11"/>
                       </tuple>
                     </value>
                 </item>
@@ -2097,122 +2235,145 @@ XXXXXXXXXXXXXXX\n
       </dictionary>
     </pickle>
   </record>
-  <record id="30824" aka="AAAAAAAAeGg=">
+  <record id="31011" aka="AAAAAAAAeSM=">
     <pickle>
       <tuple>
-        <tuple id="30824.3">
-          <string id="30824.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30824.2" encoding="repr">Expression</string>
+        <tuple id="31011.3">
+          <string id="31011.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31011.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30824.4">
+      <dictionary id="31011.4">
         <item>
-            <key> <string id="30824.5" encoding="repr">text</string> </key>
-            <value> <string id="30824.6" encoding="repr">state_change/getHistory</string> </value>
+            <key> <string id="31011.5" encoding="repr">text</string> </key>
+            <value> <string id="31011.6" encoding="repr">state_change/getHistory</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30825" aka="AAAAAAAAeGk=">
+  <record id="31012" aka="AAAAAAAAeSQ=">
     <pickle>
       <tuple>
-        <tuple id="30825.3">
-          <string id="30825.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30825.2" encoding="repr">Expression</string>
+        <tuple id="31012.3">
+          <string id="31012.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31012.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30825.4">
+      <dictionary id="31012.4">
         <item>
-            <key> <string id="30825.5" encoding="repr">text</string> </key>
-            <value> <string id="30825.6" encoding="repr">python:state_change.kwargs.get(\'comment\', \'\')</string> </value>
+            <key> <string id="31012.5" encoding="repr">text</string> </key>
+            <value> <string id="31012.6" encoding="repr">python:state_change.kwargs.get(\'comment\', \'\')</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30826" aka="AAAAAAAAeGo=">
+  <record id="31013" aka="AAAAAAAAeSU=">
     <pickle>
       <tuple>
-        <tuple id="30826.3">
-          <string id="30826.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30826.2" encoding="repr">Expression</string>
+        <tuple id="31013.3">
+          <string id="31013.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31013.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30826.4">
+      <dictionary id="31013.4">
         <item>
-            <key> <string id="30826.5" encoding="repr">text</string> </key>
-            <value> <string id="30826.6" encoding="repr">state_change/getDateTime</string> </value>
+            <key> <string id="31013.5" encoding="repr">text</string> </key>
+            <value> <string id="31013.6" encoding="repr">state_change/getDateTime</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30827" aka="AAAAAAAAeGs=">
+  <record id="31014" aka="AAAAAAAAeSY=">
     <pickle>
       <tuple>
-        <tuple id="30827.3">
-          <string id="30827.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30827.2" encoding="repr">Expression</string>
+        <tuple id="31014.3">
+          <string id="31014.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31014.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30827.4">
+      <dictionary id="31014.4">
         <item>
-            <key> <string id="30827.5" encoding="repr">text</string> </key>
-            <value> <string id="30827.6" encoding="repr">user/getId</string> </value>
+            <key> <string id="31014.5" encoding="repr">text</string> </key>
+            <value> <string id="31014.6" encoding="repr">user/getId</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30828" aka="AAAAAAAAeGw=">
+  <record id="31015" aka="AAAAAAAAeSc=">
     <pickle>
       <tuple>
-        <tuple id="30828.3">
-          <string id="30828.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30828.2" encoding="repr">Expression</string>
+        <tuple id="31015.3">
+          <string id="31015.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31015.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30828.4">
+      <dictionary id="31015.4">
         <item>
-            <key> <string id="30828.5" encoding="repr">text</string> </key>
-            <value> <string id="30828.6" encoding="repr">transition/getId|nothing</string> </value>
+            <key> <string id="31015.5" encoding="repr">text</string> </key>
+            <value> <string id="31015.6" encoding="repr">transition/getId|nothing</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30830" aka="AAAAAAAAeG4=">
+  <record id="31017" aka="AAAAAAAAeSk=">
     <pickle>
       <tuple>
-        <tuple id="30830.3">
-          <string id="30830.1" encoding="repr">Persistence</string>
-          <string id="30830.2" encoding="repr">PersistentMapping</string>
+        <tuple id="31017.3">
+          <string id="31017.1" encoding="repr">Products.DCWorkflow.Guard</string>
+          <string id="31017.2" encoding="repr">Guard</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30830.4">
+      <dictionary id="31017.4">
         <item>
-            <key> <string id="30830.5" encoding="repr">_container</string> </key>
+            <key> <string id="31017.5" encoding="repr">permissions</string> </key>
             <value>
-              <dictionary id="30830.6">
+              <tuple>
+                <string id="31017.6" encoding="repr">Review portal content</string>
+              </tuple>
+            </value>
+        </item>
+      </dictionary>
+    </pickle>
+  </record>
+  <record id="31016" aka="AAAAAAAAeSg=">
+    <pickle>
+      <tuple>
+        <tuple id="31016.3">
+          <string id="31016.1" encoding="repr">Persistence</string>
+          <string id="31016.2" encoding="repr">PersistentMapping</string>
+        </tuple>
+        <none/>
+      </tuple>
+    </pickle>
+    <pickle>
+      <dictionary id="31016.4">
+        <item>
+            <key> <string id="31016.5" encoding="repr">_container</string> </key>
+            <value>
+              <dictionary id="31016.6">
                 <item>
-                    <key> <string id="30830.7" encoding="repr">review_state</string> </key>
+                    <key> <string id="31016.7" encoding="repr">review_state</string> </key>
                     <value>
                       <tuple>
-                        <string id="30830.8" encoding="repr">pending</string>
+                        <string id="31016.8" encoding="repr">pending</string>
                       </tuple>
                     </value>
                 </item>
@@ -2222,101 +2383,97 @@ XXXXXXXXXXXXXXX\n
       </dictionary>
     </pickle>
   </record>
-  <record id="30829" aka="AAAAAAAAeG0=">
+  <record id="31021" aka="AAAAAAAAeS0=">
     <pickle>
       <tuple>
-        <tuple id="30829.3">
-          <string id="30829.1" encoding="repr">Products.DCWorkflow.Guard</string>
-          <string id="30829.2" encoding="repr">Guard</string>
+        <tuple id="31021.3">
+          <string id="31021.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31021.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30829.4">
+      <dictionary id="31021.4">
         <item>
-            <key> <string id="30829.5" encoding="repr">permissions</string> </key>
-            <value>
-              <tuple>
-                <string id="30829.6" encoding="repr">Review portal content</string>
-              </tuple>
-            </value>
+            <key> <string id="31021.5" encoding="repr">text</string> </key>
+            <value> <string id="31021.6" encoding="repr">here/isTheAssignedOne</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30831" aka="AAAAAAAAeG8=">
+  <record id="31019" aka="AAAAAAAAeSs=">
     <pickle>
       <tuple>
-        <tuple id="30831.3">
-          <string id="30831.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30831.2" encoding="repr">Expression</string>
+        <tuple id="31019.3">
+          <string id="31019.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31019.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30831.4">
+      <dictionary id="31019.4">
         <item>
-            <key> <string id="30831.5" encoding="repr">text</string> </key>
-            <value> <string id="30831.6" encoding="repr">here/isAssigned</string> </value>
+            <key> <string id="31019.5" encoding="repr">text</string> </key>
+            <value> <string id="31019.6" encoding="repr">here/isAssigned</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30832" aka="AAAAAAAAeHA=">
+  <record id="31020" aka="AAAAAAAAeSw=">
     <pickle>
       <tuple>
-        <tuple id="30832.3">
-          <string id="30832.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30832.2" encoding="repr">Expression</string>
+        <tuple id="31020.3">
+          <string id="31020.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31020.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30832.4">
+      <dictionary id="31020.4">
         <item>
-            <key> <string id="30832.5" encoding="repr">text</string> </key>
-            <value> <string id="30832.6" encoding="repr">here/isAssigned</string> </value>
+            <key> <string id="31020.5" encoding="repr">text</string> </key>
+            <value> <string id="31020.6" encoding="repr">here/isCreator</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30833" aka="AAAAAAAAeHE=">
+  <record id="31024" aka="AAAAAAAAeTA=">
     <pickle>
       <tuple>
-        <tuple id="30833.3">
-          <string id="30833.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30833.2" encoding="repr">Expression</string>
+        <tuple id="31024.3">
+          <string id="31024.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31024.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30833.4">
+      <dictionary id="31024.4">
         <item>
-            <key> <string id="30833.5" encoding="repr">text</string> </key>
-            <value> <string id="30833.6" encoding="repr">here/isCreator</string> </value>
+            <key> <string id="31024.5" encoding="repr">text</string> </key>
+            <value> <string id="31024.6" encoding="repr">here/isCreator</string> </value>
         </item>
       </dictionary>
     </pickle>
   </record>
-  <record id="30834" aka="AAAAAAAAeHI=">
+  <record id="31018" aka="AAAAAAAAeSo=">
     <pickle>
       <tuple>
-        <tuple id="30834.3">
-          <string id="30834.1" encoding="repr">Products.CMFCore.Expression</string>
-          <string id="30834.2" encoding="repr">Expression</string>
+        <tuple id="31018.3">
+          <string id="31018.1" encoding="repr">Products.CMFCore.Expression</string>
+          <string id="31018.2" encoding="repr">Expression</string>
         </tuple>
         <none/>
       </tuple>
     </pickle>
     <pickle>
-      <dictionary id="30834.4">
+      <dictionary id="31018.4">
         <item>
-            <key> <string id="30834.5" encoding="repr">text</string> </key>
-            <value> <string id="30834.6" encoding="repr">here/isTheAssignedOne</string> </value>
+            <key> <string id="31018.5" encoding="repr">text</string> </key>
+            <value> <string id="31018.6" encoding="repr">here/isAssigned</string> </value>
         </item>
       </dictionary>
     </pickle>
