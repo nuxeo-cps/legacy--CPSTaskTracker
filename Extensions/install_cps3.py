@@ -211,7 +211,7 @@ class CPSInstaller(CPSInstaller):
         # Creation of the .cps_workflow_configuration.
         tasks_tool = getToolByName(self.portal, 'portal_tasks')
         if '.cps_workflow_configuration' not in tasks_tool.objectIds():
-            tasks_tool.manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
+            tasks_tool.manage_addProduct['CPSWorkflow'].addCPSWorkflowConfiguration()
 
         # Adding wfc task chain
         wfc = getattr(tasks_tool, '.cps_workflow_configuration')
@@ -290,7 +290,7 @@ class CPSInstaller(CPSInstaller):
 
         workspaces = getattr(self.portal, WORKSPACES_ID)
         if '.cps_workflow_configuration' not in workspaces.objectIds():
-            workpaces.manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
+            workpaces.manage_addProduct['CPSWorkflow'].addCPSWorkflowConfiguration()
 
         # Adding wfc task chain
         wfc = getattr(workspaces, '.cps_workflow_configuration')
@@ -341,7 +341,7 @@ class CPSInstaller(CPSInstaller):
 
         ##workspaces = getattr(self.portal, WORKSPACES_ID)
         ##if '.cps_workflow_configuration' not in workspaces.objectIds():
-        ##    workpaces.manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
+        ##    workpaces.manage_addProduct['CPSWorkflow'].addCPSWorkflowConfiguration()
         ##
         ### Adding wfc task chain
         ##wfc = getattr(workspaces, '.cps_workflow_configuration')
