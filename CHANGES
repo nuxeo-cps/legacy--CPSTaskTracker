@@ -3,10 +3,10 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- History for the reject action
 Bug fixes:
 ~~~~~~~~~~
--
+- Creating a task within a screener context : fixing bad breadcrumb.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -28,7 +28,7 @@ This tool will :
   - store some lists like project list here.
 """
 
-from zLOG import LOG, DEBUG
+from zLOG import LOG, DEBUG , INFO
 
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
@@ -173,21 +173,72 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder):
 
         task_lists = {}
 
-        if parameters.get('display_my_tasks'):
-            task_lists['my_tasks'] = [x for x in sorted_tasks \
-                                      if x.isCreator()]
-        if parameters.get('display_my_affected_tasks'):
-            task_lists['my_affected_tasks'] = [x for x in sorted_tasks \
-                                               if member_id in \
-                                               x.getMemberIds()]
-        if parameters.get('display_my_groups_affected_tasks'):
-            task_lists['my_groups_affected_tasks'] = [x for x in \
-                                                      sorted_tasks if \
-                                                      member_id in x.getUserGroupsAssigned()]
+#         if parameters.get('display_my_tasks'):
+#             task_lists['my_tasks'] = [x for x in sorted_tasks \
+#                                       if x.isCreator()]
+#
+#         if parameters.get('display_my_affected_tasks'):
+#             task_lists['my_affected_tasks'] = [x for x in sorted_tasks \
+#                                                if member_id in \
+#                                                x.getMemberIds()]
+#
+#         if parameters.get('display_my_groups_affected_tasks'):
+#             task_lists['my_groups_affected_tasks'] = [x for x in \
+#                                                       sorted_tasks if \
+#                                                       member_id in x.getUserGroupsAssigned()]
+#
+#         if parameters.get('display_my_accepted_tasks'):
+#             task_lists['my_accepted_tasks'] = [x for x \
+#                                                in sorted_tasks \
+#                                                if x.isTheAssignedOne()]
+
+
+        # <FJ>                                  
+        # Avoid duplicated items with some kind of priority
+        # my_accepted_tasks > my_affected_tasks > my_groups_affected_tasks > my_tasks
+        out=[]
         if parameters.get('display_my_accepted_tasks'):
-            task_lists['my_accepted_tasks'] = [x for x \
-                                               in sorted_tasks \
-                                               if x.isTheAssignedOne()]
+            for item in sorted_tasks:
+                if item.isTheAssignedOne():
+                    out.append(item)
+                    sorted_tasks.remove(item)
+                    
+        task_lists['my_accepted_tasks']=out
+        LOG('TaskTool', INFO, 'my accepted tasks : "%s"' % str(out))
+
+            
+        out=[]
+        if parameters.get('display_my_affected_tasks'):
+            for item in sorted_tasks:
+                if member_id in item.getMemberIds():
+                    out.append(item)
+                    sorted_tasks.remove(item)
+                    
+        task_lists['my_affected_tasks']=out
+        LOG('TaskTool', INFO, 'my affected tasks : "%s"' % str(out))
+                            
+        out=[]
+        if parameters.get('display_my_groups_affected_tasks'):
+            for item in sorted_tasks:
+                if member_id in item.getUserGroupsAssigned():
+                    out.append(item)
+                    sorted_tasks.remove(item)
+                    
+        task_lists['my_groups_affected_tasks']=out
+        LOG('TaskTool', INFO, 'groups affected tasks : "%s"' % str(out))
+                
+        out=[]
+        if parameters.get('display_my_tasks'):
+            for item in sorted_tasks:
+                if item.isCreator():
+                    out.append(item)
+                    sorted_tasks.remove(item)
+                    
+        task_lists['my_tasks']=out
+        LOG('TaskTool', INFO, 'my tasks : "%s"' % str(out))
+        # </FJ>
+                                                   
+        
         #
         # Cleaning the empty entries
         # For the visible if empty feature
