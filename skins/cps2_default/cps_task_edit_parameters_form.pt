@@ -333,25 +333,19 @@
         <metal:block fill-slot="content">
           <select name="task_project"
                   tal:define="the_project here/task_project|nothing" >
-                  <tal:block repeat="project here/portal_tasks/getProjects">
-                    <option value="."
-                        tal:condition="python:the_project != project['title']"
-                        tal:attributes="value project/title"
-                        tal:content="project/title">
-                      Task Project
+                  <option selected
+                        tal:attributes="value string:none"
+                        tal:content="python:mcat('_label_other')">
+                      Task project
                     </option>
-                    <option value="." selected
-                        tal:condition="python:the_project == project['title']"
-                        tal:attributes="value project/title"
+                  <tal:block repeat="project here/portal_tasks/getProjects">
+                    <option
+                        tal:attributes="value project/title;
+                                        selected python:the_project == project['title']"
                         tal:content="project/title">
                       Task project
                     </option>
                  </tal:block>
-                 <option value="." selected
-                        tal:attributes="value string:none"
-                        tal:content="python:mcat('_label_other')">
-                      Task project
-                 </option>
           </select>
         </metal:block>
       </metal:block>
