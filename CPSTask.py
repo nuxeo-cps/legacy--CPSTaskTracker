@@ -64,6 +64,11 @@ factory_type_information = (
                   'action': 'cps_task_create',
                   'visible': 0,
                   'permissions': ()},
+                 {'id': 'edit',
+                  'name': '_action_modify_',
+                  'action': 'cps_task_edit_form',
+                  'visible': 0,
+                  'permissions': (ModifyPortalContent,)},
                  {'id': 'isdocument',
                   'name': 'isdocument',
                   'action': 'isdocument',
@@ -111,8 +116,8 @@ class CPSTask(FlexibleDocument):
     # Initialization of the properties
     #
 
-    start_task_date = ''
-    stop_task_date  = ''
+    start_task_date = DateTime().strftime("%Y/%m/%d")
+    stop_task_date  = DateTime().strftime("%Y/%m/%d")
     task_priority   = 'normal'
     task_type       = 'other'
     task_project    = 'other'
@@ -334,7 +339,7 @@ class CPSTask(FlexibleDocument):
         """
         return self.task_rejecter
 
-    security.declareProtected(ModifyPortalContent, "getAssignedEmails")
+    security.declareProtected(ModifyPortalContent, "getAllAssignedMembers")
     def getAllAssignedMembers(self):
         """
         Return assigned members.
@@ -372,7 +377,7 @@ class CPSTask(FlexibleDocument):
 
         return res
 
-    security.declareProtected(ModifyPortalContent, "sendMail")
+    security.declareProtected(ModifyPortalContent, "sendMailTo")
     def sendMailTo(self, content="", emails=[], from_address="", subject=""):
         """
         Send a mail
