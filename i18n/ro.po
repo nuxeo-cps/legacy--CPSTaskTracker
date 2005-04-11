@@ -1,513 +1,744 @@
+# translation of ro.po to 
 # ##########################################################
 # ################# DON'T EDIT THIS FILE! ##################
 # ##########################################################
 # Gettext Message File for default.
 # Your Name <your@email>, Year
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
+# , 2005.
 msgid ""
 msgstr ""
-"Project-Id-Version: default\n"
+"Project-Id-Version: ro\n"
 "POT-Creation-Date: 2004-07-26 14:17default\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Your Name <your@email>\n"
-"Language-Team: Name <email>\n"
+"PO-Revision-Date: 2005-04-11 13:07+0300\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-code: ro\n"
 "Language-name: Romanian\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
+"X-Generator: KBabel 1.9.1\n"
 
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
-msgstr ""
+msgstr "Sterge"
 
 msgid "_button_submit_"
-msgstr ""
+msgstr "Schimba"
 
 msgid "_button_accept_"
-msgstr ""
+msgstr "Accepta aceasta sarcina"
 
 msgid "_button_reject_"
-msgstr ""
+msgstr "Refuza aceasta sarcina"
 
 msgid "_button_recall_"
-msgstr ""
+msgstr "Reaminteste"
 
 msgid "_button_assign"
-msgstr ""
+msgstr "Atribuie"
 
 msgid "_button_reinit"
-msgstr ""
+msgstr "Reinitializeaza"
 
 # ## PORTAL types ##########################################################
 msgid "_portal_type_CPS_Task"
-msgstr ""
+msgstr "Sarcina"
 
 msgid "_portal_type_CPS_Task_Screen"
-msgstr ""
+msgstr "Vizualizeaza sarcinile"
 
 msgid "_portal_type_task Box"
-msgstr ""
+msgstr "Box de sarcini"
 
 # ## actions ###############################################################
 msgid "_action_reinit_"
-msgstr ""
+msgstr "Reinitializeaza"
 
 msgid "_action_create_new_tasks"
-msgstr ""
+msgstr "Creeaza o noua sarcina"
 
 msgid "_action_parameters"
-msgstr ""
+msgstr "Parametrizeaza vizualizatorul de sarcini. "
 
 msgid "_action_edit_"
-msgstr ""
+msgstr "Editeaza"
 
 msgid "_action_assign_task_to"
-msgstr ""
+msgstr "Reinitializeaza sarcina"
 
 msgid "_action_current_status_"
-msgstr ""
+msgstr "Starea curenta"
 
 msgid "_action_recall_"
-msgstr ""
+msgstr "Reaminteste membrilor atribuiti"
 
 msgid "_reviewstate_waiting"
-msgstr ""
+msgstr "In asteptare"
 
 msgid "_reviewstate_processed"
-msgstr ""
+msgstr "in curs"
 
 msgid "_reviewstate_closed"
-msgstr ""
+msgstr "Inchisa"
 
 msgid "_action_history_"
-msgstr ""
+msgstr "Istoricul sarcinii"
 
 # ## labels ################################################################
 msgid "_label_name"
-msgstr ""
+msgstr "Nume complet"
 
 msgid "_label_email"
-msgstr ""
+msgstr "Email"
 
 msgid "_label_my_tasks"
-msgstr ""
+msgstr "Sarcinile mele "
 
 msgid "_label_sort_date_on"
-msgstr ""
+msgstr "Data "
 
 msgid "_label_sort_order"
-msgstr ""
+msgstr "Ordine "
 
 msgid "_label_sort_on"
-msgstr ""
+msgstr "Ordonat dupa  "
 
 msgid "_label_display_my_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile pe care le-am creat "
 
 msgid "_label_display_my_affected_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile care mi-au fost atribuite"
 
 msgid "_label_display_my_groups_affected_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile care sunt atribuite unuia din grupurile de care apartin eu."
 
 msgid "_label_display_my_accepted_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile pe care le-am acceptat. "
 
 msgid "_label_screener_display_my_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile pe care le-am creat  "
 
 msgid "_label_screener_display_my_affected_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile care mi-au fost atribuite  "
 
 msgid "_label_screener_display_my_groups_affected_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile care sunt atribuite unuia din grupurile de care apartin eu."
 
 msgid "_label_screener_display_my_accepted_tasks"
-msgstr ""
+msgstr "Afiseaza sarcinile pe care le-am acceptat.  "
 
 msgid "_label_start_date"
-msgstr ""
+msgstr "Data efectiva"
 
 msgid "_label_stop_date"
-msgstr ""
+msgstr "Termen de predare"
 
 msgid "_label_asc"
-msgstr ""
+msgstr "Crescator"
 
 msgid "_label_desc"
-msgstr ""
+msgstr "Descrescator"
 
 msgid "_label_none"
-msgstr ""
+msgstr "Nici unul"
 
 msgid "_label_type"
-msgstr ""
+msgstr "Tip"
 
 msgid "_label_indicator"
-msgstr ""
+msgstr "Indicator"
 
 msgid "_label_priority"
-msgstr ""
+msgstr "Prioritate"
 
 msgid "_heading_task_i_created"
-msgstr ""
+msgstr "Sarcina pe care am creat-o"
 
 msgid "_heading_task_affected_to_me"
-msgstr ""
+msgstr "Sarcini care mi-au fost atribuite"
 
 msgid "_heading_task_i_accepted"
-msgstr ""
+msgstr "Sarcini pe care le-am acceptat"
 
 msgid "_heading_task_affected_to_one_of_my_groups"
-msgstr ""
+msgstr "Sarcini atribuite unuia din grupurile mele"
 
 msgid "_heading_screener_message"
 msgstr ""
+"Poti sa editezi parametrii skinner-ului urmand calea "
+"<strong>Parametrizeaza vizualizatorul de sarcini<stong> pe dreapta. "
 
 msgid "_heading_configure"
-msgstr ""
+msgstr "Configureaza"
 
 msgid "_heading_create_a_task_screen"
-msgstr ""
+msgstr "Creeaza un vizualizator de sarcini."
 
 msgid "_heading_recall_assigned_members"
-msgstr ""
+msgstr "Reaminteste persoanelor atribuite"
 
 msgid "_label_title"
-msgstr ""
+msgstr "Titlu"
 
 msgid "_label_creator"
-msgstr ""
+msgstr "Creatorul"
 
 msgid "_label_effective_date"
-msgstr ""
+msgstr "Data efectiva"
 
 msgid "_label_deadline"
-msgstr ""
+msgstr "Data de predare"
 
 msgid "_label_project"
-msgstr ""
+msgstr "Proiect"
 
 msgid "_label_goal"
-msgstr ""
+msgstr "Tinta proiectului"
 
 msgid "_label_assigned_to_users"
-msgstr ""
+msgstr "Atribuite utilizatorilor"
 
 msgid "_label_assigned_to_groups"
-msgstr ""
+msgstr "Atribuite grupurilor"
 
 msgid "_label_accepted_by"
-msgstr ""
+msgstr "Acceptate de "
 
 msgid "_label_rejected_by"
-msgstr ""
+msgstr "Refuzate de "
 
 msgid "_label_do_you_want_to_accpet_it"
-msgstr ""
+msgstr "Esti sigur ca vrei sa accepti aceasta sarcina ?"
 
 msgid "_label_do_you_want_to_reject_it"
-msgstr ""
+msgstr "Esti sigur ca vrei sa refuzi aceasta sarcina ?"
 
 msgid "_label_do_you_want_to_close_it"
-msgstr ""
+msgstr "Esti sigur ca vrei sa inchizi aceasta sarcina ?"
 
 msgid "_label_status"
-msgstr ""
+msgstr ". "
 
 msgid "_label_recall_explanation"
 msgstr ""
+"Poti sa reamintesti membrilor ca sunt atribuiti acestei sarcini "
+"apasand "
+"butonul <strong>Reaminteste</strong> dupa ce ai ales membrii.<br />Poti "
+"in acelasi timp sa ai acces la informatiile fiecarui membru "
+"apasand pe campul <i>Nume complet</i> si de asemenea sa trimiti un mail catre "
+"un membru apasand pe campul email. "
 
 msgid "_label_you_are_recalled_for_the_task"
-msgstr ""
+msgstr "Tu esti chemat pentru sarcina urmatoare : "
 
 msgid "_label_you_can_reassign_the_task_here"
-msgstr ""
+msgstr "Poti sa re-atribui aceasta sarcina. Aceasta va inlocui atribuirile precedente."
 
 msgid "_label_do_you_want_to_reinit_it"
-msgstr ""
+msgstr "Esti sigur ca vrei sa reinitializezi sarcina ? "
 
 msgid "_label_recall"
-msgstr ""
+msgstr "Reaminteste"
 
 msgid "_label_mail_sent"
-msgstr ""
+msgstr "Email-urile au fost trimise."
 
 msgid "_label_error_while_sending_mail"
 msgstr ""
+"Probleme in trimiterea email-urilor. Contacteaza administratorul "
+"site-ului."
 
 msgid "_label_All/None_"
-msgstr ""
+msgstr "Toti/Nici unul"
 
 msgid "_action_accept"
-msgstr ""
+msgstr "Accepta aceasta sarcina"
 
 msgid "_action_reject"
-msgstr ""
+msgstr "Refuza aceasta sarcina"
 
 msgid "_action_close_task"
-msgstr ""
+msgstr "Inchide aceasta sarcina"
 
 msgid "_action_create_new_project"
-msgstr ""
+msgstr "Administreaza proiectele"
 
 # ## Calendar #########################################################
 msgid "_cday_Su"
-msgstr ""
+msgstr "Du"
 
 msgid "_cday_Mo"
-msgstr ""
+msgstr "Lu"
 
 msgid "_cday_Tu"
-msgstr ""
+msgstr "Ma"
 
 msgid "_cday_We"
-msgstr ""
+msgstr "Mi"
 
 msgid "_cday_Th"
-msgstr ""
+msgstr "Jo"
 
 msgid "_cday_Fr"
-msgstr ""
+msgstr "Vi"
 
 msgid "_cday_Sa"
-msgstr ""
+msgstr "Sa"
 
 msgid "_cmonth_01"
-msgstr ""
+msgstr "Ianuarie"
 
 msgid "_cmonth_02"
-msgstr ""
+msgstr "Februarie"
 
 msgid "_cmonth_03"
-msgstr ""
+msgstr "Martie"
 
 msgid "_cmonth_04"
-msgstr ""
+msgstr "Aprilie"
 
 msgid "_cmonth_05"
-msgstr ""
+msgstr "Mai"
 
 msgid "_cmonth_06"
-msgstr ""
+msgstr "Iunie"
 
 msgid "_cmonth_07"
-msgstr ""
+msgstr "Iulie"
 
 msgid "_cmonth_08"
-msgstr ""
+msgstr "August"
 
 msgid "_cmonth_09"
-msgstr ""
+msgstr "Septembrie"
 
 msgid "_cmonth_10"
-msgstr ""
+msgstr "Octombrie"
 
 msgid "_cmonth_11"
-msgstr ""
+msgstr "Noiembrie"
 
 msgid "_cmonth_12"
-msgstr ""
+msgstr "Decembrie"
 
 msgid "_cfmt_date_"
-msgstr ""
+msgstr "%d/%m/%Y"
 
 msgid "_cfmt_datetime_"
-msgstr ""
+msgstr "%d/%m/%Y  %Hh%M"
 
 msgid "_c_at_"
-msgstr ""
+msgstr "h "
 
 msgid "_c_h_"
-msgstr ""
+msgstr "h"
 
 # ## POPUPS ##################################################
 msgid "_searchmembers_tools_"
-msgstr ""
+msgstr "Unealta de cautare a membrilor"
 
 msgid "_Members_criteria_"
-msgstr ""
+msgstr "Criteriu de cautare al membrilor."
 
 msgid "_dir_Groups_"
-msgstr ""
+msgstr "Grupuri"
 
 msgid "_(Add users ...) as_"
-msgstr ""
+msgstr "Adauga un membru ca :"
 
 msgid "_button_search_"
-msgstr ""
+msgstr "Cauta"
 
 msgid "_select_members_from_search_"
-msgstr ""
+msgstr "Selectioneaza membrii plecand de la cautare."
 
 msgid "_button_add_"
-msgstr ""
+msgstr "Adauga"
 
 msgid "_No_entry_matches_your_request_"
-msgstr ""
+msgstr "Cautarea ta nu intoarce nici un rezultat."
 
 msgid "_members_selected_"
-msgstr ""
+msgstr "Membrii selectionati."
 
 msgid "_button_clean_"
-msgstr ""
+msgstr "Sterge"
 
 msgid "_button_close"
-msgstr ""
+msgstr "Inchide"
 
 msgid "_button_validate_"
-msgstr ""
+msgstr "Valideaza."
 
 msgid "_searchgroups_tools_"
-msgstr ""
+msgstr "Unealta de cautare a grupurilor"
 
 msgid "_Groups_criteria_"
-msgstr ""
+msgstr "Criterii de cautare pentru grupuri"
 
 msgid "_select_groups_from_search_"
-msgstr ""
+msgstr "Selecteaza grupurile plecand de la cautare."
 
 msgid "_groups_selected_"
-msgstr ""
+msgstr "grupuri selectate."
 
 # ## Projects #######################################################
 msgid "_label_create_a_new_project"
-msgstr ""
+msgstr "Creeaza un nou proiect."
 
 msgid "_label_manage_projects"
-msgstr ""
+msgstr "Administreaza proiectele"
 
 msgid "_label_description"
-msgstr ""
+msgstr "Descriere"
 
 msgid "_label_other"
-msgstr ""
+msgstr "Altul"
 
 # ## Skinners #######################################################
 msgid "_label_skinner"
-msgstr ""
+msgstr "Vedere"
 
 msgid "other"
-msgstr ""
+msgstr "Altul"
 
 msgid "closed"
-msgstr ""
+msgstr "Inchisa"
 
 msgid "assigned"
-msgstr ""
+msgstr "Atribuita"
 
 msgid "late"
-msgstr ""
+msgstr "In intarziere"
 
 msgid "opened"
-msgstr ""
+msgstr "Deschisa"
 
 # ## Status History ############################################
 msgid "_heading_task_history"
-msgstr ""
+msgstr "Istoric"
 
 msgid "_heading_current_state"
-msgstr ""
+msgstr "Stare curenta "
 
 msgid "_label_item_is"
-msgstr ""
+msgstr "Aceasta sarcina este in starea"
 
 msgid "_label_state"
-msgstr ""
+msgstr ". "
 
 msgid "_label_reviewing_history"
-msgstr ""
+msgstr "Istoric"
 
 msgid "_label_by"
-msgstr ""
+msgstr "de"
 
 msgid "_portal_tasks"
-msgstr ""
+msgstr "Centrul sarcinilor"
 
 msgid "_transition_accept"
-msgstr ""
+msgstr "Acceptare"
 
 msgid "_transition_assign"
-msgstr ""
+msgstr "Atribuire"
 
 msgid "_transition_close"
-msgstr ""
+msgstr "Inchidere"
 
 msgid "_transition_reject"
-msgstr ""
+msgstr "Refuzata"
 
 msgid "_transition_None"
-msgstr ""
+msgstr "Creatie"
 
 msgid "_transition_reinit"
-msgstr ""
+msgstr "Re-initializare"
 
 msgid "_label_no_project"
 msgstr ""
+"Nu exista nici un proiect. Poti sa creezi un proiect prin legatura de "
+"mai sus."
 
 msgid "_label_reject_history"
-msgstr ""
+msgstr "Istoricul refuzurilor"
 
 msgid "_heading_task_related_to"
-msgstr ""
+msgstr "Sarcini legate de proiect"
 
 msgid "_label_only_this_project"
-msgstr ""
+msgstr "Afiseaza sarcinile legate de proiect"
 
 msgid "_label_recall_no_users_assigned"
-msgstr ""
+msgstr "Aceasta sarcina nu iti este inca atribuita"
 
 # ## Document fields
 msgid "label_cps_task_type"
-msgstr ""
+msgstr "Tip de sarcina"
 
 msgid "label_cps_start_task_date"
-msgstr ""
+msgstr "Data efectiva"
 
 msgid "label_cps_task_priority"
-msgstr ""
+msgstr "Prioritate"
 
 msgid "label_cps_stop_task_date"
-msgstr ""
+msgstr "Data de predare"
 
 msgid "label_cps_task_goal"
-msgstr ""
+msgstr "Tinta proiectului"
 
 msgid "label_cps_task_description"
-msgstr ""
+msgstr "Descriere"
 
 msgid "label_cps_task_members"
-msgstr ""
+msgstr "Membrii atribuiti acestei sarcini"
 
 msgid "label_cps_task_groups"
-msgstr ""
+msgstr "Grupuri atribuite acestei sarcini"
 
 msgid "label_priority_high"
-msgstr ""
+msgstr "Inalta"
 
 msgid "label_priority_normal"
-msgstr ""
+msgstr "Normala"
 
 msgid "label_priority_low"
-msgstr ""
+msgstr "Scazuta"
 
 msgid "label_priority_internal"
-msgstr ""
+msgstr "Interna"
 
 msgid "label_priority_nuxeo"
-msgstr ""
+msgstr "Nuxeo"
 
 msgid "label_priority_other"
-msgstr ""
+msgstr "Alta"
 
 msgid "label_cpstask_text"
-msgstr ""
+msgstr "Text"
 
 msgid "_label_task_rejected"
-msgstr ""
+msgstr "Sarcina refuzata"
 
 msgid "_label_the_task_has_been_rejected"
-msgstr ""
+msgstr "Sarcina urmatoare a fost refuzata"
+
