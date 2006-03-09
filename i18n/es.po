@@ -1,0 +1,537 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CPSTaskTracker\n"
+"POT-Creation-Date: 2004-07-26 14:17default\n"
+"PO-Revision-Date: 2006-03-05 18:29+0100\n"
+"Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
+"Language-Team: español <jesusmartin@lasalle.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Preferred-encodings: latin9 utf-8\n"
+"Domain: default\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+# ## BUTTTONS ######################################################
+msgid "_button_delete"
+msgstr "Borrar"
+
+# ## BUTTTONS ######################################################
+msgid "_button_submit_"
+msgstr "Cambiar"
+
+msgid "_button_accept_"
+msgstr "Aceptar esta tarea"
+
+# ## BUTTTONS ######################################################
+msgid "_button_reject_"
+msgstr "Rechazar esta tarea"
+
+# ## BUTTTONS ######################################################
+msgid "_button_recall_"
+msgstr "Rellamar"
+
+msgid "_button_assign"
+msgstr "Asignar"
+
+msgid "_button_reinit"
+msgstr "Reinicializar"
+
+# # portal types ##########################################################
+msgid "_portal_type_CPS_Task"
+msgstr "Tarea"
+
+msgid "_portal_type_CPS_Task_Screen"
+msgstr "Visor de tareas"
+
+# # portal types ##########################################################
+msgid "_portal_type_task Box"
+msgstr "Caja de Tareas"
+
+msgid "_action_reinit_"
+msgstr "Reinicializar"
+
+# # actions ###############################################################
+msgid "_action_create_new_tasks"
+msgstr "Crear una nueva tarea"
+
+msgid "_action_parameters"
+msgstr "Parámetros del visor de tareas"
+
+msgid "_action_edit_"
+msgstr "Editar"
+
+msgid "_action_assign_task_to"
+msgstr "Reinicializar la tarea"
+
+msgid "_action_current_status_"
+msgstr "Estado actual"
+
+msgid "_action_recall_"
+msgstr "Rellamar a los miembros asignados"
+
+msgid "_reviewstate_waiting"
+msgstr "Esperando"
+
+msgid "_reviewstate_processed"
+msgstr "en proceso"
+
+msgid "_reviewstate_closed"
+msgstr "Cerrado"
+
+msgid "_action_history_"
+msgstr "Historial de la tarea"
+
+msgid "_label_name"
+msgstr "Nombre completo"
+
+# ## labels ################################################################
+msgid "_label_email"
+msgstr "Correo electrónico"
+
+# ## labels ################################################################
+msgid "_label_my_tasks"
+msgstr "Mis tareas"
+
+msgid "_label_sort_date_on"
+msgstr "Fecha"
+
+msgid "_label_sort_order"
+msgstr "Orden "
+
+msgid "_label_sort_on"
+msgstr "Ordenar según"
+
+msgid "_label_display_my_tasks"
+msgstr "Mostrar mis tareas"
+
+msgid "_label_display_my_affected_tasks"
+msgstr "Mostrar las tareas Display the tasks assigned to me "
+
+msgid "_label_display_my_groups_affected_tasks"
+msgstr "Mostrar las tareas asignadas a uno de mis grupos"
+
+msgid "_label_display_my_accepted_tasks"
+msgstr "Mostrar las tareas que he aceptado"
+
+msgid "_label_screener_display_my_tasks"
+msgstr "Mostrar las tareas que he creado"
+
+msgid "_label_screener_display_my_affected_tasks"
+msgstr "Mostrar las tareas que me han sido asignadas"
+
+msgid "_label_screener_display_my_groups_affected_tasks"
+msgstr "Mostrar las tareas asignadas a uno de mis grupos"
+
+msgid "_label_screener_display_my_accepted_tasks"
+msgstr "Mostrar las tareas que he aceptado"
+
+msgid "_label_start_date"
+msgstr "Entrada en vigor"
+
+msgid "_label_stop_date"
+msgstr "Fecha de caducidad"
+
+# ## labels ################################################################
+msgid "_label_asc"
+msgstr "Creciente"
+
+msgid "_label_desc"
+msgstr "Decreciente"
+
+msgid "_label_none"
+msgstr "Nada"
+
+msgid "_label_type"
+msgstr "Tipo"
+
+msgid "_label_indicator"
+msgstr "Indicador"
+
+msgid "_label_priority"
+msgstr "Prioridad"
+
+msgid "_heading_task_i_created"
+msgstr "Tareas que he creado"
+
+msgid "_heading_task_affected_to_me"
+msgstr "Tareas que me son asignadas"
+
+msgid "_heading_task_i_accepted"
+msgstr "Tareas que he aceptado"
+
+msgid "_heading_task_affected_to_one_of_my_groups"
+msgstr "Tareas asignadas a uno de mis grupos"
+
+msgid "_heading_screener_message"
+msgstr "Puedes editar los parámteros de tu carcasa (skinner) en el enlace <strong>Parámetros del visualización</strong> en la parte derecha"
+
+msgid "_heading_configure"
+msgstr "Configurar"
+
+msgid "_heading_create_a_task_screen"
+msgstr "Crear un visualizador de tareas"
+
+msgid "_heading_recall_assigned_members"
+msgstr "Rellamar a las personas asignadas"
+
+msgid "_label_title"
+msgstr "Título"
+
+msgid "_label_creator"
+msgstr "Creador"
+
+msgid "_label_effective_date"
+msgstr "Entrada en vigor"
+
+msgid "_label_deadline"
+msgstr "Fecha de caducidad"
+
+msgid "_label_project"
+msgstr "Projecto"
+
+# ## labels ################################################################
+msgid "_label_goal"
+msgstr "Objetivo del Proyecto"
+
+msgid "_label_assigned_to_users"
+msgstr "Asignado a los usuarios"
+
+msgid "_label_assigned_to_groups"
+msgstr "Asignado a los grupos"
+
+# ## labels ################################################################
+msgid "_label_accepted_by"
+msgstr "Aceptado por"
+
+# ## labels ################################################################
+msgid "_label_rejected_by"
+msgstr "Rechazado por"
+
+msgid "_label_do_you_want_to_accpet_it"
+msgstr "¿Realmente desea aceptarlo?"
+
+msgid "_label_do_you_want_to_reject_it"
+msgstr "¿Realmente desea aceptarlo?"
+
+msgid "_label_do_you_want_to_close_it"
+msgstr "¿Realmente desea aceptarlo?"
+
+# ## labels ################################################################
+msgid "_label_status"
+msgstr "Estado"
+
+msgid "_label_recall_explanation"
+msgstr "Puede enviar un correo recordando a los miembros la tarea asginada. <br /> También puede acceder a las preferencias de acceso de los usuarios pulsando sobre el campo <i>Nombre Completo</i> e, igualmente, enviar un correo a uno de ellos pulsando sobre su dirección de correo."
+
+msgid "_label_you_are_recalled_for_the_task"
+msgstr "Ha sido rellamado para la siguiente tarea: "
+
+msgid "_label_you_can_reassign_the_task_here"
+msgstr "Puede reasignar la tarea aquí. Sustituirá al anterior."
+
+msgid "_label_do_you_want_to_reinit_it"
+msgstr "¿Realmente desea reiniciarlo?"
+
+# ## labels ################################################################
+msgid "_label_recall"
+msgstr "Llamada"
+
+# ## labels ################################################################
+msgid "_label_mail_sent"
+msgstr "Los correos han sido enviados."
+
+msgid "_label_error_while_sending_mail"
+msgstr "Error mientras se enviaban los correos. Contacte con el administrador del portal."
+
+msgid "_label_All/None_"
+msgstr "Todos / Ninguno"
+
+msgid "_action_accept"
+msgstr "Aceptar esta tarea"
+
+msgid "_action_reject"
+msgstr "Rechazar esta tarea"
+
+msgid "_action_close_task"
+msgstr "Cerrar esta tarea"
+
+# # actions ###############################################################
+msgid "_action_create_new_project"
+msgstr "Gestionar proyectos"
+
+# # Calendar ################################################################
+msgid "_cday_Su"
+msgstr "Do"
+
+msgid "_cday_Mo"
+msgstr "Lu"
+
+msgid "_cday_Tu"
+msgstr "Ma"
+
+msgid "_cday_We"
+msgstr "Mi"
+
+msgid "_cday_Th"
+msgstr "Ju"
+
+msgid "_cday_Fr"
+msgstr "Vi"
+
+msgid "_cday_Sa"
+msgstr "Sá"
+
+msgid "_cmonth_01"
+msgstr "Enero"
+
+msgid "_cmonth_02"
+msgstr "Febrero"
+
+msgid "_cmonth_03"
+msgstr "Marzo"
+
+msgid "_cmonth_04"
+msgstr "Abril"
+
+msgid "_cmonth_05"
+msgstr "Mayo"
+
+msgid "_cmonth_06"
+msgstr "Junio"
+
+msgid "_cmonth_07"
+msgstr "Julio"
+
+msgid "_cmonth_08"
+msgstr "Agosto"
+
+msgid "_cmonth_09"
+msgstr "Septiembre"
+
+msgid "_cmonth_10"
+msgstr "Octubre"
+
+msgid "_cmonth_11"
+msgstr "Noviembre"
+
+msgid "_cmonth_12"
+msgstr "Diciembre"
+
+msgid "_cfmt_date_"
+msgstr "%m/%d/%Y"
+
+msgid "_cfmt_datetime_"
+msgstr "%m/%d/%Y a las %H:%M"
+
+msgid "_c_at_"
+msgstr "a las"
+
+msgid "_c_h_"
+msgstr ":"
+
+# ## POPUPS ##################################################
+msgid "_searchmembers_tools_"
+msgstr "Herramienta de búsqueda de usuarios"
+
+msgid "_Members_criteria_"
+msgstr "Criterios de búsqueda de los usuarios"
+
+msgid "_dir_Groups_"
+msgstr "Grupos"
+
+msgid "_(Add users ...) as_"
+msgstr "Añadir usuarios como:"
+
+msgid "_button_search_"
+msgstr "Búsqueda"
+
+msgid "_select_members_from_search_"
+msgstr "Seleccionar miembros desde la búsqueda"
+
+msgid "_button_add_"
+msgstr "Añadir"
+
+msgid "_No_entry_matches_your_request_"
+msgstr "Su búsqueda no ha devuelto ningún resultado."
+
+# ## labels ################################################################
+msgid "_members_selected_"
+msgstr "Usuarios seleccionados"
+
+msgid "_button_clean_"
+msgstr "Limpiar"
+
+# ## BUTTTONS ######################################################
+msgid "_button_close"
+msgstr "Cerrar"
+
+# ## BUTTTONS ######################################################
+msgid "_button_validate_"
+msgstr "Validar"
+
+# ## POPUPS ##################################################
+msgid "_searchgroups_tools_"
+msgstr "Herramienta de búsqueda de grupos."
+
+msgid "_Groups_criteria_"
+msgstr "Criterio de búsqueda en los grupos"
+
+msgid "_select_groups_from_search_"
+msgstr "Seleccionar los grupos a partir de la búsqueda"
+
+# ## labels ################################################################
+msgid "_groups_selected_"
+msgstr "Grupos seleccionados"
+
+# # actions ###############################################################
+msgid "_label_create_a_new_project"
+msgstr "Crear un nuevo proyecto"
+
+msgid "_label_manage_projects"
+msgstr "Gestionar los proyectos"
+
+msgid "_label_description"
+msgstr "Descripción"
+
+msgid "_label_other"
+msgstr "Otro"
+
+msgid "_label_skinner"
+msgstr "Ver"
+
+msgid "other"
+msgstr "Otro"
+
+msgid "closed"
+msgstr "Cerrado"
+
+msgid "assigned"
+msgstr "Asignado"
+
+msgid "late"
+msgstr "Con retraso"
+
+msgid "opened"
+msgstr "Abierto"
+
+msgid "_heading_task_history"
+msgstr "Historial del estado de las tareas"
+
+msgid "_heading_current_state"
+msgstr "Estado actual"
+
+# ## labels ################################################################
+msgid "_label_item_is"
+msgstr "Este ítem está en "
+
+# ## labels ################################################################
+msgid "_label_state"
+msgstr "Estado"
+
+msgid "_label_reviewing_history"
+msgstr "Historial"
+
+msgid "_label_by"
+msgstr "por"
+
+# # portal types ##########################################################
+msgid "_portal_tasks"
+msgstr "Centro de tareas"
+
+msgid "_transition_accept"
+msgstr "Aceptar"
+
+msgid "_transition_assign"
+msgstr "Asignar"
+
+# ## BUTTTONS ######################################################
+msgid "_transition_close"
+msgstr "Cerrar"
+
+msgid "_transition_reject"
+msgstr "Rechazar"
+
+msgid "_transition_None"
+msgstr "Crear"
+
+msgid "_transition_reinit"
+msgstr "Reinicialización"
+
+msgid "_label_no_project"
+msgstr "No hay ningún projecto. Puede crear uno pulsando en el enlace superior."
+
+msgid "_label_reject_history"
+msgstr "Historial de rechazos"
+
+msgid "_heading_task_related_to"
+msgstr "Tareas relativas al proyecto: "
+
+msgid "_label_only_this_project"
+msgstr "Mostrar las tareas referidas a"
+
+msgid "_label_recall_no_users_assigned"
+msgstr "No se ha asignado a nadie esta tarea"
+
+# ## labels ################################################################
+msgid "label_cps_task_type"
+msgstr "Tipo de tarea"
+
+msgid "label_cps_start_task_date"
+msgstr "Entrada en vigor"
+
+msgid "label_cps_task_priority"
+msgstr "Prioridad de la tarea"
+
+msgid "label_cps_stop_task_date"
+msgstr "Caducidad de la tarea"
+
+# ## labels ################################################################
+msgid "label_cps_task_goal"
+msgstr "Objetivo de la tarea"
+
+msgid "label_cps_task_description"
+msgstr "Descripción"
+
+# ## labels ################################################################
+msgid "label_cps_task_members"
+msgstr "Usuarios afectados por la tarea"
+
+msgid "label_cps_task_groups"
+msgstr "Grupos afectados por la tarea"
+
+msgid "label_priority_high"
+msgstr "Alta"
+
+msgid "label_priority_normal"
+msgstr "Normal"
+
+msgid "label_priority_low"
+msgstr "Baja"
+
+msgid "label_priority_internal"
+msgstr "Interna"
+
+msgid "label_priority_nuxeo"
+msgstr "Nuxeo"
+
+msgid "label_priority_other"
+msgstr "Otro"
+
+# ## labels ################################################################
+msgid "label_cpstask_text"
+msgstr "Texto"
+
+# ## labels ################################################################
+msgid "_label_task_rejected"
+msgstr "Tarea rechazada"
+
+# # actions ###############################################################
+msgid "_label_the_task_has_been_rejected"
+msgstr "La siguiente tarea ha sido rechazada"
+
