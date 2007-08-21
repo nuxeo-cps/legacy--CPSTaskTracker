@@ -3,7 +3,7 @@
   <metal:block xmlns:tal="http://xml.zope.org/namespaces/tal"
                xmlns:metal="http://xml.zope.org/namespaces/metal"
                xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-               use-macro="here/content_lib/macros/master">
+               use-macro="here/content_lib_master/macros/master">
     <metal:block fill-slot="css_slot">
         <script type="text/javascript">
         <!--
