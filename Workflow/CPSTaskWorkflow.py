@@ -24,7 +24,7 @@ import os, sys
 from zLOG import LOG, INFO, DEBUG
 from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 
-from Products.CPSWorkflow.transtions import \
+from Products.CPSWorkflow.transitions import \
      TRANSITION_INITIAL_CREATE, \
      TRANSITION_ALLOWSUB_CHECKOUT, \
      TRANSITION_ALLOWSUB_CREATE, \
