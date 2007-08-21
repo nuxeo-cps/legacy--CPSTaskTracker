@@ -1,3 +1,23 @@
+===========================================================
+Package: CPSTaskTracker 0.12.0
+===========================================================
+First release built by: madarche at: 2007-08-21T15:12:48
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/legacy/CPSTaskTracker/tags/0.12.0
+Build from: https://svn.nuxeo.org/pub/CPS3/legacy/CPSTaskTracker/trunk@51935
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Added Spanish translation.
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
 *******************************************
 ** CPSTaskTracker V0.11.1 [R1 build 2005/01/28-15:16 by madarche]
 
