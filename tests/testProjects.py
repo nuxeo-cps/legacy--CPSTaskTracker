@@ -16,7 +16,7 @@ class TestProjects(CPSTaskTrackerTestCase.CPSTaskTrackerTestCase):
         #
         # Testing project API
         #
-        tasks_tool = getToolByName(self.portal, 'portal_tasks')
+        tasks_tool = getToolByName(self.portal, 'tasks')
 
         # Adding projects
         project1 = {'title':'Title1',

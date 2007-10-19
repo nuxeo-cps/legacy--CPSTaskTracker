@@ -1,6 +1,0 @@
-$Id:
-
-This Workflow is the task dedicated workflow. 
-It's only in use with CPS3. 
-
-For CPS2 the workflow is in xml format within the Install sub-directory.

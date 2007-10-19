@@ -6,12 +6,12 @@
 from urllib import urlencode
 
 #
-# The task are created in the portal_tasks
+# The task are created in the tasks
 # It might be possible to create them elsewhere such as workspaces
 # somewhere else with slight modifications.
 #
 
-task_repository = context.portal_tasks
+task_repository = context.tasks
 
 type_name = 'CPS Task'
 id = context.computeId()

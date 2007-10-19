@@ -1,6 +1,8 @@
-# (c) 2003,2004 Nuxeo SARL <http://nuxeo.com>
-# (c) 2003 CEA <http://www.cea.fr>
-# Author: Julien Anguenot <mailto:ja@nuxeo.com>
+# (C) 2003-2007 Nuxeo SAS <http://nuxeo.com>
+# (C) 2003 CEA <http://www.cea.fr>
+# Authors:
+# Julien Anguenot <mailto:ja@nuxeo.com>
+# M.-A. Darche <madarche@nuxeo.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 2 as published
@@ -22,32 +24,10 @@ __author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
 
 """CPSTaskTracker
 
-CPSTaskTracker is a task tracker intended to be used with CPS
-version 2 and version 3.
-
-You can access the software requierements specifications within
+You can access the software requirements specifications within
 the docs sub-directory of the product.
 """
 
-#
-# Checking what's the version of CPS3 in here.
-# This flag will be in use to import the
-# corresponding classes according to the version of CPS.
-#
-
-try:
-        import Products.CPSCore
-        CPS_VERSION = 3
-except ImportError:
-        try:
-                import Products.NuxCPS
-                CPS_VERSION = 2
-        except ImportError:
-                raise "Unknown version of CPS"
-
-# For debug purposes (CPS2)
-from AccessControl import ModuleSecurityInfo
-ModuleSecurityInfo('zLOG').declarePublic('LOG', 'DEBUG')
 
 ##############################################
 # PATCHING THE OFS.
@@ -73,13 +53,13 @@ def manage_delObjects(self, ids=[], REQUEST=None):
         """
 
         #
-        # Testing if we are in the portal_tasks
+        # Testing if we are in the tasks
         # And then if it's the owner of the task
         # trying to delete.
         #
 
         new_ids = []
-        if self.id == "portal_tasks":
+        if self.id == "tasks":
             member = self.portal_membership.getAuthenticatedMember()
             roles_in_context = member.getRolesInContext(self)
             for id in ids:
@@ -119,22 +99,19 @@ ObjectManager.manage_delObjects = manage_delObjects
 ########################################################
 
 
-import sys
-
 from Products.CMFCore.utils import ToolInit, ContentInit
 from Products.CMFCore.DirectoryView import registerDirectory
-from Products.CMFCore.CMFCorePermissions import AddPortalContent
+from Products.CMFCore.permissions import AddPortalContent
 
-if CPS_VERSION == 2:
-        import CPSTaskTool
-        import CPSTaskScreen
-        import CPSTask
-        import CPSTaskBox
-else:
-        import CPS3TaskTool as CPSTaskTool
-        import CPS3TaskScreen as CPSTaskScreen
-        import CPS3Task as CPSTask
-        import CPS3TaskBox as CPSTaskBox
+from Products.GenericSetup import profile_registry
+from Products.GenericSetup import EXTENSION
+
+from Products.CPSCore.interfaces import ICPSSite
+
+import CPSTaskTool
+import CPSTaskScreen
+import CPSTask
+import CPSTaskBox
 
 contentClasses = (
     CPSTask.CPSTask,
@@ -148,28 +125,21 @@ contentConstructors = (
     CPSTaskBox.addCPSTaskBox,
     )
 
-if CPS_VERSION == 2:
-        fti = (
-                CPSTask.factory_type_information +
-                CPSTaskScreen.factory_type_information +
-                CPSTaskBox.factory_type_information + ()
-                )
-if CPS_VERSION == 3:
-        #
-        # No factory type for CPSTask since it's
-        # a sub class of CPSDocument
-        #
-        fti = (
-                () +
-                CPSTaskScreen.factory_type_information +
-                CPSTaskBox.factory_type_information + ()
-                )
+#
+# No factory type for CPSTask since it's
+# a sub class of CPSDocument
+#
+fti = (
+        () +
+        CPSTaskScreen.factory_type_information +
+        CPSTaskBox.factory_type_information + ()
+        )
 
 registerDirectory('skins', globals())
 registerDirectory('www', globals())
 
-tools = ( CPSTaskTool.CPSTaskTool,
-          )
+tools = (CPSTaskTool.CPSTaskTool,
+         )
 
 def initialize(context):
     """
@@ -179,10 +149,9 @@ def initialize(context):
     # Task tool & repository for the tasks
     #
     ToolInit(
-        'CPS Task Tool',
-        tools = tools,
-        product_name = 'CPSTaskTracker',
-        icon = 'todo.png',
+        'CPS Task Repository',
+        tools=tools,
+        icon='tool.png',
         ).initialize(context)
 
     #
@@ -191,8 +160,18 @@ def initialize(context):
     #
     ContentInit(
         'CPS Task Tracker',
-        content_types = contentClasses,
-        permission = AddPortalContent,
-        extra_constructors = contentConstructors,
-        fti = fti,
+        content_types=contentClasses,
+        permission=AddPortalContent,
+        extra_constructors=contentConstructors,
+        fti=fti,
         ).initialize(context)
+
+
+    profile_registry.registerProfile(
+        'default',
+        'CPS Task Tracker',
+        "Task Tracker product for CPS.",
+        'profiles/default',
+        'CPSTaskTracker',
+        EXTENSION,
+        for_=ICPSSite)

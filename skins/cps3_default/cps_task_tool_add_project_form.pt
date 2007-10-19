@@ -1,17 +1,24 @@
 <html xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="here/content_lib/macros/master">
-  <body>
-    <metal:block fill-slot="header">
-      <h1 i18n:translate="_label_create_a_new_project">
-        Create a new project
-      </h1>
-    </metal:block>
-    <metal:block fill-slot="main">
-      <div class="group">
-      <form method="post" action="doCreateProject">
-        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="here/content_lib_master/macros/master">
+
+  <metal:block fill-slot="style_slot">
+    <link rel="Stylesheet" type="text/css" href=""
+      tal:attributes="href string:${base_url}cpstasktracker.css" />
+  </metal:block>
+
+  <metal:block fill-slot="header">
+    <h1 i18n:translate="_label_create_a_new_project">
+      Create a new project
+    </h1>
+  </metal:block>
+
+  <metal:block fill-slot="main"
+    tal:define="tasks python:here.tasks.getProjectTasks(request.get('project_title'))">
+
+    <form method="post" action="doCreateProject">
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
         <tr>
           <td colspan="1">
             <div class="row">
@@ -23,7 +30,7 @@
               <div class="field">
                 &nbsp;&nbsp;
                 <input type="text" name="title" value=""
-                       tal:attributes="value request/project_title|nothing" />
+                  tal:attributes="value request/project_title|nothing" />
               </div>
             </div>
             <div class="row">
@@ -39,13 +46,95 @@
             </div>
           </td>
         </tr>
-        </table>
+      </table>
+
+      <p>
         <input class="standalone" type="submit"
-               value="button_submit" i18n:attributes="value" />
+          value="button_create" i18n:attributes="value" />
         <input class="standalone" type="button" onclick="history.back()"
-               value="button_cancel" i18n:attributes="value" />
-      </form>
-      </div>
-    </metal:block>
-  </body>
+          value="button_cancel" i18n:attributes="value" />
+      </p>
+    </form>
+
+    <table id="projectsWithTasks">
+      <thead>
+        <tr>
+          <th>
+            <tal:block i18n:translate="label_task_title">
+              Task
+            </tal:block>
+          </th>
+          <th>
+            <tal:block i18n:translate="label_cps_task_members">
+              Assigned members
+            </tal:block>
+          </th>
+          <th>
+            <tal:block i18n:translate="label_cps_task_groups">
+              Assigned groups
+            </tal:block>
+          </th>
+
+          <th>
+            &nbsp;
+          </th>
+          <th>
+            <tal:block i18n:translate="_label_effective_date">
+              Task start date
+            </tal:block>
+          </th>
+          <th>
+            <tal:block i18n:translate="_label_deadline">
+              Task end date
+            </tal:block>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tal:block repeat="task tasks">
+          <tr tal:define="class python:test(repeat['task'].even(), 'even','odd')"
+            tal:attributes="class class">
+            <td>
+              <a href="."
+                tal:attributes="href string:${utool}/tasks/${task/id}">
+                <tal:block content="task/title"/>
+              </a>
+            </td>
+
+            <td class="assignees">
+              <tal:block
+                define="fullnames
+                python:[here.portal_membership.getFullnameFromId(x)
+                for x in task['members']]"
+                content="structure python:'<br/>'.join(fullnames)"/>
+            </td>
+
+            <td class="assignees">
+              <tal:block content="structure python:'<br/>'.join(task['groups'])"/>
+            </td>
+
+            <td>
+              <img src="red.gif" alt=""
+                tal:condition="python:task['status'] == 'late'" />
+              <img src="orange.gif" alt=""
+                tal:condition="python:task['status'] == 'assigned'" />
+              <img src="green.gif" alt=""
+                tal:condition="python:task['status'] == 'opened'" />
+              <img src="task_closed_icon.png" alt=""
+                tal:condition="python:task['status'] == 'closed'" />
+            </td>
+            <td class="date">
+              <tal:block content="python:here.getDateStr(task['start_date'])"/>
+            </td>
+            <td class="date">
+              <tal:block content="python:here.getDateStr(task['stop_date'])"/>
+            </td>
+
+          </tr>
+        </tal:block>
+      </tbody>
+    </table>
+
+  </metal:block>
 </html>

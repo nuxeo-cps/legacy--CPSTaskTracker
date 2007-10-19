@@ -9,7 +9,7 @@ REQUEST = context.REQUEST
 from zLOG import LOG, DEBUG
 LOG("DELETE CANDIDATE TASKS", DEBUG, ids)
 
-ptasks = context.portal_tasks
+ptasks = context.tasks
 #
 # Flag to check if the delete operation is allowed.
 # Just for security cause we are not going to let

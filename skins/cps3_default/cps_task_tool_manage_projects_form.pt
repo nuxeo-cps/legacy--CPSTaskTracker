@@ -1,14 +1,16 @@
 <html xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="here/content_lib/macros/master">
+      metal:use-macro="here/content_lib_master/macros/master">
   <body>
     <metal:block fill-slot="header">
       <h1 i18n:translate="_label_manage_projects">
         Manage projects
       </h1>
     </metal:block>
-    <metal:block fill-slot="main">
+
+    <metal:block fill-slot="main"
+      tal:define="projects here/tasks/getProjects">
       <div align="right">
         <a href="./cps_task_tool_add_project_form">
           <span i18n:translate="_label_create_a_new_project">
@@ -17,9 +19,9 @@
         </a>
       </div>
       <form method="post" action="doDeleteProjects">
-      <tal:block condition="here/portal_tasks/getProjects">
+      <tal:block condition="projects">
         <div class="group">
-          <table border="0" align="center" width="100%" cellpadding="0" cellspacing="0">
+          <table width="100%">
             <tr>
               <th>&nbsp;</th>
               <th>
@@ -34,7 +36,7 @@
                 &nbsp;
               </td>
             </tr>
-            <tal:block repeat="project here/portal_tasks/getProjects">
+            <tal:block repeat="project projects">
             <tr tal:define="class python:test(repeat['project'].even(), 'even','odd')"
                 tal:attributes="class class">
               <td>
@@ -59,11 +61,13 @@
         </div>
       </tal:block>
       </form>
-      <tal:block condition="not:here/portal_tasks/getProjects">
+
+      <tal:block condition="not:projects">
         <div class="group" align="center">
           <span i18n:translate="_label_no_project" />
         </div>
       </tal:block>
+
     </metal:block>
   </body>
 </html>

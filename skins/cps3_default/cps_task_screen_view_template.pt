@@ -1,764 +1,724 @@
 <tal:block define="current_action string:view;
-                   dummy python:here.saveScreenerBreadCrumb(request);
-                   mcat nocall:here/Localizer/default">
-<html xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="here/content_lib_master/macros/master">
-<body>
+  dummy python:here.saveScreenerBreadCrumb(request);
+  mcat nocall:here/Localizer/default">
+  <html xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    metal:use-macro="here/content_lib_master/macros/master">
+    <body>
 
-<metal:block fill-slot="main">
-  <tal:block define="task_lists python:here.portal_tasks.searchTasks(here.getParameters());
-                     isManager python:mtool.checkPermission('Manage portal',here)">
-    <!-- BEGINNING OF MY TASKS -->
-    <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []">
-      <tal:block  define="tasks python:task_lists['my_tasks']">
-      <h2 tal:content="python:mcat('_heading_task_i_created')">
-        The tasks I created.
-      </h2>
-      <form action="." method="POST">
-        <table border="0"  width="100%" cellpadding="2" cellspacing="1">
-        <tr>
-          <th>&nbsp;</th>
-          <th>&nbsp;</th>
-          <th >
-             <span i18n:translate="_label_title">
-               Title
-             </span>
-          </th>
-          <th >
-             <span i18n:translate="_label_creator">
-               Creator
-             </span>
-          </th>
-          <th >
-            <span i18n:translate="_label_priority">
-              Priority
-            </span>
-          </th>
-          <th >
-            <span i18n:translate="_label_type">
-              Type
-            </span>
-          </th>
-          <th >
-            <span i18n:translate="_label_project">
-              Project
-            </span>
-          </th>
-          <th >
-            <span i18n:translate="_label_effective_date">
-              Effective Date
-            </span>
-          </th>
-          <th >
-            <span i18n:translate="_label_deadline">
-              Deadline
-            </span>
-          </th>
-        </tr>
-        <tal:block repeat="task tasks">
-           <tr tal:attributes="class python:test(repeat['task'].even(), 'even', 'odd')">
-              <td>
-                <input type="checkbox" name="ids:list"
-                       tal:attributes="value task/id"
-                       tal:condition="python:task.getContent().isCreator() or isManager" />
-              </td>
-              <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                  <img src="red.gif"
-                       tal:condition="python:status == 'late'" />
-                  <img src="orange.gif"
-                       tal:condition="python:status == 'assigned'" />
-                  <img src="green.gif"
-                       tal:condition="python:status == 'opened'" />
-                  <img src="task_closed_icon.png"
-                       tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-              <td>
-                <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-              </td>
-              <td>
-                <span tal:replace="task/Creator" />
-              </td>
-              <td>
-                <span tal:replace="task/task_priority" />
-              </td>
-              <td>
-                <span tal:replace="task/task_type" />
-              </td>
-              <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-           </tr>
-        </tal:block>
-        <!-- ACTION PANEL -->
-        <tr>
-         <td colspan="9" align="right">
-           <input type="submit" value="_button_delete" class="standalone"
-                  name="doDeleteTasks:method"
-                  i18n:attributes="value" />
-         </td>
-        </tr>
-        <!-- END ACTION PANEL -->
-        </table>
-      </form>
-    </tal:block>
-    </tal:block>
-    <!-- END OF MY TASKS -->
+      <metal:block fill-slot="style_slot">
+        <link rel="Stylesheet" type="text/css" href=""
+          tal:attributes="href string:${base_url}cpstasktracker.css" />
+      </metal:block>
 
-    <!-- TASK ASSIGNED TO ME -->
-    <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []">
-    <tal:block define="tasks python:task_lists['my_affected_tasks']">
-      <h2 tal:content="python:mcat('_heading_task_affected_to_me')">
-        The tasks affected to me.
-      </h2>
-      <form action="." method="POST">
-        <table border="0" align="center" width="100%" cellpadding="2"
-        cellspacing="1">
-        <tr bgcolor="#DDDDDD">
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_title')">Title</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_creator')">Creator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_priority')">Priority</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_type')">Type</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_project')">Project</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
-             </strong>
-          </td>
-        </tr>
-        <tal:block repeat="task tasks">
-        <tal:block condition="repeat/task/even">
-           <tr bgcolor="#EEEEEE">
-              <td>
-                <input type="checkbox" name="ids:list"
-                       tal:attributes="value task/id"
-                       tal:condition="python:task.getContent().isCreator() or isManager" />
-              </td>
-              <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                  <img src="red.gif"
-                       tal:condition="python:status == 'late'" />
-                  <img src="orange.gif"
-                       tal:condition="python:status == 'assigned'" />
-                  <img src="green.gif"
-                       tal:condition="python:status == 'opened'" />
-                  <img src="task_closed_icon.png"
-                       tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-              <td>
-                <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-              </td>
-              <td>
-                <span tal:replace="task/Creator" />
-              </td>
-              <td>
-                <span tal:replace="task/task_priority" />
-              </td>
-              <td>
-                <span tal:replace="task/task_type" />
-              </td>
-              <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-           </tr>
-        </tal:block>
-        <tal:block condition="repeat/task/odd">
-          <tr>
-             <td>
-               <input type="checkbox" name="ids:list"
-                      tal:attributes="value task/id"
-                      tal:condition="python:task.getContent().isCreator() or isManager" />
-             </td>
-             <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                  <img src="red.gif"
-                       tal:condition="python:status == 'late'" />
-                  <img src="orange.gif"
-                       tal:condition="python:status == 'assigned'" />
-                  <img src="green.gif"
-                       tal:condition="python:status == 'opened'" />
-                  <img src="task_closed_icon.png"
-                       tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-             <td>
-               <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-             </td>
-             <td>
-               <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_priority" />
-             </td>
-             <td>
-               <span tal:replace="task/task_type" />
-             </td>
-             <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-          </tr>
-        </tal:block>
-        </tal:block>
-        <!-- ACTION PANEL -->
-        <tr>
-         <td colspan="9" align="right">
-           <input type="submit" value="_button_delete" class="standalone"
-             name="doDeleteTasks:method"
-             tal:attributes="value python:mcat('_button_delete')" />
-         </td>
-        </tr>
-        <!-- END ACTION PANEL -->
-        </table>
-      </form>
-    </tal:block>
-    </tal:block>
-    <!-- TASK ASSIGNED TO ME -->
+      <metal:block fill-slot="main">
+        <tal:block define="task_lists python:here.tasks.searchTasks(here.getParameters());
+          isManager python:mtool.checkPermission('Manage portal',here)">
+          <!-- BEGINNING OF MY TASKS -->
+          <tal:block condition="python:task_lists.has_key('my_tasks') and task_lists['my_tasks'] != []">
+            <tal:block  define="tasks python:task_lists['my_tasks']">
+              <h2 tal:content="python:mcat('_heading_task_i_created')">
+                The tasks I created
+              </h2>
+              <form action="." method="post">
+                <table class="tasks">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th>
+                        <span i18n:translate="_label_title">
+                          Title
+                        </span>
+                      </th>
+                      <th>
+                        <span i18n:translate="_label_creator">
+                          Creator
+                        </span>
+                      </th>
+                      <th>
+                        <span i18n:translate="_label_priority">
+                          Priority
+                        </span>
+                      </th>
+                      <th>
+                        <span i18n:translate="_label_type">
+                          Type
+                        </span>
+                      </th>
+                      <th>
+                        <span i18n:translate="_label_project">
+                          Project
+                        </span>
+                      </th>
+                      <th>&nbsp;</th>
+                      <th>
+                        <span i18n:translate="_label_effective_date">
+                          Effective Date
+                        </span>
+                      </th>
+                      <th>
+                        <span i18n:translate="_label_deadline">
+                          Deadline
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tal:block repeat="task tasks">
+                      <tr tal:attributes="class python:test(repeat['task'].even(), 'even', 'odd')">
+                        <td>
+                          <input type="checkbox" name="ids:list"
+                            tal:attributes="value task/id"
+                            tal:condition="python:task.getContent().isCreator() or isManager" />
+                        </td>
+                        <td>
+                          <a href="."
+                            tal:attributes="href string:${utool}/tasks/${task/id}">
+                            <span tal:replace="task/title_or_id" />
+                          </a>
+                        </td>
+                        <td>
+                          <span tal:replace="task/Creator" />
+                        </td>
+                        <td>
+                          <span tal:replace="task/task_priority" />
+                        </td>
+                        <td>
+                          <span tal:replace="task/task_type" />
+                        </td>
+                        <td>
+                          <span tal:replace="task/task_project" />
+                        </td>
+                        <td>
+                          <tal:block define="status python:task.getContent().getStatus()">
+                            <img src="red.gif" alt=""
+                              tal:condition="python:status == 'late'" />
+                            <img src="orange.gif" alt=""
+                              tal:condition="python:status == 'assigned'" />
+                            <img src="green.gif" alt=""
+                              tal:condition="python:status == 'opened'" />
+                            <img src="task_closed_icon.png" alt=""
+                              tal:condition="python:status == 'closed'" />
+                          </tal:block>
+                        </td>
+                        <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                          <span tal:replace="date_str" />
+                        </td>
+                        <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                          <span tal:replace="date_str" />
+                        </td>
+                      </tr>
+                    </tal:block>
+                  </tbody>
+                </table>
 
-    <!-- TASK ASSIGNED TO ONE OF MY GROUPS -->
-    <tal:block
-    condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []">
-    <tal:block define="tasks python:task_lists['my_groups_affected_tasks']">
-      <h2 tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">
-        The tasks affected to one of my groups.
-      </h2>
-      <form action="." method="POST">
-        <table border="0" align="center" width="100%" cellpadding="2"
-        cellspacing="1">
-        <tr bgcolor="#DDDDDD">
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_title')">Title</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_creator')">Creator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_priority')">Priority</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_type')">Type</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_project')">Project</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
-             </strong>
-          </td>
-        </tr>
-        <tal:block repeat="task tasks">
-        <tal:block condition="repeat/task/even">
-           <tr bgcolor="#EEEEEE">
-              <td>
-                <input type="checkbox" name="ids:list"
-                       tal:attributes="value task/id"
-                       tal:condition="python:task.getContent().isCreator() or isManager" />
-              </td>
-              <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                  <img src="red.gif"
-                       tal:condition="python:status == 'late'" />
-                  <img src="orange.gif"
-                       tal:condition="python:status == 'assigned'" />
-                  <img src="green.gif"
-                       tal:condition="python:status == 'opened'" />
-                  <img src="task_closed_icon.png"
-                       tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-              <td>
-                <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-              </td>
-              <td>
-                <span tal:replace="task/Creator" />
-              </td>
-              <td>
-                <span tal:replace="task/task_priority" />
-              </td>
-              <td>
-                <span tal:replace="task/task_type" />
-              </td>
-              <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-           </tr>
-        </tal:block>
-        <tal:block condition="repeat/task/odd">
-          <tr>
-             <td>
-               <input type="checkbox" name="ids:list"
-                      tal:attributes="value task/id"
-                      tal:condition="python:task.getContent().isCreator() or isManager" />
-             </td>
-             <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                  <img src="red.gif"
-                       tal:condition="python:status == 'late'" />
-                  <img src="orange.gif"
-                       tal:condition="python:status == 'assigned'" />
-                  <img src="green.gif"
-                       tal:condition="python:status == 'opened'" />
-                  <img src="task_closed_icon.png"
-                       tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-             <td>
-               <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-             </td>
-             <td>
-               <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_priority" />
-             </td>
-             <td>
-               <span tal:replace="task/task_type" />
-             </td>
-             <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-          </tr>
-        </tal:block>
-        </tal:block>
-        <!-- ACTION PANEL -->
-        <tr>
-         <td colspan="9" align="right">
-           <input type="submit" value="_button_delete" class="standalone"
-             name="doDeleteTasks:method"
-             tal:attributes="value python:mcat('_button_delete')" />
-         </td>
-        </tr>
-        <!-- END ACTION PANEL -->
-        </table>
-      </form>
-    </tal:block>
-    </tal:block>
-    <!-- TASK ASSIGNED TO ONEOF MY GROUPS -->
+                <p>
+                  <input type="submit" value="_button_delete" class="standalone"
+                    name="doDeleteTasks:method"
+                    i18n:attributes="value" />
+                </p>
+              </form>
 
-    <!-- TASK I ACCEPTED -->
-    <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []">
-    <tal:block define="tasks python:task_lists['my_accepted_tasks']">
-      <h2 tal:content="python:mcat('_heading_task_i_accepted')">
-        The tasks I accepted.
-      </h2>
-      <form action="." method="POST">
-        <table border="0" align="center" width="100%" cellpadding="2"
-        cellspacing="1">
-        <tr bgcolor="#DDDDDD">
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_title')">Title</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_creator')">Creator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_priority')">Priority</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_type')">Type</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_project')">Project</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
-             </strong>
-          </td>
-        </tr>
-        <tal:block repeat="task tasks">
-        <tal:block condition="repeat/task/even">
-           <tr bgcolor="#EEEEEE">
-              <td>
-                <input type="checkbox" name="ids:list"
-                       tal:attributes="value task/id"
-                       tal:condition="python:task.getContent().isCreator() or isManager" />
-              </td>
-              <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                    <img src="red.gif"
-                         tal:condition="python:status == 'late'" />
-                    <img src="orange.gif"
-                         tal:condition="python:status == 'assigned'" />
-                    <img src="green.gif"
-                         tal:condition="python:status == 'opened'" />
-                    <img src="task_closed_icon.png"
-                         tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-              <td>
-                <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-              </td>
-              <td>
-                <span tal:replace="task/Creator" />
-              </td>
-              <td>
-                <span tal:replace="task/task_priority" />
-              </td>
-              <td>
-                <span tal:replace="task/task_type" />
-              </td>
-              <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-           </tr>
-        </tal:block>
-        <tal:block condition="repeat/task/odd">
-          <tr>
-             <td>
-               <input type="checkbox" name="ids:list"
-                      tal:attributes="value task/id"
-                      tal:condition="python:task.getContent().isCreator() or isManager" />
-             </td>
-             <td>
-               <tal:block define="status python:task.getContent().getStatus()">
-                    <img src="red.gif"
-                         tal:condition="python:status == 'late'" />
-                    <img src="orange.gif"
-                         tal:condition="python:status == 'assigned'" />
-                    <img src="green.gif"
-                         tal:condition="python:status == 'opened'" />
-                    <img src="task_closed_icon.png"
-                         tal:condition="python:status == 'closed'" />
-               </tal:block>
-             </td>
-             <td>
-               <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-             </td>
-             <td>
-               <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_priority" />
-             </td>
-             <td>
-               <span tal:replace="task/task_type" />
-             </td>
-             <td>
-                <span tal:replace="task/task_project" />
-              </td>
-             <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-          </tr>
-        </tal:block>
-        </tal:block>
-        <!-- ACTION PANEL -->
-        <tr>
-         <td colspan="9" align="right">
-           <input type="submit" value="_button_delete" class="standalone"
-             name="doDeleteTasks:method"
-             tal:attributes="value python:mcat('_button_delete')" />
-         </td>
-        </tr>
-        <!-- END ACTION PANEL -->
-        </table>
-      </form>
-    </tal:block>
-    </tal:block>
-    <!-- TASK I ACCEPTED -->
+            </tal:block>
+          </tal:block>
+          <!-- END OF MY TASKS -->
 
-    <!-- TASK RELATED TO ONE PROJECT -->
-    <tal:block condition="python:task_lists.has_key('display_on_project') and task_lists['display_on_project'] != []">
-    <tal:block define="tasks python:task_lists['display_on_project']">
-      <h2>
-        <span tal:replace="python:mcat('_heading_task_related_to')" />
-        &nbsp;<span tal:replace="here/display_on_project" />
-      </h2>
-      <form action="." method="POST">
-        <table border="0" align="center" width="100%" cellpadding="2"
-        cellspacing="1">
-        <tr bgcolor="#DDDDDD">
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-            <span>&nbsp;</span>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_title')">Title</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_creator')">Creator</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_priority')">Priority</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_type')">Type</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_project')">Project</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
-             </strong>
-          </td>
-          <td align="center">
-             <strong>
-               <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
-             </strong>
-          </td>
-        </tr>
-        <tal:block repeat="task tasks">
-        <tal:block condition="repeat/task/even">
-           <tr bgcolor="#EEEEEE">
-              <td>
-                <input type="checkbox" name="ids:list"
-                       tal:attributes="value task/id"
-                       tal:condition="python:task.getContent().isCreator() or isManager" />
-              </td>
-              <td>
-                <tal:block define="status python:task.getContent().getStatus()">
-                    <img src="red.gif"
-                         tal:condition="python:status == 'late'" />
-                    <img src="orange.gif"
-                         tal:condition="python:status == 'assigned'" />
-                    <img src="green.gif"
-                         tal:condition="python:status == 'opened'" />
-                    <img src="task_closed_icon.png"
-                         tal:condition="python:status == 'closed'" />
-                </tal:block>
-              </td>
-              <td>
-                <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-              </td>
-              <td>
-                <span tal:replace="task/Creator" />
-              </td>
-              <td>
-                <span tal:replace="task/task_priority" />
-              </td>
-              <td>
-                <span tal:replace="task/task_type" />
-              </td>
-              <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-           </tr>
-        </tal:block>
-        <tal:block condition="repeat/task/odd">
-          <tr>
-             <td>
-               <input type="checkbox" name="ids:list"
-                      tal:attributes="value task/id"
-                      tal:condition="python:task.getContent().isCreator() or isManager" />
-             </td>
-             <td>
-               <tal:block define="status python:task.getContent().getStatus()">
-                    <img src="red.gif"
-                         tal:condition="python:status == 'late'" />
-                    <img src="orange.gif"
-                         tal:condition="python:status == 'assigned'" />
-                    <img src="green.gif"
-                         tal:condition="python:status == 'opened'" />
-                    <img src="task_closed_icon.png"
-                         tal:condition="python:status == 'closed'" />
-               </tal:block>
-             </td>
-             <td>
-               <a href="."
-                   tal:attributes="href string:${utool}/portal_tasks/${task/id}">
-                  <span tal:replace="task/title_or_id" />
-                </a>
-             </td>
-             <td>
-               <span tal:replace="task/Creator" />
-             </td>
-             <td>
-               <span tal:replace="task/task_priority" />
-             </td>
-             <td>
-               <span tal:replace="task/task_type" />
-             </td>
-             <td>
-                <span tal:replace="task/task_project" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-              <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
-                <span tal:replace="date_str" />
-              </td>
-          </tr>
-        </tal:block>
-        </tal:block>
-        <!-- ACTION PANEL -->
-        <tr>
-         <td colspan="9" align="right">
-           <input type="submit" value="_button_delete" class="standalone"
-             name="doDeleteTasks:method"
-             tal:attributes="value python:mcat('_button_delete')" />
-         </td>
-        </tr>
-        <!-- END ACTION PANEL -->
-        </table>
-      </form>
-    </tal:block>
-    </tal:block>
-    <!-- TASK RELATED TO ONE PROJECT -->
+          <!-- TASK ASSIGNED TO ME -->
+          <tal:block condition="python:task_lists.has_key('my_affected_tasks') and task_lists['my_affected_tasks'] != []">
+            <tal:block define="tasks python:task_lists['my_affected_tasks']">
+              <h2 tal:content="python:mcat('_heading_task_affected_to_me')">
+                The tasks affected to me
+              </h2>
+              <form action="." method="post">
+                <table class="tasks">
+                  <thead>
+                    <tr>
+                      <th>
+                        <span>&nbsp;</span>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_title')">Title</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_creator')">Creator</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_priority')">Priority</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_type')">Type</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_project')">Project</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <span>&nbsp;</span>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
+                        </strong>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tal:block repeat="task tasks">
+                      <tr tal:attributes="class python:test(repeat['task'].even(), 'even', 'odd')">
+                        <td>
+                          <input type="checkbox" name="ids:list"
+                            tal:attributes="value task/id"
+                            tal:condition="python:task.getContent().isCreator() or isManager" />
+                        </td>
+                        <td>
+                          <a href="."
+                            tal:attributes="href string:${utool}/tasks/${task/id}">
+                            <span tal:replace="task/title_or_id" />
+                          </a>
+                        </td>
+                        <td>
+                          <span tal:replace="task/Creator" />
+                        </td>
+                        <td>
+                          <span tal:replace="task/task_priority" />
+                        </td>
+                        <td>
+                          <span tal:replace="task/task_type" />
+                        </td>
+                        <td>
+                          <span tal:replace="task/task_project" />
+                        </td>
+                        <td>
+                          <tal:block define="status python:task.getContent().getStatus()">
+                            <img src="red.gif" alt=""
+                              tal:condition="python:status == 'late'" />
+                            <img src="orange.gif" alt=""
+                              tal:condition="python:status == 'assigned'" />
+                            <img src="green.gif" alt=""
+                              tal:condition="python:status == 'opened'" />
+                            <img src="task_closed_icon.png" alt=""
+                              tal:condition="python:status == 'closed'" />
+                          </tal:block>
+                        </td>
+                        <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                          <span tal:replace="date_str" />
+                        </td>
+                        <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                          <span tal:replace="date_str" />
+                        </td>
+                      </tr>
+                    </tal:block>
+                  </tbody>
+                </table>
 
-  </tal:block>
-</metal:block>
+                <p>
+                  <input type="submit" value="_button_delete" class="standalone"
+                    name="doDeleteTasks:method"
+                    tal:attributes="value python:mcat('_button_delete')" />
+                </p>
+              </form>
+            </tal:block>
+          </tal:block>
+          <!-- TASK ASSIGNED TO ME -->
+
+          <!-- TASK ASSIGNED TO ONE OF MY GROUPS -->
+          <tal:block
+            condition="python:task_lists.has_key('my_groups_affected_tasks') and task_lists['my_groups_affected_tasks'] != []">
+            <tal:block define="tasks python:task_lists['my_groups_affected_tasks']">
+              <h2 tal:content="python:mcat('_heading_task_affected_to_one_of_my_groups')">
+                The tasks affected to one of my groups.
+              </h2>
+              <form action="." method="post">
+                <table class="tasks">
+                  <thead>
+                    <tr>
+                      <th>
+                        <span>&nbsp;</span>
+                      </th>
+                      <th>
+                        <span>&nbsp;</span>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_title')">Title</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_creator')">Creator</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_priority')">Priority</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_type')">Type</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_project')">Project</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
+                        </strong>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tal:block repeat="task tasks">
+                      <tal:block condition="repeat/task/even">
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="ids:list"
+                              tal:attributes="value task/id"
+                              tal:condition="python:task.getContent().isCreator() or isManager" />
+                          </td>
+                          <td>
+                            <tal:block define="status python:task.getContent().getStatus()">
+                              <img src="red.gif" alt=""
+                                tal:condition="python:status == 'late'" />
+                              <img src="orange.gif" alt=""
+                                tal:condition="python:status == 'assigned'" />
+                              <img src="green.gif" alt=""
+                                tal:condition="python:status == 'opened'" />
+                              <img src="task_closed_icon.png" alt=""
+                                tal:condition="python:status == 'closed'" />
+                            </tal:block>
+                          </td>
+                          <td>
+                            <a href="."
+                              tal:attributes="href string:${utool}/tasks/${task/id}">
+                              <span tal:replace="task/title_or_id" />
+                            </a>
+                          </td>
+                          <td>
+                            <span tal:replace="task/Creator" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_priority" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_type" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_project" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                        </tr>
+                      </tal:block>
+                      <tal:block condition="repeat/task/odd">
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="ids:list"
+                              tal:attributes="value task/id"
+                              tal:condition="python:task.getContent().isCreator() or isManager" />
+                          </td>
+                          <td>
+                            <tal:block define="status python:task.getContent().getStatus()">
+                              <img src="red.gif" alt=""
+                                tal:condition="python:status == 'late'" />
+                              <img src="orange.gif" alt=""
+                                tal:condition="python:status == 'assigned'" />
+                              <img src="green.gif" alt=""
+                                tal:condition="python:status == 'opened'" />
+                              <img src="task_closed_icon.png" alt=""
+                                tal:condition="python:status == 'closed'" />
+                            </tal:block>
+                          </td>
+                          <td>
+                            <a href="."
+                              tal:attributes="href string:${utool}/tasks/${task/id}">
+                              <span tal:replace="task/title_or_id" />
+                            </a>
+                          </td>
+                          <td>
+                            <span tal:replace="task/Creator" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_priority" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_type" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_project" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                        </tr>
+                      </tal:block>
+                    </tal:block>
+                  </tbody>
+                </table>
+
+                <p>
+                  <input type="submit" value="_button_delete" class="standalone"
+                    name="doDeleteTasks:method"
+                    tal:attributes="value python:mcat('_button_delete')" />
+                </p>
+              </form>
+            </tal:block>
+          </tal:block>
+          <!-- TASK ASSIGNED TO ONEOF MY GROUPS -->
+
+          <!-- TASK I ACCEPTED -->
+          <tal:block condition="python:task_lists.has_key('my_accepted_tasks') and task_lists['my_accepted_tasks'] != []">
+            <tal:block define="tasks python:task_lists['my_accepted_tasks']">
+              <h2 tal:content="python:mcat('_heading_task_i_accepted')">
+                The tasks I accepted.
+              </h2>
+              <form action="." method="post">
+                <table class="tasks">
+                  <thead>
+                    <tr>
+                      <td>
+                        <span>&nbsp;</span>
+                      </td>
+                      <td>
+                        <span>&nbsp;</span>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_title')">Title</span>
+                        </strong>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_creator')">Creator</span>
+                        </strong>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_priority')">Priority</span>
+                        </strong>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_type')">Type</span>
+                        </strong>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_project')">Project</span>
+                        </strong>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
+                        </strong>
+                      </td>
+                      <td>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
+                        </strong>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tal:block repeat="task tasks">
+                      <tal:block condition="repeat/task/even">
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="ids:list"
+                              tal:attributes="value task/id"
+                              tal:condition="python:task.getContent().isCreator() or isManager" />
+                          </td>
+                          <td>
+                            <tal:block define="status python:task.getContent().getStatus()">
+                              <img src="red.gif" alt=""
+                                tal:condition="python:status == 'late'" />
+                              <img src="orange.gif" alt=""
+                                tal:condition="python:status == 'assigned'" />
+                              <img src="green.gif" alt=""
+                                tal:condition="python:status == 'opened'" />
+                              <img src="task_closed_icon.png" alt=""
+                                tal:condition="python:status == 'closed'" />
+                            </tal:block>
+                          </td>
+                          <td>
+                            <a href="."
+                              tal:attributes="href string:${utool}/tasks/${task/id}">
+                              <span tal:replace="task/title_or_id" />
+                            </a>
+                          </td>
+                          <td>
+                            <span tal:replace="task/Creator" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_priority" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_type" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_project" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                        </tr>
+                      </tal:block>
+                      <tal:block condition="repeat/task/odd">
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="ids:list"
+                              tal:attributes="value task/id"
+                              tal:condition="python:task.getContent().isCreator() or isManager" />
+                          </td>
+                          <td>
+                            <tal:block define="status python:task.getContent().getStatus()">
+                              <img src="red.gif" alt=""
+                                tal:condition="python:status == 'late'" />
+                              <img src="orange.gif" alt=""
+                                tal:condition="python:status == 'assigned'" />
+                              <img src="green.gif" alt=""
+                                tal:condition="python:status == 'opened'" />
+                              <img src="task_closed_icon.png" alt=""
+                                tal:condition="python:status == 'closed'" />
+                            </tal:block>
+                          </td>
+                          <td>
+                            <a href="."
+                              tal:attributes="href string:${utool}/tasks/${task/id}">
+                              <span tal:replace="task/title_or_id" />
+                            </a>
+                          </td>
+                          <td>
+                            <span tal:replace="task/Creator" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_priority" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_type" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_project" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                        </tr>
+                      </tal:block>
+                    </tal:block>
+                  </tbody>
+                </table>
+
+                <p>
+                  <input type="submit" value="_button_delete" class="standalone"
+                    name="doDeleteTasks:method"
+                    tal:attributes="value python:mcat('_button_delete')" />
+                </p>
+              </form>
+            </tal:block>
+          </tal:block>
+          <!-- TASK I ACCEPTED -->
+
+          <!-- TASK RELATED TO ONE PROJECT -->
+          <tal:block condition="python:task_lists.has_key('display_on_project') and task_lists['display_on_project'] != []">
+            <tal:block define="tasks python:task_lists['display_on_project']">
+              <h2>
+                <span tal:replace="python:mcat('_heading_task_related_to')" />
+                &nbsp;<span tal:replace="here/display_on_project" />
+              </h2>
+              <form action="." method="post">
+                <table class="tasks">
+                  <thead>
+                    <tr>
+                      <th>
+                        <span>&nbsp;</span>
+                      </th>
+                      <th>
+                        <span>&nbsp;</span>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_title')">Title</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_creator')">Creator</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_priority')">Priority</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_type')">Type</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_project')">Project</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_effective_date')">Effective Date</span>
+                        </strong>
+                      </th>
+                      <th>
+                        <strong>
+                          <span tal:replace="python:mcat('_label_deadline')">Deadline</span>
+                        </strong>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tal:block repeat="task tasks">
+                      <tal:block condition="repeat/task/even">
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="ids:list"
+                              tal:attributes="value task/id"
+                              tal:condition="python:task.getContent().isCreator() or isManager" />
+                          </td>
+                          <td>
+                            <tal:block define="status python:task.getContent().getStatus()">
+                              <img src="red.gif" alt=""
+                                tal:condition="python:status == 'late'" />
+                              <img src="orange.gif" alt=""
+                                tal:condition="python:status == 'assigned'" />
+                              <img src="green.gif" alt=""
+                                tal:condition="python:status == 'opened'" />
+                              <img src="task_closed_icon.png" alt=""
+                                tal:condition="python:status == 'closed'" />
+                            </tal:block>
+                          </td>
+                          <td>
+                            <a href="."
+                              tal:attributes="href string:${utool}/tasks/${task/id}">
+                              <span tal:replace="task/title_or_id" />
+                            </a>
+                          </td>
+                          <td>
+                            <span tal:replace="task/Creator" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_priority" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_type" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_project" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                        </tr>
+                      </tal:block>
+                      <tal:block condition="repeat/task/odd">
+                        <tr>
+                          <td>
+                            <input type="checkbox" name="ids:list"
+                              tal:attributes="value task/id"
+                              tal:condition="python:task.getContent().isCreator() or isManager" />
+                          </td>
+                          <td>
+                            <tal:block define="status python:task.getContent().getStatus()">
+                              <img src="red.gif" alt=""
+                                tal:condition="python:status == 'late'" />
+                              <img src="orange.gif" alt=""
+                                tal:condition="python:status == 'assigned'" />
+                              <img src="green.gif" alt=""
+                                tal:condition="python:status == 'opened'" />
+                              <img src="task_closed_icon.png" alt=""
+                                tal:condition="python:status == 'closed'" />
+                            </tal:block>
+                          </td>
+                          <td>
+                            <a href="."
+                              tal:attributes="href string:${utool}/tasks/${task/id}">
+                              <span tal:replace="task/title_or_id" />
+                            </a>
+                          </td>
+                          <td>
+                            <span tal:replace="task/Creator" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_priority" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_type" />
+                          </td>
+                          <td>
+                            <span tal:replace="task/task_project" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().start_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                          <td tal:define="date_str python:here.getDateStr(task.getContent().stop_task_date)">
+                            <span tal:replace="date_str" />
+                          </td>
+                        </tr>
+                      </tal:block>
+                    </tal:block>
+                  </tbody>
+                </table>
+
+                <p>
+                  <input type="submit" value="_button_delete" class="standalone"
+                    name="doDeleteTasks:method"
+                    tal:attributes="value python:mcat('_button_delete')" />
+                </p>
+              </form>
+            </tal:block>
+          </tal:block>
+          <!-- TASK RELATED TO ONE PROJECT -->
+
+        </tal:block>
+      </metal:block>
 
 
-</body>
-</html>
+    </body>
+  </html>
 </tal:block>

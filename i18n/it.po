@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSTaskTracker\n"
-"POT-Creation-Date: 2004-07-26 14:17default\n"
+"POT-Creation-Date: 2007-09-14 17:10default\n"
 "PO-Revision-Date: 2004-09-30 16:04+0100\n"
 "Last-Translator: Fabio Nosari <fabnos@fastwebnet.it>\n"
 "Language-Team: Fabio Nosari <fabnos@fastwebnet.it>\n"
@@ -21,12 +21,15 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
+#.   <span condition="metadata">heading_metadata_edit</span>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#, fuzzy
+msgid "heading_metadata_edit"
+msgstr "Tâches relatives au projet"
+
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
 msgstr "Elimina"
-
-msgid "_button_submit_"
-msgstr "Salva variazioni"
 
 msgid "_button_accept_"
 msgstr "Accetto"
@@ -43,6 +46,15 @@ msgstr "Assegno"
 msgid "_button_reinit"
 msgstr "Riapro"
 
+# # portal types ##########################################################
+#, fuzzy
+msgid "portal_type_CPS_Task_title"
+msgstr "Tâche"
+
+#, fuzzy
+msgid "portal_type_CPS_Task_description"
+msgstr "Visualisateur des tâches "
+
 # ## PORTAL types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr "Incarico"
@@ -52,6 +64,11 @@ msgstr "Visualizzatore di incarichi"
 
 msgid "_portal_type_task Box"
 msgstr "Contenitore di incarichi"
+
+# # actions ###############################################################
+#, fuzzy
+msgid "action_view_projects"
+msgstr "Voir les projets"
 
 # ## actions ###############################################################
 msgid "_action_reinit_"
@@ -86,6 +103,18 @@ msgstr "chiuso"
 
 msgid "_action_history_"
 msgstr "Cronologico di stato dell'incarico"
+
+#, fuzzy
+msgid "label_project_title"
+msgstr "Projet"
+
+#, fuzzy
+msgid "label_task_title"
+msgstr "Tâche"
+
+#, fuzzy
+msgid "title_view_all_projects"
+msgstr "Voir tous les projets"
 
 # ## labels ################################################################
 msgid "_label_name"
@@ -167,7 +196,11 @@ msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr "Incarichi assegnati ad uno dei miei gruppi:"
 
 msgid "_heading_screener_message"
-msgstr "You can edit your skinner by following the <strong>Screener parameters</strong> action on the rightVous pouvez éditer les paramètres du skinner en suivant le lien <strong>Paramétrer le visualisateur de tâches<stong> sur la droite. "
+msgstr ""
+"You can edit your skinner by following the <strong>Screener parameters</"
+"strong> action on the rightVous pouvez éditer les paramètres du skinner en "
+"suivant le lien <strong>Paramétrer le visualisateur de tâches<stong> sur la "
+"droite. "
 
 msgid "_heading_configure"
 msgstr "Parametra:"
@@ -221,13 +254,20 @@ msgid "_label_status"
 msgstr "Stato:"
 
 msgid "_label_recall_explanation"
-msgstr "Dopo aver scelto gli utenti ai quali è stato assegnato l'incarico, puoi inviare loro un sollecito cliccando sul pulsante: <strong>Sollecito</strong>. <br> Allo stesso modo, puoi avere accesso alle informazioni personali degli utenti cliccando sul campo del  nome completo o  contattarli inviando una email cliccando sull'indirizzo postale di loro pertinenza. "
+msgstr ""
+"Dopo aver scelto gli utenti ai quali è stato assegnato l'incarico, puoi "
+"inviare loro un sollecito cliccando sul pulsante: <strong>Sollecito</"
+"strong>. <br> Allo stesso modo, puoi avere accesso alle informazioni "
+"personali degli utenti cliccando sul campo del  nome completo o  contattarli "
+"inviando una email cliccando sull'indirizzo postale di loro pertinenza. "
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Sei stato sollecitato per il seguente incarico:"
 
 msgid "_label_you_can_reassign_the_task_here"
-msgstr "In questa schermata puoi riassegnare l'incarico. <br> Questa nuova versione sostituirà i precedenti assegnamenti."
+msgstr ""
+"In questa schermata puoi riassegnare l'incarico. <br> Questa nuova versione "
+"sostituirà i precedenti assegnamenti."
 
 msgid "_label_do_you_want_to_reinit_it"
 msgstr "Vuoi procedere con la conferma?"
@@ -448,7 +488,9 @@ msgid "_transition_reinit"
 msgstr "Riaperto"
 
 msgid "_label_no_project"
-msgstr "Attualmente, non esistono progetti. <br> Puoi creare un nuovo progetto cliccando sul collegamento che ti viene proposto."
+msgstr ""
+"Attualmente, non esistono progetti. <br> Puoi creare un nuovo progetto "
+"cliccando sul collegamento che ti viene proposto."
 
 msgid "_label_reject_history"
 msgstr "Cronologia dei rifiuti"
@@ -461,6 +503,10 @@ msgstr "Visualizza gli incarichi relativi al progetto:"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "Non hai ancora assegnato ad alcuno questo incarico."
+
+#, fuzzy
+msgid "label_cps_task_project"
+msgstr "Projet"
 
 # ## Document fields
 msgid "label_cps_task_type"
@@ -514,3 +560,5 @@ msgstr "Incarichi rifiutati"
 msgid "_label_the_task_has_been_rejected"
 msgstr "Il seguente incarico è stato rifiutato:"
 
+msgid "_button_submit_"
+msgstr "Salva variazioni"

@@ -223,26 +223,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
-"POT-Creation-Date: 2004-07-26 14:17default\n"
+"POT-Creation-Date: 2007-09-14 17:10default\n"
 "PO-Revision-Date: 2005-04-11 13:07+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Language-code: ro\n"
 "Language-name: Romanian\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
 "X-Generator: KBabel 1.9.1\n"
 
+#.   <span condition="metadata">heading_metadata_edit</span>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#, fuzzy
+msgid "heading_metadata_edit"
+msgstr "Task related to the project : "
+
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
 msgstr "Sterge"
-
-msgid "_button_submit_"
-msgstr "Schimba"
 
 msgid "_button_accept_"
 msgstr "Accepta aceasta sarcina"
@@ -259,6 +262,15 @@ msgstr "Atribuie"
 msgid "_button_reinit"
 msgstr "Reinitializeaza"
 
+# # portal types ##########################################################
+#, fuzzy
+msgid "portal_type_CPS_Task_title"
+msgstr "Task"
+
+#, fuzzy
+msgid "portal_type_CPS_Task_description"
+msgstr "A task"
+
 # ## PORTAL types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr "Sarcina"
@@ -268,6 +280,11 @@ msgstr "Vizualizeaza sarcinile"
 
 msgid "_portal_type_task Box"
 msgstr "Box de sarcini"
+
+# # actions ###############################################################
+#, fuzzy
+msgid "action_view_projects"
+msgstr "View projects"
 
 # ## actions ###############################################################
 msgid "_action_reinit_"
@@ -303,6 +320,18 @@ msgstr "Inchisa"
 msgid "_action_history_"
 msgstr "Istoricul sarcinii"
 
+#, fuzzy
+msgid "label_project_title"
+msgstr "Project"
+
+#, fuzzy
+msgid "label_task_title"
+msgstr "Task"
+
+#, fuzzy
+msgid "title_view_all_projects"
+msgstr "View all projects"
+
 # ## labels ################################################################
 msgid "_label_name"
 msgstr "Nume complet"
@@ -329,7 +358,9 @@ msgid "_label_display_my_affected_tasks"
 msgstr "Afiseaza sarcinile care mi-au fost atribuite"
 
 msgid "_label_display_my_groups_affected_tasks"
-msgstr "Afiseaza sarcinile care sunt atribuite unuia din grupurile de care apartin eu."
+msgstr ""
+"Afiseaza sarcinile care sunt atribuite unuia din grupurile de care apartin "
+"eu."
 
 msgid "_label_display_my_accepted_tasks"
 msgstr "Afiseaza sarcinile pe care le-am acceptat. "
@@ -341,7 +372,9 @@ msgid "_label_screener_display_my_affected_tasks"
 msgstr "Afiseaza sarcinile care mi-au fost atribuite  "
 
 msgid "_label_screener_display_my_groups_affected_tasks"
-msgstr "Afiseaza sarcinile care sunt atribuite unuia din grupurile de care apartin eu."
+msgstr ""
+"Afiseaza sarcinile care sunt atribuite unuia din grupurile de care apartin "
+"eu."
 
 msgid "_label_screener_display_my_accepted_tasks"
 msgstr "Afiseaza sarcinile pe care le-am acceptat.  "
@@ -384,8 +417,8 @@ msgstr "Sarcini atribuite unuia din grupurile mele"
 
 msgid "_heading_screener_message"
 msgstr ""
-"Poti sa editezi parametrii skinner-ului urmand calea "
-"<strong>Parametrizeaza vizualizatorul de sarcini<stong> pe dreapta. "
+"Poti sa editezi parametrii skinner-ului urmand calea <strong>Parametrizeaza "
+"vizualizatorul de sarcini<stong> pe dreapta. "
 
 msgid "_heading_configure"
 msgstr "Configureaza"
@@ -440,18 +473,19 @@ msgstr ". "
 
 msgid "_label_recall_explanation"
 msgstr ""
-"Poti sa reamintesti membrilor ca sunt atribuiti acestei sarcini "
-"apasand "
-"butonul <strong>Reaminteste</strong> dupa ce ai ales membrii.<br />Poti "
-"in acelasi timp sa ai acces la informatiile fiecarui membru "
-"apasand pe campul <i>Nume complet</i> si de asemenea sa trimiti un mail catre "
-"un membru apasand pe campul email. "
+"Poti sa reamintesti membrilor ca sunt atribuiti acestei sarcini apasand "
+"butonul <strong>Reaminteste</strong> dupa ce ai ales membrii.<br />Poti in "
+"acelasi timp sa ai acces la informatiile fiecarui membru apasand pe campul "
+"<i>Nume complet</i> si de asemenea sa trimiti un mail catre un membru "
+"apasand pe campul email. "
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Tu esti chemat pentru sarcina urmatoare : "
 
 msgid "_label_you_can_reassign_the_task_here"
-msgstr "Poti sa re-atribui aceasta sarcina. Aceasta va inlocui atribuirile precedente."
+msgstr ""
+"Poti sa re-atribui aceasta sarcina. Aceasta va inlocui atribuirile "
+"precedente."
 
 msgid "_label_do_you_want_to_reinit_it"
 msgstr "Esti sigur ca vrei sa reinitializezi sarcina ? "
@@ -464,8 +498,7 @@ msgstr "Email-urile au fost trimise."
 
 msgid "_label_error_while_sending_mail"
 msgstr ""
-"Probleme in trimiterea email-urilor. Contacteaza administratorul "
-"site-ului."
+"Probleme in trimiterea email-urilor. Contacteaza administratorul site-ului."
 
 msgid "_label_All/None_"
 msgstr "Toti/Nici unul"
@@ -675,8 +708,8 @@ msgstr "Re-initializare"
 
 msgid "_label_no_project"
 msgstr ""
-"Nu exista nici un proiect. Poti sa creezi un proiect prin legatura de "
-"mai sus."
+"Nu exista nici un proiect. Poti sa creezi un proiect prin legatura de mai "
+"sus."
 
 msgid "_label_reject_history"
 msgstr "Istoricul refuzurilor"
@@ -689,6 +722,10 @@ msgstr "Afiseaza sarcinile legate de proiect"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "Aceasta sarcina nu iti este inca atribuita"
+
+#, fuzzy
+msgid "label_cps_task_project"
+msgstr "Project"
 
 # ## Document fields
 msgid "label_cps_task_type"
@@ -742,3 +779,5 @@ msgstr "Sarcina refuzata"
 msgid "_label_the_task_has_been_rejected"
 msgstr "Sarcina urmatoare a fost refuzata"
 
+msgid "_button_submit_"
+msgstr "Schimba"

@@ -17,7 +17,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-07-26 14:17default\n"
+"POT-Creation-Date: 2007-09-14 17:10default\n"
 "PO-Revision-Date: 2004-07-26 14:18+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
@@ -26,13 +26,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3\n"
 
+#.   <span condition="metadata">heading_metadata_edit</span>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#, fuzzy
+msgid "heading_metadata_edit"
+msgstr "Task related to the project : "
+
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
 msgstr "Delete"
-
-# ## BUTTTONS ######################################################
-msgid "_button_submit_"
-msgstr "Change"
 
 msgid "_button_accept_"
 msgstr "Accept this task "
@@ -52,6 +54,13 @@ msgid "_button_reinit"
 msgstr "Re-initialization "
 
 # # portal types ##########################################################
+msgid "portal_type_CPS_Task_title"
+msgstr "Task"
+
+msgid "portal_type_CPS_Task_description"
+msgstr "A task"
+
+# # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr "Task"
 
@@ -61,6 +70,10 @@ msgstr "Task Screen"
 # # portal types ##########################################################
 msgid "_portal_type_task Box"
 msgstr "Task Box"
+
+# # actions ###############################################################
+msgid "action_view_projects"
+msgstr "View projects"
 
 msgid "_action_reinit_"
 msgstr "Re-initialization"
@@ -96,14 +109,21 @@ msgstr "Closed"
 msgid "_action_history_"
 msgstr "Status history"
 
+msgid "label_project_title"
+msgstr "Project"
+
+msgid "label_task_title"
+msgstr "Task"
+
+msgid "title_view_all_projects"
+msgstr "View all projects"
+
 msgid "_label_name"
 msgstr "Full name"
 
-# ## labels ################################################################
 msgid "_label_email"
 msgstr "Email"
 
-# ## labels ################################################################
 msgid "_label_my_tasks"
 msgstr "My Tasks "
 
@@ -247,7 +267,8 @@ msgid "_label_you_are_recalled_for_the_task"
 msgstr "You are recalled for the following task : "
 
 msgid "_label_you_can_reassign_the_task_here"
-msgstr "You can re-assign the task here. It will replace the previous assignment."
+msgstr ""
+"You can re-assign the task here. It will replace the previous assignment."
 
 msgid "_label_do_you_want_to_reinit_it"
 msgstr "Do you really want to reinit it ?"
@@ -494,6 +515,9 @@ msgstr "Display the tasks related to"
 msgid "_label_recall_no_users_assigned"
 msgstr "You din't assign this task to anybody."
 
+msgid "label_cps_task_project"
+msgstr "Project"
+
 # ## labels ################################################################
 msgid "label_cps_task_type"
 msgstr "Task type"
@@ -551,3 +575,6 @@ msgstr "Task Rejection"
 msgid "_label_the_task_has_been_rejected"
 msgstr "The following task has been rejected"
 
+# ## BUTTTONS ######################################################
+#~ msgid "_button_submit_"
+#~ msgstr "Change"

@@ -7,7 +7,10 @@
   ">
 <metal:block define-macro="edit_form">
 <metal:block use-macro="here/content_lib_master/macros/master">
-  <metal:block fill-slot="css_slot">
+  <metal:block fill-slot="style_slot">
+    <link rel="Stylesheet" type="text/css" href=""
+      tal:attributes="href string:${base_url}document.css" />
+
     <metal:block define-macro="widgets_javascript">
 
     <!-- XXX this has to move to CPSSchemas -->
@@ -16,10 +19,20 @@
     <script type="text/javascript" src="calendar.js"
       tal:attributes="src string:${base_url}calendar.js"></script>
     <script type="text/javascript" src="lang/calendar-en.js"
-      tal:define="local cpsmcat/get_selected_language"
-      tal:attributes="src string:${base_url}lang/calendar-${local}.js"></script>
+      tal:define="local cpsmcat/getSelectedLanguage"
+      tal:attributes="src string:${base_url}calendar-lang/calendar-${local}.js"></script>
     <script type="text/javascript" src="calendar-setup.js"
       tal:attributes="src string:${base_url}calendar-setup.js"></script>
+    <script type="text/javascript" src="prototype.js"
+      tal:attributes="src string:${base_url}prototype.js"></script>
+    <script type="text/javascript" src="effects.js"
+      tal:attributes="src string:${base_url}effects.js"></script>
+    <script type="text/javascript" src="controls.js"
+      tal:attributes="src string:${base_url}controls.js"></script>
+    <script type="text/javascript" src="cpsdocument.js"
+      tal:attributes="src string:${base_url}cpsdocument.js"></script>
+    <script type="text/javascript" src="cpsschemas.js"
+      tal:attributes="src string:${base_url}cpsschemas.js"></script>
 
     <script type="text/javascript">
     <!--
@@ -59,6 +72,7 @@
   </metal:block>
 
   <metal:block fill-slot="main">
+    <input type="hidden" id="button_placeholder" name="button_placeholder" value="" />
     <div tal:replace="structure rendered_main" />
   </metal:block>
 

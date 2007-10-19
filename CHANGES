@@ -1,9 +1,9 @@
 Requires
 ~~~~~~~~
--
+- CPSDefault > 3.60.6
 New features
 ~~~~~~~~~~~~
--
+- Ported to CPS 3.4 and using GenericSetup.
 Bug fixes
 ~~~~~~~~~
 -

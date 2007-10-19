@@ -21,9 +21,6 @@ msgstr ""
 msgid "_button_delete"
 msgstr ""
 
-msgid "_button_submit_"
-msgstr ""
-
 msgid "_button_accept_"
 msgstr ""
 
@@ -41,6 +38,12 @@ msgstr ""
 
 ### PORTAL types ##########################################################
 
+msgid "portal_type_CPS_Task_title"
+msgstr ""
+
+msgid "portal_type_CPS_Task_description"
+msgstr ""
+
 msgid "_portal_type_CPS_Task"
 msgstr ""
 
@@ -51,6 +54,9 @@ msgid "_portal_type_task Box"
 msgstr ""
 
 ### actions ###############################################################
+
+msgid "action_view_projects"
+msgstr ""
 
 msgid "_action_reinit_"
 msgstr ""
@@ -86,6 +92,15 @@ msgid "_action_history_"
 msgstr ""
 
 ### labels ################################################################
+
+msgid "label_project_title"
+msgstr ""
+
+msgid "label_task_title"
+msgstr ""
+
+msgid "title_view_all_projects"
+msgstr ""
 
 msgid "_label_name"
 msgstr ""
@@ -467,6 +482,9 @@ msgid "_label_recall_no_users_assigned"
 msgstr ""
 
 ### Document fields
+
+msgid "label_cps_task_project"
+msgstr ""
 
 msgid "label_cps_task_type"
 msgstr ""

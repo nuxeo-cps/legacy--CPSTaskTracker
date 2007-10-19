@@ -9,7 +9,7 @@ REQUEST = context.REQUEST
 from zLOG import LOG, DEBUG
 LOG("DELETE CANDIDATE PROJECTS", DEBUG, ids)
 
-ptasks = context.portal_tasks
+ptasks = context.tasks
 psm = 'projects_deleted'
 
 if same_type(ids, ''):

@@ -40,7 +40,7 @@ class TestGlobalInstall(CPSTaskTrackerTestCase.CPSTaskTrackerTestCase):
         self.assertEqual('task_wf' in wftool.objectIds(), 1)
 
     def testPortalTasksFixture(self):
-        tasks_tool = getToolByName(self.portal, 'portal_tasks', None)
+        tasks_tool = getToolByName(self.portal, 'tasks', None)
 
         # Portal existence
         self.assertNotEqual(tasks_tool, None)

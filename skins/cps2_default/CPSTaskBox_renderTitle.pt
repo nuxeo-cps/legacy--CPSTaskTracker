@@ -1,8 +1,0 @@
-<tal:block define="mcat nocall:here/portal_messages;
-                   task_lists python:here.portal_tasks.searchTasks(here.getParameters())"
-           condition="python:not here.portal_membership.isAnonymousUser() and not
-                   ((not here.visible_if_empty) and (not task_lists))" >
-  <img tal:attributes="src string:${here/portal_url}/todo.png" />
-  &nbsp;
-  <tal:block tal:replace="here/title_or_id" />
-</tal:block>

@@ -1,8 +1,0 @@
-<tal:block define="default_skinner string:CPSTaskBox_renderBodyTemplate;
-                   all_skinners python:here.getTaskBoxSkinners();
-                   lrender_template python:[x['zpt'] for x in all_skinners
-                   if x['title'] == here.skinner];
-                   render_template python:lrender_template != [] and
-                   lrender_template[0] or default_skinner"
-
-            replace="structure python:path('here/%s' % render_template)" />

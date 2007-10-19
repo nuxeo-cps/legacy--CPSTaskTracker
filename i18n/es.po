@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSTaskTracker\n"
-"POT-Creation-Date: 2004-07-26 14:17default\n"
+"POT-Creation-Date: 2007-09-14 17:10default\n"
 "PO-Revision-Date: 2006-03-05 18:29+0100\n"
 "Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
 "Language-Team: español <jesusmartin@lasalle.es>\n"
@@ -17,13 +17,15 @@ msgstr ""
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 
+#.   <span condition="metadata">heading_metadata_edit</span>
+#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#, fuzzy
+msgid "heading_metadata_edit"
+msgstr "Task related to the project : "
+
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
 msgstr "Borrar"
-
-# ## BUTTTONS ######################################################
-msgid "_button_submit_"
-msgstr "Cambiar"
 
 msgid "_button_accept_"
 msgstr "Aceptar esta tarea"
@@ -43,6 +45,15 @@ msgid "_button_reinit"
 msgstr "Reinicializar"
 
 # # portal types ##########################################################
+#, fuzzy
+msgid "portal_type_CPS_Task_title"
+msgstr "Task"
+
+#, fuzzy
+msgid "portal_type_CPS_Task_description"
+msgstr "A task"
+
+# # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
 msgstr "Tarea"
 
@@ -52,6 +63,11 @@ msgstr "Visor de tareas"
 # # portal types ##########################################################
 msgid "_portal_type_task Box"
 msgstr "Caja de Tareas"
+
+# # actions ###############################################################
+#, fuzzy
+msgid "action_view_projects"
+msgstr "View projects"
 
 msgid "_action_reinit_"
 msgstr "Reinicializar"
@@ -86,6 +102,18 @@ msgstr "Cerrado"
 
 msgid "_action_history_"
 msgstr "Historial de la tarea"
+
+#, fuzzy
+msgid "label_project_title"
+msgstr "Project"
+
+#, fuzzy
+msgid "label_task_title"
+msgstr "Task"
+
+#, fuzzy
+msgid "title_view_all_projects"
+msgstr "View all projects"
 
 msgid "_label_name"
 msgstr "Nombre completo"
@@ -169,7 +197,9 @@ msgid "_heading_task_affected_to_one_of_my_groups"
 msgstr "Tareas asignadas a uno de mis grupos"
 
 msgid "_heading_screener_message"
-msgstr "Puedes editar los parámteros de tu carcasa (skinner) en el enlace <strong>Parámetros del visualización</strong> en la parte derecha"
+msgstr ""
+"Puedes editar los parámteros de tu carcasa (skinner) en el enlace "
+"<strong>Parámetros del visualización</strong> en la parte derecha"
 
 msgid "_heading_configure"
 msgstr "Configurar"
@@ -227,7 +257,11 @@ msgid "_label_status"
 msgstr "Estado"
 
 msgid "_label_recall_explanation"
-msgstr "Puede enviar un correo recordando a los miembros la tarea asginada. <br /> También puede acceder a las preferencias de acceso de los usuarios pulsando sobre el campo <i>Nombre Completo</i> e, igualmente, enviar un correo a uno de ellos pulsando sobre su dirección de correo."
+msgstr ""
+"Puede enviar un correo recordando a los miembros la tarea asginada. <br /> "
+"También puede acceder a las preferencias de acceso de los usuarios pulsando "
+"sobre el campo <i>Nombre Completo</i> e, igualmente, enviar un correo a uno "
+"de ellos pulsando sobre su dirección de correo."
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Ha sido rellamado para la siguiente tarea: "
@@ -247,7 +281,9 @@ msgid "_label_mail_sent"
 msgstr "Los correos han sido enviados."
 
 msgid "_label_error_while_sending_mail"
-msgstr "Error mientras se enviaban los correos. Contacte con el administrador del portal."
+msgstr ""
+"Error mientras se enviaban los correos. Contacte con el administrador del "
+"portal."
 
 msgid "_label_All/None_"
 msgstr "Todos / Ninguno"
@@ -464,7 +500,8 @@ msgid "_transition_reinit"
 msgstr "Reinicialización"
 
 msgid "_label_no_project"
-msgstr "No hay ningún projecto. Puede crear uno pulsando en el enlace superior."
+msgstr ""
+"No hay ningún projecto. Puede crear uno pulsando en el enlace superior."
 
 msgid "_label_reject_history"
 msgstr "Historial de rechazos"
@@ -477,6 +514,10 @@ msgstr "Mostrar las tareas referidas a"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "No se ha asignado a nadie esta tarea"
+
+#, fuzzy
+msgid "label_cps_task_project"
+msgstr "Project"
 
 # ## labels ################################################################
 msgid "label_cps_task_type"
@@ -535,3 +576,6 @@ msgstr "Tarea rechazada"
 msgid "_label_the_task_has_been_rejected"
 msgstr "La siguiente tarea ha sido rechazada"
 
+# ## BUTTTONS ######################################################
+msgid "_button_submit_"
+msgstr "Cambiar"

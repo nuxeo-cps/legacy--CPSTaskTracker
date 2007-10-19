@@ -184,7 +184,7 @@
                         tal:content="python:''">
                       Task project
                     </option>
-                  <tal:block repeat="project here/portal_tasks/getProjects">
+                  <tal:block repeat="project here/tasks/getProjects">
                     <option
                         tal:attributes="value project/title;
                                         selected python:the_project == project['title']"
@@ -198,7 +198,7 @@
       </td>
     </tr>
     </table>
-    <input class="standalone" type="submit" value="button_submit"
+    <input class="standalone" type="submit" value="button_change"
            i18n:attributes="value" />
     <input class="standalone" type="button" name="cancel" onclick="history.back()"
            value="button_cancel" i18n:attributes="value" />
