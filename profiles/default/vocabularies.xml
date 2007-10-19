@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object name="portal_vocabularies" meta_type="CPS Vocabularies Tool">
+ <object name="task_priority" meta_type="CPS Vocabulary"/>
+ <object name="task_type" meta_type="CPS Vocabulary"/>
+ <object name="task_projects" meta_type="CPS Method Vocabulary"/>
+</object>

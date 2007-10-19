@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<object name="cps_task" meta_type="CPS Schema">
+ <field name="groups" meta_type="CPS String List Field"/>
+ <field name="members" meta_type="CPS String List Field"/>
+ <field name="start_task_date" meta_type="CPS DateTime Field">
+  <property name="default_expr">python:DateTime()</property>
+ </field>
+ <field name="stop_task_date" meta_type="CPS DateTime Field">
+  <property name="default_expr">python:DateTime()</property>
+ </field>
+ <field name="task_goal" meta_type="CPS String Field"/>
+ <field name="task_goal_position" meta_type="CPS String Field"/>
+ <field name="task_goal_format" meta_type="CPS String Field"/>
+ <field name="task_priority" meta_type="CPS String Field">
+  <property name="default_expr">string:normal</property>
+ </field>
+ <field name="task_project" meta_type="CPS String Field"/>
+ <field name="task_type" meta_type="CPS String Field">
+  <property name="default_expr">string:other</property>
+ </field>
+</object>

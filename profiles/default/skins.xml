@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+ <object name="cps3_default" meta_type="Filesystem Directory View"
+    directory="CPSTaskTracker/skins/cps3_default"/>
+ <object name="cps3_documents" meta_type="Filesystem Directory View"
+    directory="CPSTaskTracker/skins/cps3_documents"/>
+ <skin-path name="CPSSkins">
+  <layer name="cps3_default" insert-after="cps_default"/>
+  <layer name="cps3_documents" insert-after="cps_default"/>
+ </skin-path>
+ <skin-path name="CPSSkins-macroless">
+  <layer name="cps3_default" insert-after="cps_default"/>
+  <layer name="cps3_documents" insert-after="cps_default"/>
+ </skin-path>
+</object>

@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<object name="cps_task" meta_type="CPS Layout">
+ <property name="layout_create_method"></property>
+ <property name="layout_edit_method"></property>
+ <property name="layout_view_method"></property>
+ <property name="style_prefix">layout_default_</property>
+ <property name="flexible_widgets"/>
+ <property name="validate_values_expr"></property>
+ <property name="label"></property>
+ <property name="label_edit"></property>
+ <property name="is_i18n">False</property>
+ <widget name="groups" meta_type="Directory MultiEntries Widget">
+  <property name="fields">
+   <element value="groups"/>
+  </property>
+  <property name="label">label_cps_task_groups</property>
+  <property name="label_edit">label_cps_task_groups</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+  <property name="vocabulary">groups</property>
+  <property name="format_empty">[]</property>
+  <property name="directory">groups</property>
+  <property name="popup_mode">search</property>
+ </widget>
+ <widget name="members" meta_type="Directory MultiEntries Widget">
+  <property name="fields">
+   <element value="members"/>
+  </property>
+  <property name="is_required">True</property>
+  <property name="label">label_cps_task_members</property>
+  <property name="label_edit">label_cps_task_members</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+  <property name="vocabulary">members</property>
+  <property name="format_empty">[]</property>
+  <property name="directory">members</property>
+  <property name="popup_mode">search</property>
+ </widget>
+ <widget name="start_task_date" meta_type="DateTime Widget">
+  <property name="fields">
+   <element value="start_task_date"/>
+  </property>
+  <property name="is_required">True</property>
+  <property name="label">label_cps_start_task_date</property>
+  <property name="label_edit">label_cps_start_task_date</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+ </widget>
+ <widget name="stop_task_date" meta_type="DateTime Widget">
+  <property name="fields">
+   <element value="stop_task_date"/>
+  </property>
+  <property name="is_required">True</property>
+  <property name="label">label_cps_stop_task_date</property>
+  <property name="label_edit">label_cps_stop_task_date</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+ </widget>
+ <widget name="task_goal" meta_type="Text Widget">
+  <property name="fields">
+   <element value="task_goal"/>
+   <element value="task_goal_position"/>
+   <element value="task_goal_format"/>
+  </property>
+  <property name="label">label_cps_task_goal</property>
+  <property name="label_edit">label_cps_task_goal</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+  <property name="width">72</property>
+  <property name="height">10</property>
+  <property name="render_format">html</property>
+  <property name="configurable">format</property>
+ </widget>
+ <widget name="task_priority" meta_type="Select Widget">
+  <property name="fields">
+   <element value="task_priority"/>
+  </property>
+  <property name="is_required">True</property>
+  <property name="label">label_cps_task_priority</property>
+  <property name="label_edit">label_cps_task_priority</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+  <property name="vocabulary">task_priority</property>
+ </widget>
+ <widget name="task_type" meta_type="Select Widget">
+  <property name="fields">
+   <element value="task_type"/>
+  </property>
+  <property name="is_required">True</property>
+  <property name="label">label_cps_task_type</property>
+  <property name="label_edit">label_cps_task_type</property>
+  <property name="is_i18n">True</property>
+  <property name="readonly_layout_modes"/>
+  <property name="hidden_layout_modes"/>
+  <property name="hidden_readonly_layout_modes"/>
+  <property name="vocabulary">task_type</property>
+ </widget>
+ <widget name="task_project" meta_type="Select Widget">
+  <property name="fields">
+   <element value="task_project"/>
+  </property>
+  <property name="is_required">True</property>
+  <property name="label">label_cps_task_project</property>
+  <property name="label_edit">label_cps_task_project</property>
+  <property name="is_i18n">True</property>
+  <property name="vocabulary">task_projects</property>
+ </widget>
+ <table>
+  <row>
+   <cell name="start_task_date"/>
+  </row>
+  <row>
+   <cell name="stop_task_date"/>
+  </row>
+  <row>
+   <cell name="task_project"/>
+  </row>
+  <row>
+   <cell name="task_type"/>
+  </row>
+  <row>
+   <cell name="task_priority"/>
+  </row>
+  <row>
+   <cell name="task_goal"/>
+  </row>
+  <row>
+   <cell name="members"/>
+  </row>
+  <row>
+   <cell name="groups"/>
+  </row>
+ </table>
+</object>

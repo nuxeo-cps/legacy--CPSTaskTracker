@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="CPS Workflow Tool">
+ <object name="task_wf" meta_type="CPS Workflow"/>
+</object>

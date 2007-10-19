@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<roots>
+ <object name="workspaces"/>
+ <object name="tasks" meta_type="CPS Task Repository"/>
+</roots>
