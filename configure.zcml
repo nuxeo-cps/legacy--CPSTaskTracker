@@ -1,0 +1,12 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:five="http://namespaces.zope.org/five">
+
+  <permission id="cmf.addPortalContent" title="Add portal content"/>
+  <five:registerClass
+    class="Products.CPSTaskTracker.CPSTaskTool.CPSTaskTool"
+    meta_type="CPS Task Repository"
+    permission="cmf.addPortalContent"
+    />
+
+</configure>

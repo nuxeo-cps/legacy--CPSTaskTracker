@@ -1,0 +1,134 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="here/content_lib_master/macros/master">
+
+  <metal:block fill-slot="style_slot">
+    <link rel="Stylesheet" type="text/css" href=""
+      tal:attributes="href string:${base_url}cpstasktracker.css" />
+  </metal:block>
+
+  <metal:block fill-slot="header">
+    <h1 i18n:translate="title_view_all_projects">
+      View all projects
+    </h1>
+  </metal:block>
+
+  <metal:block fill-slot="main"
+    tal:define="projects here/tasks/getProjectsWithTasks">
+
+    <tal:block condition="projects">
+      <table id="projectsWithTasks">
+        <thead>
+          <tr>
+            <th>
+              <tal:block i18n:translate="label_project_title">
+                Project
+              </tal:block>
+            </th>
+            <th>
+              <tal:block i18n:translate="label_task_title">
+                Task
+              </tal:block>
+            </th>
+            <th>
+              <tal:block i18n:translate="label_cps_task_members">
+                Assigned members
+              </tal:block>
+            </th>
+            <th>
+              <tal:block i18n:translate="label_cps_task_groups">
+                Assigned groups
+              </tal:block>
+            </th>
+
+            <th>
+              &nbsp;
+            </th>
+            <th>
+              <tal:block i18n:translate="_label_effective_date">
+                Task start date
+              </tal:block>
+            </th>
+            <th>
+              <tal:block i18n:translate="_label_deadline">
+                Task end date
+              </tal:block>
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tal:block repeat="project_with_tasks python:projects.items()">
+            <tal:block define="
+              project_title python:project_with_tasks[0];
+              tasks python:project_with_tasks[1];
+              ">
+              <tr>
+                <th>
+                  <a href="."
+                    tal:attributes="href
+                    string:cps_task_tool_add_project_form?project_title=${project_title}">
+                    <tal:block content="project_title"/>
+                  </a>
+                </th>
+              </tr>
+              <tal:block repeat="task tasks">
+                <tr tal:define="class python:test(repeat['task'].even(), 'even','odd')"
+                  tal:attributes="class class">
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>
+                    <a href="."
+                      tal:attributes="href string:${utool}/tasks/${task/id}">
+                      <tal:block content="task/title"/>
+                    </a>
+                  </td>
+
+                  <td class="assignees">
+                    <tal:block
+                      define="fullnames
+                      python:[here.portal_membership.getFullnameFromId(x)
+                      for x in task['members']]"
+                      content="structure python:'<br/>'.join(fullnames)"/>
+                  </td>
+
+                  <td class="assignees">
+                    <tal:block content="structure python:'<br/>'.join(task['groups'])"/>
+                  </td>
+
+                  <td>
+                    <img src="red.gif" alt=""
+                      tal:condition="python:task['status'] == 'late'" />
+                    <img src="orange.gif" alt=""
+                      tal:condition="python:task['status'] == 'assigned'" />
+                    <img src="green.gif" alt=""
+                      tal:condition="python:task['status'] == 'opened'" />
+                    <img src="task_closed_icon.png" alt=""
+                      tal:condition="python:task['status'] == 'closed'" />
+                  </td>
+                  <td class="date">
+                    <tal:block content="python:here.getDateStr(task['start_date'])"/>
+                  </td>
+                  <td class="date">
+                    <tal:block content="python:here.getDateStr(task['stop_date'])"/>
+                  </td>
+
+                </tr>
+              </tal:block>
+            </tal:block>
+          </tal:block>
+        </tbody>
+      </table>
+    </tal:block>
+
+    <tal:block condition="not:projects">
+      <div class="group">
+        <tal:block i18n:translate="_label_no_project" />
+      </div>
+    </tal:block>
+
+  </metal:block>
+
+</html>

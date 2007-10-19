@@ -1,0 +1,61 @@
+<dtml-comment>
+$Id$
+</dtml-comment>
+
+<dtml-let last_modified="_.DateTime()-14" expires="_.DateTime()+1" >
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Content-Type', 'text/css' )">
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Last-Modified', last_modified.toZone('GMT').rfc822() )">
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Cache-Control', 'max-age=36000, must-revalidate' )">
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Expires', expires.toZone('GMT').rfc822() )" >
+</dtml-let>
+
+<dtml-with stylesheet_properties>
+
+
+table.tasks {
+  width: 100%;
+}
+table.tasks thead th {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: #dddddd;
+}
+
+
+table#projectsWithTasks {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+table#projectsWithTasks thead th {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: #dddddd;
+}
+
+table#projectsWithTasks tbody th {
+  margin-top: 1em;
+  padding-top: 1em;
+  color: #663300;
+}
+
+table#projectsWithTasks td {
+  text-align: center;
+}
+
+table#projectsWithTasks td.date {
+  padding: 0.2em;
+}
+
+table#projectsWithTasks td.assignees {
+  text-align: left;
+  padding: 0.2em 1em 0.2em 1em;
+}
+
+
+
+
+
+
+</dtml-with>
