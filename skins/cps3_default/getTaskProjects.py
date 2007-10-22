@@ -17,10 +17,11 @@ items = []
 
 task_repository = getattr(context, 'tasks', None)
 if task_repository is not None:
-    for project in task_repository.getProjects():
-        project_id = project['title']
+    for project_item in task_repository.getProjects():
+        project_id = project_item[0]
+        project_title = project_item[1]['title']
         if key is None:
-            items.append((project_id, project_id))
+            items.append((project_id, project_title))
         elif project_id == key:
             value = project_id
             break

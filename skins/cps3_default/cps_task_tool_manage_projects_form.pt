@@ -10,25 +10,25 @@
     </metal:block>
 
     <metal:block fill-slot="main"
-      tal:define="projects here/tasks/getProjects">
+      tal:define="project_items python:here.tasks.getProjects()">
       <div align="right">
         <a href="./cps_task_project_add_form">
-          <span i18n:translate="_label_create_a_new_project">
+          <tal:block i18n:translate="_label_create_a_new_project">
             Create a new project
-          </span>
+         </tal:block>
         </a>
       </div>
       <form method="post" action="doDeleteProjects">
-      <tal:block condition="projects">
+      <tal:block condition="project_items">
         <div class="group">
           <table width="100%">
             <tr>
               <th>&nbsp;</th>
               <th>
-                <span i18n:translate="_label_title" />
+                <tal:block i18n:translate="_label_title" />
               </th>
               <th>
-                <span i18n:translate="_label_description" />
+                <tal:block i18n:translate="_label_description" />
               </th>
             </tr>
             <tr>
@@ -36,21 +36,27 @@
                 &nbsp;
               </td>
             </tr>
-            <tal:block repeat="project projects">
-            <tr tal:define="class python:test(repeat['project'].even(), 'even','odd')"
-                tal:attributes="class class">
+            <tal:block repeat="project_item project_items">
+            <tr tal:define="
+                  project_id python:project_item[0];
+                  project_def python:project_item[1];
+                  project_title project_def/title;
+                  project_description project_def/description;
+                  class python:test(repeat['project_item'].even(), 'even','odd');
+                  "
+                  tal:attributes="class class">
               <td>
                 <input type="checkbox" value="" name="ids:list"
-                       tal:attributes="value python:project['title']" />
+                      tal:attributes="value project_id" />
               </td>
               <td align="center">
-                <a href=""
-                   tal:attributes="href string:cps_task_project_add_form?project_title=${project/title}&project_description=${project/description}">
-                  <span tal:replace="python:project['title']" />
+                    <a href=""
+                      tal:attributes="href string:cps_task_project_edit_form?project_id=${project_id}">
+                      <tal:block replace="project_title" />
                </a>
               </td>
               <td align="center">
-                <span tal:replace="python:project['description']" />
+                <tal:block replace="project_description"/>
               </td>
             </tr>
             </tal:block>
@@ -62,9 +68,9 @@
       </tal:block>
       </form>
 
-      <tal:block condition="not:projects">
+      <tal:block condition="not:project_items">
         <div class="group" align="center">
-          <span i18n:translate="_label_no_project" />
+          <tal:block i18n:translate="_label_no_project" />
         </div>
       </tal:block>
 

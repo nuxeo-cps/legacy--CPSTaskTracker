@@ -61,14 +61,16 @@
         <tbody>
           <tal:block repeat="project_with_tasks python:projects.items()">
             <tal:block define="
-              project_title python:project_with_tasks[0];
-              tasks python:project_with_tasks[1];
+              project_id python:project_with_tasks[0];
+              project_def python:project_with_tasks[1];
+              project_title project_def/project_title;
+              tasks project_def/tasks;
               ">
               <tr>
                 <th>
                   <a href="."
                     tal:attributes="href
-                    string:cps_task_project_view?project_title=${project_title}">
+                    string:cps_task_project_view?project_id=${project_id}">
                     <tal:block content="project_title"/>
                   </a>
                 </th>

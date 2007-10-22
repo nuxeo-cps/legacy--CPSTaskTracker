@@ -9,8 +9,8 @@
   </metal:block>
 
   <metal:block fill-slot="header">
-    <h1 i18n:translate="_label_create_a_new_project">
-      Create a new project
+    <h1 i18n:translate="_label_modify_project">
+      Modify a project
     </h1>
   </metal:block>
 

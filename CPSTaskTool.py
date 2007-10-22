@@ -22,16 +22,19 @@ __author__ = "Julien Anguenot <mailto:ja@nuxeo.com>"
 
 """CPS Task Repository
 
-This tool will :
-  - Acts as a repository for all the tasks created in the whole portal
-  - Defines a task search API used by CPSTaskScreen and CPSTaskBox types.
-  - Stores project records.
+This tool :
+
+- Acts as a repository for all the tasks created in the whole portal
+- Defines a task search API used by CPSTaskScreen and CPSTaskBox types
+- Stores project records
 """
 
-from zLOG import LOG, DEBUG, INFO
+from logging import getLogger
+
 from zope.interface import implements
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
+from persistent.dict import PersistentDict
 
 from Products.BTreeFolder2.CMFBTreeFolder import CMFBTreeFolder
 from Products.CMFCore.utils import getToolByName
@@ -43,6 +46,7 @@ from Products.CPSTaskTracker.CPSTaskTrackerPermissions import ManageProjects, \
      TaskCreate
 from Products.CPSTaskTracker.interfaces import ITaskTool
 
+LOG_KEY = 'CPSTaskTool'
 
 _marker = object()
 
@@ -67,9 +71,11 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         if id is not _marker:
             self.id = id
         CMFBTreeFolder.__init__(self, self.id)
+
         # We will keep the different projects here.
-        # FIXME enhance that.
-        self.lprojects = []
+        # We have to use a PersistentDict since the python built-in list
+        # and dict don't notify the ZODB when they have been changed.
+        self._projects = PersistentDict()
 
     #################################################
     #################################################
@@ -242,16 +248,23 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
     security.declareProtected(View, 'getProjects')
     def getProjects(self):
-        """Returns the list of projects.
+        """Returns all the projects as a list of items (id, definition).
         """
-        return self.lprojects
+        return self._projects.items()
+
+    security.declareProtected(View, 'getProjectDef')
+    def getProjectDef(self, project_id):
+        """Return the definition, ie a dictionary, of the project.
+        """
+        return self._projects[project_id]
 
     security.declareProtected(View, 'getProjectsWithTasks')
     def getProjectsWithTasks(self):
         """Returns the list of projects with their associated tasks.
 
         The result is a dictionary with keys being project names and values
-        being tasks information.
+        being a dictionary containing information the project title and the
+        task descriptions.
         """
         res = {}
         pcat = self.portal_catalog
@@ -261,21 +274,25 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         for task in tasks:
             task_doc = task.getContent()
             task_def = {}
-            task_project = task_doc.task_project
             task_def['id'] = task_doc.id
             task_def['title'] = task_doc.title
-            task_def['project'] = task_project
             task_def['status'] = task_doc.getStatus()
             task_def['start_date'] = task_doc.start_task_date
             task_def['stop_date'] = task_doc.stop_task_date
             task_def['members'] = task_doc.members
             task_def['groups'] = task_doc.groups
 
-            if task_project not in res.keys():
-                res[task_project] = [task_def]
+            # This is the ID of the project
+            project_id = task_doc.task_project
+            if project_id not in res.keys():
+                project_title = self.getProjectDef(project_id)['title']
+                res[project_id] = {'project_title': project_title}
+                res[project_id]['tasks'] = []
+                task_defs = []
             else:
-                task_defs = res[task_project]
-                task_defs.append(task_def)
+                task_defs = res[project_id]['tasks']
+
+            res[project_id]['tasks'].append(task_def)
 
         return res
 
@@ -306,44 +323,48 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         return task_defs
 
     security.declareProtected(ManageProjects, 'addProject')
-    def addProject(self, new_project={}):
+    def addProject(self, new_project):
         """Adds a brandly new project.
         """
-        self._p_changed = 1
+        log_key = LOG_KEY + '.addProject'
+        logger = getLogger(log_key)
+        if not isinstance(new_project, dict) or new_project == {}:
+            raise ValueError("Wrong project definition given")
 
-        stupid_flag = 0
-        if new_project != {} and \
-           isinstance(new_project, dict):
-            i = 0
-            for project in self.lprojects:
-                if project['title'] == new_project['title']:
-                    stupid_flag = 1
-                    if new_project['description'] is not None:
-                        self.lprojects[i]['description'] = new_project['description']
-                i += 1
-            if not stupid_flag:
-                self.lprojects.append(new_project)
-                return 1
-        return 0
+        project_id = new_project['id']
+        logger.debug("project_id = %s" % project_id)
+        if self._projects.has_id(project_id):
+            raise ValueError("A project already exist with the ID: %s"
+                             % project_id)
+
+        self._projects[project_id] = new_project
+        logger.debug("project = %s" % self._projects[project_id])
+        # At this point we don't need the project id anymore in the dictionary
+        del self._projects[project_id]['id']
+        logger.debug("project = %s" % self._projects[project_id])
+
+    security.declareProtected(ManageProjects, 'editProject')
+    def editProject(self, project_def):
+        """Modify an existing project
+
+        project_def should be a dictionary with id, title and description.
+        """
+        if not isinstance(new_project, dict) or project_def == {}:
+            raise ValueError("Wrong project definition given")
+
+        project_id = project_id['id']
+        if not self._projects.has_id(project_id):
+            raise ValueError("No project exists with the ID: %s" % project_id)
+
+        # At this point we don't need the project id anymore in the dictionary
+        del project_def['id']
+        self._projects[project_id] = project_def
 
     security.declareProtected(ManageProjects, 'delProjects')
-    def delProjects(self, titles=[]):
-        """Removes projects given title
+    def delProjects(self, project_ids=[]):
+        """Removes projects with the given IDs.
         """
-
-        self._p_changed = 1
-
-        stupid_flag = 0
-        for title in titles:
-            try:
-                titles = [x['title'] for x in self.lprojects]
-                index = titles.index(title)
-                del self.lprojects[index]
-            except ValueError:
-                stupid_flag = 1
-
-        if not stupid_flag:
-            return 1
-        return 0
+        for project_id in project_ids:
+            del self._projects[project_id]
 
 InitializeClass(CPSTaskTool)
