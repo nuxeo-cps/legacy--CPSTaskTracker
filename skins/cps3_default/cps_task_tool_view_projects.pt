@@ -68,7 +68,7 @@
                 <th>
                   <a href="."
                     tal:attributes="href
-                    string:cps_task_tool_add_project_form?project_title=${project_title}">
+                    string:cps_task_project_view?project_title=${project_title}">
                     <tal:block content="project_title"/>
                   </a>
                 </th>

@@ -12,7 +12,7 @@
     <metal:block fill-slot="main"
       tal:define="projects here/tasks/getProjects">
       <div align="right">
-        <a href="./cps_task_tool_add_project_form">
+        <a href="./cps_task_project_add_form">
           <span i18n:translate="_label_create_a_new_project">
             Create a new project
           </span>
@@ -45,7 +45,7 @@
               </td>
               <td align="center">
                 <a href=""
-                   tal:attributes="href string:cps_task_tool_add_project_form?project_title=${project/title}&project_description=${project/description}">
+                   tal:attributes="href string:cps_task_project_add_form?project_title=${project/title}&project_description=${project/description}">
                   <span tal:replace="python:project['title']" />
                </a>
               </td>

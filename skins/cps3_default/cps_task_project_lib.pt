@@ -1,0 +1,87 @@
+<!-- Macro library for project display  -->
+<!-- $Id$ -->
+
+<!-- ============================================================ -->
+<metal:block define-macro="tasks_view">
+
+  <table id="projectsWithTasks">
+    <thead>
+      <tr>
+        <th>
+          <tal:block i18n:translate="label_task_title">
+            Task
+          </tal:block>
+        </th>
+        <th>
+          <tal:block i18n:translate="label_cps_task_members">
+            Assigned members
+          </tal:block>
+        </th>
+        <th>
+          <tal:block i18n:translate="label_cps_task_groups">
+            Assigned groups
+          </tal:block>
+        </th>
+
+        <th>
+          &nbsp;
+        </th>
+        <th>
+          <tal:block i18n:translate="_label_effective_date">
+            Task start date
+          </tal:block>
+        </th>
+        <th>
+          <tal:block i18n:translate="_label_deadline">
+            Task end date
+          </tal:block>
+        </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tal:block repeat="task tasks">
+        <tr tal:define="class python:test(repeat['task'].even(), 'even','odd')"
+          tal:attributes="class class">
+          <td>
+            <a href="."
+              tal:attributes="href string:${utool}/tasks/${task/id}">
+              <tal:block content="task/title"/>
+            </a>
+          </td>
+
+          <td class="assignees">
+            <tal:block
+              define="fullnames
+              python:[here.portal_membership.getFullnameFromId(x)
+              for x in task['members']]"
+              content="structure python:'<br/>'.join(fullnames)"/>
+          </td>
+
+          <td class="assignees">
+            <tal:block content="structure python:'<br/>'.join(task['groups'])"/>
+          </td>
+
+          <td>
+            <img src="red.gif" alt=""
+              tal:condition="python:task['status'] == 'late'" />
+            <img src="orange.gif" alt=""
+              tal:condition="python:task['status'] == 'assigned'" />
+            <img src="green.gif" alt=""
+              tal:condition="python:task['status'] == 'opened'" />
+            <img src="task_closed_icon.png" alt=""
+              tal:condition="python:task['status'] == 'closed'" />
+          </td>
+          <td class="date">
+            <tal:block content="python:here.getDateStr(task['start_date'])"/>
+          </td>
+          <td class="date">
+            <tal:block content="python:here.getDateStr(task['stop_date'])"/>
+          </td>
+
+        </tr>
+      </tal:block>
+    </tbody>
+  </table>
+
+</metal:block>

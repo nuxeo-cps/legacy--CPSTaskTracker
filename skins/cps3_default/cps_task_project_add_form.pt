@@ -1,0 +1,62 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="here/content_lib_master/macros/master">
+
+  <metal:block fill-slot="style_slot">
+    <link rel="Stylesheet" type="text/css" href=""
+      tal:attributes="href string:${base_url}cpstasktracker.css" />
+  </metal:block>
+
+  <metal:block fill-slot="header">
+    <h1 i18n:translate="_label_create_a_new_project">
+      Create a new project
+    </h1>
+  </metal:block>
+
+  <metal:block fill-slot="main"
+    tal:define="tasks python:here.tasks.getProjectTasks(request.get('project_title'))">
+
+    <form method="post" action="doCreateProject">
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td colspan="1">
+            <div class="row">
+              <div class="label">
+                <span i18n:translate="_prop_title_">
+                  Title
+                </span>
+              </div>
+              <div class="field">
+                &nbsp;&nbsp;
+                <input type="text" name="title" value=""
+                  tal:attributes="value request/project_title|nothing" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="label">
+                <span i18n:translate="_prop_description_">
+                  Description
+                </span>
+              </div>
+              <div class="field">
+                &nbsp;&nbsp;
+                <textarea name="description:text" rows="5" cols="50" wrap="soft"><span tal:replace="request/project_description|nothing" /></textarea>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <input class="standalone" type="submit"
+          value="button_create" i18n:attributes="value" />
+        <input class="standalone" type="button" onclick="history.back()"
+          value="button_cancel" i18n:attributes="value" />
+      </p>
+    </form>
+
+    <metal:block use-macro="here/cps_task_project_lib/macros/tasks_view" />
+
+  </metal:block>
+</html>

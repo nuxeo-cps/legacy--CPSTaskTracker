@@ -1,0 +1,29 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="here/content_lib_master/macros/master">
+
+  <metal:block fill-slot="style_slot">
+    <link rel="Stylesheet" type="text/css" href=""
+      tal:attributes="href string:${base_url}cpstasktracker.css" />
+  </metal:block>
+
+  <metal:block fill-slot="header"
+    tal:define="
+    global project_title python:request.get('project_title');
+    global tasks python:here.tasks.getProjectTasks(project_title);
+    ">
+    <h1 tal:content="project_title">
+      Project title
+    </h1>
+  </metal:block>
+
+  <metal:block fill-slot="main">
+    <p>
+      Description du projet.
+    </p>
+
+    <metal:block use-macro="here/cps_task_project_lib/macros/tasks_view" />
+
+  </metal:block>
+</html>

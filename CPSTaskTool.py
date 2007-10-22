@@ -156,7 +156,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         # Same business -> building the lambda function.
         task_list = res
 
-        self.map_priority = {'high': 1, 'normal':2, 'low':3}
+        self.map_priority = {'high': 1, 'normal': 2, 'low': 3}
 
         stupid_flag = 0
 
