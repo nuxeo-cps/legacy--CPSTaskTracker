@@ -348,7 +348,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         project_id = new_project['id']
         logger.debug("project_id = %s" % project_id)
-        if self._projects.has_id(project_id):
+        if self._projects.has_key(project_id):
             raise ValueError("A project already exist with the ID: %s"
                              % project_id)
 
