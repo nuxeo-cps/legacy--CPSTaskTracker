@@ -28,7 +28,7 @@
   <property name="fields">
    <element value="members"/>
   </property>
-  <property name="is_required">True</property>
+  <property name="is_required">False</property>
   <property name="label">label_cps_task_members</property>
   <property name="label_edit">label_cps_task_members</property>
   <property name="is_i18n">True</property>
@@ -117,6 +117,21 @@
   <property name="is_i18n">True</property>
   <property name="vocabulary">task_projects</property>
  </widget>
+ <widget name="task_dependency" meta_type="Select Widget">
+  <property name="fields">
+   <element value="task_dependency"/>
+  </property>
+  <property name="is_required">False</property>
+  <property name="label">label_cps_task_dependency</property>
+  <property name="label_edit">label_cps_task_dependency</property>
+  <property name="is_i18n">True</property>
+  <property name="hidden_layout_modes">
+   <element value="create"/>
+  </property>
+  <property name="vocabulary">project_tasks</property>
+  <property name="add_empty_key">True</property>
+  <property name="empty_key_value"></property>
+ </widget>
  <table>
   <row>
    <cell name="start_task_date"/>
@@ -126,6 +141,9 @@
   </row>
   <row>
    <cell name="task_project"/>
+  </row>
+  <row>
+   <cell name="task_dependency"/>
   </row>
   <row>
    <cell name="task_type"/>

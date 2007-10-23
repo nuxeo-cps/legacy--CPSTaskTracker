@@ -15,16 +15,15 @@ marker = []
 value = marker
 items = []
 
-task_repository = getattr(context, 'tasks', None)
-if task_repository is not None:
-    for project_item in task_repository.getProjects():
-        project_id = project_item[0]
-        project_title = project_item[1]['title']
-        if key is None:
-            items.append((project_id, project_title))
-        elif project_id == key:
-            value = project_id
-            break
+task_repository = getattr(context, 'tasks')
+for project_item in task_repository.getProjects():
+    project_id = project_item[0]
+    project_title = project_item[1]['title']
+    if key is None:
+        items.append((project_id, project_title))
+    elif project_id == key:
+        value = project_id
+        break
 
 if key is not None:
     if value is not marker:

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2007-10-23 15:21default\n"
+"POT-Creation-Date: 2007-10-23 18:34default\n"
 "PO-Revision-Date: 2004-07-26 14:18+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
@@ -13,19 +13,19 @@ msgstr ""
 #.   <block>
 #.               Task end date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_deadline"
 msgstr "Deadline"
 
 #.   <block>
 #.               Task start date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_effective_date"
 msgstr "Effective Date"
 
 #.   <span condition="metadata">heading_metadata_edit</span>
-#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#: from ../skins/cps_tasktracker/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
 msgstr "Task related to the project : "
@@ -33,7 +33,7 @@ msgstr "Task related to the project : "
 #.   <block>
 #.               Assigned groups
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_groups"
 msgstr "Task assigned groups"
 
@@ -41,14 +41,14 @@ msgstr "Task assigned groups"
 #.   <block>
 #.               Assigned members
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_members"
 msgstr "Task assigned members"
 
 #.   <block>
 #.               Task
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_task_title"
 msgstr "Task"
 
@@ -532,10 +532,13 @@ msgstr "Display the tasks related to"
 msgid "_label_recall_no_users_assigned"
 msgstr "You din't assign this task to anybody."
 
+# ## labels ################################################################
+msgid "label_cps_task_dependency"
+msgstr "Dependency"
+
 msgid "label_cps_task_project"
 msgstr "Project"
 
-# ## labels ################################################################
 msgid "label_cps_task_type"
 msgstr "Task type"
 

@@ -3,4 +3,5 @@
  <object name="task_priority" meta_type="CPS Vocabulary"/>
  <object name="task_type" meta_type="CPS Vocabulary"/>
  <object name="task_projects" meta_type="CPS Method Vocabulary"/>
+ <object name="project_tasks" meta_type="CPS Method Vocabulary"/>
 </object>

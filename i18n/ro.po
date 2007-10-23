@@ -223,7 +223,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
-"POT-Creation-Date: 2007-10-23 15:21default\n"
+"POT-Creation-Date: 2007-10-23 18:32default\n"
 "PO-Revision-Date: 2005-04-11 13:07+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -240,19 +240,19 @@ msgstr ""
 #.   <block>
 #.               Task end date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_deadline"
 msgstr "Data de predare"
 
 #.   <block>
 #.               Task start date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_effective_date"
 msgstr "Data efectiva"
 
 #.   <span condition="metadata">heading_metadata_edit</span>
-#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#: from ../skins/cps_tasktracker/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
 msgstr "Task related to the project : "
@@ -260,21 +260,21 @@ msgstr "Task related to the project : "
 #.   <block>
 #.               Assigned groups
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_groups"
 msgstr "Grupuri atribuite acestei sarcini"
 
 #.   <block>
 #.               Assigned members
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_members"
 msgstr "Membrii atribuiti acestei sarcini"
 
 #.   <block>
 #.               Task
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 #, fuzzy
 msgid "label_task_title"
 msgstr "Task"
@@ -359,6 +359,10 @@ msgstr "Inchisa"
 
 msgid "_action_history_"
 msgstr "Istoricul sarcinii"
+
+#, fuzzy
+msgid "label_duration"
+msgstr "Duration"
 
 #, fuzzy
 msgid "label_project_title"
@@ -752,6 +756,11 @@ msgstr "Afiseaza sarcinile legate de proiect"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "Aceasta sarcina nu iti este inca atribuita"
+
+# ## labels ################################################################
+#, fuzzy
+msgid "label_cps_task_dependency"
+msgstr "Dependency"
 
 #, fuzzy
 msgid "label_cps_task_project"

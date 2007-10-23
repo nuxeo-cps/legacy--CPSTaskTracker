@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2007-10-23 15:21default\n"
+"POT-Creation-Date: 2007-10-23 18:34default\n"
 "PO-Revision-Date: 2004-07-26 14:18+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
@@ -13,19 +13,19 @@ msgstr ""
 #.   <block>
 #.               Task end date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_deadline"
 msgstr "Date d'échéance"
 
 #.   <block>
 #.               Task start date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_effective_date"
 msgstr "Date effective"
 
 #.   <span condition="metadata">heading_metadata_edit</span>
-#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#: from ../skins/cps_tasktracker/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
 msgstr "Tâches relatives au projet"
@@ -33,21 +33,21 @@ msgstr "Tâches relatives au projet"
 #.   <block>
 #.               Assigned groups
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_groups"
 msgstr "Groupes affectés à la tâche"
 
 #.   <block>
 #.               Assigned members
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_members"
 msgstr "Membres affectés à la tâche"
 
 #.   <block>
 #.               Task
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_task_title"
 msgstr "Tâche"
 
@@ -531,6 +531,9 @@ msgstr "Afficher les tâches relatives au projet"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "Vous n'avez pas encore assigné cette tâche"
+
+msgid "label_cps_task_dependency"
+msgstr "Dépendance"
 
 msgid "label_cps_task_project"
 msgstr "Projet"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSTaskTracker\n"
-"POT-Creation-Date: 2007-10-23 15:21default\n"
+"POT-Creation-Date: 2007-10-23 18:32default\n"
 "PO-Revision-Date: 2004-09-30 16:04+0100\n"
 "Last-Translator: Fabio Nosari <fabnos@fastwebnet.it>\n"
 "Language-Team: Fabio Nosari <fabnos@fastwebnet.it>\n"
@@ -24,19 +24,19 @@ msgstr ""
 #.   <block>
 #.               Task end date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_deadline"
 msgstr "Data di scadenza"
 
 #.   <block>
 #.               Task start date
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_effective_date"
 msgstr "Data di accessibilità"
 
 #.   <span condition="metadata">heading_metadata_edit</span>
-#: from ../skins/cps3_documents/cpstask_edit_form.pt
+#: from ../skins/cps_tasktracker/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
 msgstr "Tâches relatives au projet"
@@ -44,21 +44,21 @@ msgstr "Tâches relatives au projet"
 #.   <block>
 #.               Assigned groups
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_groups"
 msgstr "Impegna i seguenti gruppi:"
 
 #.   <block>
 #.               Assigned members
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_members"
 msgstr "Impegna i seguenti collaboratori:"
 
 #.   <block>
 #.               Task
 #.             </block>
-#: from ../skins/cps3_default/cps_task_project_lib.pt
+#: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 #, fuzzy
 msgid "label_task_title"
 msgstr "Tâche"
@@ -143,6 +143,10 @@ msgstr "chiuso"
 
 msgid "_action_history_"
 msgstr "Cronologico di stato dell'incarico"
+
+#, fuzzy
+msgid "label_duration"
+msgstr "Durée"
 
 #, fuzzy
 msgid "label_project_title"
@@ -533,6 +537,10 @@ msgstr "Visualizza gli incarichi relativi al progetto:"
 
 msgid "_label_recall_no_users_assigned"
 msgstr "Non hai ancora assegnato ad alcuno questo incarico."
+
+#, fuzzy
+msgid "label_cps_task_dependency"
+msgstr "Dépendance"
 
 #, fuzzy
 msgid "label_cps_task_project"

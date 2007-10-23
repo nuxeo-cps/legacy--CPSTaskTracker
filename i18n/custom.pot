@@ -487,6 +487,9 @@ msgstr ""
 
 ### Document fields
 
+msgid "label_cps_task_dependency"
+msgstr ""
+
 msgid "label_cps_task_project"
 msgstr ""
 
