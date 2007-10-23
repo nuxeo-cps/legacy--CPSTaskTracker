@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSTaskTracker\n"
-"POT-Creation-Date: 2007-09-14 17:10default\n"
+"POT-Creation-Date: 2007-10-23 15:00default\n"
 "PO-Revision-Date: 2004-09-30 16:04+0100\n"
 "Last-Translator: Fabio Nosari <fabnos@fastwebnet.it>\n"
 "Language-Team: Fabio Nosari <fabnos@fastwebnet.it>\n"
@@ -21,11 +21,51 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
+#.   <block>
+#.               Task end date
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "_label_deadline"
+msgstr "Data di scadenza"
+
+#.   <block>
+#.               Task start date
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "_label_effective_date"
+msgstr "Data di accessibilità"
+
 #.   <span condition="metadata">heading_metadata_edit</span>
 #: from ../skins/cps3_documents/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
 msgstr "Tâches relatives au projet"
+
+#.   <block>
+#.               Assigned groups
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "label_cps_task_groups"
+msgstr "Impegna i seguenti gruppi:"
+
+#.   <block>
+#.               Assigned members
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "label_cps_task_members"
+msgstr "Impegna i seguenti collaboratori:"
+
+#.   <block>
+#.               Task
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+#, fuzzy
+msgid "label_task_title"
+msgstr "Tâche"
+
+#, fuzzy
+msgid "heading_modify_project"
+msgstr "Modifier le projet"
 
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
@@ -107,10 +147,6 @@ msgstr "Cronologico di stato dell'incarico"
 #, fuzzy
 msgid "label_project_title"
 msgstr "Projet"
-
-#, fuzzy
-msgid "label_task_title"
-msgstr "Tâche"
 
 #, fuzzy
 msgid "title_view_all_projects"
@@ -216,12 +252,6 @@ msgstr "Titolo"
 
 msgid "_label_creator"
 msgstr "Creatore"
-
-msgid "_label_effective_date"
-msgstr "Data di accessibilità"
-
-msgid "_label_deadline"
-msgstr "Data di scadenza"
 
 msgid "_label_project"
 msgstr "Progetto"
@@ -527,12 +557,6 @@ msgstr "Finalità del progetto:"
 msgid "label_cps_task_description"
 msgstr "Descrizione:"
 
-msgid "label_cps_task_members"
-msgstr "Impegna i seguenti collaboratori:"
-
-msgid "label_cps_task_groups"
-msgstr "Impegna i seguenti gruppi:"
-
 msgid "label_priority_high"
 msgstr "Alta"
 
@@ -560,5 +584,5 @@ msgstr "Incarichi rifiutati"
 msgid "_label_the_task_has_been_rejected"
 msgstr "Il seguente incarico è stato rifiutato:"
 
-msgid "_button_submit_"
-msgstr "Salva variazioni"
+#~ msgid "_button_submit_"
+#~ msgstr "Salva variazioni"

@@ -223,7 +223,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
-"POT-Creation-Date: 2007-09-14 17:10default\n"
+"POT-Creation-Date: 2007-10-23 15:00default\n"
 "PO-Revision-Date: 2005-04-11 13:07+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -237,11 +237,51 @@ msgstr ""
 "Domain: default\n"
 "X-Generator: KBabel 1.9.1\n"
 
+#.   <block>
+#.               Task end date
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "_label_deadline"
+msgstr "Data de predare"
+
+#.   <block>
+#.               Task start date
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "_label_effective_date"
+msgstr "Data efectiva"
+
 #.   <span condition="metadata">heading_metadata_edit</span>
 #: from ../skins/cps3_documents/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
 msgstr "Task related to the project : "
+
+#.   <block>
+#.               Assigned groups
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "label_cps_task_groups"
+msgstr "Grupuri atribuite acestei sarcini"
+
+#.   <block>
+#.               Assigned members
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+msgid "label_cps_task_members"
+msgstr "Membrii atribuiti acestei sarcini"
+
+#.   <block>
+#.               Task
+#.             </block>
+#: from ../skins/cps3_default/cps_task_project_lib.pt
+#, fuzzy
+msgid "label_task_title"
+msgstr "Task"
+
+#, fuzzy
+msgid "heading_modify_project"
+msgstr "Modify the project"
 
 # ## BUTTTONS ######################################################
 msgid "_button_delete"
@@ -323,10 +363,6 @@ msgstr "Istoricul sarcinii"
 #, fuzzy
 msgid "label_project_title"
 msgstr "Project"
-
-#, fuzzy
-msgid "label_task_title"
-msgstr "Task"
 
 #, fuzzy
 msgid "title_view_all_projects"
@@ -434,12 +470,6 @@ msgstr "Titlu"
 
 msgid "_label_creator"
 msgstr "Creatorul"
-
-msgid "_label_effective_date"
-msgstr "Data efectiva"
-
-msgid "_label_deadline"
-msgstr "Data de predare"
 
 msgid "_label_project"
 msgstr "Proiect"
@@ -746,12 +776,6 @@ msgstr "Tinta proiectului"
 msgid "label_cps_task_description"
 msgstr "Descriere"
 
-msgid "label_cps_task_members"
-msgstr "Membrii atribuiti acestei sarcini"
-
-msgid "label_cps_task_groups"
-msgstr "Grupuri atribuite acestei sarcini"
-
 msgid "label_priority_high"
 msgstr "Inalta"
 
@@ -779,5 +803,5 @@ msgstr "Sarcina refuzata"
 msgid "_label_the_task_has_been_rejected"
 msgstr "Sarcina urmatoare a fost refuzata"
 
-msgid "_button_submit_"
-msgstr "Schimba"
+#~ msgid "_button_submit_"
+#~ msgstr "Schimba"

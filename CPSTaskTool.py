@@ -256,6 +256,9 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
     def getProjectDef(self, project_id):
         """Return the definition, ie a dictionary, of the project.
         """
+        log_key = LOG_KEY + '.getProjectDef'
+        logger = getLogger(log_key)
+        logger.debug("project_id = %s" % project_id)
         return self._projects[project_id]
 
     security.declareProtected(View, 'getProjectsWithTasks')
@@ -349,11 +352,11 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         project_def should be a dictionary with id, title and description.
         """
-        if not isinstance(new_project, dict) or project_def == {}:
+        if not isinstance(project_def, dict) or project_def == {}:
             raise ValueError("Wrong project definition given")
 
-        project_id = project_id['id']
-        if not self._projects.has_id(project_id):
+        project_id = project_def['id']
+        if not self._projects.has_key(project_id):
             raise ValueError("No project exists with the ID: %s" % project_id)
 
         # At this point we don't need the project id anymore in the dictionary

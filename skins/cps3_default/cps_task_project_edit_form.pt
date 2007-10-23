@@ -8,39 +8,46 @@
       tal:attributes="href string:${base_url}cpstasktracker.css" />
   </metal:block>
 
-  <metal:block fill-slot="header">
-    <h1 i18n:translate="_label_modify_project">
+  <metal:block fill-slot="header"
+    tal:define="
+    global project_id request/project_id;
+    global project_def python:here.tasks.getProjectDef(project_id);
+    global project_title project_def/title;
+    global project_description project_def/description;
+    ">
+    <h1 i18n:translate="heading_modify_project">
       Modify a project
     </h1>
   </metal:block>
 
   <metal:block fill-slot="main">
 
-    <form method="post" action="doCreateProject">
+    <form method="post" action="doEditProject">
       <table width="100%">
         <tr>
           <td colspan="1">
             <div class="row">
               <div class="label">
-                <span i18n:translate="_prop_title_">
+                <tal:block i18n:translate="_prop_title_">
                   Title
-                </span>
+                </tal:block>
               </div>
               <div class="field">
                 &nbsp;&nbsp;
                 <input type="text" name="title" value=""
-                  tal:attributes="value request/project_title|nothing" />
+                  tal:attributes="value project_title" />
               </div>
             </div>
             <div class="row">
               <div class="label">
-                <span i18n:translate="_prop_description_">
+                <tal:block i18n:translate="_prop_description_">
                   Description
-                </span>
+                </tal:block>
               </div>
               <div class="field">
                 &nbsp;&nbsp;
-                <textarea name="description:text" rows="5" cols="50" wrap="soft"><span tal:replace="request/project_description|nothing" /></textarea>
+                <textarea name="description:text" rows="5" cols="50"
+                  wrap="soft"><tal:block replace="project_description"/></textarea>
               </div>
             </div>
           </td>
@@ -48,8 +55,11 @@
       </table>
 
       <p>
+        <input type="hidden" name="project_id" value=""
+          tal:attributes="value project_id"/>
+
         <input class="standalone" type="submit"
-          value="button_create" i18n:attributes="value" />
+          value="button_change" i18n:attributes="value" />
         <input class="standalone" type="button" onclick="history.back()"
           value="button_cancel" i18n:attributes="value" />
       </p>
