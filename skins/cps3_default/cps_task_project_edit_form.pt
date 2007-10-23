@@ -14,6 +14,7 @@
     global project_def python:here.tasks.getProjectDef(project_id);
     global project_title project_def/title;
     global project_description project_def/description;
+    global tasks python:here.tasks.getProjectTasks(project_id);
     ">
     <h1 i18n:translate="heading_modify_project">
       Modify a project
@@ -64,6 +65,8 @@
           value="button_cancel" i18n:attributes="value" />
       </p>
     </form>
+
+    <metal:block use-macro="here/cps_task_project_lib/macros/tasks_view" />
 
   </metal:block>
 </html>

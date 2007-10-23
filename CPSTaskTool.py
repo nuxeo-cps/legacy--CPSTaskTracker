@@ -30,6 +30,7 @@ This tool :
 """
 
 from logging import getLogger
+from operator import itemgetter
 
 from zope.interface import implements
 from Globals import InitializeClass
@@ -295,7 +296,16 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             else:
                 task_defs = res[project_id]['tasks']
 
-            res[project_id]['tasks'].append(task_def)
+            # The tasks list is decorated with start dates to later on
+            # be able to sort.
+            res[project_id]['tasks'].append((task_doc.start_task_date, task_def))
+
+        # Now doing the sorting on the tasks of each project so they are sorted
+        # on their start date.
+        for project_id in res.keys():
+            tasks_with_dates = res[project_id]['tasks']
+            tasks_with_dates.sort(key=itemgetter(0))
+            res[project_id]['tasks'] = [x[1] for x in tasks_with_dates]
 
         return res
 
@@ -305,7 +315,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         The result is a list with itels being tasks information.
         """
-        task_defs = []
+        tasks_with_dates = []
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
         tasks = [x.getObject() for x in tasks]
@@ -322,7 +332,10 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             task_def['stop_date'] = task_doc.stop_task_date
             task_def['members'] = task_doc.members
             task_def['groups'] = task_doc.groups
-            task_defs.append(task_def)
+            tasks_with_dates.append((task_doc.start_task_date, task_def))
+        # Using the decorate-sort-undecorate pattern
+        tasks_with_dates.sort(key=itemgetter(0))
+        task_defs = [x[1] for x in tasks_with_dates]
         return task_defs
 
     security.declareProtected(ManageProjects, 'addProject')
