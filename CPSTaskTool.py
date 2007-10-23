@@ -296,8 +296,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             else:
                 task_defs = res[project_id]['tasks']
 
-            # The tasks list is decorated with start dates to later on
-            # be able to sort.
+            # Using the decorate-sort-undecorate pattern
             res[project_id]['tasks'].append((task_doc.start_task_date, task_def))
 
         # Now doing the sorting on the tasks of each project so they are sorted
@@ -332,8 +331,8 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             task_def['stop_date'] = task_doc.stop_task_date
             task_def['members'] = task_doc.members
             task_def['groups'] = task_doc.groups
+            # Using the decorate-sort-undecorate pattern
             tasks_with_dates.append((task_doc.start_task_date, task_def))
-        # Using the decorate-sort-undecorate pattern
         tasks_with_dates.sort(key=itemgetter(0))
         task_defs = [x[1] for x in tasks_with_dates]
         return task_defs
