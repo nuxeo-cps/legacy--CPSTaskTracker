@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2007-10-23 15:03default\n"
+"POT-Creation-Date: 2007-10-23 15:21default\n"
 "PO-Revision-Date: 2004-07-26 14:18+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
@@ -131,6 +131,9 @@ msgstr "Closed"
 
 msgid "_action_history_"
 msgstr "Status history"
+
+msgid "label_duration"
+msgstr "Duration"
 
 msgid "label_project_title"
 msgstr "Project"

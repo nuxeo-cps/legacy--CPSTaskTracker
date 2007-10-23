@@ -94,6 +94,9 @@ msgstr ""
 
 ### labels ################################################################
 
+msgid "label_duration"
+msgstr ""
+
 msgid "label_project_title"
 msgstr ""
 
