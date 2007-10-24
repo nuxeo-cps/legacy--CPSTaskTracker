@@ -358,28 +358,9 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         The result is a list with itels being tasks information.
         """
-        tasks_with_dates = []
-        pcat = self.portal_catalog
-        tasks = pcat.searchResults({'portal_type':'CPS Task'})
-        tasks = [x.getObject() for x in tasks]
-
-        for task in tasks:
-            task_doc = task.getContent()
-            if task_doc.task_project != project_id:
-                continue
-            task_def = {}
-            task_def['id'] = task_doc.id
-            task_def['title'] = task_doc.title
-            task_def['status'] = task_doc.getStatus()
-            task_def['start_date'] = task_doc.start_task_date
-            task_def['stop_date'] = task_doc.stop_task_date
-            task_def['members'] = task_doc.members
-            task_def['groups'] = task_doc.groups
-            # Using the decorate-sort-undecorate pattern
-            tasks_with_dates.append((task_doc.start_task_date, task_def))
-        tasks_with_dates.sort(key=itemgetter(0))
-        task_defs = [x[1] for x in tasks_with_dates]
-        return task_defs
+        projects_defs = self.getProjectsWithTasks()
+        project_def = projects_defs[project_id]
+        return project_def['tasks']
 
     security.declareProtected(ManageProjects, 'addProject')
     def addProject(self, new_project):
