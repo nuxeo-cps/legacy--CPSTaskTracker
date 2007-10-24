@@ -304,24 +304,20 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             if task_doc.dependency:
                 res[project_id]['dependencies'].add(task_doc.dependency)
 
-        # Now doing the sorting on the tasks of each project so they are sorted
-        # on their start date.
         for project_id in res.keys():
-##             tasks_with_dates = res[project_id]['tasks']
-##             tasks_with_dates.sort(key=itemgetter(0))
-##             tasks_defs = [x[1] for x in tasks_with_dates]
-
-##             tasks_with_dependency = [(x['dependency'], x) for x in tasks_defs]
-##             tasks_with_dependency.sort(key=itemgetter(0))
-##             tasks_defs = [x[1] for x in tasks_with_dependency]
             tasks_defs = res[project_id]['tasks']
             tasks_defs_new = []
             dependencies = res[project_id]['dependencies']
             for dependency in dependencies:
                 tasks_defs_top = [x for x in task_defs if x['id'] == dependency]
                 tasks_defs_new += tasks_defs_top
+
                 tasks_defs_with_dependencies = [x for x in task_defs
                                                 if x['dependency'] == dependency]
+                # Using the decorate-sort-undecorate pattern
+                decorated = [(x['start_date'], x) for x in tasks_defs_with_dependencies]
+                decorated.sort(key=itemgetter(0))
+                tasks_defs_with_dependencies = [x[1] for x in decorated]
                 tasks_defs_new += tasks_defs_with_dependencies
 
             # Tasks with no dependencies and not_dependent to other tasks
