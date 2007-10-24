@@ -1,4 +1,24 @@
 ===========================================================
+Package: CPSTaskTracker 1.0.0
+===========================================================
+First release built by: madarche at: 2007-10-24T19:06:04
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/legacy/CPSTaskTracker/tags/1.0.0
+Build from: https://svn.nuxeo.org/pub/CPS3/legacy/CPSTaskTracker/trunk@52129
+
+Requires
+~~~~~~~~
+- CPSDefault > 3.60.6
+New features
+~~~~~~~~~~~~
+- Ported to CPS 3.4 and using GenericSetup.
+Bug fixes
+~~~~~~~~~
+-
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSTaskTracker 0.12.0
 ===========================================================
 First release built by: madarche at: 2007-08-21T15:12:48
