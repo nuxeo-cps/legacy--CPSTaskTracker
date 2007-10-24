@@ -315,13 +315,27 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
                  top_task = [x for x in tasks_defs if x['id'] == dependency][0]
                  top_tasks_and_dependencies.append((top_task['start_date'],
                                                     top_task, dependency))
+
+            # Tasks with no dependencies and not_dependent to other tasks
+            tasks_defs_no_dependencies = [(x['start_date'], x, None)
+                                          for x in tasks_defs
+                                          if x['id'] not in dependencies
+                                          and not x['dependency']]
+            top_tasks_and_dependencies += tasks_defs_no_dependencies
+            #logger.debug("top_tasks_and_dependencies = \n%s"
+            #             % pformat(top_tasks_and_dependencies))
+
             top_tasks_and_dependencies.sort(key=itemgetter(0))
             #logger.debug("top_tasks_and_dependencies = \n%s"
             #             % pformat(top_tasks_and_dependencies))
+
             for top_task_and_dependency in top_tasks_and_dependencies:
                 top_task = top_task_and_dependency[1]
                 dependency = top_task_and_dependency[2]
                 tasks_defs_new.append(top_task)
+
+                if dependency is None:
+                    continue
 
                 tasks_defs_with_dependencies = [x for x in tasks_defs
                                                 if x['dependency'] == dependency]
@@ -331,12 +345,6 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
                 decorated.sort(key=itemgetter(0))
                 tasks_defs_with_dependencies = [x[1] for x in decorated]
                 tasks_defs_new += tasks_defs_with_dependencies
-
-            # Tasks with no dependencies and not_dependent to other tasks
-            tasks_defs_other = [x for x in tasks_defs
-                                if x['id'] not in dependencies
-                                and not x['dependency']]
-            tasks_defs_new += tasks_defs_other
 
             #logger.debug(pformat(tasks_defs_new))
             res[project_id]['tasks'] = tasks_defs_new
