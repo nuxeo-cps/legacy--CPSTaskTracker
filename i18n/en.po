@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2007-10-23 18:34default\n"
+"POT-Creation-Date: 2007-10-24 17:18default\n"
 "PO-Revision-Date: 2004-07-26 14:18+0200\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
@@ -35,7 +35,7 @@ msgstr "Task related to the project : "
 #.             </block>
 #: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_groups"
-msgstr "Task assigned groups"
+msgstr "Assigned groups"
 
 # ## labels ################################################################
 #.   <block>
@@ -43,7 +43,7 @@ msgstr "Task assigned groups"
 #.             </block>
 #: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_members"
-msgstr "Task assigned members"
+msgstr "Assigned members"
 
 #.   <block>
 #.               Task

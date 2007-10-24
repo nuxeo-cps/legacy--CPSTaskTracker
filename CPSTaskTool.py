@@ -270,6 +270,8 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         being a dictionary containing information the project title and the
         task descriptions.
         """
+        log_key = LOG_KEY + '.getProjectsWithTasks'
+        logger = getLogger(log_key)
         res = {}
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
@@ -285,6 +287,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             task_def['stop_date'] = task_doc.stop_task_date
             task_def['members'] = task_doc.members
             task_def['groups'] = task_doc.groups
+            task_def['dependency'] = task_doc.dependency
 
             # This is the ID of the project
             project_id = task_doc.task_project
@@ -292,20 +295,45 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
                 project_title = self.getProjectDef(project_id)['title']
                 res[project_id] = {'project_title': project_title}
                 res[project_id]['tasks'] = []
+                res[project_id]['dependencies'] = set()
                 task_defs = []
             else:
                 task_defs = res[project_id]['tasks']
 
-            # Using the decorate-sort-undecorate pattern
-            res[project_id]['tasks'].append((task_doc.start_task_date, task_def))
+            res[project_id]['tasks'].append(task_def)
+            if task_doc.dependency:
+                res[project_id]['dependencies'].add(task_doc.dependency)
 
         # Now doing the sorting on the tasks of each project so they are sorted
         # on their start date.
         for project_id in res.keys():
-            tasks_with_dates = res[project_id]['tasks']
-            tasks_with_dates.sort(key=itemgetter(0))
-            res[project_id]['tasks'] = [x[1] for x in tasks_with_dates]
+##             tasks_with_dates = res[project_id]['tasks']
+##             tasks_with_dates.sort(key=itemgetter(0))
+##             tasks_defs = [x[1] for x in tasks_with_dates]
 
+##             tasks_with_dependency = [(x['dependency'], x) for x in tasks_defs]
+##             tasks_with_dependency.sort(key=itemgetter(0))
+##             tasks_defs = [x[1] for x in tasks_with_dependency]
+            tasks_defs = res[project_id]['tasks']
+            tasks_defs_new = []
+            dependencies = res[project_id]['dependencies']
+            for dependency in dependencies:
+                tasks_defs_top = [x for x in task_defs if x['id'] == dependency]
+                tasks_defs_new += tasks_defs_top
+                tasks_defs_with_dependencies = [x for x in task_defs
+                                                if x['dependency'] == dependency]
+                tasks_defs_new += tasks_defs_with_dependencies
+
+            # Tasks with no dependencies and not_dependent to other tasks
+            tasks_defs_other = [x for x in task_defs
+                                if x['id'] not in dependencies
+                                and not x['dependency']]
+            tasks_defs_new += tasks_defs_other
+
+            res[project_id]['tasks'] = tasks_defs_new
+
+        from pprint import pformat
+        logger.debug(pformat(tasks_defs))
         return res
 
     security.declareProtected(View, 'getProjectTasks')

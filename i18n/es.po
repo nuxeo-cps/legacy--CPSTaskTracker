@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSTaskTracker\n"
-"POT-Creation-Date: 2007-10-23 18:32default\n"
+"POT-Creation-Date: 2007-10-23 18:34default\n"
 "PO-Revision-Date: 2006-03-05 18:29+0100\n"
 "Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
 "Language-Team: español <jesusmartin@lasalle.es>\n"

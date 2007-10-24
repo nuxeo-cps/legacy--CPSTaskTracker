@@ -117,9 +117,9 @@
   <property name="is_i18n">True</property>
   <property name="vocabulary">task_projects</property>
  </widget>
- <widget name="task_dependency" meta_type="Select Widget">
+ <widget name="dependency" meta_type="Select Widget">
   <property name="fields">
-   <element value="task_dependency"/>
+   <element value="dependency"/>
   </property>
   <property name="is_required">False</property>
   <property name="label">label_cps_task_dependency</property>
@@ -143,7 +143,7 @@
    <cell name="task_project"/>
   </row>
   <row>
-   <cell name="task_dependency"/>
+   <cell name="dependency"/>
   </row>
   <row>
    <cell name="task_type"/>

@@ -44,6 +44,10 @@ table#projectsWithTasks td {
   text-align: center;
 }
 
+table#projectsWithTasks td.task {
+  text-align: left;
+}
+
 table#projectsWithTasks td.date {
   padding: 0.2em;
 }

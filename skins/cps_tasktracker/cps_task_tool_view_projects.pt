@@ -86,7 +86,11 @@
                   <td>
                     &nbsp;
                   </td>
-                  <td>
+                  <td class="task">
+                    <tal:block condition="task/dependency">
+                      <img src="task_dependency.png"
+                        tal:attributes="alt python:'dependency on ' + task['dependency']"/>
+                    </tal:block>
                     <a href="."
                       tal:attributes="href string:${utool}/tasks/${task/id}">
                       <tal:block content="task/title"/>
