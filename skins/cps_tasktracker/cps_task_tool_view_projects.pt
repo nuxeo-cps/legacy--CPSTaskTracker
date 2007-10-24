@@ -80,6 +80,7 @@
                   </a>
                 </th>
               </tr>
+
               <tal:block repeat="task tasks">
                 <tr tal:define="class python:test(repeat['task'].even(), 'even','odd')"
                   tal:attributes="class class">
@@ -131,6 +132,7 @@
 
                 </tr>
               </tal:block>
+
             </tal:block>
           </tal:block>
         </tbody>

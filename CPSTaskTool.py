@@ -29,6 +29,7 @@ This tool :
 - Stores project records
 """
 
+from pprint import pformat
 from logging import getLogger
 from operator import itemgetter
 
@@ -272,6 +273,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         """
         log_key = LOG_KEY + '.getProjectsWithTasks'
         logger = getLogger(log_key)
+        # The result we want to return
         res = {}
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
@@ -296,9 +298,6 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
                 res[project_id] = {'project_title': project_title}
                 res[project_id]['tasks'] = []
                 res[project_id]['dependencies'] = set()
-                task_defs = []
-            else:
-                task_defs = res[project_id]['tasks']
 
             res[project_id]['tasks'].append(task_def)
             if task_doc.dependency:
@@ -308,28 +307,41 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             tasks_defs = res[project_id]['tasks']
             tasks_defs_new = []
             dependencies = res[project_id]['dependencies']
-            for dependency in dependencies:
-                tasks_defs_top = [x for x in task_defs if x['id'] == dependency]
-                tasks_defs_new += tasks_defs_top
+            #logger.debug("dependencies = %s" % str(dependencies))
 
-                tasks_defs_with_dependencies = [x for x in task_defs
+            # Sorting the top tasks using the decorate-sort-undecorate pattern
+            top_tasks_and_dependencies = []
+            for dependency in dependencies:
+                 top_task = [x for x in tasks_defs if x['id'] == dependency][0]
+                 top_tasks_and_dependencies.append((top_task['start_date'],
+                                                    top_task, dependency))
+            top_tasks_and_dependencies.sort(key=itemgetter(0))
+            #logger.debug("top_tasks_and_dependencies = \n%s"
+            #             % pformat(top_tasks_and_dependencies))
+            for top_task_and_dependency in top_tasks_and_dependencies:
+                top_task = top_task_and_dependency[1]
+                dependency = top_task_and_dependency[2]
+                tasks_defs_new.append(top_task)
+
+                tasks_defs_with_dependencies = [x for x in tasks_defs
                                                 if x['dependency'] == dependency]
-                # Using the decorate-sort-undecorate pattern
+                # Sorting the tasks with dependency
+                # using the decorate-sort-undecorate pattern.
                 decorated = [(x['start_date'], x) for x in tasks_defs_with_dependencies]
                 decorated.sort(key=itemgetter(0))
                 tasks_defs_with_dependencies = [x[1] for x in decorated]
                 tasks_defs_new += tasks_defs_with_dependencies
 
             # Tasks with no dependencies and not_dependent to other tasks
-            tasks_defs_other = [x for x in task_defs
+            tasks_defs_other = [x for x in tasks_defs
                                 if x['id'] not in dependencies
                                 and not x['dependency']]
             tasks_defs_new += tasks_defs_other
 
+            #logger.debug(pformat(tasks_defs_new))
             res[project_id]['tasks'] = tasks_defs_new
 
-        from pprint import pformat
-        logger.debug(pformat(tasks_defs))
+        #logger.debug(pformat(res))
         return res
 
     security.declareProtected(View, 'getProjectTasks')
