@@ -111,29 +111,22 @@ from Products.CPSCore.interfaces import ICPSSite
 import CPSTaskTool
 import CPSTaskScreen
 import CPSTask
-import CPSTaskBox
 
 contentClasses = (
     CPSTask.CPSTask,
     CPSTaskScreen.CPSTaskScreen,
-    CPSTaskBox.CPSTaskBox,
     )
 
 contentConstructors = (
     CPSTask.addCPSTask,
     CPSTaskScreen.addCPSTaskScreen,
-    CPSTaskBox.addCPSTaskBox,
     )
 
 #
 # No factory type for CPSTask since it's
 # a sub class of CPSDocument
 #
-fti = (
-        () +
-        CPSTaskScreen.factory_type_information +
-        CPSTaskBox.factory_type_information + ()
-        )
+fti = (CPSTaskScreen.factory_type_information)
 
 registerDirectory('skins', globals())
 registerDirectory('www', globals())
@@ -155,8 +148,7 @@ def initialize(context):
         ).initialize(context)
 
     #
-    # Registering content classes :
-    # Task, the Task Screen and the task box.
+    # Registering content classes
     #
     ContentInit(
         'CPS Task Tracker',

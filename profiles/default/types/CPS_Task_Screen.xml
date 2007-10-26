@@ -12,7 +12,6 @@
  <property name="filter_content_types">False</property>
  <property name="allowed_content_types"/>
  <property name="allow_discussion">False</property>
- <property name="cps_is_portalbox">False</property>
  <property name="cps_is_searchable">False</property>
  <property name="cps_proxy_type"></property>
  <property name="cps_display_as_document_in_listing">False</property>
