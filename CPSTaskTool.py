@@ -273,8 +273,15 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         """
         log_key = LOG_KEY + '.getProjectsWithTasks'
         logger = getLogger(log_key)
-        # The result we want to return
+        # The result we want to return is initialized to have all the projects
+        # in it, even if there isn't any task in each project.
         res = {}
+        for project_id in self._projects.keys():
+            project_title = self.getProjectDef(project_id)['title']
+            res[project_id] = {'project_title': project_title}
+            res[project_id]['tasks'] = []
+            res[project_id]['dependencies'] = set()
+
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
         tasks = [x.getObject() for x in tasks]
@@ -293,12 +300,6 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
             # This is the ID of the project
             project_id = task_doc.task_project
-            if project_id not in res.keys():
-                project_title = self.getProjectDef(project_id)['title']
-                res[project_id] = {'project_title': project_title}
-                res[project_id]['tasks'] = []
-                res[project_id]['dependencies'] = set()
-
             res[project_id]['tasks'].append(task_def)
             if task_doc.dependency:
                 res[project_id]['dependencies'].add(task_doc.dependency)
