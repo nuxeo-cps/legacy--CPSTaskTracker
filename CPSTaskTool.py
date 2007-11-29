@@ -356,11 +356,11 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
     def getProjectTasks(self, project_id):
         """Returns the list of tasks for a given project.
 
-        The result is a list with itels being tasks information.
+        The result is a list with items being tasks information.
         """
         projects_defs = self.getProjectsWithTasks()
-        project_def = projects_defs[project_id]
-        return project_def['tasks']
+        project_def = projects_defs.get(project_id)
+        return project_def and project_def['tasks'] or None
 
     security.declareProtected(ManageProjects, 'addProject')
     def addProject(self, new_project):
