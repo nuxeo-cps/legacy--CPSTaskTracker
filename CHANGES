@@ -8,6 +8,7 @@ Bug fixes
 ~~~~~~~~~
 - A project's display should not break if the project hasn't any task.
 - Display all projects, and not only the projects with tasks.
+- Add the resetting of task dependency when a task change of project.
 - Add sanitizing code when displaying tasks in case some tasks have change of
   project.
 New internal features
