@@ -1,6 +1,8 @@
-# (c) 2003-2007 Nuxeo SAS <http://nuxeo.com>
-# (c) 2003 CEA <http://www.cea.fr>
-# Author: Julien Anguenot <ja@nuxeo.com>
+# (C) Copyright 2003-2007 Nuxeo SAS <http://nuxeo.com>
+# (C) 2003 CEA <http://www.cea.fr>
+# Authors:
+# Julien Anguenot <ja@nuxeo.com>
+# M.-A. Darche <madarche@nuxeo.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 2 as published
@@ -317,34 +319,57 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         for project_id in res.keys():
             tasks_defs = res[project_id]['tasks']
-            tasks_defs_new = []
+            tasks_defs_sorted = []
             dependencies = res[project_id]['dependencies']
             #logger.debug("dependencies = %s" % str(dependencies))
 
-            # Sorting the top tasks using the decorate-sort-undecorate pattern
-            top_tasks_and_dependencies = []
+            # A "top task" is a task with no dependency.
+            # Creating the list of top tasks and tasks with no dependencies.
+            top_tasks_and_no_dependencies = []
+            top_tasks_ids = []
             for dependency in dependencies:
-                 top_task = [x for x in tasks_defs if x['id'] == dependency][0]
-                 top_tasks_and_dependencies.append((top_task['start_date'],
-                                                    top_task, dependency))
+                #import pdb;pdb.set_trace()
+                top_tasks = [x for x in tasks_defs if x['id'] == dependency
+                             and not x['dependency']]
+                # A parent task for a task having a dependency on it
+                # might also have a dependency on another task. Thus this isn't
+                # a top task.
+                if not top_tasks:
+                    continue
+                # There is only one top task for a dependency
+                top_task = top_tasks[0]
+                top_tasks_and_no_dependencies.append((top_task['start_date'],
+                                                      top_task, dependency))
+                top_tasks_ids.append(top_task['id'])
 
-            # Tasks with no dependencies and not_dependent to other tasks
+            # Tasks which are dependent, but not on top tasks
+            tasks_defs_with_dependencies = [(x['start_date'], x, None)
+                                            for x in tasks_defs
+                                            if x['dependency']
+                                            and x['id'] not in top_tasks_ids
+                                            and x['dependency'] not in top_tasks_ids]
+            top_tasks_and_no_dependencies += tasks_defs_with_dependencies
+
+            # Tasks with no dependencies and not dependent to other tasks
             tasks_defs_no_dependencies = [(x['start_date'], x, None)
                                           for x in tasks_defs
                                           if x['id'] not in dependencies
                                           and not x['dependency']]
-            top_tasks_and_dependencies += tasks_defs_no_dependencies
-            #logger.debug("top_tasks_and_dependencies = \n%s"
-            #             % pformat(top_tasks_and_dependencies))
+            top_tasks_and_no_dependencies += tasks_defs_no_dependencies
+            #logger.debug("top_tasks_and_no_dependencies = \n%s"
+            #             % pformat(top_tasks_and_no_dependencies))
 
-            top_tasks_and_dependencies.sort(key=itemgetter(0))
-            #logger.debug("top_tasks_and_dependencies = \n%s"
-            #             % pformat(top_tasks_and_dependencies))
+            # First sort on the top tasks and no dependencies tasks based on the
+            # start date.
+            top_tasks_and_no_dependencies.sort(key=itemgetter(0))
+            #logger.debug("top_tasks_and_no_dependencies = \n%s"
+            #             % pformat(top_tasks_and_no_dependencies))
 
-            for top_task_and_dependency in top_tasks_and_dependencies:
+            # Then adding the dependencies inside the first computed set of tasks
+            for top_task_and_dependency in top_tasks_and_no_dependencies:
                 top_task = top_task_and_dependency[1]
                 dependency = top_task_and_dependency[2]
-                tasks_defs_new.append(top_task)
+                tasks_defs_sorted.append(top_task)
 
                 if dependency is None:
                     continue
@@ -356,10 +381,10 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
                 decorated = [(x['start_date'], x) for x in tasks_defs_with_dependencies]
                 decorated.sort(key=itemgetter(0))
                 tasks_defs_with_dependencies = [x[1] for x in decorated]
-                tasks_defs_new += tasks_defs_with_dependencies
+                tasks_defs_sorted += tasks_defs_with_dependencies
 
-            #logger.debug(pformat(tasks_defs_new))
-            res[project_id]['tasks'] = tasks_defs_new
+            #logger.debug(pformat(tasks_defs_sorted))
+            res[project_id]['tasks'] = tasks_defs_sorted
 
         #logger.debug(pformat(res))
         return res

@@ -11,6 +11,7 @@ Bug fixes
 - Add the resetting of task dependency when a task change of project.
 - Add sanitizing code when displaying tasks in case some tasks have change of
   project.
+- Fixed the display of tasks which are dependent, but not on top tasks.
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
