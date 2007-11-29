@@ -309,7 +309,10 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
                     if parent_task.task_project == task_doc.task_project:
                         res[project_id]['dependencies'].add(task_doc.dependency)
                     else:
-                        # Sanitizing the dependency since it has changed
+                        # Sanitizing the dependency since it has changed.
+                        # TODO: To optimize the sanitizing each task could have
+                        # pointers on tasks dependent on it, instead of doing
+                        # this check every time.
                         task_doc.dependency = ''
 
         for project_id in res.keys():
