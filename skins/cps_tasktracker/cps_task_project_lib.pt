@@ -7,6 +7,7 @@
   <table id="projectsWithTasks">
     <thead>
       <tr>
+        <th tal:condition="enable_deletion|nothing">X</th>
         <th>
           <tal:block i18n:translate="label_task_title">
             Task
@@ -43,6 +44,12 @@
       <tal:block repeat="task tasks">
         <tr tal:define="class python:test(repeat['task'].even(), 'even','odd')"
           tal:attributes="class class">
+
+          <td tal:condition="enable_deletion|nothing">
+            <input type="checkbox" value="" name="ids:list"
+              tal:attributes="value task/id" />
+          </td>
+
           <td class="task">
             <tal:block condition="task/dependency">
               <img src="task_dependency.png"

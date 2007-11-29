@@ -11,7 +11,7 @@
 
     <metal:block fill-slot="main"
       tal:define="project_items python:here.tasks.getProjects()">
-      <div align="right">
+      <div>
         <a href="./cps_task_project_add_form">
           <tal:block i18n:translate="_label_create_a_new_project">
             Create a new project
@@ -49,27 +49,28 @@
                 <input type="checkbox" value="" name="ids:list"
                       tal:attributes="value project_id" />
               </td>
-              <td align="center">
+              <td>
                     <a href=""
                       tal:attributes="href string:cps_task_project_edit_form?project_id=${project_id}">
                       <tal:block replace="project_title" />
                </a>
               </td>
-              <td align="center">
+              <td>
                 <tal:block replace="project_description"/>
               </td>
             </tr>
             </tal:block>
             </table>
-            <br />
-            <input type="submit" value="_button_delete" class="standalone"
-                   i18n:attributes="value" />
+            <p>
+              <button type="submit" class="destructive"
+                i18n:translate="button_delete">Delete</button>
+            </p>
         </div>
       </tal:block>
       </form>
 
       <tal:block condition="not:project_items">
-        <div class="group" align="center">
+        <div class="group">
           <tal:block i18n:translate="_label_no_project" />
         </div>
       </tal:block>
