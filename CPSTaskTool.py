@@ -91,7 +91,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         Main function used by CPSTaskScreen and CPSTaskBox.
         """
         pcat = self.portal_catalog
-        tasks = pcat.searchResults({'portal_type':'CPS Task'})
+        tasks = pcat.searchResults({'portal_type': 'CPS Task'})
         tasks = [x.getObject() for x in tasks]
 
         # Sorting the tasks against the parameters
@@ -273,6 +273,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         """
         log_key = LOG_KEY + '.getProjectsWithTasks'
         logger = getLogger(log_key)
+
         # The result we want to return is initialized to have all the projects
         # in it, even if there isn't any task in each project.
         res = {}
@@ -282,10 +283,10 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             res[project_id]['tasks'] = []
             res[project_id]['dependencies'] = set()
 
+        # Then getting all tasks and link them with the corresponding projects
         pcat = self.portal_catalog
         tasks = pcat.searchResults({'portal_type':'CPS Task'})
         tasks = [x.getObject() for x in tasks]
-
         for task in tasks:
             task_doc = task.getContent()
             task_def = {}
@@ -302,7 +303,14 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             project_id = task_doc.task_project
             res[project_id]['tasks'].append(task_def)
             if task_doc.dependency:
-                res[project_id]['dependencies'].add(task_doc.dependency)
+                # Checking the dependency since it might have change
+                parent_task = getattr(self, task_doc.dependency, None)
+                if parent_task is not None:
+                    if parent_task.task_project == task_doc.task_project:
+                        res[project_id]['dependencies'].add(task_doc.dependency)
+                    else:
+                        # Sanitizing the dependency since it has changed
+                        task_doc.dependency = ''
 
         for project_id in res.keys():
             tasks_defs = res[project_id]['tasks']
