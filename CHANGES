@@ -6,6 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
+- A project's display should not break if the project hasn't any task.
 - Display all projects, and not only the projects with tasks.
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
