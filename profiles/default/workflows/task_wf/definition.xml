@@ -28,7 +28,7 @@
  <transition transition_id="accept" title=""
              new_state="processed" trigger="USER"
              before_script="" after_script="">
-  
+
   <action url="%(content_url)s/cps_task_accept_form"
           category="workflow">_action_accept</action>
   <guard>
@@ -40,7 +40,7 @@
  <transition transition_id="close" title=""
              new_state="closed" trigger="USER"
              before_script="" after_script="">
-  
+
   <action url="%(content_url)s/cps_task_close_form"
           category="workflow">_action_close_task</action>
   <guard>
@@ -53,8 +53,8 @@
              new_state="waiting" trigger="USER"
              before_script="" after_script="">
   <description>Intial transition like</description>
-  
-  
+
+
   <guard>
    <guard-role>Manager</guard-role>
    <guard-role>Member</guard-role>
@@ -63,7 +63,7 @@
  </transition>
  <transition transition_id="history" title="" new_state=""
              trigger="USER" before_script="" after_script="">
-  
+
   <action url="%(content_url)s/cps_task_status_history"
           category="workflow">_action_current_status_</action>
   <guard>
@@ -73,7 +73,7 @@
  </transition>
  <transition transition_id="recall" title="" new_state=""
              trigger="USER" before_script="" after_script="">
-  
+
   <action url="%(content_url)s/cps_task_recall_assignee_form"
           category="workflow">_action_recall_</action>
   <guard>
@@ -85,7 +85,7 @@
  <transition transition_id="reinit" title=""
              new_state="waiting" trigger="USER"
              before_script="" after_script="">
-  
+
   <action url="%(content_url)s/cps_task_reinit_form"
           category="workflow">_action_reinit_</action>
   <guard>
@@ -96,7 +96,7 @@
  </transition>
  <transition transition_id="reject" title="" new_state=""
              trigger="USER" before_script="" after_script="">
-  
+
   <action url="%(content_url)s/cps_task_reject_form"
           category="workflow">_action_reject</action>
   <guard>
@@ -109,7 +109,7 @@
            for_status="True" update_always="True">
   <description>The last transition</description>
   <default>
-   
+
    <expression>transition/getId|nothing</expression>
   </default>
   <guard>
@@ -119,7 +119,7 @@
            for_status="True" update_always="True">
   <description>The ID of the user who performed the last transition</description>
   <default>
-   
+
    <expression>user/getId</expression>
   </default>
   <guard>
@@ -129,18 +129,18 @@
            for_status="True" update_always="True">
   <description>Comments about the last transition</description>
   <default>
-   
-   <expression>python:state_change.kwargs.get('comment',                       '')</expression>
+
+   <expression>python:state_change.kwargs.get('comment', '')</expression>
   </default>
   <guard>
   </guard>
  </variable>
  <variable variable_id="dest_container" for_catalog="False"
            for_status="True" update_always="True">
-  <description>Destination container for the last     paste/publish</description>
+  <description>Destination container for the last paste/publish</description>
   <default>
-   
-   <expression>python:state_change.kwargs.get(                       'dest_container', '')</expression>
+
+   <expression>python:state_change.kwargs.get('dest_container', '')</expression>
   </default>
   <guard>
   </guard>
@@ -149,7 +149,7 @@
            for_status="False" update_always="False">
   <description>Provides access to workflow history</description>
   <default>
-   
+
    <expression>state_change/getHistory</expression>
   </default>
   <guard>
@@ -164,7 +164,7 @@
            for_status="True" update_always="True">
   <description>Time of the last transition</description>
   <default>
-   
+
    <expression>state_change/getDateTime</expression>
   </default>
   <guard>
