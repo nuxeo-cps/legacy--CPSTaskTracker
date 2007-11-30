@@ -13,6 +13,7 @@ Bug fixes
   project.
 - Fix the display of tasks which are dependent, but not on top tasks.
 - Add what's needed to delete tasks on a project edit form.
+- Rejecting a task should not break (it's a ZPT name change).
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 
