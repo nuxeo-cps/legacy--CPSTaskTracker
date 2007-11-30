@@ -6,18 +6,60 @@
               meta_type="CPS Workflow">
  <permission>Modify portal content</permission>
  <permission>View</permission>
+
  <state state_id="closed" title="">
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+
   <exit-transition transition_id="assign"/>
   <exit-transition transition_id="history"/>
   <exit-transition transition_id="reinit"/>
  </state>
+
  <state state_id="processed" title="">
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+
   <exit-transition transition_id="close"/>
   <exit-transition transition_id="recall"/>
   <exit-transition transition_id="history"/>
   <exit-transition transition_id="reinit"/>
  </state>
+
  <state state_id="waiting" title="">
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+
   <exit-transition transition_id="accept"/>
   <exit-transition transition_id="close"/>
   <exit-transition transition_id="recall"/>
@@ -25,6 +67,7 @@
   <exit-transition transition_id="history"/>
   <exit-transition transition_id="reinit"/>
  </state>
+
  <transition transition_id="accept" title=""
              new_state="processed" trigger="USER"
              before_script="" after_script="">
