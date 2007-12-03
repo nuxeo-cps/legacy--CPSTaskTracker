@@ -1,4 +1,31 @@
 ===========================================================
+Package: CPSTaskTracker 1.0.2
+===========================================================
+First release built by: madarche at: 2007-12-03T09:28:48
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/products/CPSTaskTracker/tags/1.0.2
+Build from: https://svn.nuxeo.org/pub/CPS3/products/CPSTaskTracker/trunk@52239
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- A project's display should not break if the project hasn't any task.
+- Display all projects, and not only the projects with tasks.
+- Add the resetting of task dependency when a task change of project.
+- Add sanitizing code when displaying tasks in case some tasks have change of
+  project.
+- Fix the display of tasks which are dependent, but not on top tasks.
+- Add what's needed to delete tasks on a project edit form.
+- Rejecting a task should not break (it's a ZPT name change).
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSTaskTracker 1.0.1
 ===========================================================
 First release built by: madarche at: 2007-10-26T18:03:07
