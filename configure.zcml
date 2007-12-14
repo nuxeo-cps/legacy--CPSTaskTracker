@@ -9,4 +9,10 @@
     permission="cmf.addPortalContent"
     />
 
+  <subscriber
+      for="OFS.interfaces.IItem
+           zope.app.event.interfaces.IObjectEvent"
+      handler=".__init__.handleObjectEvent"
+      />
+
 </configure>
