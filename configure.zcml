@@ -4,7 +4,7 @@
 
   <permission id="cmf.addPortalContent" title="Add portal content"/>
   <five:registerClass
-    class="Products.CPSTaskTracker.CPSTaskTool.CPSTaskTool"
+    class="Products.CPSTaskTracker.tasktool.CPSTaskTool"
     meta_type="CPS Task Repository"
     permission="cmf.addPortalContent"
     />

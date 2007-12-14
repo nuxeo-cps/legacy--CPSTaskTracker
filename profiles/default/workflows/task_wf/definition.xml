@@ -7,45 +7,6 @@
  <permission>Modify portal content</permission>
  <permission>View</permission>
 
- <state state_id="closed" title="">
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>Manager</permission-role>
-   <permission-role>WorkspaceManager</permission-role>
-   <permission-role>WorkspaceMember</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>Manager</permission-role>
-   <permission-role>WorkspaceManager</permission-role>
-   <permission-role>WorkspaceMember</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-
-  <exit-transition transition_id="assign"/>
-  <exit-transition transition_id="history"/>
-  <exit-transition transition_id="reinit"/>
- </state>
-
- <state state_id="processed" title="">
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>Manager</permission-role>
-   <permission-role>WorkspaceManager</permission-role>
-   <permission-role>WorkspaceMember</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>Manager</permission-role>
-   <permission-role>WorkspaceManager</permission-role>
-   <permission-role>WorkspaceMember</permission-role>
-   <permission-role>Owner</permission-role>
-  </permission-map>
-
-  <exit-transition transition_id="close"/>
-  <exit-transition transition_id="recall"/>
-  <exit-transition transition_id="history"/>
-  <exit-transition transition_id="reinit"/>
- </state>
-
  <state state_id="waiting" title="">
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>Manager</permission-role>
@@ -66,6 +27,49 @@
   <exit-transition transition_id="reject"/>
   <exit-transition transition_id="history"/>
   <exit-transition transition_id="reinit"/>
+  <exit-transition transition_id="modify"/>
+  <exit-transition transition_id="modify"/>
+ </state>
+
+ <state state_id="processed" title="">
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+
+  <exit-transition transition_id="close"/>
+  <exit-transition transition_id="recall"/>
+  <exit-transition transition_id="history"/>
+  <exit-transition transition_id="reinit"/>
+  <exit-transition transition_id="modify"/>
+  <exit-transition transition_id="modify"/>
+ </state>
+
+ <state state_id="closed" title="">
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>WorkspaceManager</permission-role>
+   <permission-role>WorkspaceMember</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+
+  <exit-transition transition_id="assign"/>
+  <exit-transition transition_id="history"/>
+  <exit-transition transition_id="reinit"/>
  </state>
 
  <transition transition_id="accept" title=""
@@ -76,7 +80,10 @@
           category="workflow">_action_accept</action>
   <guard>
    <guard-role>Manager</guard-role>
+   <guard-role>WorkspaceManager</guard-role>
+   <guard-role>WorkspaceMember</guard-role>
    <guard-role>Member</guard-role>
+   <guard-role>Owner</guard-role>
    <guard-expression>python:state_change['object'].getContent().isAssigned()</guard-expression>
   </guard>
  </transition>
@@ -88,22 +95,40 @@
           category="workflow">_action_close_task</action>
   <guard>
    <guard-role>Manager</guard-role>
+   <guard-role>WorkspaceManager</guard-role>
+   <guard-role>WorkspaceMember</guard-role>
    <guard-role>Member</guard-role>
+   <guard-role>Owner</guard-role>
    <guard-expression>python:state_change['object'].getContent().isTheAssignedOne()</guard-expression>
   </guard>
  </transition>
+
  <transition transition_id="create" title="Initial creation"
              new_state="waiting" trigger="USER"
              before_script="" after_script="">
   <description>Intial transition like</description>
-
-
   <guard>
    <guard-role>Manager</guard-role>
+   <guard-role>WorkspaceManager</guard-role>
+   <guard-role>WorkspaceMember</guard-role>
    <guard-role>Member</guard-role>
   </guard>
   <transition-behavior behavior_id="initial-create"/>
  </transition>
+
+ <transition transition_id="modify" title="Edit content"
+             new_state="" trigger="USER" before_script=""
+             after_script="">
+  <description>This transition provides a specific entry in status history</description>
+  <guard>
+   <guard-role>Manager</guard-role>
+   <guard-role>Member</guard-role>
+   <guard-role>Owner</guard-role>
+   <guard-role>WorkspaceManager</guard-role>
+   <guard-role>WorkspaceMember</guard-role>
+  </guard>
+ </transition>
+
  <transition transition_id="history" title="" new_state=""
              trigger="USER" before_script="" after_script="">
 
@@ -148,6 +173,7 @@
    <guard-expression>python:state_change['object'].getContent().isAssigned()</guard-expression>
   </guard>
  </transition>
+
  <variable variable_id="action" for_catalog="False"
            for_status="True" update_always="True">
   <description>The last transition</description>
@@ -158,6 +184,7 @@
   <guard>
   </guard>
  </variable>
+
  <variable variable_id="actor" for_catalog="False"
            for_status="True" update_always="True">
   <description>The ID of the user who performed the last transition</description>
@@ -168,6 +195,7 @@
   <guard>
   </guard>
  </variable>
+
  <variable variable_id="comments" for_catalog="False"
            for_status="True" update_always="True">
   <description>Comments about the last transition</description>
@@ -178,6 +206,7 @@
   <guard>
   </guard>
  </variable>
+
  <variable variable_id="dest_container" for_catalog="False"
            for_status="True" update_always="True">
   <description>Destination container for the last paste/publish</description>
@@ -188,6 +217,7 @@
   <guard>
   </guard>
  </variable>
+
  <variable variable_id="review_history" for_catalog="False"
            for_status="False" update_always="False">
   <description>Provides access to workflow history</description>
@@ -203,6 +233,7 @@
    <guard-role>Member</guard-role>
   </guard>
  </variable>
+
  <variable variable_id="time" for_catalog="False"
            for_status="True" update_always="True">
   <description>Time of the last transition</description>
@@ -213,4 +244,5 @@
   <guard>
   </guard>
  </variable>
+
 </cps-workflow>

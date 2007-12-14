@@ -108,7 +108,7 @@ from Products.GenericSetup import EXTENSION
 
 from Products.CPSCore.interfaces import ICPSSite
 
-import CPSTaskTool
+import tasktool
 import CPSTaskScreen
 import CPSTask
 
@@ -131,7 +131,7 @@ fti = (CPSTaskScreen.factory_type_information)
 registerDirectory('skins', globals())
 registerDirectory('www', globals())
 
-tools = (CPSTaskTool.CPSTaskTool,
+tools = (tasktool.CPSTaskTool,
          )
 
 def initialize(context):

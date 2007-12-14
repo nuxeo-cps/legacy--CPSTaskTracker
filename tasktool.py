@@ -38,16 +38,20 @@ from operator import itemgetter
 from zope.interface import implements
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
+from AccessControl import getSecurityManager
+from AccessControl.SecurityManagement import newSecurityManager
+from AccessControl.SecurityManagement import setSecurityManager
 from persistent.dict import PersistentDict
 
 from Products.BTreeFolder2.CMFBTreeFolder import CMFBTreeFolder
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.utils import UniqueObject
-from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
+from Products.CMFCore.CMFCorePermissions import View, \
+     ModifyPortalContent, AddPortalContent
 
-from Products.CPSTaskTracker.CPSTaskTrackerPermissions import ManageProjects, \
-     TaskCreate
+from Products.CPSCore.CPSMembershipTool import CPSUnrestrictedUser
+from Products.CPSTaskTracker.permissions import ManageProjects, TaskCreate
 from Products.CPSTaskTracker.interfaces import ITaskTool
 
 LOG_KEY = 'CPSTaskTool'
@@ -80,6 +84,66 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         # We have to use a PersistentDict since the python built-in list
         # and dict don't notify the ZODB when they have been changed.
         self._projects = PersistentDict()
+
+##     security.declarePublic('invokeFactory')
+##     def invokeFactory(self, type_name, id, RESPONSE=None, *args, **kw):
+##         """Create a CMF object in this folder.
+
+##         A creation_transitions argument should be passed for CPS
+##         object creation.
+
+##         This method is public as creation security is governed
+##         by the workflows allowed by the workflow tool.
+##         """
+##         wftool = getToolByName(self, 'portal_workflow')
+##         newid = wftool.invokeFactoryFor(self, type_name, id, *args, **kw)
+##         if RESPONSE is not None:
+##             ob = self._getOb(newid)
+##             ttool = getToolByName(self, 'portal_types')
+##             info = ttool.getTypeInfo(type_name)
+##             RESPONSE.redirect('%s/%s' % (ob.absolute_url(),
+##                                          info.immediate_view))
+##         return newid
+
+    #security.declareProtected(AddPortalContent, 'invokeFactory')
+##     security.declarePublic('invokeFactory')
+##     def invokeFactory(self, type_name, id, RESPONSE=None, *args, **kw):
+##         """Invokes the portal_types tool.
+##         """
+##         mtool = getToolByName(self, 'portal_membership')
+##         pt = getToolByName(self, 'portal_types')
+
+##         # Create a tmp_user to create the post
+##         user = mtool.getAuthenticatedMember()
+##         member_id = user.getMemberId()
+##         tmp_user = CPSUnrestrictedUser(member_id, '',
+##                                        ['Manager'], '')
+##         tmp_user = tmp_user.__of__(self.acl_users)
+##         old_sm = getSecurityManager()
+##         newSecurityManager(None, tmp_user)
+
+##         try:
+##             myType = pt.getTypeInfo(self)
+##             if myType is not None:
+##                 if not myType.allowType( type_name ):
+##                     raise ValueError('Disallowed subobject type: %s' % type_name)
+
+##             info = pt.getTypeInfo( type_name )
+##             if info is None:
+##                 raise ValueError('No such content type: %s' % type_name)
+
+##             ob = info.constructInstance(self, id, *args, **kw)
+##         finally:
+##             # Revert to original user.
+##             setSecurityManager(old_sm)
+
+##         if RESPONSE is not None:
+##             immediate_url = '%s/%s' % ( ob.absolute_url()
+##                                       , info.immediate_view )
+##             RESPONSE.redirect( immediate_url )
+
+##         return ob.getId()
+
 
     #################################################
     #################################################

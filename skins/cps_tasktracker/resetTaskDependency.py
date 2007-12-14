@@ -19,8 +19,8 @@ from zLOG import LOG, DEBUG
 if proxy is None:
     return value
 
-#project_id = object.get('task_project')
-project_id = object['task_project']
+project_id = object.get('task_project')
+#project_id = object['task_project']
 #LOG('XXXX', DEBUG, "project_id before %s, after = %s" % (project_id, data['task_project']))
 if data['task_project'] != project_id:
     data['dependency'] = ''
