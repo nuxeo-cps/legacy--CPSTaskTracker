@@ -1,7 +1,7 @@
 <html xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="here/content_lib_master/macros/master">
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  metal:use-macro="here/content_lib_master/macros/master">
   <body>
     <metal:block fill-slot="header">
       <h1 i18n:translate="_label_manage_projects">
@@ -11,33 +11,27 @@
 
     <metal:block fill-slot="main"
       tal:define="project_items python:here.tasks.getProjects()">
-      <div>
-        <a href="./cps_task_project_add_form">
-          <tal:block i18n:translate="_label_create_a_new_project">
-            Create a new project
-         </tal:block>
-        </a>
-      </div>
+
       <form method="post" action="doDeleteProjects">
-      <tal:block condition="project_items">
-        <div class="group">
-          <table width="100%">
-            <tr>
-              <th>&nbsp;</th>
-              <th>
-                <tal:block i18n:translate="_label_title" />
-              </th>
-              <th>
-                <tal:block i18n:translate="_label_description" />
-              </th>
-            </tr>
-            <tr>
-              <td colspan="3">
-                &nbsp;
-              </td>
-            </tr>
-            <tal:block repeat="project_item project_items">
-            <tr tal:define="
+        <tal:block condition="project_items">
+          <div class="group">
+            <table width="100%">
+              <tr>
+                <th>&nbsp;</th>
+                <th>
+                  <tal:block i18n:translate="_label_title" />
+                </th>
+                <th>
+                  <tal:block i18n:translate="_label_description" />
+                </th>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  &nbsp;
+                </td>
+              </tr>
+              <tal:block repeat="project_item project_items">
+                <tr tal:define="
                   project_id python:project_item[0];
                   project_def python:project_item[1];
                   project_title project_def/title;
@@ -45,28 +39,28 @@
                   class python:test(repeat['project_item'].even(), 'even','odd');
                   "
                   tal:attributes="class class">
-              <td>
-                <input type="checkbox" value="" name="ids:list"
+                  <td>
+                    <input type="checkbox" value="" name="ids:list"
                       tal:attributes="value project_id" />
-              </td>
-              <td>
+                  </td>
+                  <td>
                     <a href=""
                       tal:attributes="href string:cps_task_project_edit_form?project_id=${project_id}">
                       <tal:block replace="project_title" />
-               </a>
-              </td>
-              <td>
-                <tal:block replace="project_description"/>
-              </td>
-            </tr>
-            </tal:block>
+                    </a>
+                  </td>
+                  <td>
+                    <tal:block replace="project_description"/>
+                  </td>
+                </tr>
+              </tal:block>
             </table>
             <p>
               <button type="submit" class="destructive"
                 i18n:translate="button_delete">Delete</button>
             </p>
-        </div>
-      </tal:block>
+          </div>
+        </tal:block>
       </form>
 
       <tal:block condition="not:project_items">
@@ -74,6 +68,14 @@
           <tal:block i18n:translate="_label_no_project" />
         </div>
       </tal:block>
+
+      <p>
+        <a href="./cps_task_project_add_form">
+          <tal:block i18n:translate="_label_create_a_new_project">
+            Create a new project
+          </tal:block>
+        </a>
+      </p>
 
     </metal:block>
   </body>
