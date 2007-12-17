@@ -1,47 +1,42 @@
-## Script (Python) "getTaskBreadCrumb"
 ##parameters=REQUEST=None
-#$Id$
-
+# $Id$
 """Builts the breadcrumbs.
 
-Will be empty except when we're coming
-from the task screener.
+Sets the breadcrumb as if a task had its project as parent.
 """
 
-from zLOG import LOG, INFO
+from zLOG import LOG, DEBUG, INFO
 
+from Products.CMFCore.utils import getToolByName
 
-default_bc = [{'url': context.absolute_url(),
-               'title': context.title_or_id(),
-               'longtitle': context.title_or_id()
-               }]
+utool = getToolByName(context, 'portal_url')
+tasktool = getToolByName(context, 'tasks')
 
-if REQUEST is None:
-    return []
-else:
-    if REQUEST.get('skip_bc') is None:
-        bc = REQUEST.SESSION.get('screener_breadcrumb')
-        if bc is not None:
-            stupid = 0
-            for item in bc:
-                if item['url'] == context.absolute_url():
-                    #
-                    # Here the title could have change.
-                    # When you we just create a task.
-                    #
-                    item['title'] = context.title_or_id()
-                    item['longtitle'] = context.title_or_id()
-                    stupid = 1
-            if stupid == 0:
-                del bc[0]
-                bc.append({'url': context.absolute_url(),
-                           'title': context.title_or_id(),
-                           'longtitle': context.title_or_id()
-                           })
-            return bc
-        else:
-            return default_bc
-    else:
-        if REQUEST.SESSION.has_key('screener_breadcrumb'):
-            del REQUEST.SESSION['screener_breadcrumb']
-        return default_bc
+portal = utool.getPortalObject()
+portal_url = portal.absolute_url()
+
+bc = [{'url': portal_url,
+       'title': portal.title_or_id(),
+       'longtitle': portal.title_or_id(),
+       }]
+
+project_id = context['task_project']
+if not project_id:
+    return bc
+
+project_def = tasktool.getProjectDef(project_id)
+project_title = project_def['title']
+project_url = portal_url + '/cps_task_project_view?project_id=' + project_id
+
+bc.append({'url': project_url,
+            'title': project_title,
+            'longtitle': project_title,
+           })
+
+bc.append({'url': context.absolute_url(),
+            'title': context.title_or_id(),
+            'longtitle': context.title_or_id(),
+           })
+
+return bc
+

@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- Sets the breadcrumb as if a task had its project as parent.
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 

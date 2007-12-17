@@ -32,15 +32,15 @@
  </property>
  <property name="storage_methods"/>
  <property name="cps_is_portlet">False</property>
- <alias from="(Default)" to="cpsdocument_view"/>
- <alias from="view" to="cpsdocument_view"/>
+ <alias from="(Default)" to="cpstask_view"/>
+ <alias from="view" to="cpstask_view"/>
  <action title="action_view" action_id="view" category="object"
-    condition_expr="" url_expr="string:${object_url}/cpsdocument_view"
+    condition_expr="" url_expr="string:${object_url}/cpstask_view"
     visible="True">
   <permission value="View"/>
  </action>
  <action title="action_edit" action_id="edit" category="object"
-    condition_expr="" url_expr="string:${object_url}/cpsdocument_edit_form"
+    condition_expr="" url_expr="string:${object_url}/cpstask_edit_form"
     visible="True">
   <permission value="Modify portal content"/>
  </action>
