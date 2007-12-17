@@ -30,5 +30,8 @@ from Products.CMFCore.CMFCorePermissions import setDefaultRoles
 TaskCreate = 'Task create'
 setDefaultRoles(TaskCreate, ('Manager', 'Member'))
 
+ViewProjects = 'View projects'
+setDefaultRoles(ViewProjects, ('Manager', 'Member'))
+
 ManageProjects = 'Manage projects'
 setDefaultRoles(ManageProjects, ('Manager'))

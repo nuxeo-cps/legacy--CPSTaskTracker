@@ -45,6 +45,10 @@ from Globals import MessageDialog
 from logging import getLogger
 from zope.app.container.interfaces import IObjectAddedEvent
 
+from Products.CMFCore.permissions import AddPortalContent
+from Products.CMFCore.utils import getToolByName
+
+from Products.CPSTaskTracker.tasktool import TASK_TOOL_ID
 
 LOG_KEY = 'CPSTaskTracker'
 
@@ -174,23 +178,23 @@ def initialize(context):
         for_=ICPSSite)
 
 
-def handleObjectEvent(ob, event):
+def handleObjectEvent(obj, event):
     """To set the right permissions on the tasktool after it has been created.
     """
     log_key = LOG_KEY + '.handleObjectEvent'
     logger = getLogger(log_key)
-    #print 'handleObjectEvent %s %s' % (event.__class__.__name__,
-    #                                   '/'.join(ob.getPhysicalPath()))
-    if IObjectAddedEvent.providedBy(event):
-        if event.newName is None:
-            return
-        logger.debug("event = %s" % str(event))
-        logger.debug("event.newName = %s" % str(event.newName))
-        logger.debug("ob = %s" % str(ob))
-        #logger.debug("ob.getPhysicalPath = %s" % ob.getPhysicalPath())
-        # CPSTaskTracker.handleObjectEvent ob = <CPSTaskTool at tasks>
-        # TODO: Change the permissions here.
-
+    if not IObjectAddedEvent.providedBy(event):
+        return
+    if event.newName is None:
+        return
+    if not event.newName == TASK_TOOL_ID:
+        return
+    utool = getToolByName(obj, 'portal_url')
+    if not utool.getRpath(obj) == TASK_TOOL_ID:
+        return
+    obj.manage_permission(AddPortalContent,
+                          ['Manager', 'Member'],
+                          acquire=True)
 
 
 

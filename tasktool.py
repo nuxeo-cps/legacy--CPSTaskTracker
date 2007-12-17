@@ -50,11 +50,13 @@ from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.CMFCorePermissions import View, \
      ModifyPortalContent, AddPortalContent
 
-from Products.CPSCore.CPSMembershipTool import CPSUnrestrictedUser
-from Products.CPSTaskTracker.permissions import ManageProjects, TaskCreate
 from Products.CPSTaskTracker.interfaces import ITaskTool
+from Products.CPSTaskTracker.permissions import ManageProjects, ViewProjects, \
+     TaskCreate
 
 LOG_KEY = 'CPSTaskTool'
+
+TASK_TOOL_ID = 'tasks'
 
 _marker = object()
 
@@ -66,7 +68,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
     implements(ITaskTool)
 
-    id = 'tasks'
+    id = TASK_TOOL_ID
     meta_type = 'CPS Task Repository'
 
     security = ClassSecurityInfo()
@@ -84,66 +86,6 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         # We have to use a PersistentDict since the python built-in list
         # and dict don't notify the ZODB when they have been changed.
         self._projects = PersistentDict()
-
-##     security.declarePublic('invokeFactory')
-##     def invokeFactory(self, type_name, id, RESPONSE=None, *args, **kw):
-##         """Create a CMF object in this folder.
-
-##         A creation_transitions argument should be passed for CPS
-##         object creation.
-
-##         This method is public as creation security is governed
-##         by the workflows allowed by the workflow tool.
-##         """
-##         wftool = getToolByName(self, 'portal_workflow')
-##         newid = wftool.invokeFactoryFor(self, type_name, id, *args, **kw)
-##         if RESPONSE is not None:
-##             ob = self._getOb(newid)
-##             ttool = getToolByName(self, 'portal_types')
-##             info = ttool.getTypeInfo(type_name)
-##             RESPONSE.redirect('%s/%s' % (ob.absolute_url(),
-##                                          info.immediate_view))
-##         return newid
-
-    #security.declareProtected(AddPortalContent, 'invokeFactory')
-##     security.declarePublic('invokeFactory')
-##     def invokeFactory(self, type_name, id, RESPONSE=None, *args, **kw):
-##         """Invokes the portal_types tool.
-##         """
-##         mtool = getToolByName(self, 'portal_membership')
-##         pt = getToolByName(self, 'portal_types')
-
-##         # Create a tmp_user to create the post
-##         user = mtool.getAuthenticatedMember()
-##         member_id = user.getMemberId()
-##         tmp_user = CPSUnrestrictedUser(member_id, '',
-##                                        ['Manager'], '')
-##         tmp_user = tmp_user.__of__(self.acl_users)
-##         old_sm = getSecurityManager()
-##         newSecurityManager(None, tmp_user)
-
-##         try:
-##             myType = pt.getTypeInfo(self)
-##             if myType is not None:
-##                 if not myType.allowType( type_name ):
-##                     raise ValueError('Disallowed subobject type: %s' % type_name)
-
-##             info = pt.getTypeInfo( type_name )
-##             if info is None:
-##                 raise ValueError('No such content type: %s' % type_name)
-
-##             ob = info.constructInstance(self, id, *args, **kw)
-##         finally:
-##             # Revert to original user.
-##             setSecurityManager(old_sm)
-
-##         if RESPONSE is not None:
-##             immediate_url = '%s/%s' % ( ob.absolute_url()
-##                                       , info.immediate_view )
-##             RESPONSE.redirect( immediate_url )
-
-##         return ob.getId()
-
 
     #################################################
     #################################################
@@ -261,7 +203,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
 
         return res
 
-    security.declarePrivate("_getTaskList")
+    security.declarePrivate('_getTaskList')
     def _getTaskLists(self, sorted_tasks, parameters):
         """Return the list of tasks split in different categories
 
@@ -314,13 +256,13 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
     ################################################
     ################################################
 
-    security.declareProtected(View, 'getProjects')
+    security.declareProtected(ViewProjects, 'getProjects')
     def getProjects(self):
         """Returns all the projects as a list of items (id, definition).
         """
         return self._projects.items()
 
-    security.declareProtected(View, 'getProjectDef')
+    security.declareProtected(ViewProjects, 'getProjectDef')
     def getProjectDef(self, project_id):
         """Return the definition, ie a dictionary, of the project.
         """
@@ -329,7 +271,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         logger.debug("project_id = %s" % project_id)
         return self._projects[project_id]
 
-    security.declareProtected(View, 'getProjectsWithTasks')
+    security.declareProtected(ViewProjects, 'getProjectsWithTasks')
     def getProjectsWithTasks(self):
         """Returns the list of projects with their associated tasks.
 
@@ -453,7 +395,7 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
         #logger.debug(pformat(res))
         return res
 
-    security.declareProtected(View, 'getProjectTasks')
+    security.declareProtected(ViewProjects, 'getProjectTasks')
     def getProjectTasks(self, project_id):
         """Returns the list of tasks for a given project.
 

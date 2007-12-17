@@ -9,16 +9,16 @@
    <permission>Task create</permission>
   </action>
 
-  <action title="_action_create_new_project" action_id="create_new_project"
-     category="global" condition_expr=""
-     url_expr="string: ${portal_url}/cps_task_tool_manage_projects_form"
-     visible="True">
-   <permission>Manage projects</permission>
-  </action>
-
   <action title="action_view_projects" action_id="action_view_projects"
      category="global" condition_expr=""
      url_expr="string: ${portal_url}/cps_task_tool_view_projects"
+     visible="True">
+   <permission>View projects</permission>
+  </action>
+
+  <action title="_action_create_new_project" action_id="create_new_project"
+     category="global" condition_expr=""
+     url_expr="string: ${portal_url}/cps_task_tool_manage_projects_form"
      visible="True">
    <permission>Manage projects</permission>
   </action>

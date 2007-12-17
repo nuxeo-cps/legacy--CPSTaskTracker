@@ -10,15 +10,17 @@
  <state state_id="waiting" title="">
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>Manager</permission-role>
+   <permission-role>Member</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>WorkspaceManager</permission-role>
    <permission-role>WorkspaceMember</permission-role>
-   <permission-role>Owner</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
    <permission-role>Manager</permission-role>
+   <permission-role>Member</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>WorkspaceManager</permission-role>
    <permission-role>WorkspaceMember</permission-role>
-   <permission-role>Owner</permission-role>
   </permission-map>
 
   <exit-transition transition_id="accept"/>
@@ -27,7 +29,6 @@
   <exit-transition transition_id="reject"/>
   <exit-transition transition_id="history"/>
   <exit-transition transition_id="reinit"/>
-  <exit-transition transition_id="modify"/>
   <exit-transition transition_id="modify"/>
  </state>
 
@@ -49,7 +50,6 @@
   <exit-transition transition_id="recall"/>
   <exit-transition transition_id="history"/>
   <exit-transition transition_id="reinit"/>
-  <exit-transition transition_id="modify"/>
   <exit-transition transition_id="modify"/>
  </state>
 
