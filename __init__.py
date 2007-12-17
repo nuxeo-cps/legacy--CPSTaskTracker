@@ -45,12 +45,27 @@ from Globals import MessageDialog
 from logging import getLogger
 from zope.app.container.interfaces import IObjectAddedEvent
 
-from Products.CMFCore.permissions import AddPortalContent
-from Products.CMFCore.utils import getToolByName
+from Products.GenericSetup import profile_registry
+from Products.GenericSetup import EXTENSION
 
-from Products.CPSTaskTracker.tasktool import TASK_TOOL_ID
+from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.utils import ToolInit, ContentInit
+from Products.CMFCore.DirectoryView import registerDirectory
+from Products.CMFCore.permissions import AddPortalContent
+
+from Products.CPSCore.interfaces import ICPSSite
+
+from Products.CPSTaskTracker.tasktool import TASK_TOOL_ID, CPSTaskTool
+from Products.CPSTaskTracker.task import CPSTask, addCPSTask
+from Products.CPSTaskTracker.taskscreen import CPSTaskScreen, addCPSTaskScreen, factory_type_information
+from Products.CPSTaskTracker.taskscreen import factory_type_information
+
 
 LOG_KEY = 'CPSTaskTracker'
+
+########################################################
+# PATCHING THE OFS
+########################################################
 
 security = ClassSecurityInfo()
 
@@ -108,39 +123,26 @@ ObjectManager.manage_delObjects = manage_delObjects
 ########################################################
 
 
-from Products.CMFCore.utils import ToolInit, ContentInit
-from Products.CMFCore.DirectoryView import registerDirectory
-from Products.CMFCore.permissions import AddPortalContent
-
-from Products.GenericSetup import profile_registry
-from Products.GenericSetup import EXTENSION
-
-from Products.CPSCore.interfaces import ICPSSite
-
-import tasktool
-import CPSTaskScreen
-import CPSTask
-
 contentClasses = (
-    CPSTask.CPSTask,
-    CPSTaskScreen.CPSTaskScreen,
+    CPSTask,
+    CPSTaskScreen,
     )
 
 contentConstructors = (
-    CPSTask.addCPSTask,
-    CPSTaskScreen.addCPSTaskScreen,
+    addCPSTask,
+    addCPSTaskScreen,
     )
 
 #
 # No factory type for CPSTask since it's
 # a sub class of CPSDocument
 #
-fti = (CPSTaskScreen.factory_type_information)
+fti = (factory_type_information)
 
 registerDirectory('skins', globals())
 registerDirectory('www', globals())
 
-tools = (tasktool.CPSTaskTool,
+tools = (CPSTaskTool,
          )
 
 def initialize(context):

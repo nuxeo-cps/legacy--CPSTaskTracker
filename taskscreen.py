@@ -33,7 +33,7 @@ from AccessControl import ClassSecurityInfo
 from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
 
-from TaskTrackerPropertyManager import TaskTrackerPropertyManager
+from propertymanager import TaskTrackerPropertyManager
 
 factory_type_information = (
     {'id': 'CPS Task Screen',

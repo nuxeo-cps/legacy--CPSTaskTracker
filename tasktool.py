@@ -47,7 +47,7 @@ from Products.BTreeFolder2.CMFBTreeFolder import CMFBTreeFolder
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.utils import UniqueObject
-from Products.CMFCore.CMFCorePermissions import View, \
+from Products.CMFCore.permissions import View, \
      ModifyPortalContent, AddPortalContent
 
 from Products.CPSTaskTracker.interfaces import ITaskTool
