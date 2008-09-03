@@ -6,16 +6,20 @@ msgstr ""
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Domain: default\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Preferred-Encodings: utf-8\n"
 
 #.   <block>
 #.               Task end date
 #.             </block>
 #: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "_label_deadline"
-msgstr "Date d'ÈchÈance"
+msgstr "Date d'√©ch√©ance"
 
 #.   <block>
 #.               Task start date
@@ -28,28 +32,28 @@ msgstr "Date effective"
 #: from ../skins/cps_tasktracker/cpstask_edit_form.pt
 #, fuzzy
 msgid "heading_metadata_edit"
-msgstr "T‚ches relatives au projet"
+msgstr "T√¢ches relatives au projet"
 
 #.   <block>
 #.               Assigned groups
 #.             </block>
 #: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_groups"
-msgstr "Groupes affectÈs"
+msgstr "Groupes affect√©s"
 
 #.   <block>
 #.               Assigned members
 #.             </block>
 #: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_cps_task_members"
-msgstr "Membres affectÈs"
+msgstr "Membres affect√©s"
 
 #.   <block>
 #.               Task
 #.             </block>
 #: from ../skins/cps_tasktracker/cps_task_project_lib.pt
 msgid "label_task_title"
-msgstr "T‚che"
+msgstr "T√¢che"
 
 msgid "heading_modify_project"
 msgstr "Modifier le projet"
@@ -59,11 +63,11 @@ msgid "_button_delete"
 msgstr "Effacer"
 
 msgid "_button_accept_"
-msgstr "Accepter cette t‚che "
+msgstr "Accepter cette t√¢che "
 
 # ## BUTTTONS ######################################################
 msgid "_button_reject_"
-msgstr "Rejeter cette t‚che"
+msgstr "Rejeter cette t√¢che"
 
 # ## BUTTTONS ######################################################
 msgid "_button_recall_"
@@ -73,51 +77,51 @@ msgid "_button_assign"
 msgstr "Affecter"
 
 msgid "_button_reinit"
-msgstr "RÈ-initialiser "
+msgstr "R√©-initialiser "
 
 # # portal types ##########################################################
 msgid "portal_type_CPS_Task_title"
-msgstr "T‚che"
+msgstr "T√¢che"
 
 msgid "portal_type_CPS_Task_description"
-msgstr "Visualisateur des t‚ches "
+msgstr "Visualisateur des t√¢ches "
 
 # # portal types ##########################################################
 msgid "_portal_type_CPS_Task"
-msgstr "T‚che"
+msgstr "T√¢che"
 
 msgid "_portal_type_CPS_Task_Screen"
-msgstr "Visualisateur des t‚ches "
+msgstr "Visualisateur des t√¢ches "
 
 # # portal types ##########################################################
 msgid "_portal_type_task Box"
-msgstr "BoÓte des T‚ches"
+msgstr "Bo√Æte des T√¢ches"
 
 # # actions ###############################################################
 msgid "action_view_projects"
 msgstr "Voir les projets"
 
 msgid "_action_reinit_"
-msgstr "RÈ-initialiser"
+msgstr "R√©-initialiser"
 
 # # actions ###############################################################
 msgid "_action_create_new_tasks"
-msgstr "CrÈer une nouvelle t‚che"
+msgstr "Cr√©er une nouvelle t√¢che"
 
 msgid "_action_parameters"
-msgstr "ParamÈtrer le visualisateur de t‚ches. "
+msgstr "Param√©trer le visualisateur de t√¢ches. "
 
 msgid "_action_edit_"
 msgstr "Editer"
 
 msgid "_action_assign_task_to"
-msgstr "RÈ-initialiser la t‚che"
+msgstr "R√©-initialiser la t√¢che"
 
 msgid "_action_current_status_"
 msgstr "Statut courant"
 
 msgid "_action_recall_"
-msgstr "Rappeler les membres assignÈs"
+msgstr "Rappeler les membres assign√©s"
 
 msgid "_reviewstate_waiting"
 msgstr "En attente."
@@ -126,13 +130,13 @@ msgid "_reviewstate_processed"
 msgstr "En cours"
 
 msgid "_reviewstate_closed"
-msgstr "FermÈe"
+msgstr "Ferm√©e"
 
 msgid "_action_history_"
-msgstr "Historique de la t‚che"
+msgstr "Historique de la t√¢che"
 
 msgid "label_duration"
-msgstr "DurÈe"
+msgstr "Dur√©e"
 
 msgid "label_project_title"
 msgstr "Projet"
@@ -147,7 +151,7 @@ msgid "_label_email"
 msgstr "Courriel"
 
 msgid "_label_my_tasks"
-msgstr "Mes t‚ches "
+msgstr "Mes t√¢ches "
 
 msgid "_label_sort_date_on"
 msgstr "Date "
@@ -159,45 +163,45 @@ msgid "_label_sort_on"
 msgstr "Trier sur "
 
 msgid "_label_display_my_tasks"
-msgstr "Afficher les t‚ches que j'ai crÈÈes "
+msgstr "Afficher les t√¢ches que j'ai cr√©√©es "
 
 msgid "_label_display_my_affected_tasks"
-msgstr "Afficher les t‚ches qui me sont affectÈes "
+msgstr "Afficher les t√¢ches qui me sont affect√©es "
 
 msgid "_label_display_my_groups_affected_tasks"
 msgstr ""
-"Afficher les t‚ches qui sont affectÈes ‡ un des groupes auxquels "
+"Afficher les t√¢ches qui sont affect√©es √† un des groupes auxquels "
 "j'appartiens."
 
 msgid "_label_display_my_accepted_tasks"
-msgstr "Afficher les t‚ches que j'ai acceptÈes. "
+msgstr "Afficher les t√¢ches que j'ai accept√©es. "
 
 msgid "_label_screener_display_my_tasks"
-msgstr "Afficher les t‚ches que j'ai crÈÈes  "
+msgstr "Afficher les t√¢ches que j'ai cr√©√©es  "
 
 msgid "_label_screener_display_my_affected_tasks"
-msgstr "Afficher les t‚ches qui me sont affectÈes  "
+msgstr "Afficher les t√¢ches qui me sont affect√©es  "
 
 msgid "_label_screener_display_my_groups_affected_tasks"
 msgstr ""
-"Afficher les t‚ches qui sont affectÈes ‡ un des groupes auxquels "
+"Afficher les t√¢ches qui sont affect√©es √† un des groupes auxquels "
 "j'appartiens. "
 
 msgid "_label_screener_display_my_accepted_tasks"
-msgstr "Afficher les t‚ches que j'ai acceptÈes.  "
+msgstr "Afficher les t√¢ches que j'ai accept√©es.  "
 
 msgid "_label_start_date"
 msgstr "Date d'effet"
 
 msgid "_label_stop_date"
-msgstr "Date d'ÈchÈance"
+msgstr "Date d'√©ch√©ance"
 
 # ## labels ################################################################
 msgid "_label_asc"
 msgstr "Croissant"
 
 msgid "_label_desc"
-msgstr "DÈcroissant"
+msgstr "D√©croissant"
 
 msgid "_label_none"
 msgstr "Aucun"
@@ -209,39 +213,39 @@ msgid "_label_indicator"
 msgstr "Indicateur"
 
 msgid "_label_priority"
-msgstr "PrioritÈ"
+msgstr "Priorit√©"
 
 msgid "_heading_task_i_created"
-msgstr "T‚ches que j'ai crÈÈes"
+msgstr "T√¢ches que j'ai cr√©√©es"
 
 msgid "_heading_task_affected_to_me"
-msgstr "T‚ches qui me sont assignÈes"
+msgstr "T√¢ches qui me sont assign√©es"
 
 msgid "_heading_task_i_accepted"
-msgstr "T‚ches que j'ai acceptÈes"
+msgstr "T√¢ches que j'ai accept√©es"
 
 msgid "_heading_task_affected_to_one_of_my_groups"
-msgstr "T‚ches affectÈes ‡ un de mes groupes"
+msgstr "T√¢ches affect√©es √† un de mes groupes"
 
 msgid "_heading_screener_message"
 msgstr ""
-"Vous pouvez Èditer les paramËtres du skinner en suivant le lien "
-"<strong>ParamÈtrer le visualisateur de t‚ches<stong> sur la droite. "
+"Vous pouvez √©diter les param√®tres du skinner en suivant le lien "
+"<strong>Param√©trer le visualisateur de t√¢ches<stong> sur la droite. "
 
 msgid "_heading_configure"
 msgstr "Configure"
 
 msgid "_heading_create_a_task_screen"
-msgstr "CrÈer un visualisateur de t‚ches."
+msgstr "Cr√©er un visualisateur de t√¢ches."
 
 msgid "_heading_recall_assigned_members"
-msgstr "Rappeler les personnes assignÈes"
+msgstr "Rappeler les personnes assign√©es"
 
 msgid "_label_title"
 msgstr "Titre"
 
 msgid "_label_creator"
-msgstr "CrÈateur"
+msgstr "Cr√©ateur"
 
 # ## labels ################################################################
 msgid "_label_project"
@@ -251,73 +255,73 @@ msgid "_label_goal"
 msgstr "But du projet"
 
 msgid "_label_assigned_to_users"
-msgstr "AssignÈe aux utilisateurs"
+msgstr "Assign√©e aux utilisateurs"
 
 msgid "_label_assigned_to_groups"
-msgstr "AssignÈe aux groupes"
+msgstr "Assign√©e aux groupes"
 
 msgid "_label_accepted_by"
-msgstr "AcceptÈe par "
+msgstr "Accept√©e par "
 
 msgid "_label_rejected_by"
-msgstr "RejetÈe par "
+msgstr "Rejet√©e par "
 
 msgid "_label_do_you_want_to_accpet_it"
-msgstr "Etes-vous certain de vouloir accepter la t‚che ?"
+msgstr "Etes-vous certain de vouloir accepter la t√¢che ?"
 
 msgid "_label_do_you_want_to_reject_it"
-msgstr "Etes-vous certain de vouloir rejeter la t‚che ?"
+msgstr "Etes-vous certain de vouloir rejeter la t√¢che ?"
 
 msgid "_label_do_you_want_to_close_it"
-msgstr "Etes-vous certain de vouloir fermer la t‚che ?"
+msgstr "Etes-vous certain de vouloir fermer la t√¢che ?"
 
 msgid "_label_status"
 msgstr "Statut"
 
 msgid "_label_recall_explanation"
 msgstr ""
-"Vous pouvez envoyer un rappel aux membres assignÈs ‡ la t‚che en pressant le "
-"bouton <strong>Rappeler</strong> aprËs avoir choisi les membres.<br />Vous "
-"pouvez Ègalement accÈder aux informations relatives ‡ chaque membre en "
-"cliquant sur le champ <i>Nom Complet</i> et Ègalement envoyer un mail ‡ un "
-"membre donnÈ en cliquant le champ email. "
+"Vous pouvez envoyer un rappel aux membres assign√©s √† la t√¢che en pressant le "
+"bouton <strong>Rappeler</strong> apr√®s avoir choisi les membres.<br />Vous "
+"pouvez √©galement acc√©der aux informations relatives √† chaque membre en "
+"cliquant sur le champ <i>Nom Complet</i> et √©galement envoyer un mail √† un "
+"membre donn√© en cliquant le champ email. "
 
 msgid "_label_you_are_recalled_for_the_task"
-msgstr "Ceci est un rappel vous concernant pour la t‚che suivante : "
+msgstr "Ceci est un rappel vous concernant pour la t√¢che suivante : "
 
 msgid "_label_you_can_reassign_the_task_here"
 msgstr ""
-"Vous pouvez rÈaffecter la t‚che Ceci remplacera les affectations prÈcÈdentes."
+"Vous pouvez r√©affecter la t√¢che Ceci remplacera les affectations pr√©c√©dentes."
 
 msgid "_label_do_you_want_to_reinit_it"
-msgstr "Etes-vous certain de vouloir rÈ-initialiser la t‚che ?"
+msgstr "Etes-vous certain de vouloir r√©-initialiser la t√¢che ?"
 
 msgid "_label_recall"
 msgstr "Rappel"
 
 msgid "_label_mail_sent"
-msgstr "Les courriels ont ÈtÈ envoyÈs."
+msgstr "Les courriels ont √©t√© envoy√©s."
 
 msgid "_label_error_while_sending_mail"
 msgstr ""
-"ProblËme lors de l'envoi des courriels. Contactez l'administrateur du "
+"Probl√®me lors de l'envoi des courriels. Contactez l'administrateur du "
 "portail."
 
 msgid "_label_All/None_"
 msgstr "Tous/Aucun"
 
 msgid "_action_accept"
-msgstr "Accepter cette t‚che"
+msgstr "Accepter cette t√¢che"
 
 msgid "_action_reject"
-msgstr "Rejeter cette t‚che"
+msgstr "Rejeter cette t√¢che"
 
 msgid "_action_close_task"
-msgstr "Fermer cette t‚che"
+msgstr "Fermer cette t√¢che"
 
 # # actions ###############################################################
 msgid "_action_create_new_project"
-msgstr "GÈrer les projets"
+msgstr "G√©rer les projets"
 
 # ## Calendar ###############################################################
 msgid "_cday_Su"
@@ -345,7 +349,7 @@ msgid "_cmonth_01"
 msgstr "Janvier"
 
 msgid "_cmonth_02"
-msgstr "FÈvrier"
+msgstr "F√©vrier"
 
 msgid "_cmonth_03"
 msgstr "Mars"
@@ -363,7 +367,7 @@ msgid "_cmonth_07"
 msgstr "Juillet"
 
 msgid "_cmonth_08"
-msgstr "Ao˚t"
+msgstr "Ao√ªt"
 
 msgid "_cmonth_09"
 msgstr "Septembre"
@@ -375,7 +379,7 @@ msgid "_cmonth_11"
 msgstr "Novembre"
 
 msgid "_cmonth_12"
-msgstr "DÈcembre"
+msgstr "D√©cembre"
 
 msgid "_cfmt_date_"
 msgstr "%d/%m/%Y"
@@ -394,7 +398,7 @@ msgid "_searchmembers_tools_"
 msgstr "Outil de recherche de membres"
 
 msgid "_Members_criteria_"
-msgstr "CritËre de recherche sur les membres."
+msgstr "Crit√®re de recherche sur les membres."
 
 msgid "_dir_Groups_"
 msgstr "Groupes"
@@ -406,16 +410,16 @@ msgid "_button_search_"
 msgstr "Rechercher"
 
 msgid "_select_members_from_search_"
-msgstr "SÈlectionner les membres ‡ partir de la recherche."
+msgstr "S√©lectionner les membres √† partir de la recherche."
 
 msgid "_button_add_"
 msgstr "Ajouter"
 
 msgid "_No_entry_matches_your_request_"
-msgstr "Votre recherche ne retourne aucun rÈsultat."
+msgstr "Votre recherche ne retourne aucun r√©sultat."
 
 msgid "_members_selected_"
-msgstr "membres sÈlectionnÈs."
+msgstr "membres s√©lectionn√©s."
 
 msgid "_button_clean_"
 msgstr "Effacer"
@@ -426,28 +430,28 @@ msgstr "Fermer"
 
 # ## BUTTTONS ######################################################
 msgid "_button_validate_"
-msgstr "ValidÈ."
+msgstr "Valid√©."
 
 # ## POPUPS ##################################################
 msgid "_searchgroups_tools_"
 msgstr "Outil de recherche de groupes"
 
 msgid "_Groups_criteria_"
-msgstr "CritËre de recherche sur les groupes"
+msgstr "Crit√®re de recherche sur les groupes"
 
 msgid "_select_groups_from_search_"
-msgstr "SÈlectionner les groupes ‡ partir de la recherche."
+msgstr "S√©lectionner les groupes √† partir de la recherche."
 
 msgid "_groups_selected_"
-msgstr "groupes sÈlectionnÈs."
+msgstr "groupes s√©lectionn√©s."
 
 # # actions ###############################################################
 msgid "_label_create_a_new_project"
-msgstr "CrÈer un nouveau projet"
+msgstr "Cr√©er un nouveau projet"
 
 # ## labels ################################################################
 msgid "_label_manage_projects"
-msgstr "GÈrer les projets"
+msgstr "G√©rer les projets"
 
 msgid "_label_description"
 msgstr "Description"
@@ -462,10 +466,10 @@ msgid "other"
 msgstr "Autre"
 
 msgid "closed"
-msgstr "FermÈe"
+msgstr "Ferm√©e"
 
 msgid "assigned"
-msgstr "AssignÈe"
+msgstr "Assign√©e"
 
 msgid "late"
 msgstr "En retard"
@@ -480,7 +484,7 @@ msgid "_heading_current_state"
 msgstr "Statut courant "
 
 msgid "_label_item_is"
-msgstr "Cette t‚che est dans l'Ètat"
+msgstr "Cette t√¢che est dans l'√©tat"
 
 msgid "_label_state"
 msgstr "."
@@ -493,7 +497,7 @@ msgstr "par"
 
 # # portal types ##########################################################
 msgid "_portal_tasks"
-msgstr "Centre des t‚ches"
+msgstr "Centre des t√¢ches"
 
 msgid "_transition_accept"
 msgstr "Acceptation"
@@ -506,13 +510,13 @@ msgid "_transition_close"
 msgstr "Fermeture"
 
 msgid "_transition_reject"
-msgstr "RejetÈe"
+msgstr "Rejet√©e"
 
 msgid "_transition_None"
-msgstr "CrÈation"
+msgstr "Cr√©ation"
 
 msgid "_transition_reinit"
-msgstr "RÈ-initialisation"
+msgstr "R√©-initialisation"
 
 # ## labels ################################################################
 msgid "_label_no_project"
@@ -522,34 +526,34 @@ msgid "_label_reject_history"
 msgstr "Historique des rejets"
 
 msgid "_heading_task_related_to"
-msgstr "T‚ches relatives au projet"
+msgstr "T√¢ches relatives au projet"
 
 msgid "_label_only_this_project"
-msgstr "Afficher les t‚ches relatives au projet"
+msgstr "Afficher les t√¢ches relatives au projet"
 
 msgid "_label_recall_no_users_assigned"
-msgstr "Vous n'avez pas encore assignÈ cette t‚che"
+msgstr "Vous n'avez pas encore assign√© cette t√¢che"
 
 msgid "label_cps_task_dependency"
-msgstr "DÈpendance"
+msgstr "D√©pendance"
 
 msgid "label_cps_task_project"
 msgstr "Projet"
 
 msgid "label_cps_task_type"
-msgstr "Type de t‚che"
+msgstr "Type de t√¢che"
 
 msgid "label_cps_start_task_date"
 msgstr "Date effective"
 
 msgid "label_cps_task_priority"
-msgstr "PrioritÈ "
+msgstr "Priorit√© "
 
 msgid "label_cps_stop_task_date"
-msgstr "Date d'ÈchÈance"
+msgstr "Date d'√©ch√©ance"
 
 msgid "label_cps_task_goal"
-msgstr "But de la t‚che"
+msgstr "But de la t√¢che"
 
 msgid "label_cps_task_description"
 msgstr "Description"
@@ -576,8 +580,8 @@ msgid "label_cpstask_text"
 msgstr "Texte"
 
 msgid "_label_task_rejected"
-msgstr "T‚che rejetÈe"
+msgstr "T√¢che rejet√©e"
 
 # # actions ###############################################################
 msgid "_label_the_task_has_been_rejected"
-msgstr "La t‚che suivante a ÈtÈ rejetÈee"
+msgstr "La t√¢che suivante a √©t√© rejet√©ee"

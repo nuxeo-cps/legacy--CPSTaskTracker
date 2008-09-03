@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: CPSTaskTracker\n"
 "POT-Creation-Date: 2007-10-23 18:34default\n"
 "PO-Revision-Date: 2006-03-05 18:29+0100\n"
-"Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
-"Language-Team: español <jesusmartin@lasalle.es>\n"
+"Last-Translator: JesÃºs MartÃ­n <jesusmartin@lasalle.es>\n"
+"Language-Team: espaÃ±ol <jesusmartin@lasalle.es>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Preferred-encodings: latin9 utf-8\n"
-"Domain: default\n"
-"Language-Code: es\n"
-"Language-Name: Spanish\n"
 "X-Generator: KBabel 1.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Domain: default\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Preferred-Encodings: utf-8\n"
 
 #.   <block>
 #.               Task end date
@@ -118,7 +118,7 @@ msgid "_action_create_new_tasks"
 msgstr "Crear una nueva tarea"
 
 msgid "_action_parameters"
-msgstr "Parámetros del visor de tareas"
+msgstr "ParÃ¡metros del visor de tareas"
 
 msgid "_action_edit_"
 msgstr "Editar"
@@ -161,7 +161,7 @@ msgstr "Nombre completo"
 
 # ## labels ################################################################
 msgid "_label_email"
-msgstr "Correo electrónico"
+msgstr "Correo electrÃ³nico"
 
 # ## labels ################################################################
 msgid "_label_my_tasks"
@@ -174,7 +174,7 @@ msgid "_label_sort_order"
 msgstr "Orden "
 
 msgid "_label_sort_on"
-msgstr "Ordenar según"
+msgstr "Ordenar segÃºn"
 
 msgid "_label_display_my_tasks"
 msgstr "Mostrar mis tareas"
@@ -239,8 +239,8 @@ msgstr "Tareas asignadas a uno de mis grupos"
 
 msgid "_heading_screener_message"
 msgstr ""
-"Puedes editar los parámteros de tu carcasa (skinner) en el enlace "
-"<strong>Parámetros del visualización</strong> en la parte derecha"
+"Puedes editar los parÃ¡mteros de tu carcasa (skinner) en el enlace "
+"<strong>ParÃ¡metros del visualizaciÃ³n</strong> en la parte derecha"
 
 msgid "_heading_configure"
 msgstr "Configurar"
@@ -252,7 +252,7 @@ msgid "_heading_recall_assigned_members"
 msgstr "Rellamar a las personas asignadas"
 
 msgid "_label_title"
-msgstr "Título"
+msgstr "TÃ­tulo"
 
 msgid "_label_creator"
 msgstr "Creador"
@@ -279,13 +279,13 @@ msgid "_label_rejected_by"
 msgstr "Rechazado por"
 
 msgid "_label_do_you_want_to_accpet_it"
-msgstr "¿Realmente desea aceptarlo?"
+msgstr "Â¿Realmente desea aceptarlo?"
 
 msgid "_label_do_you_want_to_reject_it"
-msgstr "¿Realmente desea aceptarlo?"
+msgstr "Â¿Realmente desea aceptarlo?"
 
 msgid "_label_do_you_want_to_close_it"
-msgstr "¿Realmente desea aceptarlo?"
+msgstr "Â¿Realmente desea aceptarlo?"
 
 # ## labels ################################################################
 msgid "_label_status"
@@ -294,18 +294,18 @@ msgstr "Estado"
 msgid "_label_recall_explanation"
 msgstr ""
 "Puede enviar un correo recordando a los miembros la tarea asginada. <br /> "
-"También puede acceder a las preferencias de acceso de los usuarios pulsando "
+"TambiÃ©n puede acceder a las preferencias de acceso de los usuarios pulsando "
 "sobre el campo <i>Nombre Completo</i> e, igualmente, enviar un correo a uno "
-"de ellos pulsando sobre su dirección de correo."
+"de ellos pulsando sobre su direcciÃ³n de correo."
 
 msgid "_label_you_are_recalled_for_the_task"
 msgstr "Ha sido rellamado para la siguiente tarea: "
 
 msgid "_label_you_can_reassign_the_task_here"
-msgstr "Puede reasignar la tarea aquí. Sustituirá al anterior."
+msgstr "Puede reasignar la tarea aquÃ­. SustituirÃ¡ al anterior."
 
 msgid "_label_do_you_want_to_reinit_it"
-msgstr "¿Realmente desea reiniciarlo?"
+msgstr "Â¿Realmente desea reiniciarlo?"
 
 # ## labels ################################################################
 msgid "_label_recall"
@@ -356,7 +356,7 @@ msgid "_cday_Fr"
 msgstr "Vi"
 
 msgid "_cday_Sa"
-msgstr "Sá"
+msgstr "SÃ¡"
 
 msgid "_cmonth_01"
 msgstr "Enero"
@@ -408,28 +408,28 @@ msgstr ":"
 
 # ## POPUPS ##################################################
 msgid "_searchmembers_tools_"
-msgstr "Herramienta de búsqueda de usuarios"
+msgstr "Herramienta de bÃºsqueda de usuarios"
 
 msgid "_Members_criteria_"
-msgstr "Criterios de búsqueda de los usuarios"
+msgstr "Criterios de bÃºsqueda de los usuarios"
 
 msgid "_dir_Groups_"
 msgstr "Grupos"
 
 msgid "_(Add users ...) as_"
-msgstr "Añadir usuarios como:"
+msgstr "AÃ±adir usuarios como:"
 
 msgid "_button_search_"
-msgstr "Búsqueda"
+msgstr "BÃºsqueda"
 
 msgid "_select_members_from_search_"
-msgstr "Seleccionar miembros desde la búsqueda"
+msgstr "Seleccionar miembros desde la bÃºsqueda"
 
 msgid "_button_add_"
-msgstr "Añadir"
+msgstr "AÃ±adir"
 
 msgid "_No_entry_matches_your_request_"
-msgstr "Su búsqueda no ha devuelto ningún resultado."
+msgstr "Su bÃºsqueda no ha devuelto ningÃºn resultado."
 
 # ## labels ################################################################
 msgid "_members_selected_"
@@ -448,13 +448,13 @@ msgstr "Validar"
 
 # ## POPUPS ##################################################
 msgid "_searchgroups_tools_"
-msgstr "Herramienta de búsqueda de grupos."
+msgstr "Herramienta de bÃºsqueda de grupos."
 
 msgid "_Groups_criteria_"
-msgstr "Criterio de búsqueda en los grupos"
+msgstr "Criterio de bÃºsqueda en los grupos"
 
 msgid "_select_groups_from_search_"
-msgstr "Seleccionar los grupos a partir de la búsqueda"
+msgstr "Seleccionar los grupos a partir de la bÃºsqueda"
 
 # ## labels ################################################################
 msgid "_groups_selected_"
@@ -468,7 +468,7 @@ msgid "_label_manage_projects"
 msgstr "Gestionar los proyectos"
 
 msgid "_label_description"
-msgstr "Descripción"
+msgstr "DescripciÃ³n"
 
 msgid "_label_other"
 msgstr "Otro"
@@ -499,7 +499,7 @@ msgstr "Estado actual"
 
 # ## labels ################################################################
 msgid "_label_item_is"
-msgstr "Este ítem está en "
+msgstr "Este Ã­tem estÃ¡ en "
 
 # ## labels ################################################################
 msgid "_label_state"
@@ -532,11 +532,11 @@ msgid "_transition_None"
 msgstr "Crear"
 
 msgid "_transition_reinit"
-msgstr "Reinicialización"
+msgstr "ReinicializaciÃ³n"
 
 msgid "_label_no_project"
 msgstr ""
-"No hay ningún projecto. Puede crear uno pulsando en el enlace superior."
+"No hay ningÃºn projecto. Puede crear uno pulsando en el enlace superior."
 
 msgid "_label_reject_history"
 msgstr "Historial de rechazos"
@@ -577,7 +577,7 @@ msgid "label_cps_task_goal"
 msgstr "Objetivo de la tarea"
 
 msgid "label_cps_task_description"
-msgstr "Descripción"
+msgstr "DescripciÃ³n"
 
 msgid "label_priority_high"
 msgstr "Alta"
