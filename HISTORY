@@ -1,4 +1,24 @@
 ===========================================================
+Package: CPSTaskTracker 1.0.5
+===========================================================
+First release built by: madarche at: 2008-11-23T22:22:26
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/products/CPSTaskTracker/tags/1.0.5
+Build from: https://svn.nuxeo.org/pub/CPS3/products/CPSTaskTracker/trunk@53051
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #1916: Switch all the .po files to UTF-8
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSTaskTracker 1.0.4
 ===========================================================
 First release built by: madarche at: 2007-12-17T18:45:59
