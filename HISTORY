@@ -1,4 +1,21 @@
 ===========================================================
+Package: CPSTaskTracker 1.0.6
+===========================================================
+First release built by: gracinet at: 2010-03-14T16:33:40
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- Switch to mercurial DCVS and hgbundler release manager
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSTaskTracker 1.0.5
 ===========================================================
 First release built by: madarche at: 2008-11-23T22:22:26
