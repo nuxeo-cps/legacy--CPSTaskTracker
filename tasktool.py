@@ -334,7 +334,6 @@ class CPSTaskTool(UniqueObject, CMFBTreeFolder, PortalFolder):
             top_tasks_and_no_dependencies = []
             top_tasks_ids = []
             for dependency in dependencies:
-                #import pdb;pdb.set_trace()
                 top_tasks = [x for x in tasks_defs if x['id'] == dependency
                              and not x['dependency']]
                 # A parent task for a task having a dependency on it
