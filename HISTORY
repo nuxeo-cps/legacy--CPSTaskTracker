@@ -1,4 +1,21 @@
 ===========================================================
+Package: CPSTaskTracker 1.0.7
+===========================================================
+First release built by: gracinet at: 2010-07-26T22:34:43
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #597: marked as non unicode ready
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSTaskTracker 1.0.6
 ===========================================================
 First release built by: gracinet at: 2010-03-14T16:33:40
